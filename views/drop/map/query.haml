@@ -1,0 +1,27 @@
+!!! 5
+%html
+  %head
+    %title= "Poir/Drop"
+  %body
+    - query.each do |key, value|
+      %div
+        %div= key
+        %table
+          %tr
+            %td= "ship"
+            %td= "s"
+            %td= "a"
+            %td= "b"
+            %td= "c"
+            %td= "d"
+            %td= "e"
+          - value.each do |v|
+            %tr
+              %td
+                %a{:href => "/drop/ship/#{KCConstants.ships[v["_id"].to_i]}.html"}= KCConstants.ships[v["_id"].to_i]
+              %td= v["value"]["s"].to_i
+              %td= v["value"]["a"].to_i
+              %td= v["value"]["b"].to_i
+              %td= v["value"]["c"].to_i
+              %td= v["value"]["d"].to_i
+              %td= v["value"]["e"].to_i

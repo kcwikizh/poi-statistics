@@ -1,0 +1,24 @@
+!!! 5
+%html
+  %head
+    %title= "Poir/Drop"
+  %body
+    %table
+      %tr
+        %td= "quest"
+        %td= "s"
+        %td= "a"
+        %td= "b"
+        %td= "c"
+        %td= "d"
+        %td= "e"
+      - query.each do |v|
+        %tr
+          %td
+            %a{:href => "/drop/map/#{v["_id"]}.html"}= v["_id"]
+          %td= v["value"]["s"].to_i
+          %td= v["value"]["a"].to_i
+          %td= v["value"]["b"].to_i
+          %td= v["value"]["c"].to_i
+          %td= v["value"]["d"].to_i
+          %td= v["value"]["e"].to_i

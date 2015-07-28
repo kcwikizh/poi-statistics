@@ -1,0 +1,14 @@
+!!! 5
+%html
+  %head
+    %title= "Poir/Construction"
+  %body
+    %table
+      %tr
+        %td= "ship"
+        %td= "count"
+      - query.each do |v|
+        %tr
+          %td
+            %a{:href => "/construction/ship/#{KCConstants.ships[v["_id"].to_i]}.html"}= KCConstants.ships[v["_id"].to_i]
+          %td= v["value"]["count"].to_i

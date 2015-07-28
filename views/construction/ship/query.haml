@@ -1,0 +1,14 @@
+!!! 5
+%html
+  %head
+    %title= "Poir/Construction"
+  %body
+    %table
+      %tr
+        %td= "recipe"
+        %td= "count"
+      - query.each do |v|
+        %tr
+          %td
+            %a{:href => "/construction/recipe/#{v["_id"]}.html"}= v["_id"]
+          %td= v["value"]["count"].to_i

@@ -1,0 +1,13 @@
+!!! 5
+%html
+  %head
+    %title= "Poir/Construction"
+  %body
+    %div= "ships:"
+    - ships.each do |item|
+      %div
+        %a{:href => "/construction/ship/#{item}.html"}= item
+    %div= "recipes:"
+    - recipes.each do |item|
+      %div
+        %a{:href => "/construction/recipe/#{item}.html"}= item

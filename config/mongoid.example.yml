@@ -1,0 +1,13 @@
+development:
+  sessions:
+    default:
+      database: poi-production
+      hosts:
+        - localhost:27017
+
+production:
+  sessions:
+    default:
+      database: poi-production
+      hosts:
+        - localhost:27017
