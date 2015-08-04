@@ -12,6 +12,7 @@ list = ['/']
 list.push '/construction/'
 
 CreateShipRecord.distinct(:shipId).each do |id|
+  list.push "/construction/ship/#{URI.escape(KCConstants.ships[id])}.json"
   list.push "/construction/ship/#{URI.escape(KCConstants.ships[id])}.html"
 end
 
@@ -26,16 +27,19 @@ reduce = %Q{
   }
 }
 CreateShipRecord.map_reduce(map, reduce).out(inline: 1).each do |item|
+  list.push "/construction/recipe/#{item["value"]}.json"
   list.push "/construction/recipe/#{item["value"]}.html"
 end
 
 list.push '/drop/'
 
 DropShipRecord.distinct(:quest).each do |name|
+  list.push "/drop/map/#{URI.escape(name)}.json"
   list.push "/drop/map/#{URI.escape(name)}.html"
 end
 
 DropShipRecord.distinct(:shipId).each do |id|
+  list.push "/drop/ship/#{URI.escape(KCConstants.ships[id])}.json"
   list.push "/drop/ship/#{URI.escape(KCConstants.ships[id])}.html"
 end
 
