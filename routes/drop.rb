@@ -1,6 +1,7 @@
 require 'haml'
+require 'json'
 
-get /\/drop\/?/ do
+get '/drop/index' do
   ship_list = []
   DropShipRecord.distinct(:shipId).each do |id|
     ship_list.push KCConstants.ships[id]
@@ -9,7 +10,7 @@ get /\/drop\/?/ do
   haml :'drop/index', :locals => { :ships => ship_list }
 end
 
-get '/drop/map/:name' do
+get '/drop/map/:name.?:format?' do
   idx = nil
   KCConstants.maps.each do |key, value|
     idx = key if value.include?(params[:name])
@@ -64,10 +65,38 @@ get '/drop/map/:name' do
     query_hash["#{key}/#{value}"] = DropShipRecord.where(quest: params[:name], enemy: key).map_reduce(map, reduce).out(inline: 1)
   end
 
-  haml :'drop/map/query', :locals => { :query => query_hash }
+  if params[:format] == 'json'
+    result = []
+    query_hash.each do |key, values|
+      arr = []
+      values.each do |v|
+        item = {
+          name: KCConstants.ships[v['_id'].to_i],
+          s:    v['value']['s'].to_i,
+          a:    v['value']['a'].to_i,
+          b:    v['value']['b'].to_i,
+          c:    v['value']['c'].to_i,
+          d:    v['value']['d'].to_i,
+          e:    v['value']['e'].to_i
+        }
+        arr.push item
+      end
+      item = {
+        mapcell: key,
+        ships:   arr
+      }
+      result.push item
+    end
+
+    content_type :json
+    json_obj = { database: 'drop', query: params[:name], result: result }
+    json_obj.to_json
+  else
+    haml :'drop/map/query', :locals => { :query => query_hash }
+  end
 end
 
-get '/drop/ship/:name' do
+get '/drop/ship/:name.?:format?' do
   idx = nil
   KCConstants.ships.each do |key, value|
     idx = key if value == params[:name]
@@ -119,5 +148,25 @@ get '/drop/ship/:name' do
 
   query = DropShipRecord.where(shipId: idx).map_reduce(map, reduce).out(inline: 1)
 
-  haml :'drop/ship/query', :locals => { :query => query }
+  if params[:format] == 'json'
+    result = []
+    query.each do |v|
+       item = {
+        map: v['_id'],
+        s:   v['value']['s'].to_i,
+        a:   v['value']['a'].to_i,
+        b:   v['value']['b'].to_i,
+        c:   v['value']['c'].to_i,
+        d:   v['value']['d'].to_i,
+        e:   v['value']['e'].to_i
+      }
+      result.push item
+    end
+
+    content_type :json
+    json_obj = { database: 'drop', query: params[:name], result: result }
+    json_obj.to_json
+  else
+    haml :'drop/ship/query', :locals => { :query => query }
+  end
 end

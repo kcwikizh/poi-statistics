@@ -11,10 +11,6 @@ before '/*/' do
   redirect "/#{params['splat'].join}/index.html"
 end
 
-before '/*.html' do
-  env['PATH_INFO'].sub!(/(\/index)?.html$/, '')
-end
-
 error 404 do
   '404 - Not Found'
 end
