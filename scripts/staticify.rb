@@ -43,4 +43,4 @@ DropShipRecord.distinct(:shipId).each do |id|
   list.push "/drop/ship/#{URI.escape(KCConstants.ships[id])}.html"
 end
 
-puts `staticify -d #{path}/public -p "#{list.join(',')}" #{path}`
+puts `staticify --save -d #{path}/public -p "#{list.join(',')}" #{path}`
