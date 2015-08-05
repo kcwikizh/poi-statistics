@@ -9,5 +9,5 @@ class CreateShipRecord
   field :teitokuLv, type: Integer
   field :shipId,    type: Integer
   field :items,     type: Array
-  field :origin,     type: String
+  field :origin,    type: String
 end

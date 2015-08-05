@@ -11,162 +11,345 @@ get '/drop/index' do
 end
 
 get '/drop/map/:name.?:format?' do
-  idx = nil
-  KCConstants.maps.each do |key, value|
-    idx = key if value.include?(params[:name])
+  map_id = nil
+  KCConstants.maps.each do |id, name|
+    map_id = id if name == params[:name]
   end
 
-  halt 404 if idx.nil?
+  halt 404 if map_id.nil?
+
+  params[:format] ||= 'html'
+  if params[:format] == 'html'
+    return haml :'drop/map/query'
+  end
+
+  halt 404 unless params[:format] == 'json'
 
   map = %Q{
     function() {
-      var counts = { s: 0, a: 0, b: 0, c: 0, d: 0, e: 0 };
-      switch(this.rank) {
-        case 'S':
-          counts.s = 1;
-          break;
-        case 'A':
-          counts.a = 1;
-          break;
-        case 'B':
-          counts.b = 1;
-          break;
-        case 'C':
-          counts.c = 1;
-          break;
-        case 'D':
-          counts.d = 1;
-          break;
-        case 'E':
-          counts.e = 1;
-          break;
-      }
-      emit(this.shipId, counts);
+      emit(this.shipId, {
+        rank: this.rank,
+        teitokuLv: this.teitokuLv,
+        mapLv: this.mapLv,
+        enemy: this.enemyShips.join('/') + '/' + this.enemyFormation,
+        reduced: false
+      });
     }
   }
 
   reduce = %Q{
     function(key, values) {
-      var reduced = { s: 0, a: 0, b: 0, c: 0, d: 0, e: 0 };
+      var reduced = {
+        s: 0,
+        a: 0,
+        b: 0,
+        c: 0,
+        d: 0,
+        e: 0,
+        hqLv: [151, 0],
+        mapLv: [0, 0, 0, 0],
+        enemy: {},
+        reduced: true
+      };
+
       values.forEach(function(value) {
-        reduced.s += value.s;
-        reduced.a += value.a;
-        reduced.b += value.b;
-        reduced.c += value.c;
-        reduced.d += value.d;
-        reduced.e += value.e;
+        switch(value.rank) {
+          case 'S':
+            reduced.s++;
+            break;
+          case 'A':
+            reduced.a++;
+            break;
+          case 'B':
+            reduced.b++;
+            break;
+          case 'C':
+            reduced.c++;
+            break;
+          case 'D':
+            reduced.d++;
+            break;
+          case 'E':
+            reduced.e++;
+            break;
+        }
+
+        if (value.teitokuLv < reduced.hqLv[0]) {
+          reduced.hqLv[0] = value.teitokuLv;
+        }
+        if (value.teitokuLv > reduced.hqLv[1]) {
+          reduced.hqLv[1] = value.teitokuLv;
+        }
+
+        reduced.mapLv[value.mapLv]++;
+
+        reduced.enemy[value.enemy] = reduced.enemy[value.enemy] || 0;
+        reduced.enemy[value.enemy]++;
       });
+
       return reduced;
     }
   }
 
-  query_hash = {}
-  KCConstants.maps[idx][params[:name]].each do |key, value|
-    query_hash["#{key}/#{value}"] = DropShipRecord.where(quest: params[:name], enemy: key).map_reduce(map, reduce).out(inline: 1)
-  end
+  finalize = %Q{
+    function(key, value) {
+      if (!value.reduced) {
+        var reduced = {
+          s: 0,
+          a: 0,
+          b: 0,
+          c: 0,
+          d: 0,
+          e: 0,
+          hqLv: [value.teitokuLv, value.teitokuLv],
+          mapLv: [0, 0, 0, 0],
+          enemy: {},
+          reduced: true
+        };
 
-  if params[:format] == 'json'
-    result = []
-    query_hash.each do |key, values|
-      arr = []
-      values.each do |v|
-        item = {
-          name: KCConstants.ships[v['_id'].to_i],
-          s:    v['value']['s'].to_i,
-          a:    v['value']['a'].to_i,
-          b:    v['value']['b'].to_i,
-          c:    v['value']['c'].to_i,
-          d:    v['value']['d'].to_i,
-          e:    v['value']['e'].to_i
+        switch(value.rank) {
+          case 'S':
+            reduced.s = 1;
+            break;
+          case 'A':
+            reduced.a = 1;
+            break;
+          case 'B':
+            reduced.b = 1;
+            break;
+          case 'C':
+            reduced.c = 1;
+            break;
+          case 'D':
+            reduced.d = 1;
+            break;
+          case 'E':
+            reduced.e = 1;
+            break;
         }
-        arr.push item
-      end
-      item = {
-        mapcell: key,
-        ships:   arr
-      }
-      result.push item
-    end
+        reduced.mapLv[value.mapLv]++;
+        reduced.enemy[value.enemy] = 1;
 
-    content_type :json
-    json_obj = { database: 'drop', query: params[:name], result: result }
-    json_obj.to_json
-  else
-    haml :'drop/map/query', :locals => { :query => query_hash }
+        return reduced;
+      }
+      return value;
+    }
+  }
+
+  # query now
+
+  result = []
+  DropShipRecord.where(mapId: map_id).distinct(:cellId).sort.each do |cell_id|
+    ship_list = []
+    DropShipRecord.where(mapId: map_id, cellId: cell_id)
+      .map_reduce(map, reduce).out(inline: 1)
+      .finalize(finalize).each do |q|
+        enemies = []
+        q['value']['enemy'].each do |k, v|
+          idx = k.split('/')
+          e = (idx[0..5].map {|i| i == '-1' ? nil : KCConstants.ships[i.to_i]}).compact
+          enemies.push({
+            enemy: "#{e.join('/')}(#{KCConstants.formations[idx[6].to_i]})",
+            count: v.to_i
+          })
+        end
+
+        ship_list.push({
+          name: KCConstants.ships[q['_id'].to_i],
+          s: q['value']['s'].to_i,
+          a: q['value']['a'].to_i,
+          b: q['value']['b'].to_i,
+          c: q['value']['c'].to_i,
+          d: q['value']['d'].to_i,
+          e: q['value']['e'].to_i,
+          detail: {
+            hqLvRange: q['value']['hqLv'].map {|i| i.to_i},
+            mapLvSet: q['value']['mapLv'].map {|i| i.to_i},
+            enemySet: enemies
+          }
+        })
+      end
+    result.push({ name: KCConstants.cells[map_id][cell_id], ships: ship_list })
   end
+
+  content_type :json
+  json_obj = { database: 'drop', query: params[:name], result: result }
+  json_obj.to_json
 end
 
 get '/drop/ship/:name.?:format?' do
-  idx = nil
-  KCConstants.ships.each do |key, value|
-    idx = key if value == params[:name]
+  ship_sortno = nil
+  KCConstants.ships.each do |id, name|
+    ship_sortno = id if name == params[:name]
   end
 
-  halt 404 if idx.nil?
+  halt 404 if ship_sortno.nil?
+
+  params[:format] ||= 'html'
+  if params[:format] == 'html'
+    return haml :'drop/ship/query'
+  end
+
+  halt 404 unless params[:format] == 'json'
+
+  map_id_hash = {}
+  DropShipRecord.where(shipId: ship_sortno).distinct(:mapId).sort.each do |map_id|
+    map_id_hash[map_id / 10] ||= []
+    map_id_hash[map_id / 10].push map_id
+  end
 
   map = %Q{
     function() {
-      var count = { s: 0, a: 0, b: 0, c: 0, d: 0, e: 0 };
-      switch(this.rank) {
-        case 'S':
-          count.s = 1;
-          break;
-        case 'A':
-          count.a = 1;
-          break;
-        case 'B':
-          count.b = 1;
-          break;
-        case 'C':
-          count.c = 1;
-          break;
-        case 'D':
-          count.d = 1;
-          break;
-        case 'E':
-          count.e = 1;
-          break;
-      }
-      emit(this.quest, count);
+      emit(this.cellId, {
+        rank: this.rank,
+        teitokuLv: this.teitokuLv,
+        mapLv: this.mapLv,
+        enemy: this.enemyShips.join('/') + '/' + this.enemyFormation,
+        reduced: false
+      });
     }
   }
 
   reduce = %Q{
     function(key, values) {
-      var reduced = { s: 0, a: 0, b: 0, c: 0, d: 0, e: 0 };
+      var reduced = {
+        s: 0,
+        a: 0,
+        b: 0,
+        c: 0,
+        d: 0,
+        e: 0,
+        hqLv: [151, 0],
+        mapLv: [0, 0, 0, 0],
+        enemy: {},
+        reduced: true
+      };
+
       values.forEach(function(value) {
-        reduced.s += value.s;
-        reduced.a += value.a;
-        reduced.b += value.b;
-        reduced.c += value.c;
-        reduced.d += value.d;
-        reduced.e += value.e;
+        switch(value.rank) {
+          case 'S':
+            reduced.s++;
+            break;
+          case 'A':
+            reduced.a++;
+            break;
+          case 'B':
+            reduced.b++;
+            break;
+          case 'C':
+            reduced.c++;
+            break;
+          case 'D':
+            reduced.d++;
+            break;
+          case 'E':
+            reduced.e++;
+            break;
+        }
+
+        if (value.teitokuLv < reduced.hqLv[0]) {
+          reduced.hqLv[0] = value.teitokuLv;
+        }
+        if (value.teitokuLv > reduced.hqLv[1]) {
+          reduced.hqLv[1] = value.teitokuLv;
+        }
+
+        reduced.mapLv[value.mapLv]++;
+
+        reduced.enemy[value.enemy] = reduced.enemy[value.enemy] || 0;
+        reduced.enemy[value.enemy]++;
       });
+
       return reduced;
     }
   }
 
-  query = DropShipRecord.where(shipId: idx).map_reduce(map, reduce).out(inline: 1)
+  finalize = %Q{
+    function(key, value) {
+      if (!value.reduced) {
+        var reduced = {
+          s: 0,
+          a: 0,
+          b: 0,
+          c: 0,
+          d: 0,
+          e: 0,
+          hqLv: [value.teitokuLv, value.teitokuLv],
+          mapLv: [0, 0, 0, 0],
+          enemy: {},
+          reduced: true
+        };
 
-  if params[:format] == 'json'
-    result = []
-    query.each do |v|
-       item = {
-        map: v['_id'],
-        s:   v['value']['s'].to_i,
-        a:   v['value']['a'].to_i,
-        b:   v['value']['b'].to_i,
-        c:   v['value']['c'].to_i,
-        d:   v['value']['d'].to_i,
-        e:   v['value']['e'].to_i
+        switch(value.rank) {
+          case 'S':
+            reduced.s = 1;
+            break;
+          case 'A':
+            reduced.a = 1;
+            break;
+          case 'B':
+            reduced.b = 1;
+            break;
+          case 'C':
+            reduced.c = 1;
+            break;
+          case 'D':
+            reduced.d = 1;
+            break;
+          case 'E':
+            reduced.e = 1;
+            break;
+        }
+        reduced.mapLv[value.mapLv]++;
+        reduced.enemy[value.enemy] = 1;
+
+        return reduced;
       }
-      result.push item
-    end
+      return value;
+    }
+  }
 
-    content_type :json
-    json_obj = { database: 'drop', query: params[:name], result: result }
-    json_obj.to_json
-  else
-    haml :'drop/ship/query', :locals => { :query => query }
+  # query now
+
+  result = []
+  map_id_hash.each do |area_id, map_id_list|
+    map_list = []
+    map_id_list.each do |map_id|
+      cell_list = []
+      DropShipRecord.where(shipId: ship_sortno, mapId: map_id)
+        .map_reduce(map, reduce).out(inline: 1)
+        .finalize(finalize).each do |q|
+          enemies = []
+          q['value']['enemy'].each do |k, v|
+            idx = k.split('/')
+            e = (idx[0..5].map {|i| i == '-1' ? nil : KCConstants.ships[i.to_i]}).compact
+            enemies.push({
+              enemy: "#{e.join('/')}(#{KCConstants.formations[idx[6].to_i]})",
+              count: v.to_i
+            })
+          end
+
+          cell_list.push({
+            name: KCConstants.cells[map_id][q['_id'].to_i],
+            s: q['value']['s'].to_i,
+            a: q['value']['a'].to_i,
+            b: q['value']['b'].to_i,
+            c: q['value']['c'].to_i,
+            d: q['value']['d'].to_i,
+            e: q['value']['e'].to_i,
+            detail: {
+              hqLvRange: q['value']['hqLv'].map {|i| i.to_i},
+              mapLvSet: q['value']['mapLv'].map {|i| i.to_i},
+              enemySet: enemies
+            }
+          })
+        end
+      map_list.push({ name: KCConstants.maps[map_id], cells: cell_list })
+    end
+    result.push({ name: KCConstants.areas[area_id], maps: map_list })
   end
+
+  content_type :json
+  json_obj = { database: 'drop', query: params[:name], result: result }
+  json_obj.to_json
 end

@@ -1,4 +1,4 @@
-class CreateShipRecord
+class CreateItemRecord
   include Mongoid::Document
   store_in collection: "createitemrecords"
 
