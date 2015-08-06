@@ -25,6 +25,12 @@ get '/drop/map/:name.?:format?' do
 
   halt 404 unless params[:format] == 'json'
 
+  enemy_hash = {}
+  DropShipRecord.where(mapId: map_id).distinct(:cellId).sort.each do |cell_id|
+    enemy_hash[KCConstants.cells[map_id][cell_id]] ||= []
+    enemy_hash[KCConstants.cells[map_id][cell_id]].push cell_id
+  end
+
   map = %Q{
     function() {
       emit(this.shipId, {
@@ -139,9 +145,9 @@ get '/drop/map/:name.?:format?' do
   # query now
 
   result = []
-  DropShipRecord.where(mapId: map_id).distinct(:cellId).sort.each do |cell_id|
+  enemy_hash.each do |enemy_name, cell_id_list|
     ship_list = []
-    DropShipRecord.where(mapId: map_id, cellId: cell_id)
+    DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list)
       .map_reduce(map, reduce).out(inline: 1)
       .finalize(finalize).each do |q|
         enemies = []
@@ -169,7 +175,7 @@ get '/drop/map/:name.?:format?' do
           }
         })
       end
-    result.push({ name: KCConstants.cells[map_id][cell_id], ships: ship_list })
+    result.push({ name: enemy_name, ships: ship_list })
   end
 
   content_type :json
