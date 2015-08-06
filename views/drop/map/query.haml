@@ -40,7 +40,7 @@
                    :"data-parent" => "#accordion",
                    :href => "#map#{a_id}"}= "#{a_name} (#{a_id})"
             %div{:id => "map#{a_id}",
-                 :class => "panel-collapse#{map_id / 10 == a_id ? '' : ' collapse'}"}
+                 :class => "panel-collapse collapse #{map_id / 10 == a_id ? ' in' : ''}"}
               %div.list-group
                 - KCConstants.maps.select{|k, v| k / 10 == a_id}.each do |m_id, m_name|
                   %a{:class => "list-group-item#{map_id == m_id ? ' active' : ''}",
