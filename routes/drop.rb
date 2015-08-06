@@ -147,6 +147,7 @@ get '/drop/map/:name.?:format?' do
   result = []
   enemy_hash.each do |enemy_name, cell_id_list|
     ship_list = []
+    drop_sum = 0
     DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list)
       .map_reduce(map, reduce).out(inline: 1)
       .finalize(finalize).each do |q|
@@ -160,6 +161,8 @@ get '/drop/map/:name.?:format?' do
           })
         end
 
+        count = q['value']['mapLv'].map{|i| i.to_i}.inject(:+)
+
         ship_list.push({
           name: KCConstants.ships[q['_id'].to_i],
           s: q['value']['s'].to_i,
@@ -168,14 +171,17 @@ get '/drop/map/:name.?:format?' do
           c: q['value']['c'].to_i,
           d: q['value']['d'].to_i,
           e: q['value']['e'].to_i,
+          count: count,
           detail: {
             hqLvRange: q['value']['hqLv'].map {|i| i.to_i},
             mapLvSet: q['value']['mapLv'].map {|i| i.to_i},
             enemySet: enemies
           }
         })
+
+        drop_sum += count
       end
-    result.push({ name: enemy_name, ships: ship_list })
+    result.push({ name: enemy_name, ships: ship_list, count: drop_sum })
   end
 
   content_type :json
@@ -318,6 +324,7 @@ get '/drop/ship/:name.?:format?' do
   # query now
 
   result = []
+  drop_sum = 0
   map_id_hash.each do |area_id, map_id_list|
     map_list = []
     map_id_list.each do |map_id|
@@ -335,6 +342,8 @@ get '/drop/ship/:name.?:format?' do
             })
           end
 
+          count = q['value']['mapLv'].map{|i| i.to_i}.inject(:+)
+
           cell_list.push({
             name: KCConstants.cells[map_id][q['_id'].to_i],
             s: q['value']['s'].to_i,
@@ -343,12 +352,15 @@ get '/drop/ship/:name.?:format?' do
             c: q['value']['c'].to_i,
             d: q['value']['d'].to_i,
             e: q['value']['e'].to_i,
+            count: count,
             detail: {
               hqLvRange: q['value']['hqLv'].map {|i| i.to_i},
               mapLvSet: q['value']['mapLv'].map {|i| i.to_i},
               enemySet: enemies
             }
           })
+
+          drop_sum += count
         end
       map_list.push({ name: KCConstants.maps[map_id], cells: cell_list })
     end
@@ -356,6 +368,6 @@ get '/drop/ship/:name.?:format?' do
   end
 
   content_type :json
-  json_obj = { database: 'drop', query: params[:name], result: result }
+  json_obj = { database: 'drop', query: params[:name], result: result, count: drop_sum }
   json_obj.to_json
 end
