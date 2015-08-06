@@ -1,27 +1,53 @@
-!!! 5
-%html
-  %head
-    %title= "Poir/Drop"
-  %body
-    - query.each do |key, value|
-      %div
-        %div= key
-        %table
-          %tr
-            %td= "ship"
-            %td= "s"
-            %td= "a"
-            %td= "b"
-            %td= "c"
-            %td= "d"
-            %td= "e"
-          - value.each do |v|
-            %tr
-              %td
-                %a{:href => "/drop/ship/#{KCConstants.ships[v["_id"].to_i]}.html"}= KCConstants.ships[v["_id"].to_i]
-              %td= v["value"]["s"].to_i
-              %td= v["value"]["a"].to_i
-              %td= v["value"]["b"].to_i
-              %td= v["value"]["c"].to_i
-              %td= v["value"]["d"].to_i
-              %td= v["value"]["e"].to_i
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  %div.container
+    %div.navbar-header
+      %button.navbar-toggle.collapsed{:type => "button",
+                                      :"data-toggle" => "collapse",
+                                      :"data-target" => "#navbar-main",
+                                      :"aria-expanded" => "false"}
+        %span.sr-only 展开导航栏
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "/"} poi-statistics
+    %div#navbar-main.navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => "/drop"} 掉落统计
+%div.container
+  %div.row.row-offcanvas.row-offcanvas-right
+    %div.col-xs-12.col-sm-9
+      %p.pull-right.visible-xs
+        %button.btn.btn-primary.btn-xs{:type => "button", :"data-toggle" => "offcanvas"}
+          展开侧边栏
+      %ol.breadcrumb
+        %li 主页
+        %li 掉落
+        %li= KCConstants.areas[map_id / 10]
+        %li= KCConstants.maps[map_id]
+      %div.busy-indicator
+        %span.glyphicon.glyphicon-refresh.glyphicon-spin
+        %span 少女祈祷中...
+      %ul#main-tab.nav.nav-pills{:role => "tablist"}
+      %div#main-content.tab-content
+    %div#sidebar.class.col-xs-6.col-sm-3.sidebar-offcanvas
+      %div#accordion.panel-group
+        - KCConstants.areas.each do |a_id, a_name|
+          %div.panel.panel-default
+            %div.panel-heading
+              %h4.panel-title
+                %a{:"data-toggle" => "collapse",
+                   :"data-parent" => "#accordion",
+                   :href => "#map#{a_id}"}= "#{a_name} (#{a_id})"
+            %div{:id => "map#{a_id}",
+                 :class => "panel-collapse#{map_id / 10 == a_id ? '' : ' collapse'}"}
+              %div.list-group
+                - KCConstants.maps.select{|k, v| k / 10 == a_id}.each do |m_id, m_name|
+                  %a{:class => "list-group-item#{map_id == m_id ? ' active' : ''}",
+                     :href => "/drop/map/#{m_name}.html"}= "#{m_name} (#{m_id / 10}-#{m_id % 10})"
+%script{:src => "/scripts/drop_map.js", :defer => "defer"}
+%script{:defer => "defer"}
+  :plain
+    $(document).ready(function() {
+      requestData("#{KCConstants.maps[map_id]}");
+    });

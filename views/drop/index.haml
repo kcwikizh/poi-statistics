@@ -6,9 +6,7 @@
     %div= "maps:"
     - KCConstants.maps.each do |key, value|
       %div
-        %div= key
-        - value.each do |k, v|
-          %a{:href => "/drop/map/#{k}.html"}= k
+        %a{:href => "/drop/map/#{value}.html"}= value
     %div= "ships:"
     - ships.each do |item|
       %div

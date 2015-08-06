@@ -1,7 +1,7 @@
 require 'haml'
 require 'json'
 
-get '/drop/index' do
+get '/drop/?' do
   ship_list = []
   DropShipRecord.distinct(:shipId).each do |id|
     ship_list.push KCConstants.ships[id]
@@ -20,7 +20,7 @@ get '/drop/map/:name.?:format?' do
 
   params[:format] ||= 'html'
   if params[:format] == 'html'
-    return haml :'drop/map/query'
+    return haml :'drop/map/query', :locals => { :map_id => map_id }
   end
 
   halt 404 unless params[:format] == 'json'
