@@ -45,7 +45,7 @@ function getContentFormatText(key, map, show) {
     var str = "<div class='tab-pane" + (show ? " active" : "") +
         "' id='point" + key + "' role='tabpanel'>\
         <table class='table table-striped table-hover'><thead><tr><th>舰娘</th>\
-        <th>S胜</th><th>A胜</th><th>B胜</th><th>C败</th><th>D败</th><th>E败</th>\
+        <th>数量</th><th>S胜</th><th>A胜</th><th>B胜</th><th>提督等级</th>\
         <th>掉落率</th></tr></thead><tbody>";
     map.ships.sort(function(a,b) {
         if (a.count == b.count) {
@@ -61,16 +61,14 @@ function getContentFormatText(key, map, show) {
     });
     $.each(map.ships, function(key, val) {
         if (val.name == "(无)") return;
-        str += "<tr" + ($.inArray(val.name, rareShips) < 0 ? "" : " style='color:red'") + ">";
-        str += "<td>" + val.name + "</td>";
-        str += "<td>" + val.s + "</td>";
-        str += "<td>" + val.a + "</td>";
-        str += "<td>" + val.b + "</td>";
-        str += "<td>" + val.c + "</td>";
-        str += "<td>" + val.d + "</td>";
-        str += "<td>" + val.e + "</td>";
-        str += "<td>" + (val.count * 100 / map.count).toFixed(2) + "%</td>";
-        str += "</tr>"
+        str += "<tr" + ($.inArray(val.name, rareShips) < 0 ? "" : " style='color:red'") + "><td>";
+        str += val.name + "</td><td>";
+        str += val.count + "</td><td>";
+        str += val.s + "</td><td>";
+        str += val.a + "</td><td>";
+        str += val.b + "</td><td>";
+        str += val.detail.hqLvRange.join(' ~ ') + "</td><td>";
+        str += (val.count * 100 / map.count).toFixed(2) + "%</td></tr>";
     });
     str += "</tbody></table></div>"
     return str;
