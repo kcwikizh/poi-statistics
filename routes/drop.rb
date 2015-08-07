@@ -20,7 +20,12 @@ get '/drop/map/:name.?:format?' do
 
   params[:format] ||= 'html'
   if params[:format] == 'html'
-    return haml :'drop/map/query', :locals => { :map_id => map_id }
+    return haml :'drop/map/query', :locals => {
+      :location => 'drop',
+      :query_by => 'map',
+      :title_append => " # 掉落统计 - #{KCConstants.maps[map_id]}",
+      :map_id => map_id,
+    }
   end
 
   halt 404 unless params[:format] == 'json'
