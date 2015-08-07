@@ -8,11 +8,22 @@ var rareShips = ["長門", "陸奥", "雪風", "飛龍", "島風", "大井", "�
                  "野分", "秋月", "高波", "朝霜", "U-511", "Littorio", "Roma",
                  "秋津洲"];
 
-function requestData(map_name) {
+$(document).ready(function() {
+    $('#main-tab').hover(function() {
+        $('.drop-map').fadeIn('fast');
+    }, function() {
+        $('.drop-map').fadeOut('fast');
+    });
+});
+
+function requestData(map_name, map_image) {
     $.getJSON('/drop/map/' + map_name + ".json", function(data) {
         $('.busy-indicator').hide();
 
         var tabs = [], contents = [];
+
+        contents.push("<image class='drop-map' src='" + map_image + "' />")
+
         $.each(data.result, function(key, val) {
             var show = val.name.indexOf('(Boss)') >= 0;
             tabs.push(getTabFormatText(key, val.name, show));

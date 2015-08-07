@@ -45,9 +45,9 @@
                 - KCConstants.maps.select{|k, v| k / 10 == a_id}.each do |m_id, m_name|
                   %a{:class => "list-group-item#{map_id == m_id ? ' active' : ''}",
                      :href => "/drop/map/#{m_name}.html"}= "#{m_name} (#{m_id / 10}-#{m_id % 10})"
-%script{:src => "/scripts/drop_map.js", :defer => "defer"}
+%script{:src => "/scripts/drop_map.js"}
 %script{:defer => "defer"}
   :plain
     $(document).ready(function() {
-      requestData("#{KCConstants.maps[map_id]}");
+      requestData("#{KCConstants.maps[map_id]}", "#{SiteConstants.map_images[map_id]}");
     });

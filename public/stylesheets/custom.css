@@ -26,3 +26,8 @@ body {
         transform: rotate(359deg);
     }
 }
+
+.drop-map {
+    position: absolute;
+    display: none;
+}
