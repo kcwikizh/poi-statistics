@@ -1,13 +1,146 @@
-!!! 5
-%html
-  %head
-    %title= "Poir/Drop"
-  %body
-    %div= "maps:"
-    - KCConstants.maps.each do |key, value|
-      %div
-        %a{:href => "/drop/map/#{value}.html"}= value
-    %div= "ships:"
-    - ships.each do |item|
-      %div
-        %a{:href => "/drop/ship/#{item}.html"}= item
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  %div.container
+    %div.navbar-header
+      %button.navbar-toggle.collapsed{:type => "button",
+                                      :"data-toggle" => "collapse",
+                                      :"data-target" => "#navbar-main",
+                                      :"aria-expanded" => "false"}
+        %span.sr-only 展开导航栏
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "/"} poi-statistics
+    %div#navbar-main.navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => "/drop"} 掉落统计
+%div.container
+  %div.page-header
+    %h1 掉落统计
+  %div.col-xs-12.col-lg-6
+    %div.panel-group
+      %div.panel.panel-primary
+        %div.panel-heading
+          %h4.panel-title 海域
+        %div.panel-body
+          %ul.nav.nav-pills
+            %li.active
+              %a{:href => "#area1", :"data-toggle" => "tab"} 鎮守府海域
+            %li
+              %a{:href => "#area2", :"data-toggle" => "tab"} 南西諸島海域
+            %li
+              %a{:href => "#area3", :"data-toggle" => "tab"} 北方海域
+            %li
+              %a{:href => "#area4", :"data-toggle" => "tab"} 西方海域
+            %li
+              %a{:href => "#area5", :"data-toggle" => "tab"} 南方海域
+            %li
+              %a{:href => "#area6", :"data-toggle" => "tab"} 中部海域
+          %div.tab-content
+            %div#area1.tab-pane.active
+              %div.col-xs-12.text-center
+                %div.row
+                  %a{:href => "/drop/map/鎮守府正面海域.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/9/99/MapBanner1-1.png/250px-MapBanner1-1.png"}
+                  %a{:href => "/drop/map/南西諸島沖.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/8/81/MapBanner1-2.png/250px-MapBanner1-2.png"}
+                %div.row
+                  %a{:href => "/drop/map/製油所地帯沿岸.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/4/4c/MapBanner1-3.png/250px-MapBanner1-3.png"}
+                  %a{:href => "/drop/map/南西諸島防衛線.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/3/3c/MapBanner1-4.png/250px-MapBanner1-4.png"}
+                %div.row
+                  %a{:href => "/drop/map/鎮守府近海.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/5/50/MapBanner1-5.png/500px-MapBanner1-5.png"}
+                %div.row
+                  %a{:href => "/drop/map/鎮守府近海航路.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/e/e2/MapBanner1-6.png/500px-MapBanner1-6.png"}
+            %div#area2.tab-pane
+              %div.col-xs-12.text-center
+                %div.row
+                  %a{:href => "/drop/map/カムラン半島.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/5/56/MapBanner2-1.png/250px-MapBanner2-1.png"}
+                  %a{:href => "/drop/map/バシー島沖.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/c/c4/MapBanner2-2.png/250px-MapBanner2-2.png"}
+                %div.row
+                  %a{:href => "/drop/map/東部オリョール海.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/5/52/MapBanner2-3.png/250px-MapBanner2-3.png"}
+                  %a{:href => "/drop/map/沖ノ島海域.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/9/98/MapBanner2-4.png/250px-MapBanner2-4.png"}
+                %div.row
+                  %a{:href => "/drop/map/沖ノ島沖.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/4/4c/MapBanner2-5.png/500px-MapBanner2-5.png"}
+                %div.row
+                  %img{:src => "http://upload.kcwiki.moe/commons/thumb/9/9e/MapBanner0-5.png/500px-MapBanner0-5.png"}
+            %div#area3.tab-pane
+              %div.col-xs-12.text-center
+                %div.row
+                  %a{:href => "/drop/map/モーレイ海.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/4/4b/MapBanner3-1.png/250px-MapBanner3-1.png"}
+                  %a{:href => "/drop/map/キス島沖.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/5/59/MapBanner3-2.png/250px-MapBanner3-2.png"}
+                %div.row
+                  %a{:href => "/drop/map/アルフォンシーノ方面.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/a/ad/MapBanner3-3.png/250px-MapBanner3-3.png"}
+                  %a{:href => "/drop/map/北方海域全域.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/2/26/MapBanner3-4.png/250px-MapBanner3-4.png"}
+                %div.row
+                  %a{:href => "/drop/map/北方AL海域.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/e/e5/MapBanner3-5.png/500px-MapBanner3-5.png"}
+                %div.row
+                  %img{:src => "http://upload.kcwiki.moe/commons/thumb/9/9e/MapBanner0-5.png/500px-MapBanner0-5.png"}
+            %div#area4.tab-pane
+              %div.col-xs-12.text-center
+                %div.row
+                  %a{:href => "/drop/map/ジャム島攻略作戦.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/b/ba/MapBanner4-1.png/250px-MapBanner4-1.png"}
+                  %a{:href => "/drop/map/カレー洋制圧戦.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/5/55/MapBanner4-2.png/250px-MapBanner4-2.png"}
+                %div.row
+                  %a{:href => "/drop/map/リランカ島空襲.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/5/5b/MapBanner4-3.png/250px-MapBanner4-3.png"}
+                  %a{:href => "/drop/map/カスガダマ沖海戦.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/6/61/MapBanner4-4.png/250px-MapBanner4-4.png"}
+                %div.row
+                  %a{:href => "/drop/map/カレー洋リランカ島沖.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/b/b6/MapBanner4-5.png/500px-MapBanner4-5.png"}
+                %div.row
+                  %img{:src => "http://upload.kcwiki.moe/commons/thumb/9/9e/MapBanner0-5.png/500px-MapBanner0-5.png"}
+            %div#area5.tab-pane
+              %div.col-xs-12.text-center
+                %div.row
+                  %a{:href => "/drop/map/南方海域前面.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/5/5e/MapBanner5-1.png/250px-MapBanner5-1.png"}
+                  %a{:href => "/drop/map/珊瑚諸島沖.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/d/d8/MapBanner5-2.png/250px-MapBanner5-2.png"}
+                %div.row
+                  %a{:href => "/drop/map/サブ島沖海域.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/8/8d/MapBanner5-3.png/250px-MapBanner5-3.png"}
+                  %a{:href => "/drop/map/サーモン海域.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/7/7a/MapBanner5-4.png/250px-MapBanner5-4.png"}
+                %div.row
+                  %a{:href => "/drop/map/サーモン海域北方.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/d/d8/MapBanner5-5.png/500px-MapBanner5-5.png"}
+                %div.row
+                  %img{:src => "http://upload.kcwiki.moe/commons/thumb/9/9e/MapBanner0-5.png/500px-MapBanner0-5.png"}
+            %div#area6.tab-pane
+              %div.col-xs-12.text-center
+                %div.row
+                  %a{:href => "/drop/map/中部海域哨戒線.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/b/bb/MapBanner6-1.png/250px-MapBanner6-1.png"}
+                  %a{:href => "/drop/map/MS諸島沖.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/2/2a/MapBanner6-2.png/250px-MapBanner6-2.png"}
+                %div.row
+                  %a{:href => "/drop/map/グアノ環礁沖海域.html"}
+                    %img{:src => "http://upload.kcwiki.moe/commons/thumb/3/38/MapBanner6-3.png/250px-MapBanner6-3.png"}
+                  %img{:src => "http://upload.kcwiki.moe/commons/thumb/3/3c/MapBanner0-0.png/250px-MapBanner0-0.png"}
+                %div.row
+                  %img{:src => "http://upload.kcwiki.moe/commons/thumb/9/9e/MapBanner0-5.png/500px-MapBanner0-5.png"}
+                %div.row
+                  %img{:src => "http://upload.kcwiki.moe/commons/thumb/9/9e/MapBanner0-5.png/500px-MapBanner0-5.png"}
+  %div.col-xs-12.col-lg-6
+    %div.panel-group
+      %div.panel.panel-primary
+        %div.panel-heading
+          %h4.panel-title 舰娘
+        %div.panel-body Coming soon.

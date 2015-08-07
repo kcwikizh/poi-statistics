@@ -2,12 +2,9 @@ require 'haml'
 require 'json'
 
 get '/drop/?' do
-  ship_list = []
-  DropShipRecord.distinct(:shipId).each do |id|
-    ship_list.push KCConstants.ships[id]
-  end
-
-  haml :'drop/index', :locals => { :ships => ship_list }
+  haml :'drop/index', :locals => {
+    :title_append => " # 掉落统计"
+  }
 end
 
 get '/drop/map/:name.?:format?' do
