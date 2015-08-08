@@ -4,6 +4,10 @@ require 'uri'
 
 path = Pathname.new(File.dirname(__FILE__)).realpath.parent
 
+File.delete("#{path}/public/index.html")
+Dir.rmdir("#{path}/construction")
+Dir.rmdir("#{path}/drop")
+
 Mongoid.load!("#{path}/config/mongoid.yml", :production)
 Dir["#{path}/models/*.rb"].each { |file| load file }
 
