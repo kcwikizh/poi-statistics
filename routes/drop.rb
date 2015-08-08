@@ -35,13 +35,45 @@ get '/drop/map/:name.?:format?' do
 
   map = %Q{
     function() {
-      emit(this.shipId, {
-        rank: this.rank,
-        teitokuLv: this.teitokuLv,
-        mapLv: this.mapLv,
-        enemy: this.enemyShips.join('/') + '/' + this.enemyFormation,
-        reduced: false
-      });
+      var val = {
+        s: 0,
+        a: 0,
+        b: 0,
+        c: 0,
+        d: 0,
+        e: 0,
+        hqLv: [this.teitokuLv, this.teitokuLv],
+        mapLv: [0, 0, 0, 0],
+        enemy: {}
+      }
+
+      switch(this.rank) {
+        case 'S':
+          val.s = 1;
+          break;
+        case 'A':
+          val.a = 1;
+          break;
+        case 'B':
+          val.b = 1;
+          break;
+        case 'C':
+          val.c = 1;
+          break;
+        case 'D':
+          val.d = 1;
+          break;
+        case 'E':
+          val.e = 1;
+          break;
+      }
+
+      val.mapLv[this.mapLv] = 1;
+
+      var enemy = this.enemyShips.join('/') + '/' + this.enemyFormation;
+      val.enemy[enemy] = val.enemy[enemy] || 1;
+
+      emit(this.shipId, val);
     }
   }
 
@@ -56,91 +88,36 @@ get '/drop/map/:name.?:format?' do
         e: 0,
         hqLv: [151, 0],
         mapLv: [0, 0, 0, 0],
-        enemy: {},
-        reduced: true
+        enemy: {}
       };
 
       values.forEach(function(value) {
-        switch(value.rank) {
-          case 'S':
-            reduced.s++;
-            break;
-          case 'A':
-            reduced.a++;
-            break;
-          case 'B':
-            reduced.b++;
-            break;
-          case 'C':
-            reduced.c++;
-            break;
-          case 'D':
-            reduced.d++;
-            break;
-          case 'E':
-            reduced.e++;
-            break;
+        reduced.s += value.s;
+        reduced.a += value.a;
+        reduced.b += value.b;
+        reduced.c += value.c;
+        reduced.d += value.d;
+        reduced.e += value.e;
+
+        reduced.mapLv[0] += value.mapLv[0];
+        reduced.mapLv[1] += value.mapLv[1];
+        reduced.mapLv[2] += value.mapLv[2];
+        reduced.mapLv[3] += value.mapLv[3];
+
+        if (value.hqLv[0] < reduced.hqLv[0]) {
+          reduced.hqLv[0] = value.hqLv[0];
+        }
+        if (value.hqLv[1] > reduced.hqLv[1]) {
+          reduced.hqLv[1] = value.hqLv[1];
         }
 
-        if (value.teitokuLv < reduced.hqLv[0]) {
-          reduced.hqLv[0] = value.teitokuLv;
+        for(var e in value.enemy) {
+          reduced.enemy[e] = reduced.enemy[e] || 0;
+          reduced.enemy[e] += value.enemy[e];
         }
-        if (value.teitokuLv > reduced.hqLv[1]) {
-          reduced.hqLv[1] = value.teitokuLv;
-        }
-
-        reduced.mapLv[value.mapLv]++;
-
-        reduced.enemy[value.enemy] = reduced.enemy[value.enemy] || 0;
-        reduced.enemy[value.enemy]++;
       });
 
       return reduced;
-    }
-  }
-
-  finalize = %Q{
-    function(key, value) {
-      if (!value.reduced) {
-        var reduced = {
-          s: 0,
-          a: 0,
-          b: 0,
-          c: 0,
-          d: 0,
-          e: 0,
-          hqLv: [value.teitokuLv, value.teitokuLv],
-          mapLv: [0, 0, 0, 0],
-          enemy: {},
-          reduced: true
-        };
-
-        switch(value.rank) {
-          case 'S':
-            reduced.s = 1;
-            break;
-          case 'A':
-            reduced.a = 1;
-            break;
-          case 'B':
-            reduced.b = 1;
-            break;
-          case 'C':
-            reduced.c = 1;
-            break;
-          case 'D':
-            reduced.d = 1;
-            break;
-          case 'E':
-            reduced.e = 1;
-            break;
-        }
-        reduced.mapLv[value.mapLv]++;
-        reduced.enemy[value.enemy] = 1;
-
-        return reduced;
-      }
-      return value;
     }
   }
 
@@ -151,8 +128,7 @@ get '/drop/map/:name.?:format?' do
     ship_list = []
     drop_sum = 0
     DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list)
-      .map_reduce(map, reduce).out(inline: 1)
-      .finalize(finalize).each do |q|
+      .map_reduce(map, reduce).out(inline: 1).each do |q|
         enemies = []
         q['value']['enemy'].each do |k, v|
           idx = k.split('/')
@@ -214,13 +190,45 @@ get '/drop/ship/:name.?:format?' do
 
   map = %Q{
     function() {
-      emit(this.cellId, {
-        rank: this.rank,
-        teitokuLv: this.teitokuLv,
-        mapLv: this.mapLv,
-        enemy: this.enemyShips.join('/') + '/' + this.enemyFormation,
-        reduced: false
-      });
+      var val = {
+        s: 0,
+        a: 0,
+        b: 0,
+        c: 0,
+        d: 0,
+        e: 0,
+        hqLv: [this.teitokuLv, this.teitokuLv],
+        mapLv: [0, 0, 0, 0],
+        enemy: {}
+      }
+
+      switch(this.rank) {
+        case 'S':
+          val.s = 1;
+          break;
+        case 'A':
+          val.a = 1;
+          break;
+        case 'B':
+          val.b = 1;
+          break;
+        case 'C':
+          val.c = 1;
+          break;
+        case 'D':
+          val.d = 1;
+          break;
+        case 'E':
+          val.e = 1;
+          break;
+      }
+
+      val.mapLv[this.mapLv] = 1;
+
+      var enemy = this.enemyShips.join('/') + '/' + this.enemyFormation;
+      val.enemy[enemy] = val.enemy[enemy] || 1;
+
+      emit(this.cellId, val);
     }
   }
 
@@ -235,91 +243,36 @@ get '/drop/ship/:name.?:format?' do
         e: 0,
         hqLv: [151, 0],
         mapLv: [0, 0, 0, 0],
-        enemy: {},
-        reduced: true
+        enemy: {}
       };
 
       values.forEach(function(value) {
-        switch(value.rank) {
-          case 'S':
-            reduced.s++;
-            break;
-          case 'A':
-            reduced.a++;
-            break;
-          case 'B':
-            reduced.b++;
-            break;
-          case 'C':
-            reduced.c++;
-            break;
-          case 'D':
-            reduced.d++;
-            break;
-          case 'E':
-            reduced.e++;
-            break;
+        reduced.s += value.s;
+        reduced.a += value.a;
+        reduced.b += value.b;
+        reduced.c += value.c;
+        reduced.d += value.d;
+        reduced.e += value.e;
+
+        reduced.mapLv[0] += value.mapLv[0];
+        reduced.mapLv[1] += value.mapLv[1];
+        reduced.mapLv[2] += value.mapLv[2];
+        reduced.mapLv[3] += value.mapLv[3];
+
+        if (value.hqLv[0] < reduced.hqLv[0]) {
+          reduced.hqLv[0] = value.hqLv[0];
+        }
+        if (value.hqLv[1] > reduced.hqLv[1]) {
+          reduced.hqLv[1] = value.hqLv[1];
         }
 
-        if (value.teitokuLv < reduced.hqLv[0]) {
-          reduced.hqLv[0] = value.teitokuLv;
+        for(var e in value.enemy) {
+          reduced.enemy[e] = reduced.enemy[e] || 0;
+          reduced.enemy[e] += value.enemy[e];
         }
-        if (value.teitokuLv > reduced.hqLv[1]) {
-          reduced.hqLv[1] = value.teitokuLv;
-        }
-
-        reduced.mapLv[value.mapLv]++;
-
-        reduced.enemy[value.enemy] = reduced.enemy[value.enemy] || 0;
-        reduced.enemy[value.enemy]++;
       });
 
       return reduced;
-    }
-  }
-
-  finalize = %Q{
-    function(key, value) {
-      if (!value.reduced) {
-        var reduced = {
-          s: 0,
-          a: 0,
-          b: 0,
-          c: 0,
-          d: 0,
-          e: 0,
-          hqLv: [value.teitokuLv, value.teitokuLv],
-          mapLv: [0, 0, 0, 0],
-          enemy: {},
-          reduced: true
-        };
-
-        switch(value.rank) {
-          case 'S':
-            reduced.s = 1;
-            break;
-          case 'A':
-            reduced.a = 1;
-            break;
-          case 'B':
-            reduced.b = 1;
-            break;
-          case 'C':
-            reduced.c = 1;
-            break;
-          case 'D':
-            reduced.d = 1;
-            break;
-          case 'E':
-            reduced.e = 1;
-            break;
-        }
-        reduced.mapLv[value.mapLv]++;
-        reduced.enemy[value.enemy] = 1;
-
-        return reduced;
-      }
-      return value;
     }
   }
 
@@ -332,8 +285,7 @@ get '/drop/ship/:name.?:format?' do
     map_id_list.each do |map_id|
       cell_list = []
       DropShipRecord.where(shipId: ship_sortno, mapId: map_id)
-        .map_reduce(map, reduce).out(inline: 1)
-        .finalize(finalize).each do |q|
+        .map_reduce(map, reduce).out(inline: 1).each do |q|
           enemies = []
           q['value']['enemy'].each do |k, v|
             idx = k.split('/')
