@@ -4,9 +4,9 @@ require 'uri'
 
 path = Pathname.new(File.dirname(__FILE__)).realpath.parent
 
-File.delete("#{path}/public/index.html")
-Dir.rmdir("#{path}/construction")
-Dir.rmdir("#{path}/drop")
+File.delete("#{path}/public/index.html") if File.exist?("#{path}/public/index.html")
+`rm -rf "#{path}/public/construction"` if Dir.exists?("#{path}/public/construction")
+`rm -rf "#{path}/public/drop"` if Dir.exists?("#{path}/public/drop")
 
 Mongoid.load!("#{path}/config/mongoid.yml", :production)
 Dir["#{path}/models/*.rb"].each { |file| load file }
