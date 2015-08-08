@@ -1,3 +1,4 @@
 config/puma.rb
 config/mongoid.yml
 public/**/*.html
+scripts/*.sh
