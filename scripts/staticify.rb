@@ -5,39 +5,15 @@ require 'uri'
 path = Pathname.new(File.dirname(__FILE__)).realpath.parent
 
 File.delete("#{path}/public/index.html") if File.exist?("#{path}/public/index.html")
-`rm -rf "#{path}/public/construction"` if Dir.exists?("#{path}/public/construction")
-`rm -rf "#{path}/public/drop"` if Dir.exists?("#{path}/public/drop")
+puts `rm -rf "#{path}/public/construction"` if Dir.exists?("#{path}/public/construction")
+puts `rm -rf "#{path}/public/drop"` if Dir.exists?("#{path}/public/drop")
 
 Mongoid.load!("#{path}/config/mongoid.yml", :production)
 Dir["#{path}/models/*.rb"].each { |file| load file }
 
-list = ['/', '/construction/']
-
-CreateShipRecord.distinct(:shipId).each do |id|
-  list.push "/construction/ship/#{URI.escape(KCConstants.ships[id])}.json"
-  list.push "/construction/ship/#{URI.escape(KCConstants.ships[id])}.html"
-end
-
-puts `staticify --save -d #{path}/public -p "#{list.join(',')}" #{path}`
-list.clear
-
-map = %Q{
-  function() {
-    emit(this.items, this.items.join('/'));
-  }
-}
-reduce = %Q{
-  function(key, values) {
-    return key.join('/');
-  }
-}
-CreateShipRecord.map_reduce(map, reduce).out(inline: 1).each do |item|
-  list.push "/construction/recipe/#{item["value"]}.json"
-  list.push "/construction/recipe/#{item["value"]}.html"
-end
-
-puts `staticify --save -d #{path}/public -p "#{list.join(',')}" #{path}`
-list = ['/drop/']
+list = ['/']
+list.push '/drop/'
+list.push '/event/'
 
 DropShipRecord.distinct(:quest).each do |name|
   list.push "/drop/map/#{URI.escape(name)}.json"
