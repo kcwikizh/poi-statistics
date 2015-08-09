@@ -34,6 +34,8 @@ body {
 .drop-map {
     position: absolute;
     display: none;
+    left: 50%;
+    margin-left: -300px;
     z-index: 10;
 }
 
