@@ -1,4 +1,10 @@
 var constants = {
+    "(无)": {
+        chineseName: "",
+        nameForSearch: "",
+        shipType: "",
+        rare: false
+    },
     "長門": {
         chineseName: "长门",
         nameForSearch: "长门,changmen,chang men,Nagato,nagato",
@@ -981,8 +987,6 @@ function requestData(map_name) {
 
             items = [];
             $.each(val.ships, function(key, ship) {
-                if (ship.name == "(无)") return;
-
                 items.push({
                     name: ship.name,
                     type: constants[ship.name].shipType,
@@ -1000,6 +1004,8 @@ function requestData(map_name) {
             });
 
             items.sort(function(a, b) {
+                if (a.name == "(无)") return 1;
+                if (b.name == "(无)") return -1;
                 return a.totalCount - b.totalCount;
             });
             table.bootstrapTable('append', items);
@@ -1016,7 +1022,7 @@ function requestData(map_name) {
 function nameFormatter(value) {
     return (constants[value].rare
         ? "<div style='color:red'>" + value + "</div>"
-        : value) + "<!-- " + constants[value].nameForSearch
+        : (value == "(无)" ? "(无掉落)" : value)) + "<!-- " + constants[value].nameForSearch
         + (constants[value].rare ? "," + searchTag["稀有"] : "")
         + (searchTag[constants[value].shipType] != null ? "," + searchTag[constants[value].shipType] : "")
         + ", -->";
