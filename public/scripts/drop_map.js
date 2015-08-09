@@ -1022,6 +1022,10 @@ function nameFormatter(value) {
         + ", -->";
 }
 
+function dropRateFormatter(value) {
+    return value + "%";
+}
+
 function detailFormatter(index, row) {
     var html = [];
     if (row.mapLvCount[0] == 0) {
