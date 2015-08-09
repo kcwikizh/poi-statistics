@@ -25,11 +25,51 @@
         %li 掉落
         %li= KCConstants.areas[map_id / 10]
         %li= KCConstants.maps[map_id]
+      %ul#cells.nav.nav-pills{:role => "tablist"}
+        - enemy_hash = KCConstants.cells[map_id].invert
+        - enemy_hash.each do |c_name, c_id|
+          %li{:role => "presentation", :class => c_name.include?("(Boss)") ? "active" : nil}
+            %a{:"aria-controls" => "point#{c_id}",
+               :"data-toggle" => "pill",
+               :href => "#point#{c_id}",
+               :role => "tab"}= c_name
+      %div
+        %img.drop-map{:src => SiteConstants.map_images[map_id]}
+      %div.tab-content.hidden
+        - enemy_hash.each do |c_name, c_id|
+          %div{:class => "tab-pane#{c_name.include?("(Boss)") ? " active" : ""}",
+               :id => "point#{c_id}",
+               :role => "tabpanel"}
+            %div{:id => "toolbar#{c_id}"}
+              %div.toolbar-content
+                %span= "最后更新时间: #{Time.now}"
+            %table.table.table-hover.table-striped{:"data-eneny-name" => c_name,
+                                                   :"data-sort-name" => "dropRate",
+                                                   :"data-toolbar" => "#toolbar#{c_id}",
+                                                   :"data-search" => "true",
+                                                   :"data-show-columns" => "true",
+                                                   :"data-show-export" => "true",
+                                                   :"data-detail-view" => "true",
+                                                   :"data-detail-formatter" => "detailFormatter"}
+              %thead
+                %tr
+                  %th{:"data-field" => "name",
+                      :"data-formatter" => "nameFormatter",
+                      :"data-switchable" => "false"} 舰娘
+                  %th{:"data-field" => "type"} 舰种
+                  %th{:"data-field" => "totalCount"} 数量
+                  %th{:"data-field" => "sCount",
+                      :"data-sortable" => "true"} S胜
+                  %th{:"data-field" => "aCount",
+                      :"data-sortable" => "true"} A胜
+                  %th{:"data-field" => "bCount",
+                      :"data-sortable" => "true"} B胜
+                  %th{:"data-field" => "hqLvRange"} 提督等级
+                  %th{:"data-field" => "dropRate",
+                      :"data-sortable" => "true"} 掉落率
       %div.busy-indicator
         %span.glyphicon.glyphicon-refresh.glyphicon-spin
         %span 少女祈祷中...
-      %ul#main-tab.nav.nav-pills{:role => "tablist"}
-      %div#main-content.tab-content
     %div#sidebar.class.col-xs-6.col-sm-3.sidebar-offcanvas
       %div#accordion.panel-group
         - KCConstants.areas.each do |a_id, a_name|
@@ -45,9 +85,9 @@
                 - KCConstants.maps.select{|k, v| k / 10 == a_id}.each do |m_id, m_name|
                   %a{:class => "list-group-item#{map_id == m_id ? ' active' : ''}",
                      :href => "/drop/map/#{m_name}.html"}= "#{m_name} (#{m_id / 10}-#{m_id % 10})"
-%script{:src => "/scripts/drop_map.js"}
+%script{:src => "/scripts/drop_map.js", :defer => "defer"}
 %script{:defer => "defer"}
   :plain
     $(document).ready(function() {
-      requestData("#{KCConstants.maps[map_id]}", "#{SiteConstants.map_images[map_id]}");
+      requestData("#{KCConstants.maps[map_id]}");
     });

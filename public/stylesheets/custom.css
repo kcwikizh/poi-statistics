@@ -34,4 +34,19 @@ body {
 .drop-map {
     position: absolute;
     display: none;
+    z-index: 10;
+}
+
+.table-like {
+    display: table;
+}
+
+.table-like div {
+    display: table-row;
+}
+
+.table-like div span {
+    display: table-cell;
+    text-align:right;
+    padding: 5px 15px;
 }
