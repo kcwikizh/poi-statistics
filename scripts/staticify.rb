@@ -16,7 +16,7 @@ list = ['/']
 list.push '/drop/'
 list.push '/event/'
 
-DropShipRecord.distinct(:quest).each do |name|
+KCConstants.maps.each do |map_id, name|
   list.push "/drop/map/#{URI.escape(name)}.json"
   list.push "/drop/map/#{URI.escape(name)}.html"
 end
