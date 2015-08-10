@@ -3,6 +3,7 @@ require 'json'
 
 get '/drop/?' do
   haml :'drop/index', :locals => {
+    :location => 'drop',
     :title_append => " # 掉落统计"
   }
 end

@@ -17,6 +17,7 @@
       %script{:src => "/scripts/html5shiv.min.js"}
       %script{:src => "/scripts/respond.min.js"}
   %body
+    =haml :navbar, :locals => locals
     = yield
     %footer.footer
       %div.container

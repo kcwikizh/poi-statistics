@@ -1,5 +1,6 @@
 get '/event/?' do
   haml :'event/index', :locals => {
+    :location => 'event',
     :title_append => " # 活动统计",
     :data => {
       first: {
