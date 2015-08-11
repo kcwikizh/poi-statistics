@@ -8,6 +8,8 @@ File.delete("#{path}/public/index.html") if File.exist?("#{path}/public/index.ht
 `rm -rf "#{path}/public/construction"` if Dir.exists?("#{path}/public/construction")
 `rm -rf "#{path}/public/drop"` if Dir.exists?("#{path}/public/drop")
 `rm -rf "#{path}/public/event"` if Dir.exists?("#{path}/public/event")
+`rm -rf "#{path}/public/enemy"` if Dir.exists?("#{path}/public/enemy")
+`rm -rf "#{path}/public/enemy2"` if Dir.exists?("#{path}/public/enemy2")
 
 Mongoid.load!("#{path}/config/mongoid.yml", :production)
 Dir["#{path}/models/*.rb"].each { |file| load file }
