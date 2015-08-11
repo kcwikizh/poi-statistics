@@ -1,3 +1,84 @@
+get '/event/?' do
+  result = {
+    e1: {
+      chosen: 0,
+      passed: 0,
+    },
+    e2: {
+      chosen: 0,
+      passed: 0,
+    },
+    e3: {
+      chosen: 0,
+      passed: 0,
+    },
+    e4: {
+      chosen: 0,
+      passed: 0,
+    },
+    e5: {
+      chosen: 0,
+      passed: 0,
+    },
+    e6: {
+      chosen: 0,
+      passed: 0,
+    },
+    e7: {
+      chosen: 0,
+      passed: 0,
+    },
+  }
+
+  result[:e1][:chosen] = SelectRankRecord.where(:mapareaId => 311).count
+  result[:e1][:passed] = PassEventRecord.where(:mapId => 311).count
+  if result[:e1][:chosen] < result[:e1][:passed]
+    result[:e1][:chosen] = result[:e1][:passed]
+  end
+
+  result[:e2][:chosen] = SelectRankRecord.where(:mapareaId => 312).count
+  result[:e2][:passed] = PassEventRecord.where(:mapId => 312).count
+  if result[:e2][:chosen] < result[:e2][:passed]
+    result[:e2][:chosen] = result[:e2][:passed]
+  end
+
+  result[:e3][:chosen] = SelectRankRecord.where(:mapareaId => 313).count
+  result[:e3][:passed] = PassEventRecord.where(:mapId => 313).count
+  if result[:e3][:chosen] < result[:e3][:passed]
+    result[:e3][:chosen] = result[:e3][:passed]
+  end
+
+  result[:e4][:chosen] = SelectRankRecord.where(:mapareaId => 314).count
+  result[:e4][:passed] = PassEventRecord.where(:mapId => 314).count
+  if result[:e4][:chosen] < result[:e4][:passed]
+    result[:e4][:chosen] = result[:e4][:passed]
+  end
+
+  result[:e5][:chosen] = SelectRankRecord.where(:mapareaId => 315).count
+  result[:e5][:passed] = PassEventRecord.where(:mapId => 315).count
+  if result[:e5][:chosen] < result[:e5][:passed]
+    result[:e5][:chosen] = result[:e5][:passed]
+  end
+
+  result[:e6][:chosen] = SelectRankRecord.where(:mapareaId => 316).count
+  result[:e6][:passed] = PassEventRecord.where(:mapId => 316).count
+  if result[:e6][:chosen] < result[:e6][:passed]
+    result[:e6][:chosen] = result[:e6][:passed]
+  end
+
+  result[:e7][:chosen] = SelectRankRecord.where(:mapareaId => 317).count
+  result[:e7][:passed] = PassEventRecord.where(:mapId => 317).count
+  if result[:e7][:chosen] < result[:e7][:passed]
+    result[:e7][:chosen] = result[:e7][:passed]
+  end
+
+  haml :'event/index', :locals => {
+    :location => 'event',
+    :title_append => " # 活动统计",
+    :data => result,
+  }
+end
+
 get '/event/:mid.?:format?' do
   map_id = params[:mid].to_i
 
@@ -103,14 +184,10 @@ get '/event/:mid.?:format?' do
     result[:third][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId => 14, :rank.in =>['S', 'A']).count
   end
 
-  haml :'event/index', :locals => {
+  haml :'event/query', :locals => {
     :location => 'event',
     :map_id => map_id,
-    :title_append => " # 活动统计",
+    :title_append => " # 活动统计 @ E#{map_id % 10}",
     :data => result,
   }
-end
-
-get '/event/?' do
-  '<script>location.href = location.protocol + "//" + location.host + "/event/311.html";</script>'
 end

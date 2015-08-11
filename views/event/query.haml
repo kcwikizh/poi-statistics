@@ -1,0 +1,179 @@
+%div.container
+  %div.page-header
+    %h1 活动统计
+  %ul.nav.nav-tabs
+    %li{:role => "presentation"}
+      %a{:href => "/event/index.html"} 总
+    - (1..7).each do |i|
+      %li{:role => "presentation",
+          :class => i == map_id % 10 ? "active" : nil}
+        %a{:href => "/event/#{map_id / 10}#{i}.html"}= "E#{i}"
+  %div.panel.panel-default.tab-panel
+    %div.panel-body
+      %div.pull-right
+        %a.btn.btn-default{:href => "http://zh.kcwiki.moe/wiki/2015年夏季活动/#{map_id % 10 < 5 ? "主作战#E-#{map_id % 10}" : "扩展作战#E-#{map_id % 10}"}",
+                           :target => "_blank"} 查看百科
+      %div
+        %ul.nav.nav-pills
+          %li.active{:role => "presentation"}
+            %a#tcon0{:href => "#report0",
+               :"data-toggle" => "tab"} 总
+          %li{:role => "presentation"}
+            %a#tcon1{:href => "#report1",
+               :"data-toggle" => "tab"} 甲
+          %li{:role => "presentation"}
+            %a#tcon2{:href => "#report2",
+               :"data-toggle" => "tab"} 乙
+          %li{:role => "presentation"}
+            %a#tcon3{:href => "#report3",
+               :"data-toggle" => "tab"} 丙
+        %div.tab-content
+          %div.tab-pane.active{:id => "report0"}
+            %div.row
+              %div.col-xs-12.col-sm-3.top30
+                %div.well.well-lg
+                  %p= "总人数： #{data[:first][:chosen] + data[:second][:chosen] + data[:third][:chosen]}"
+                  %p= "甲级人数： #{data[:first][:chosen]}"
+                  %p= "乙级人数： #{data[:second][:chosen]}"
+                  %p= "丙级人数： #{data[:third][:chosen]}"
+                  %br
+                  %p= "总通关人数： #{data[:first][:passed] + data[:second][:passed] + data[:third][:passed]}"
+                  %p= "甲级通关人数： #{data[:first][:passed]}"
+                  %p= "乙级通关人数： #{data[:second][:passed]}"
+                  %p= "丙级通关人数： #{data[:third][:passed]}"
+              %div.col-xs-12.col-sm-9
+                %div#chart01.col-xs-6.ct-chart
+                %div#chart02.col-xs-6.ct-chart
+          %div.tab-pane{:id => "report1"}
+            %div.row
+              %div.col-xs-12.col-sm-3.top30
+                %div.well.well-lg
+                  %p= "总人数： #{data[:first][:chosen]}"
+                  %p= "通关人数： #{data[:first][:passed]}"
+                  %p= "通关等级： #{data[:first][:hqLvMin]} ~ #{data[:first][:hqLvMax]}"
+                  %p= "总出击次数： #{data[:first][:battleTotal]}"
+                  %p= "Boss胜利次数： #{data[:first][:battleBoss]}"
+              %div.col-xs-12.col-sm-9
+                %div#chart11.col-xs-6.ct-chart
+                %div#chart12.col-xs-6.ct-chart
+          %div.tab-pane{:id => "report2"}
+            %div.row
+              %div.col-xs-12.col-sm-3.top30
+                %div.well.well-lg
+                  %p= "总人数： #{data[:second][:chosen]}"
+                  %p= "通关人数： #{data[:second][:passed]}"
+                  %p= "通关等级： #{data[:second][:hqLvMin]} ~ #{data[:second][:hqLvMax]}"
+                  %p= "总出击次数： #{data[:second][:battleTotal]}"
+                  %p= "Boss胜利次数： #{data[:second][:battleBoss]}"
+              %div.col-xs-12.col-sm-9
+                %div#chart21.col-xs-6.ct-chart
+                %div#chart22.col-xs-6.ct-chart
+          %div.tab-pane{:id => "report3"}
+            %div.row
+              %div.col-xs-12.col-sm-3.top30
+                %div.well.well-lg
+                  %p= "总人数： #{data[:third][:chosen]}"
+                  %p= "通关人数： #{data[:third][:passed]}"
+                  %p= "通关等级： #{data[:third][:hqLvMin]} ~ #{data[:third][:hqLvMax]}"
+                  %p= "总出击次数： #{data[:third][:battleTotal]}"
+                  %p= "Boss胜利次数： #{data[:third][:battleBoss]}"
+              %div.col-xs-12.col-sm-9
+                %div#chart31.col-xs-6.ct-chart
+                %div#chart32.col-xs-6.ct-chart
+%script{:defer => "defer"}
+  :plain
+    var draw1 = false, draw2 = false, draw3 = false;
+    var data01 = {
+      labels: ['甲', '乙', '丙'],
+      series: [#{data[:first][:chosen]}, #{data[:second][:chosen]}, #{data[:third][:chosen]}]
+    };
+    var data02 = {
+      labels: ['甲(通关)', '乙(通关)', '丙(通关)'],
+      series: [#{data[:first][:passed]}, #{data[:second][:passed]}, #{data[:third][:passed]}]
+    };
+    var data11 = {
+      labels: ['通关', '未通关'],
+      series: [#{data[:first][:passed]}, #{data[:first][:chosen] - data[:first][:passed]}]
+    };
+    var data12 = {
+      labels: ['Boss胜利', '劝退'],
+      series: [#{data[:first][:battleBoss]}, #{data[:first][:battleTotal] - data[:first][:battleBoss]}]
+    };
+    var data21 = {
+      labels: ['通关', '未通关'],
+      series: [#{data[:second][:passed]}, #{data[:second][:chosen] - data[:second][:passed]}]
+    };
+    var data22 = {
+      labels: ['Boss胜利', '劝退'],
+      series: [#{data[:second][:battleBoss]}, #{data[:second][:battleTotal] - data[:second][:battleBoss]}]
+    };
+    var data31 = {
+      labels: ['通关', '未通关'],
+      series: [#{data[:third][:passed]}, #{data[:third][:chosen] - data[:third][:passed]}]
+    };
+    var data32 = {
+      labels: ['Boss胜利', '劝退'],
+      series: [#{data[:third][:battleBoss]}, #{data[:third][:battleTotal] - data[:third][:battleBoss]}]
+    };
+    var options = {
+      height: 300,
+      labelInterpolationFnc: function(value) {
+      console.log(value);
+        return value[0];
+      }
+    };
+    var responsiveOptions = [
+      ['screen and (min-width: 640px)', {
+        chartPadding: 30,
+        labelOffset: 100,
+        labelDirection: 'explode',
+        labelInterpolationFnc: function(value) {
+          return value;
+        }
+      }],
+      ['screen and (min-width: 1024px)', {
+        labelOffset: 70,
+        chartPadding: 20
+      }]
+    ];
+    new Chartist.Pie('#chart01', data01, options, responsiveOptions);
+    new Chartist.Pie('#chart02', data02, options, responsiveOptions);
+    $('#tcon1').on('shown.bs.tab', function(e) {
+      if (!draw1) {
+        draw1 = true;
+        new Chartist.Pie('#chart11', data11, options, responsiveOptions);
+        new Chartist.Pie('#chart12', data12, options, responsiveOptions);
+      }
+    });
+    $('#tcon2').on('shown.bs.tab', function(e) {
+      if (!draw2) {
+        draw2 = true;
+        new Chartist.Pie('#chart21', data21, options, responsiveOptions);
+        new Chartist.Pie('#chart22', data22, options, responsiveOptions);
+      }
+    });
+    $('#tcon3').on('shown.bs.tab', function(e) {
+      if (!draw3) {
+        draw3 = true;
+        new Chartist.Pie('#chart31', data31, options, responsiveOptions);
+        new Chartist.Pie('#chart32', data32, options, responsiveOptions);
+      }
+    });
+%div.container
+  / 多说评论框 start
+  %div.ds-thread{:"data-thread-key" => "event/index",
+                 :"data-title" => "活动统计",
+                 :"data-url" => "http://db.kcwiki.moe/event/index.html"}
+  / 多说评论框 end
+  / 多说公共JS代码 start (一个网页只需插入一次)
+  :javascript
+    var duoshuoQuery = {short_name:"poi-db"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+  / 多说公共JS代码 end
