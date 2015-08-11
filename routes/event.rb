@@ -30,6 +30,9 @@ get '/event/:mid.?:format?' do
 
   result[:first][:chosen] = SelectRankRecord.where(:mapareaId => map_id, :rank => 3).count
   result[:first][:passed] = PassEventRecord.where(:mapId => map_id, :mapLv => 3).count
+  if result[:first][:chosen] < result[:first][:passed]
+    result[:first][:chosen] = result[:first][:passed]
+  end
   result[:first][:hqLvMin] = PassEventRecord.where(:mapId => map_id, :mapLv => 3).min(:teitokuLv).to_i
   result[:first][:hqLvMax] = PassEventRecord.where(:mapId => map_id, :mapLv => 3).max(:teitokuLv).to_i
   case map_id
@@ -54,6 +57,9 @@ get '/event/:mid.?:format?' do
   result[:second][:passed] = PassEventRecord.where(:mapId => map_id, :mapLv => 2).count
   result[:second][:hqLvMin] = PassEventRecord.where(:mapId => map_id, :mapLv => 2).min(:teitokuLv).to_i
   result[:second][:hqLvMax] = PassEventRecord.where(:mapId => map_id, :mapLv => 2).max(:teitokuLv).to_i
+  if result[:second][:chosen] < result[:second][:passed]
+    result[:second][:chosen] = result[:second][:passed]
+  end
   case map_id
   when 311
     result[:second][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId => 1).count
@@ -74,6 +80,9 @@ get '/event/:mid.?:format?' do
 
   result[:third][:chosen] = SelectRankRecord.where(:mapareaId => map_id, :rank => 1).count
   result[:third][:passed] = PassEventRecord.where(:mapId => map_id, :mapLv => 1).count
+  if result[:third][:chosen] < result[:third][:passed]
+    result[:third][:chosen] = result[:third][:passed]
+  end
   result[:third][:hqLvMin] = PassEventRecord.where(:mapId => map_id, :mapLv => 1).min(:teitokuLv).to_i
   result[:third][:hqLvMax] = PassEventRecord.where(:mapId => map_id, :mapLv => 1).max(:teitokuLv).to_i
   case map_id
