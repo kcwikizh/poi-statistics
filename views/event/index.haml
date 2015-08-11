@@ -6,7 +6,7 @@
       %li{:role => "presentation",
           :class => i == map_id % 10 ? "active" : nil}
         %a{:href => "/event/#{map_id / 10}#{i}"}= "E#{i}"
-  %div.panel.panel-default{:style => "border-top:0px;border-top-left-radius:0px;border-top-right-radius:0px;"}
+  %div.panel.panel-default.tab-panel
     %div.panel-body
       %div
         %ul.nav.nav-pills
