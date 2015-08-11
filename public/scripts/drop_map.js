@@ -1037,15 +1037,11 @@ function detailFormatter(index, row) {
     if (row.mapLvCount[1] + row.mapLvCount[2] + row.mapLvCount[3] > 0) {
         html.push("<div><strong>难度统计：</strong></div>");
         html.push("<div class='table-like'><div><span>甲难度</span><span>" +
-            row.mapLvCount[3] + " (" +
-            (row.mapLvCount[3] * 100 / row.totalCount).toFixed(2) +
-            ")%</span></div><div><span>乙难度</span><span>" + row.mapLvCount[2] +
-            " (" + (row.mapLvCount[2] * 100 / row.totalCount).toFixed(2) +
-            ")%</span></div><div><span>丙难度</span><span>" + row.mapLvCount[1] +
-            " (" + (row.mapLvCount[1] * 100 / row.totalCount).toFixed(2) +
-            ")%</span></div><div><span>未知</span><span>" + row.mapLvCount[0] +
-            " (" + (row.mapLvCount[0] * 100 / row.totalCount).toFixed(2) +
-            ")%</span></div></div>");
+            row.mapLvCount[3] + "</span></div><div><span>乙难度</span><span>" +
+            row.mapLvCount[2] + "</span></div><div><span>丙难度</span><span>" +
+            row.mapLvCount[1] + "</span></div>" + (row.mapLvCount[0] > 0 ?
+            "<div><span>未知</span><span>" + row.mapLvCount[0] +
+            "</span></div></div>" : "</div>"));
     }
 
     html.push("<div><strong>敌舰队统计：</strong></div>");
