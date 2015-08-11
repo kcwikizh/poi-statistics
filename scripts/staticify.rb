@@ -38,3 +38,15 @@ list.push '/event/'
 end
 
 puts `staticify --save -d #{path}/public -p "#{list.join(',')}" #{path}`
+list.clear
+
+list.push '/enemy/'
+(1..7).each do |i|
+  list.push "/enemy/31#{i}.html"
+end
+list.push '/enemy2/'
+(1..7).each do |i|
+  list.push "/enemy2/31#{i}.html"
+end
+
+puts `staticify --save -d #{path}/public -p "#{list.join(',')}" #{path}`
