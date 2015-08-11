@@ -34,7 +34,7 @@ list.clear
 list.push '/event/'
 
 (1..7).each do |i|
-  list.push "/drop/event/31#{i}.html"
+  list.push "/event/31#{i}.html"
 end
 
 puts `staticify --save -d #{path}/public -p "#{list.join(',')}" #{path}`
