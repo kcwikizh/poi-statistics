@@ -5,7 +5,7 @@
     - (1..7).each do |i|
       %li{:role => "presentation",
           :class => i == map_id % 10 ? "active" : nil}
-        %a{:href => "/event/#{map_id / 10}#{i}"}= "E#{i}"
+        %a{:href => "/event/#{map_id / 10}#{i}.html"}= "E#{i}"
   %div.panel.panel-default.tab-panel
     %div.panel-body
       %div

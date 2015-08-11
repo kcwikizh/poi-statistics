@@ -1,4 +1,4 @@
-get '/event/:mid' do
+get '/event/:mid.?:format?' do
   map_id = params[:mid].to_i
 
   result = {
@@ -46,5 +46,5 @@ get '/event/:mid' do
 end
 
 get '/event/?' do
-  redirect '/event/311'
+  '<script>location.href = location.protocol + "//" + location.host + "/event/311.html";</script>'
 end
