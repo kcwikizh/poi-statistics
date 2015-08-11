@@ -916,7 +916,49 @@ var constants = {
         nameForSearch: "秋津洲,qiujinzhou,qiu jin zhou,Akitsushima,akitsushima",
         shipType: "水母",
         rare: true
-    }
+    },
+    "瑞穂": {
+        chineseName: "",
+        nameForSearch: "",
+        shipType: "水母",
+        rare: true
+    },
+    "風雲": {
+        chineseName: "",
+        nameForSearch: "",
+        shipType: "驱逐舰",
+        rare: true
+    },
+    "海風": {
+        chineseName: "",
+        nameForSearch: "",
+        shipType: "驱逐舰",
+        rare: true
+    },
+    "江風": {
+        chineseName: "",
+        nameForSearch: "",
+        shipType: "驱逐舰",
+        rare: true
+    },
+    "速吸": {
+        chineseName: "",
+        nameForSearch: "",
+        shipType: "补给舰",
+        rare: true
+    },
+    "Libeccio": {
+        chineseName: "",
+        nameForSearch: "",
+        shipType: "驱逐舰",
+        rare: true
+    },
+    "照月": {
+        chineseName: "",
+        nameForSearch: "",
+        shipType: "驱逐舰",
+        rare: true
+    },
 }
 
 var searchTag = {
@@ -965,7 +1007,14 @@ var mapContants = {
     'サーモン海域北方': '5-5',
     '中部海域哨戒線': '6-1',
     'MS諸島沖': '6-2',
-    'グアノ環礁沖海域': '6-3'
+    'グアノ環礁沖海域': '6-3',
+    'ショートランド沖': '2015年夏季活动/主作战#E-1',
+    'ソロモン海': '2015年夏季活动/主作战#E-2',
+    '南太平洋海域': '2015年夏季活动/主作战#E-3',
+    'アイアンボトムサウンド': '2015年夏季活动/主作战#E-4',
+    '西方海域戦線 カレー洋': '2015年夏季活动/扩展作战#E-5',
+    'ソロモン海東部海域': '2015年夏季活动/扩展作战#E-6',
+    'FS方面海域': '2015年夏季活动/扩展作战#E-7',
 }
 
 $(document).ready(function() {

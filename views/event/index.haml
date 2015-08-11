@@ -1,40 +1,73 @@
 %div.container
   %div.page-header
     %h1 活动统计
-  %ul.nav.nav-tabs{:role => "tablist"}
+  %ul.nav.nav-tabs
     - (1..7).each do |i|
-      %li{:role => "presentation"}
-        %a{:"aria-controls" => "e#{i}",
-           :"data-toggle" => "tabs",
-           :href => "#e#{i}",
-           :role => "tab"}= "E#{i}"
-  %div.tab-content
-    %ul.nav.nav-pills{:role => "tablist"}
-      %li.active{:role => "presentation"}
-        %a{:href => "#"} 总
-      %li{:role => "presentation"}
-        %a{:href => "#"} 甲
-      %li{:role => "presentation"}
-        %a{:href => "#"} 乙
-      %li{:role => "presentation"}
-        %a{:href => "#"} 丙
-    %div.row
-      %div.text-center Coming soon...
-      %div.col-xs-12.col-sm-3
-        -#%div.well.well-lg
-          -#%p= "总人数： #{0}"
-          -#%p= "甲级人数： #{0}"
-          -#%p= "乙级人数： #{0}"
-          -#%p= "丙级人数： #{0}"
-      %div.col-xs-12.col-sm-9
-        %div
+      %li{:role => "presentation",
+          :class => i == map_id % 10 ? "active" : nil}
+        %a{:href => "/event/#{map_id / 10}#{i}"}= "E#{i}"
+  %div.panel.panel-default{:style => "border-top:0px;border-top-left-radius:0px;border-top-right-radius:0px;"}
+    %div.panel-body
+      %div
+        %ul.nav.nav-pills
+          %li.active{:role => "presentation"}
+            %a{:href => "#report0",
+               :"data-toggle" => "tab"} 总
+          %li{:role => "presentation"}
+            %a{:href => "#report1",
+               :"data-toggle" => "tab"} 甲
+          %li{:role => "presentation"}
+            %a{:href => "#report2",
+               :"data-toggle" => "tab"} 乙
+          %li{:role => "presentation"}
+            %a{:href => "#report3",
+               :"data-toggle" => "tab"} 丙
+        %div.tab-content
+          %div.tab-pane.active{:id => "report0"}
+            %div.row
+              %div.col-xs-12.col-sm-3.top30
+                %div.well.well-lg
+                  %p= "总人数： #{data[:first][:chosen] + data[:second][:chosen] + data[:third][:chosen]}"
+                  %p= "甲级人数： #{data[:first][:chosen]}"
+                  %p= "乙级人数： #{data[:second][:chosen]}"
+                  %p= "丙级人数： #{data[:third][:chosen]}"
+              %div.col-xs-12.col-sm-9
+                %div.ct-chart{:id => "chart0"}
+          %div.tab-pane{:id => "report1"}
+            %div.row
+              %div.col-xs-12.col-sm-3.top30
+                %div.well.well-lg
+                  %p= "总人数： #{data[:first][:chosen]}"
+                  %p= "通关人数： #{data[:first][:passed]}"
+                  %p= "通关等级： #{data[:first][:hqLvMin]} ~ #{data[:first][:hqLvMax]}"
+              %div.col-xs-12.col-sm-9
+                %div.ct-chart{:id => "chart1"}
+          %div.tab-pane{:id => "report2"}
+            %div.row
+              %div.col-xs-12.col-sm-3.top30
+                %div.well.well-lg
+                  %p= "总人数： #{data[:second][:chosen]}"
+                  %p= "通关人数： #{data[:second][:chosen]}"
+                  %p= "通关等级： #{data[:second][:hqLvMin]} ~ #{data[:second][:hqLvMax]}"
+              %div.col-xs-12.col-sm-9
+                %div.ct-chart{:id => "chart2"}
+          %div.tab-pane{:id => "report3"}
+            %div.row
+              %div.col-xs-12.col-sm-3.top30
+                %div.well.well-lg
+                  %p= "总人数： #{data[:third][:chosen]}"
+                  %p= "通关人数： #{data[:third][:chosen]}"
+                  %p= "通关等级： #{data[:third][:hqLvMin]} ~ #{data[:third][:hqLvMax]}"
+              %div.col-xs-12.col-sm-9
+                %div.ct-chart{:id => "chart3"}
 %script{:defer => "defer"}
   :plain
     var data = {
-      labels: ['Bananas', 'Apples', 'Grapes'],
+      labels: ['甲', '乙', '丙'],
       series: [20, 15, 40]
     };
     var options = {
+      height: 300,
       labelInterpolationFnc: function(value) {
         return value[0]
       }
@@ -53,4 +86,4 @@
         chartPadding: 20
       }]
     ];
-    new Chartist.Pie('.ct-chart', data, options, responsiveOptions);
+    charts.push "new Chartist.Pie('#chart', data, options, responsiveOptions);"
