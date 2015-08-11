@@ -14,7 +14,6 @@ Dir["#{path}/models/*.rb"].each { |file| load file }
 
 list = ['/']
 list.push '/drop/'
-list.push '/event/'
 
 KCConstants.maps.each do |map_id, name|
   list.push "/drop/map/#{URI.escape(name)}.json"
@@ -27,6 +26,15 @@ list.clear
 DropShipRecord.distinct(:shipId).each do |id|
   list.push "/drop/ship/#{URI.escape(KCConstants.ships[id])}.json"
   list.push "/drop/ship/#{URI.escape(KCConstants.ships[id])}.html"
+end
+
+puts `staticify --save -d #{path}/public -p "#{list.join(',')}" #{path}`
+list.clear
+
+list.push '/event/'
+
+(1..7).each do |i|
+  list.push "/drop/event/31#{i}.html"
 end
 
 puts `staticify --save -d #{path}/public -p "#{list.join(',')}" #{path}`
