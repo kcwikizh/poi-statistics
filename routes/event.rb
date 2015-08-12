@@ -130,8 +130,14 @@ get '/event/:mid.?:format?' do
     result[:first][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId.in => [1, 2]).count
     result[:first][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId.in => [13, 18], :rank.in =>['S', 'A']).count
   when 315
-    result[:first][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId => 3).count
+    result[:first][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId.in => [3, 5]).count
     result[:first][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId => 14, :rank.in =>['S', 'A']).count
+  when 316
+    result[:first][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId.in => [1, 3]).count
+    result[:first][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId.in => [17, 22, 23], :rank.in =>['S', 'A']).count
+  when 317
+    result[:first][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId.in => [2, 5]).count
+    result[:first][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId.in => [19, 26], :rank.in =>['S', 'A']).count
   end
 
   result[:second][:chosen] = SelectRankRecord.where(:mapareaId => map_id, :rank => 2).count
@@ -155,8 +161,14 @@ get '/event/:mid.?:format?' do
     result[:second][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId.in => [1, 2]).count
     result[:second][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId.in => [13, 18], :rank.in =>['S', 'A']).count
   when 315
-    result[:second][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId => 3).count
+    result[:second][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId.in => [3, 5]).count
     result[:second][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId => 14, :rank.in =>['S', 'A']).count
+  when 316
+    result[:second][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId.in => [1, 3]).count
+    result[:second][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId.in => [17, 22, 23], :rank.in =>['S', 'A']).count
+  when 317
+    result[:second][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId.in => [2, 5]).count
+    result[:second][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId.in => [19, 26], :rank.in =>['S', 'A']).count
   end
 
   result[:third][:chosen] = SelectRankRecord.where(:mapareaId => map_id, :rank => 1).count
@@ -180,8 +192,14 @@ get '/event/:mid.?:format?' do
     result[:third][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId.in => [1, 2]).count
     result[:third][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId.in => [13, 18], :rank.in =>['S', 'A']).count
   when 315
-    result[:third][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId => 3).count
+    result[:third][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId.in => [3, 5]).count
     result[:third][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId => 14, :rank.in =>['S', 'A']).count
+  when 316
+    result[:third][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId.in => [1, 3]).count
+    result[:third][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId.in => [17, 22, 23], :rank.in =>['S', 'A']).count
+  when 317
+    result[:third][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId.in => [2, 5]).count
+    result[:third][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId.in => [19, 26], :rank.in =>['S', 'A']).count
   end
 
   haml :'event/query', :locals => {
