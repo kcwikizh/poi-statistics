@@ -161,9 +161,9 @@
     });
 %div.container
   / 多说评论框 start
-  %div.ds-thread{:"data-thread-key" => "event/index",
-                 :"data-title" => "活动统计",
-                 :"data-url" => "http://db.kcwiki.moe/event/index.html"}
+  %div.ds-thread{:"data-thread-key" => "event/#{map_id}",
+                 :"data-title" => "活动统计##{map_id}",
+                 :"data-url" => "http://db.kcwiki.moe/event/#{map_id}.html"}
   / 多说评论框 end
   / 多说公共JS代码 start (一个网页只需插入一次)
   :javascript

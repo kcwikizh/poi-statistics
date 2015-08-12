@@ -77,3 +77,21 @@
     $(document).ready(function() {
       requestData("#{KCConstants.maps[map_id]}");
     });
+%div.container
+  / 多说评论框 start
+  %div.ds-thread{:"data-thread-key" => "drop/map/#{map_id}",
+                 :"data-title" => "掉落统计##{KCConstants.maps[map_id]}",
+                 :"data-url" => "http://db.kcwiki.moe/drop/#{KCConstants.maps[map_id]}.html"}
+  / 多说评论框 end
+  / 多说公共JS代码 start (一个网页只需插入一次)
+  :javascript
+    var duoshuoQuery = {short_name:"poi-db"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+  / 多说公共JS代码 end
