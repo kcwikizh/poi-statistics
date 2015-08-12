@@ -1046,7 +1046,11 @@ function requestData(map_name) {
                     hqLvRange: ship.detail.hqLvRange.join(' ~ '),
                     dropRate: (ship.count * 100 / val.count).toFixed(2),
                     mapLvCount: ship.detail.mapLvSet,
-                    enemyCount: ship.detail.enemySet
+                    enemyCount: ship.detail.enemySet,
+                    dropRate0: (ship.detail.mapLvSet[0] * 100 / val.lvCount[0]).toFixed(2),
+                    dropRate1: (ship.detail.mapLvSet[1] * 100 / val.lvCount[1]).toFixed(2),
+                    dropRate2: (ship.detail.mapLvSet[2] * 100 / val.lvCount[2]).toFixed(2),
+                    dropRate3: (ship.detail.mapLvSet[3] * 100 / val.lvCount[3]).toFixed(2),
                 });
 
                 qCount += ship.count;
@@ -1086,18 +1090,19 @@ function detailFormatter(index, row) {
     if (row.mapLvCount[1] + row.mapLvCount[2] + row.mapLvCount[3] > 0) {
         html.push("<div><strong>难度统计：</strong></div>");
         html.push("<div class='table-like'><div><span>甲难度</span><span>" +
-            row.mapLvCount[3] + "</span></div><div><span>乙难度</span><span>" +
-            row.mapLvCount[2] + "</span></div><div><span>丙难度</span><span>" +
-            row.mapLvCount[1] + "</span></div>" + (row.mapLvCount[0] > 0 ?
-            "<div><span>未知</span><span>" + row.mapLvCount[0] +
-            "</span></div></div>" : "</div>"));
+            row.mapLvCount[3] + " (" + row.dropRate3 +
+            "%)</span></div><div><span>乙难度</span><span>" + row.mapLvCount[2] +
+            " (" + row.dropRate2 + "%)</span></div><div><span>丙难度</span><span>" +
+            row.mapLvCount[1] + " (" + row.dropRate1 + "%)</span></div>" +
+            (row.mapLvCount[0] > 0 ? "<div><span>未知</span><span>" +
+            row.mapLvCount[0] + "</span></div></div>" : "</div>"));
     }
 
     html.push("<div><strong>敌舰队统计：</strong></div>");
     html.push("<div class='table-like'>")
     $.each(row.enemyCount, function (key, value) {
       html.push("<div><span>" + value.enemy + "</span><span>" + value.count +
-          " (" + (value.count * 100 / row.totalCount).toFixed(2) + "%)</span></div>");
+          "</span></div>");
     });
     html.push("</div>")
 

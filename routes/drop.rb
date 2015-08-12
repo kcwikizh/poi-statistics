@@ -160,7 +160,13 @@ get '/drop/map/:name.?:format?' do
 
         drop_sum += count
       end
-    result.push({ name: enemy_name, ships: ship_list, count: drop_sum })
+    result.push({ name: enemy_name, ships: ship_list, count: drop_sum, lvCount: [
+        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 0).count,
+        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 1).count,
+        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 2).count,
+        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 3).count,
+      ]
+    })
   end
 
   content_type :json
