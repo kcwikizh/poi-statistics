@@ -1034,6 +1034,804 @@ class KCConstants
     14 => '第四警戒航行序列'
   }
 
+  @@ship_infos = {
+    '長門' => {
+      :chinese_name => '长门',
+      :ship_type => 'bb',
+      :rare => true,
+    },
+    '陸奥' => {
+      :chinese_name => '陆奥',
+      :ship_type => 'bb',
+      :rare => true,
+    },
+    '伊勢' => {
+      :chinese_name => '伊势',
+      :ship_type => 'bb',
+      :rare => false,
+    },
+    '日向' => {
+      :chinese_name => '日向',
+      :ship_type => 'bb',
+      :rare => false,
+    },
+    '雪風' => {
+      :chinese_name => '雪风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '赤城' => {
+      :chinese_name => '赤城',
+      :ship_type => 'cv',
+      :rare => true,
+    },
+    '加賀' => {
+      :chinese_name => '加贺',
+      :ship_type => 'cv',
+      :rare => false,
+    },
+    '蒼龍' => {
+      :chinese_name => '苍龙',
+      :ship_type => 'cv',
+      :rare => false,
+    },
+    '飛龍' => {
+      :chinese_name => '飞龙',
+      :ship_type => 'cv',
+      :rare => true,
+    },
+    '島風' => {
+      :chinese_name => '岛风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '吹雪' => {
+      :chinese_name => '吹雪',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '白雪' => {
+      :chinese_name => '白雪',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '初雪' => {
+      :chinese_name => '初雪',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '深雪' => {
+      :chinese_name => '深雪',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '叢雲' => {
+      :chinese_name => '丛云',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '磯波' => {
+      :chinese_name => '矶波',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '綾波' => {
+      :chinese_name => '绫波',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '敷波' => {
+      :chinese_name => '敷波',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '大井' => {
+      :chinese_name => '大井',
+      :ship_type => 'cl',
+      :rare => true,
+    },
+    '北上' => {
+      :chinese_name => '北上',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '金剛' => {
+      :chinese_name => '金刚',
+      :ship_type => 'bb',
+      :rare => false,
+    },
+    '比叡' => {
+      :chinese_name => '比睿',
+      :ship_type => 'bb',
+      :rare => false,
+    },
+    '榛名' => {
+      :chinese_name => '榛名',
+      :ship_type => 'bb',
+      :rare => false,
+    },
+    '霧島' => {
+      :chinese_name => '雾岛',
+      :ship_type => 'bb',
+      :rare => false,
+    },
+    '鳳翔' => {
+      :chinese_name => '凤翔',
+      :ship_type => 'cvl',
+      :rare => false,
+    },
+    '扶桑' => {
+      :chinese_name => '扶桑',
+      :ship_type => 'bb',
+      :rare => false,
+    },
+    '山城' => {
+      :chinese_name => '山城',
+      :ship_type => 'bb',
+      :rare => false,
+    },
+    '天龍' => {
+      :chinese_name => '天龙',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '龍田' => {
+      :chinese_name => '龙田',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '龍驤' => {
+      :chinese_name => '龙骧',
+      :ship_type => 'cvl',
+      :rare => false,
+    },
+    '睦月' => {
+      :chinese_name => '睦月',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '如月' => {
+      :chinese_name => '如月',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '皐月' => {
+      :chinese_name => '皋月',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '文月' => {
+      :chinese_name => '文月',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '長月' => {
+      :chinese_name => '长月',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '菊月' => {
+      :chinese_name => '菊月',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '三日月' => {
+      :chinese_name => '三日月',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '望月' => {
+      :chinese_name => '望月',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '球磨' => {
+      :chinese_name => '球磨',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '多摩' => {
+      :chinese_name => '多摩',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '木曾' => {
+      :chinese_name => '木曾',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '長良' => {
+      :chinese_name => '长良',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '五十鈴' => {
+      :chinese_name => '五十铃',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '名取' => {
+      :chinese_name => '名取',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '由良' => {
+      :chinese_name => '由良',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '川内' => {
+      :chinese_name => '川内',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '神通' => {
+      :chinese_name => '神通',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '那珂' => {
+      :chinese_name => '那珂',
+      :ship_type => 'cl',
+      :rare => false,
+    },
+    '千歳' => {
+      :chinese_name => '千岁',
+      :ship_type => 'av',
+      :rare => false,
+    },
+    '千代田' => {
+      :chinese_name => '千代田',
+      :ship_type => 'av',
+      :rare => false,
+    },
+    '最上' => {
+      :chinese_name => '最上',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '古鷹' => {
+      :chinese_name => '古鹰',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '加古' => {
+      :chinese_name => '加古',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '青葉' => {
+      :chinese_name => '青叶',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '妙高' => {
+      :chinese_name => '妙高',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '那智' => {
+      :chinese_name => '那智',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '足柄' => {
+      :chinese_name => '足柄',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '羽黒' => {
+      :chinese_name => '羽黑',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '高雄' => {
+      :chinese_name => '高雄',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '愛宕' => {
+      :chinese_name => '爱宕',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '摩耶' => {
+      :chinese_name => '摩耶',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '鳥海' => {
+      :chinese_name => '鸟海',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '利根' => {
+      :chinese_name => '利根',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '筑摩' => {
+      :chinese_name => '筑摩',
+      :ship_type => 'ca',
+      :rare => false,
+    },
+    '飛鷹' => {
+      :chinese_name => '飞鹰',
+      :ship_type => 'cvl',
+      :rare => false,
+    },
+    '隼鷹' => {
+      :chinese_name => '隼鹰',
+      :ship_type => 'cvl',
+      :rare => false,
+    },
+    '朧' => {
+      :chinese_name => '胧',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '曙' => {
+      :chinese_name => '曙',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '漣' => {
+      :chinese_name => '涟',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '潮' => {
+      :chinese_name => '潮',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '暁' => {
+      :chinese_name => '晓',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '響' => {
+      :chinese_name => '响',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '雷' => {
+      :chinese_name => '雷',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '電' => {
+      :chinese_name => '电',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '初春' => {
+      :chinese_name => '初春',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '子日' => {
+      :chinese_name => '子日',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '若葉' => {
+      :chinese_name => '若叶',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '初霜' => {
+      :chinese_name => '初霜',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '白露' => {
+      :chinese_name => '白露',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '時雨' => {
+      :chinese_name => '时雨',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '村雨' => {
+      :chinese_name => '村雨',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '夕立' => {
+      :chinese_name => '夕立',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '五月雨' => {
+      :chinese_name => '五月雨',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '涼風' => {
+      :chinese_name => '凉风',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '朝潮' => {
+      :chinese_name => '朝潮',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '大潮' => {
+      :chinese_name => '大潮',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '満潮' => {
+      :chinese_name => '满潮',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '荒潮' => {
+      :chinese_name => '荒潮',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '霰' => {
+      :chinese_name => '霰',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '霞' => {
+      :chinese_name => '霞',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '陽炎' => {
+      :chinese_name => '阳炎',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '不知火' => {
+      :chinese_name => '不知火',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '黒潮' => {
+      :chinese_name => '黑潮',
+      :ship_type => 'dd',
+      :rare => false,
+    },
+    '祥鳳' => {
+      :chinese_name => '祥凤',
+      :ship_type => 'cvl',
+      :rare => false,
+    },
+    '翔鶴' => {
+      :chinese_name => '翔鹤',
+      :ship_type => 'cv',
+      :rare => true,
+    },
+    '瑞鶴' => {
+      :chinese_name => '瑞鹤',
+      :ship_type => 'cv',
+      :rare => true,
+    },
+    '鬼怒' => {
+      :chinese_name => '鬼怒',
+      :ship_type => 'cl',
+      :rare => true,
+    },
+    '阿武隈' => {
+      :chinese_name => '阿武隈',
+      :ship_type => 'cl',
+      :rare => true,
+    },
+    '夕張' => {
+      :chinese_name => '夕张',
+      :ship_type => 'cl',
+      :rare => true,
+    },
+    '瑞鳳' => {
+      :chinese_name => '瑞凤',
+      :ship_type => 'cvl',
+      :rare => true,
+    },
+    '三隈' => {
+      :chinese_name => '三隈',
+      :ship_type => 'ca',
+      :rare => true,
+    },
+    '初風' => {
+      :chinese_name => '初风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '舞風' => {
+      :chinese_name => '舞风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '衣笠' => {
+      :chinese_name => '衣笠',
+      :ship_type => 'ca',
+      :rare => true,
+    },
+    '伊19' => {
+      :chinese_name => '伊19',
+      :ship_type => 'ss',
+      :rare => true,
+    },
+    '鈴谷' => {
+      :chinese_name => '铃谷',
+      :ship_type => 'ca',
+      :rare => true,
+    },
+    '熊野' => {
+      :chinese_name => '熊野',
+      :ship_type => 'ca',
+      :rare => true,
+    },
+    '伊168' => {
+      :chinese_name => '伊168',
+      :ship_type => 'ss',
+      :rare => true,
+    },
+    '伊58' => {
+      :chinese_name => '伊58',
+      :ship_type => 'ss',
+      :rare => true,
+    },
+    '伊8' => {
+      :chinese_name => '伊8',
+      :ship_type => 'ss',
+      :rare => true,
+    },
+    '秋雲' => {
+      :chinese_name => '秋云',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '夕雲' => {
+      :chinese_name => '夕云',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '巻雲' => {
+      :chinese_name => '卷云',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '長波' => {
+      :chinese_name => '长波',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '阿賀野' => {
+      :chinese_name => '阿贺野',
+      :ship_type => 'cl',
+      :rare => true,
+    },
+    '能代' => {
+      :chinese_name => '能代',
+      :ship_type => 'cl',
+      :rare => true,
+    },
+    '矢矧' => {
+      :chinese_name => '矢矧',
+      :ship_type => 'cl',
+      :rare => true,
+    },
+    '酒匂' => {
+      :chinese_name => '酒匂',
+      :ship_type => 'cl',
+      :rare => true,
+    },
+    '香取' => {
+      :chinese_name => '香取',
+      :ship_type => 'clp',
+      :rare => true,
+    },
+    '伊401' => {
+      :chinese_name => '伊401',
+      :ship_type => 'ssv',
+      :rare => true,
+    },
+    'あきつ丸' => {
+      :chinese_name => '秋津丸',
+      :ship_type => 'lha',
+      :rare => true,
+    },
+    'まるゆ' => {
+      :chinese_name => '丸输',
+      :ship_type => 'ss',
+      :rare => true,
+    },
+    '弥生' => {
+      :chinese_name => '弥生',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '卯月' => {
+      :chinese_name => '卯月',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '磯風' => {
+      :chinese_name => '矶风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '浦風' => {
+      :chinese_name => '浦风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '谷風' => {
+      :chinese_name => '谷风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '浜風' => {
+      :chinese_name => '滨风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    'Z1' => {
+      :chinese_name => 'Z1',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    'Z3' => {
+      :chinese_name => 'Z3',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    'Prinz Eugen' => {
+      :chinese_name => 'Prinz Eugen',
+      :ship_type => 'ca',
+      :rare => true,
+    },
+    '天津風' => {
+      :chinese_name => '天津风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '明石' => {
+      :chinese_name => '明石',
+      :ship_type => '',
+      :rare => true,
+    },
+    '大淀' => {
+      :chinese_name => '大淀',
+      :ship_type => 'cl',
+      :rare => true,
+    },
+    '大鯨' => {
+      :chinese_name => '大鲸',
+      :ship_type => 'as',
+      :rare => true,
+    },
+    '時津風' => {
+      :chinese_name => '时津风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '雲龍' => {
+      :chinese_name => '云龙',
+      :ship_type => 'cv',
+      :rare => true,
+    },
+    '天城' => {
+      :chinese_name => '天城',
+      :ship_type => 'cv',
+      :rare => true,
+    },
+    '葛城' => {
+      :chinese_name => '葛城',
+      :ship_type => 'cv',
+      :rare => true,
+    },
+    '春雨' => {
+      :chinese_name => '春雨',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '早霜' => {
+      :chinese_name => '早霜',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '清霜' => {
+      :chinese_name => '清霜',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '朝雲' => {
+      :chinese_name => '朝云',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '山雲' => {
+      :chinese_name => '山云',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '野分' => {
+      :chinese_name => '野分',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '秋月' => {
+      :chinese_name => '秋月',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '高波' => {
+      :chinese_name => '高波',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '朝霜' => {
+      :chinese_name => '朝霜',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    'U-511' => {
+      :chinese_name => 'U-511',
+      :ship_type => 'ss',
+      :rare => true,
+    },
+    'Littorio' => {
+      :chinese_name => 'Littorio',
+      :ship_type => 'bb',
+      :rare => true,
+    },
+    'Roma' => {
+      :chinese_name => 'Roma',
+      :ship_type => 'bb',
+      :rare => true,
+    },
+    '秋津洲' => {
+      :chinese_name => '秋津洲',
+      :ship_type => 'av',
+      :rare => true,
+    },
+    '瑞穂' => {
+      :chinese_name => '瑞穗',
+      :ship_type => 'av',
+      :rare => true,
+    },
+    '風雲' => {
+      :chinese_name => '风云',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '海風' => {
+      :chinese_name => '海风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '江風' => {
+      :chinese_name => '江风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '速吸' => {
+      :chinese_name => '速吸',
+      :ship_type => 'ao',
+      :rare => true,
+    },
+    'Libeccio' => {
+      :chinese_name => 'Libeccio',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '照月' => {
+      :chinese_name => '照月',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+  }
+
   class << self
     def areas
       @@areas
@@ -1053,6 +1851,10 @@ class KCConstants
 
     def formations
       @@formations
+    end
+
+    def ship_infos
+      @@ship_infos
     end
   end
 end
