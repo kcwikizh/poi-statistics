@@ -146,6 +146,9 @@ get '/drop/map/:name.?:format?' do
   enemy_hash.each do |enemy_name, cell_id_list|
     ship_list = []
     drop_sum = 0
+    lv_count = [0, 0, 0, 0]
+    s_win_count = [0, 0, 0, 0]
+    win_count = [0, 0, 0, 0]
     DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list)
       .map_reduce(map, reduce).out(inline: 1).each do |q|
         enemies = []
@@ -177,23 +180,26 @@ get '/drop/map/:name.?:format?' do
         })
 
         drop_sum += count
+        lv_count[0] += q['value']['mapLv'][0].to_i
+        lv_count[1] += q['value']['mapLv'][1].to_i
+        lv_count[2] += q['value']['mapLv'][2].to_i
+        lv_count[3] += q['value']['mapLv'][3].to_i
+        s_win_count[0] += q['value']['s'][0].to_i
+        s_win_count[1] += q['value']['s'][1].to_i
+        s_win_count[2] += q['value']['s'][2].to_i
+        s_win_count[3] += q['value']['s'][3].to_i
+        win_count[0] += q['value']['s'][0].to_i + q['value']['a'][0].to_i + q['value']['b'][0].to_i
+        win_count[1] += q['value']['s'][1].to_i + q['value']['a'][1].to_i + q['value']['b'][1].to_i
+        win_count[2] += q['value']['s'][2].to_i + q['value']['a'][2].to_i + q['value']['b'][2].to_i
+        win_count[3] += q['value']['s'][3].to_i + q['value']['a'][3].to_i + q['value']['b'][3].to_i
       end
-    result.push({ name: enemy_name, ships: ship_list, count: drop_sum, lvCount: [
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 0).count,
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 1).count,
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 2).count,
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 3).count,
-      ], sCount: [
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 0, :rank => 'S').count,
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 1, :rank => 'S').count,
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 2, :rank => 'S').count,
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 3, :rank => 'S').count,
-      ], winCount: [
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 0, :rank.in => ['S', 'A', 'B']).count,
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 1, :rank.in => ['S', 'A', 'B']).count,
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 2, :rank.in => ['S', 'A', 'B']).count,
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 3, :rank.in => ['S', 'A', 'B']).count,
-      ]
+    result.push({
+      name: enemy_name,
+      ships: ship_list,
+      count: drop_sum,
+      lvCount: lv_count,
+      sCount: s_win_count,
+      winCount: win_count,
     })
   end
 
