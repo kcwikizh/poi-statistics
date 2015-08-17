@@ -37,12 +37,12 @@ get '/drop/map/:name.?:format?' do
   map = %Q{
     function() {
       var val = {
-        s: 0,
-        a: 0,
-        b: 0,
-        c: 0,
-        d: 0,
-        e: 0,
+        s: [0, 0, 0, 0],
+        a: [0, 0, 0, 0],
+        b: [0, 0, 0, 0],
+        c: [0, 0, 0, 0],
+        d: [0, 0, 0, 0],
+        e: [0, 0, 0, 0],
         hqLv: [this.teitokuLv, this.teitokuLv],
         mapLv: [0, 0, 0, 0],
         enemy: {}
@@ -50,22 +50,22 @@ get '/drop/map/:name.?:format?' do
 
       switch(this.rank) {
         case 'S':
-          val.s = 1;
+          val.s[this.mapLv] = 1;
           break;
         case 'A':
-          val.a = 1;
+          val.a[this.mapLv] = 1;
           break;
         case 'B':
-          val.b = 1;
+          val.b[this.mapLv] = 1;
           break;
         case 'C':
-          val.c = 1;
+          val.c[this.mapLv] = 1;
           break;
         case 'D':
-          val.d = 1;
+          val.d[this.mapLv] = 1;
           break;
         case 'E':
-          val.e = 1;
+          val.e[this.mapLv] = 1;
           break;
       }
 
@@ -81,24 +81,42 @@ get '/drop/map/:name.?:format?' do
   reduce = %Q{
     function(key, values) {
       var reduced = {
-        s: 0,
-        a: 0,
-        b: 0,
-        c: 0,
-        d: 0,
-        e: 0,
+        s: [0, 0, 0, 0],
+        a: [0, 0, 0, 0],
+        b: [0, 0, 0, 0],
+        c: [0, 0, 0, 0],
+        d: [0, 0, 0, 0],
+        e: [0, 0, 0, 0],
         hqLv: [151, 0],
         mapLv: [0, 0, 0, 0],
         enemy: {}
       };
 
       values.forEach(function(value) {
-        reduced.s += value.s;
-        reduced.a += value.a;
-        reduced.b += value.b;
-        reduced.c += value.c;
-        reduced.d += value.d;
-        reduced.e += value.e;
+        reduced.s[0] += value.s[0];
+        reduced.s[1] += value.s[1];
+        reduced.s[2] += value.s[2];
+        reduced.s[3] += value.s[3];
+        reduced.a[0] += value.a[0];
+        reduced.a[1] += value.a[1];
+        reduced.a[2] += value.a[2];
+        reduced.a[3] += value.a[3];
+        reduced.b[0] += value.b[0];
+        reduced.b[1] += value.b[1];
+        reduced.b[2] += value.b[2];
+        reduced.b[3] += value.b[3];
+        reduced.c[0] += value.c[0];
+        reduced.c[1] += value.c[1];
+        reduced.c[2] += value.c[2];
+        reduced.c[3] += value.c[3];
+        reduced.d[0] += value.d[0];
+        reduced.d[1] += value.d[1];
+        reduced.d[2] += value.d[2];
+        reduced.d[3] += value.d[3];
+        reduced.e[0] += value.e[0];
+        reduced.e[1] += value.e[1];
+        reduced.e[2] += value.e[2];
+        reduced.e[3] += value.e[3];
 
         reduced.mapLv[0] += value.mapLv[0];
         reduced.mapLv[1] += value.mapLv[1];
@@ -144,12 +162,12 @@ get '/drop/map/:name.?:format?' do
 
         ship_list.push({
           name: KCConstants.ships[q['_id'].to_i],
-          s: q['value']['s'].to_i,
-          a: q['value']['a'].to_i,
-          b: q['value']['b'].to_i,
-          c: q['value']['c'].to_i,
-          d: q['value']['d'].to_i,
-          e: q['value']['e'].to_i,
+          s: q['value']['s'].map{|i| i.to_i},
+          a: q['value']['a'].map{|i| i.to_i},
+          b: q['value']['b'].map{|i| i.to_i},
+          c: q['value']['c'].map{|i| i.to_i},
+          d: q['value']['d'].map{|i| i.to_i},
+          e: q['value']['e'].map{|i| i.to_i},
           count: count,
           detail: {
             hqLvRange: q['value']['hqLv'].map {|i| i.to_i},
@@ -165,6 +183,16 @@ get '/drop/map/:name.?:format?' do
         DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 1).count,
         DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 2).count,
         DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 3).count,
+      ], sCount: [
+        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 0, :rank => 'S').count,
+        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 1, :rank => 'S').count,
+        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 2, :rank => 'S').count,
+        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 3, :rank => 'S').count,
+      ], winCount: [
+        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 0, :rank.in => ['S', 'A', 'B']).count,
+        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 1, :rank.in => ['S', 'A', 'B']).count,
+        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 2, :rank.in => ['S', 'A', 'B']).count,
+        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :mapLv => 3, :rank.in => ['S', 'A', 'B']).count,
       ]
     })
   end
