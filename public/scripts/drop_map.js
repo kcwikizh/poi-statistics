@@ -918,44 +918,44 @@ var constants = {
         rare: true
     },
     "瑞穂": {
-        chineseName: "",
-        nameForSearch: "",
+        chineseName: "瑞穗",
+        nameForSearch: "瑞穗,ruisui,rui sui,Mizuho,mizuho",
         shipType: "水母",
         rare: true
     },
     "風雲": {
-        chineseName: "",
-        nameForSearch: "",
+        chineseName: "风云",
+        nameForSearch: "风云,fengyun,feng yun,Kazagumo,kazagumo",
         shipType: "驱逐舰",
         rare: true
     },
     "海風": {
-        chineseName: "",
-        nameForSearch: "",
+        chineseName: "海风",
+        nameForSearch: "海风,haifeng,hai feng,Umikaze,umikaze",
         shipType: "驱逐舰",
         rare: true
     },
     "江風": {
-        chineseName: "",
-        nameForSearch: "",
+        chineseName: "江风",
+        nameForSearch: "江风,jiangfeng,jiang feng,Kawakaze,kawakaze",
         shipType: "驱逐舰",
         rare: true
     },
     "速吸": {
-        chineseName: "",
-        nameForSearch: "",
+        chineseName: "速吸",
+        nameForSearch: "速吸,suxi,su xi,Hayasui,hayasui",
         shipType: "补给舰",
         rare: true
     },
     "Libeccio": {
-        chineseName: "",
-        nameForSearch: "",
+        chineseName: "Libeccio",
+        nameForSearch: "利伯齐奥,liboqiao,li bo qi ao,libeccio",
         shipType: "驱逐舰",
         rare: true
     },
     "照月": {
-        chineseName: "",
-        nameForSearch: "",
+        chineseName: "照月",
+        nameForSearch: "照月,zhaoyue,zhao yue,Teruzuki,teruzuki",
         shipType: "驱逐舰",
         rare: true
     },
@@ -975,6 +975,7 @@ var searchTag = {
     "工作舰": ":ar",
     "潜水母舰": ":as",
     "练习巡洋舰": ":clp",
+    "补给舰": ":ao",
     "稀有": ":稀有,:rare,:sr,:ur"
 }
 
