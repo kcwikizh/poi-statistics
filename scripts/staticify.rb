@@ -10,6 +10,7 @@ File.delete("#{path}/public/index.html") if File.exist?("#{path}/public/index.ht
 `rm -rf "#{path}/public/event"` if Dir.exists?("#{path}/public/event")
 `rm -rf "#{path}/public/enemy"` if Dir.exists?("#{path}/public/enemy")
 `rm -rf "#{path}/public/enemy2"` if Dir.exists?("#{path}/public/enemy2")
+`rm -rf "#{path}/public/wiki"` if Dir.exists?("#{path}/public/wiki")
 
 Mongoid.load!("#{path}/config/mongoid.yml", :production)
 Dir["#{path}/models/*.rb"].each { |file| load file }
@@ -49,6 +50,9 @@ end
 list.push '/enemy2/'
 (1..7).each do |i|
   list.push "/enemy2/31#{i}.html"
+end
+(1..7).each do |i|
+  list.push "/wiki/drop/31#{i}.html"
 end
 
 puts `staticify --save -d #{path}/public -p "#{list.join(',')}" #{path}`
