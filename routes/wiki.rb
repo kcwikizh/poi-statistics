@@ -56,7 +56,7 @@ get '/wiki/drop/:mid.?:format?' do
           end
         end).join('，')
       end
-      response += "<br />"
+      response += "<br />}}<br />"
     end
   end
 
