@@ -9,6 +9,7 @@
     %link{:href => "/stylesheets/offcanvas.css", :rel => "stylesheet"}
     %link{:href => "/stylesheets/bootstrap-table.min.css", :rel => "stylesheet"}
     %link{:href => "/stylesheets/chartist.min.css", :rel => "stylesheet"}
+    %link{:href => "/stylesheets/backTop.css", :rel => "stylesheet"}
     %link{:href => "/stylesheets/custom.css", :rel => "stylesheet"}
     %script{:src => "/scripts/jquery.min.js"}
     %script{:src => "/scripts/chartist.min.js"}
@@ -19,6 +20,7 @@
   %body
     =haml :navbar, :locals => locals
     = yield
+    %a#backTop Back To Top
     %footer.footer
       %div.container
         %div 注：网站数据更新间隔大约为一小时。
@@ -36,6 +38,15 @@
     %script{:src => "/scripts/tableExport.min.js"}
     %script{:src => "/scripts/FileSaver.min.js"}
     %script{:src => "/scripts/bootstrap-table-export.js"}
+    %script{:src => "/scripts/jquery.backTop.min.js"}
+    :javascript
+      $(document).ready(function() {
+        $('#backTop').backTop({
+            'position' : 500,
+            'speed' : 500,
+            'color' : 'black',
+        });
+      });
     :javascript
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

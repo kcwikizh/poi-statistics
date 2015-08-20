@@ -1,0 +1,29 @@
+/*Main stylesheet for Backtop jQuery Plugin */
+#backTop{
+    width:35px;
+    height:35px;
+    padding:10px;
+    border-radius:4px;
+    text-indent:-9999px;
+    cursor:pointer;
+    z-index:999999999;
+    display:none;
+    box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+}
+#backTop.white{
+    background:url(../images/uparr-48-b.png) no-repeat center center rgba(255,255,255,0.8);
+    border:1px solid #ccc;
+}
+#backTop.black{
+    background:url(../images/uparr-48-w.png) no-repeat center center rgba(0,0,0,0.8);
+    border:1px solid #ccc;
+}
+#backTop.red{
+    background:url(../images/uparr-48-w.png) no-repeat center center rgba(217,97,81,0.9);
+    border:1px solid #fff;
+}
+#backTop.green{
+    background:url(../images/uparr-48-b.png) no-repeat center center rgba(81,217,187,0.9); 
+    border:1px solid #fff;
+}
