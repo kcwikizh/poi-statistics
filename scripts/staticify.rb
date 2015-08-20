@@ -5,6 +5,7 @@ require 'uri'
 path = Pathname.new(File.dirname(__FILE__)).realpath.parent
 
 File.delete("#{path}/public/index.html") if File.exist?("#{path}/public/index.html")
+`rm -rf "#{path}/public/about"` if Dir.exists?("#{path}/public/about")
 `rm -rf "#{path}/public/construction"` if Dir.exists?("#{path}/public/construction")
 `rm -rf "#{path}/public/drop"` if Dir.exists?("#{path}/public/drop")
 `rm -rf "#{path}/public/event"` if Dir.exists?("#{path}/public/event")
@@ -15,7 +16,7 @@ File.delete("#{path}/public/index.html") if File.exist?("#{path}/public/index.ht
 Mongoid.load!("#{path}/config/mongoid.yml", :production)
 Dir["#{path}/models/*.rb"].each { |file| load file }
 
-list = ['/']
+list = ['/', '/about/']
 list.push '/drop/'
 
 KCConstants.maps.each do |map_id, name|
