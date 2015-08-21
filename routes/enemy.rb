@@ -69,7 +69,7 @@ get '/enemy/:mid.?:format?' do
     .map_reduce(map, reduce).out(inline: 1).each do |q|
       result.push "#{KCConstants.cells[mid][q['_id'].to_i]} (#{q['_id'].to_i})"
 
-      if q['value']['xEnemy'].count == 0
+      if q['value']['fEnemy'].count + q['value']['sEnemy'].count + q['value']['tEnemy'].count > 0
         result.push "甲："
         q['value']['fEnemy'].each do |k, v|
           idx = k.split('/')
@@ -175,7 +175,7 @@ get '/enemy2/:mid.?:format?' do
     .map_reduce(map, reduce).out(inline: 1).each do |q|
       result.push "#{KCConstants.cells[mid][q['_id'].to_i]} (#{q['_id'].to_i})"
 
-      if q['value']['xEnemy'].count == 0
+      if q['value']['fEnemy'].count + q['value']['sEnemy'].count + q['value']['tEnemy'].count > 0
         result.push "甲："
         q['value']['fEnemy'].each do |k, v|
           idx = k.split('/')
