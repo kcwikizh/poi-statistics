@@ -44,16 +44,10 @@ end
 puts `staticify --save -d #{path}/public -p "#{list.join(',')}" #{path}`
 list.clear
 
-list.push '/enemy/'
-(1..7).each do |i|
-  list.push "/enemy/31#{i}.html"
-end
-list.push '/enemy2/'
-(1..7).each do |i|
-  list.push "/enemy2/31#{i}.html"
-end
-(1..7).each do |i|
-  list.push "/wiki/drop/31#{i}.html"
+[(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..63).to_a, (311..317).to_a].flatten.each do |i|
+  list.push "/enemy/#{i}.html"
+  list.push "/enemy2/#{i}.html"
+  list.push "/wiki/drop/#{i}.html"
 end
 
 puts `staticify --save -d #{path}/public -p "#{list.join(',')}" #{path}`
