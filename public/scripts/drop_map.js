@@ -1037,18 +1037,22 @@ function requestData(map_name) {
 
             items = [];
             $.each(val.ships, function(key, ship) {
+                var sCount = ship.s[0] + ship.s[1] + ship.s[2] + ship.s[3];
+                var aCount = ship.a[0] + ship.a[1] + ship.a[2] + ship.a[3];
+                var bCount = ship.b[0] + ship.b[1] + ship.b[2] + ship.b[3];
+
                 items.push({
                     name: ship.name,
                     type: constants[ship.name].shipType,
                     totalCount: ship.count,
-                    sCount: ship.s[0] + ship.s[1] + ship.s[2] + ship.s[3],
-                    aCount: ship.a[0] + ship.a[1] + ship.a[2] + ship.a[3],
-                    bCount: ship.b[0] + ship.b[1] + ship.b[2] + ship.b[3],
+                    sCount: sCount,
+                    aCount: aCount,
+                    bCount: bCount,
                     cCount: ship.c[0] + ship.c[1] + ship.c[2] + ship.c[3],
                     dCount: ship.d[0] + ship.d[1] + ship.d[2] + ship.d[3],
                     eCount: ship.e[0] + ship.e[1] + ship.e[2] + ship.e[3],
                     hqLvRange: ship.detail.hqLvRange.join(' ~ '),
-                    dropRate: (ship.count * 100 / (val.winCount[0] + val.winCount[1] + val.winCount[2] + val.winCount[3])).toFixed(3),
+                    dropRate: ((sCount + aCount + bCount) * 100 / (val.winCount[0] + val.winCount[1] + val.winCount[2] + val.winCount[3])).toFixed(3),
                     mapLvCount: ship.detail.mapLvSet,
                     enemyCount: ship.detail.enemySet,
                     winDropRate0: (ship.detail.mapLvSet[0] * 100 / val.winCount[0]).toFixed(3),
