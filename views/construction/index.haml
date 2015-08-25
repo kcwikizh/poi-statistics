@@ -1,13 +1,21 @@
-!!! 5
-%html
-  %head
-    %title= "Poir/Construction"
-  %body
-    %div= "ships:"
-    - ships.each do |item|
-      %div
-        %a{:href => "/construction/ship/#{item}.html"}= item
-    %div= "recipes:"
-    - recipes.each do |item|
-      %div
-        %a{:href => "/construction/recipe/#{item}.html"}= item
+%div.container
+  %div.page-header
+    %h1 建造统计
+  %div.col-xs-8
+    - KCConstants.ship_types.each do |t_name, t_ids|
+      %div.panel-group
+        %div.panel.panel-primary
+          %div.panel-heading
+            %h4.panel-title= t_name
+          %div.panel-body
+            %ul.list-inline
+              - (KCConstants.ship.select {|s_id, s_info| s_info[:construction] && t_ids.include?(s_info[:ship_type])}).each do |id, info|
+                %li
+                  %p
+                    %a.btn.btn-default= info[:name]
+  %div.col-xs-4
+    %div.panel-group
+      %div.panel.panel-primary
+        %div.panel-heading
+          %h4.panel-title 公式
+        %div.panel-body Coming soon.

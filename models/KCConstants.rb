@@ -1579,6 +1579,11 @@ class KCConstants
       :ship_type => 'ss',
       :rare => true,
     },
+    '大和' => {
+      :chinese_name => '大和',
+      :ship_type => 'bb',
+      :rare => true,
+    },
     '秋雲' => {
       :chinese_name => '秋云',
       :ship_type => 'dd',
@@ -1617,6 +1622,16 @@ class KCConstants
     '酒匂' => {
       :chinese_name => '酒匂',
       :ship_type => 'cl',
+      :rare => true,
+    },
+    '武蔵' => {
+      :chinese_name => '武藏',
+      :ship_type => 'bb',
+      :rare => true,
+    },
+    '大鳳' => {
+      :chinese_name => '大凤',
+      :ship_type => 'cvb',
       :rare => true,
     },
     '香取' => {
@@ -1669,6 +1684,11 @@ class KCConstants
       :ship_type => 'dd',
       :rare => true,
     },
+    'Bismarck' => {
+      :chinese_name => 'Bismarck',
+      :ship_type => 'bb',
+      :rare => true,
+    },
     'Z1' => {
       :chinese_name => 'Z1',
       :ship_type => 'dd',
@@ -1691,7 +1711,7 @@ class KCConstants
     },
     '明石' => {
       :chinese_name => '明石',
-      :ship_type => '',
+      :ship_type => 'ar',
       :rare => true,
     },
     '大淀' => {
@@ -1759,6 +1779,11 @@ class KCConstants
       :ship_type => 'dd',
       :rare => true,
     },
+    '照月' => {
+      :chinese_name => '照月',
+      :ship_type => 'dd',
+      :rare => true,
+    },
     '高波' => {
       :chinese_name => '高波',
       :ship_type => 'dd',
@@ -1782,6 +1807,11 @@ class KCConstants
     'Roma' => {
       :chinese_name => 'Roma',
       :ship_type => 'bb',
+      :rare => true,
+    },
+    'Libeccio' => {
+      :chinese_name => 'Libeccio',
+      :ship_type => 'dd',
       :rare => true,
     },
     '秋津洲' => {
@@ -1814,15 +1844,2342 @@ class KCConstants
       :ship_type => 'ao',
       :rare => true,
     },
-    'Libeccio' => {
-      :chinese_name => 'Libeccio',
+  }
+
+  @@ship_types = {
+    '驱逐舰' => ['dd'],
+    '轻巡洋舰' => ['cl'],
+    '重巡洋舰' => ['ca'],
+    '轻空母' => ['cvl'],
+    '空母' => ['cv', 'cvb'],
+    '战舰' => ['bb'],
+    '潜水舰' => ['ss', 'ssv'],
+    '水母' => ['av'],
+    '其他' => ['ar', 'as', 'ao', 'lha', 'clp'],
+  }
+
+  @@ship = {
+    1 => {
+      :name => '睦月',
       :ship_type => 'dd',
-      :rare => true,
+      :rare => false,
+      :construction => true,
+      :drop => true,
     },
-    '照月' => {
-      :chinese_name => '照月',
+    2 => {
+      :name => '如月',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    6 => {
+      :name => '長月',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    7 => {
+      :name => '三日月',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    9 => {
+      :name => '吹雪',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    10 => {
+      :name => '白雪',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    11 => {
+      :name => '深雪',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    12 => {
+      :name => '磯波',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    13 => {
+      :name => '綾波',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    14 => {
+      :name => '敷波',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    15 => {
+      :name => '曙',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    16 => {
+      :name => '潮',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    17 => {
+      :name => '陽炎',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    18 => {
+      :name => '不知火',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    19 => {
+      :name => '黒潮',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    20 => {
+      :name => '雪風',
       :ship_type => 'dd',
       :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    21 => {
+      :name => '長良',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    22 => {
+      :name => '五十鈴',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    23 => {
+      :name => '由良',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    24 => {
+      :name => '大井',
+      :ship_type => 'cl',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    25 => {
+      :name => '北上',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    26 => {
+      :name => '扶桑',
+      :ship_type => 'bb',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    27 => {
+      :name => '山城',
+      :ship_type => 'bb',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    28 => {
+      :name => '皐月',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    29 => {
+      :name => '文月',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    30 => {
+      :name => '菊月',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    31 => {
+      :name => '望月',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    32 => {
+      :name => '初雪',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    33 => {
+      :name => '叢雲',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    34 => {
+      :name => '暁',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    35 => {
+      :name => '響',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    36 => {
+      :name => '雷',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    37 => {
+      :name => '電',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    38 => {
+      :name => '初春',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    39 => {
+      :name => '子日',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    40 => {
+      :name => '若葉',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    41 => {
+      :name => '初霜',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    42 => {
+      :name => '白露',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    43 => {
+      :name => '時雨',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    44 => {
+      :name => '村雨',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    45 => {
+      :name => '夕立',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    46 => {
+      :name => '五月雨',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    47 => {
+      :name => '涼風',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    48 => {
+      :name => '霰',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    49 => {
+      :name => '霞',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    50 => {
+      :name => '島風',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    51 => {
+      :name => '天龍',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    52 => {
+      :name => '龍田',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    53 => {
+      :name => '名取',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    54 => {
+      :name => '川内',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    55 => {
+      :name => '神通',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    56 => {
+      :name => '那珂',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    57 => {
+      :name => '大井改',
+    },
+    58 => {
+      :name => '北上改',
+    },
+    59 => {
+      :name => '古鷹',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    60 => {
+      :name => '加古',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    61 => {
+      :name => '青葉',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    62 => {
+      :name => '妙高',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    63 => {
+      :name => '那智',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    64 => {
+      :name => '足柄',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    65 => {
+      :name => '羽黒',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    66 => {
+      :name => '高雄',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    67 => {
+      :name => '愛宕',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    68 => {
+      :name => '摩耶',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    69 => {
+      :name => '鳥海',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    70 => {
+      :name => '最上',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    71 => {
+      :name => '利根',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    72 => {
+      :name => '筑摩',
+      :ship_type => 'ca',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    73 => {
+      :name => '最上改',
+    },
+    74 => {
+      :name => '祥鳳',
+      :ship_type => 'cvl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    75 => {
+      :name => '飛鷹',
+      :ship_type => 'cvl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    76 => {
+      :name => '龍驤',
+      :ship_type => 'cvl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    77 => {
+      :name => '伊勢',
+      :ship_type => 'bb',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    78 => {
+      :name => '金剛',
+      :ship_type => 'bb',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    79 => {
+      :name => '榛名',
+      :ship_type => 'bb',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    80 => {
+      :name => '長門',
+      :ship_type => 'bb',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    81 => {
+      :name => '陸奥',
+      :ship_type => 'bb',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    82 => {
+      :name => '伊勢改',
+    },
+    83 => {
+      :name => '赤城',
+      :ship_type => 'cv',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    84 => {
+      :name => '加賀',
+      :ship_type => 'cv',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    85 => {
+      :name => '霧島',
+      :ship_type => 'bb',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    86 => {
+      :name => '比叡',
+      :ship_type => 'bb',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    87 => {
+      :name => '日向',
+      :ship_type => 'bb',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    88 => {
+      :name => '日向改',
+    },
+    89 => {
+      :name => '鳳翔',
+      :ship_type => 'cvl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    90 => {
+      :name => '蒼龍',
+      :ship_type => 'cv',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    91 => {
+      :name => '飛龍',
+      :ship_type => 'cv',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    92 => {
+      :name => '隼鷹',
+      :ship_type => 'cvl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    93 => {
+      :name => '朧',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    94 => {
+      :name => '漣',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    95 => {
+      :name => '朝潮',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    96 => {
+      :name => '大潮',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    97 => {
+      :name => '満潮',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    98 => {
+      :name => '荒潮',
+      :ship_type => 'dd',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    99 => {
+      :name => '球磨',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    100 => {
+      :name => '多摩',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    101 => {
+      :name => '木曾',
+      :ship_type => 'cl',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    102 => {
+      :name => '千歳',
+      :ship_type => 'av',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    103 => {
+      :name => '千代田',
+      :ship_type => 'av',
+      :rare => false,
+      :construction => true,
+      :drop => true,
+    },
+    104 => {
+      :name => '千歳改',
+    },
+    105 => {
+      :name => '千代田改',
+    },
+    106 => {
+      :name => '千歳甲',
+    },
+    107 => {
+      :name => '千代田甲',
+    },
+    108 => {
+      :name => '千歳航',
+    },
+    109 => {
+      :name => '千代田航',
+    },
+    110 => {
+      :name => '翔鶴',
+      :ship_type => 'cv',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    111 => {
+      :name => '瑞鶴',
+      :ship_type => 'cv',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    112 => {
+      :name => '瑞鶴改',
+    },
+    113 => {
+      :name => '鬼怒',
+      :ship_type => 'cl',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    114 => {
+      :name => '阿武隈',
+      :ship_type => 'cl',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    115 => {
+      :name => '夕張',
+      :ship_type => 'cl',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    116 => {
+      :name => '瑞鳳',
+      :ship_type => 'cvl',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    117 => {
+      :name => '瑞鳳改',
+    },
+    118 => {
+      :name => '大井改二',
+    },
+    119 => {
+      :name => '北上改二',
+    },
+    120 => {
+      :name => '三隈',
+      :ship_type => 'ca',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    121 => {
+      :name => '三隈改',
+    },
+    122 => {
+      :name => '舞風',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    123 => {
+      :name => '衣笠',
+      :ship_type => 'ca',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    124 => {
+      :name => '鈴谷',
+      :ship_type => 'ca',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    125 => {
+      :name => '熊野',
+      :ship_type => 'ca',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    126 => {
+      :name => '伊168',
+      :ship_type => 'ss',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    127 => {
+      :name => '伊58',
+      :ship_type => 'ss',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    128 => {
+      :name => '伊8',
+      :ship_type => 'ss',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    129 => {
+      :name => '鈴谷改',
+    },
+    130 => {
+      :name => '熊野改',
+    },
+    131 => {
+      :name => '大和',
+      :ship_type => 'bb',
+      :rare => true,
+      :construction => true,
+      :drop => false,
+    },
+    132 => {
+      :name => '秋雲',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    133 => {
+      :name => '夕雲',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    134 => {
+      :name => '巻雲',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    135 => {
+      :name => '長波',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    136 => {
+      :name => '大和改',
+    },
+    137 => {
+      :name => '阿賀野',
+      :ship_type => 'cl',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    138 => {
+      :name => '能代',
+      :ship_type => 'cl',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    139 => {
+      :name => '矢矧',
+      :ship_type => 'cl',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    140 => {
+      :name => '酒匂',
+      :ship_type => 'cl',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    141 => {
+      :name => '五十鈴改二',
+    },
+    142 => {
+      :name => '衣笠改二',
+    },
+    143 => {
+      :name => '武蔵',
+      :ship_type => 'bb',
+      :rare => true,
+      :construction => true,
+      :drop => false,
+    },
+    144 => {
+      :name => '夕立改二',
+    },
+    145 => {
+      :name => '時雨改二',
+    },
+    146 => {
+      :name => '木曾改二',
+    },
+    147 => {
+      :name => 'Верный',
+    },
+    148 => {
+      :name => '武蔵改',
+    },
+    149 => {
+      :name => '金剛改二',
+    },
+    150 => {
+      :name => '比叡改二',
+    },
+    151 => {
+      :name => '榛名改二',
+    },
+    152 => {
+      :name => '霧島改二',
+    },
+    153 => {
+      :name => '大鳳',
+      :ship_type => 'cvb',
+      :rare => true,
+      :construction => true,
+      :drop => false,
+    },
+    154 => {
+      :name => '香取',
+      :ship_type => 'clp',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    155 => {
+      :name => '伊401',
+      :ship_type => 'ssv',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    156 => {
+      :name => '大鳳改',
+    },
+    157 => {
+      :name => '龍驤改二',
+    },
+    158 => {
+      :name => '川内改二',
+    },
+    159 => {
+      :name => '神通改二',
+    },
+    160 => {
+      :name => '那珂改二',
+    },
+    161 => {
+      :name => 'あきつ丸',
+      :ship_type => 'lha',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    163 => {
+      :name => 'まるゆ',
+      :ship_type => 'ss',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    164 => {
+      :name => '弥生',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    165 => {
+      :name => '卯月',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    166 => {
+      :name => 'あきつ丸改',
+    },
+    167 => {
+      :name => '磯風',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    168 => {
+      :name => '浦風',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    169 => {
+      :name => '谷風',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    170 => {
+      :name => '浜風',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    171 => {
+      :name => 'Bismarck',
+      :ship_type => 'bb',
+      :rare => true,
+      :construction => true,
+      :drop => false,
+    },
+    172 => {
+      :name => 'Bismarck改',
+    },
+    173 => {
+      :name => 'Bismarck zwei',
+    },
+    174 => {
+      :name => 'Z1',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    175 => {
+      :name => 'Z3',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => true,
+      :drop => true,
+    },
+    176 => {
+      :name => 'Prinz Eugen',
+      :ship_type => 'ca',
+      :rare => true,
+      :construction => false,
+      :drop => false,
+    },
+    177 => {
+      :name => 'Prinz Eugen改',
+    },
+    178 => {
+      :name => 'Bismarck drei',
+    },
+    179 => {
+      :name => 'Z1 zwei',
+    },
+    180 => {
+      :name => 'Z3 zwei',
+    },
+    181 => {
+      :name => '天津風',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    182 => {
+      :name => '明石',
+      :ship_type => 'ar',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    183 => {
+      :name => '大淀',
+      :ship_type => 'cl',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    184 => {
+      :name => '大鯨',
+      :ship_type => 'as',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    185 => {
+      :name => '龍鳳',
+    },
+    186 => {
+      :name => '時津風',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    187 => {
+      :name => '明石改',
+    },
+    188 => {
+      :name => '利根改二',
+    },
+    189 => {
+      :name => '筑摩改二',
+    },
+    190 => {
+      :name => '初風',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    191 => {
+      :name => '伊19',
+      :ship_type => 'ss',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    192 => {
+      :name => '那智改二',
+    },
+    193 => {
+      :name => '足柄改二',
+    },
+    194 => {
+      :name => '羽黒改二',
+    },
+    195 => {
+      :name => '綾波改二',
+    },
+    196 => {
+      :name => '飛龍改二',
+    },
+    197 => {
+      :name => '蒼龍改二',
+    },
+    200 => {
+      :name => '阿武隈改二',
+    },
+    201 => {
+      :name => '吹雪改',
+    },
+    202 => {
+      :name => '白雪改',
+    },
+    203 => {
+      :name => '初雪改',
+    },
+    204 => {
+      :name => '深雪改',
+    },
+    205 => {
+      :name => '叢雲改',
+    },
+    206 => {
+      :name => '磯波改',
+    },
+    207 => {
+      :name => '綾波改',
+    },
+    208 => {
+      :name => '敷波改',
+    },
+    209 => {
+      :name => '金剛改',
+    },
+    210 => {
+      :name => '比叡改',
+    },
+    211 => {
+      :name => '榛名改',
+    },
+    212 => {
+      :name => '霧島改',
+    },
+    213 => {
+      :name => '天龍改',
+    },
+    214 => {
+      :name => '龍田改',
+    },
+    215 => {
+      :name => '球磨改',
+    },
+    216 => {
+      :name => '多摩改',
+    },
+    217 => {
+      :name => '木曾改',
+    },
+    218 => {
+      :name => '長良改',
+    },
+    219 => {
+      :name => '五十鈴改',
+    },
+    220 => {
+      :name => '由良改',
+    },
+    221 => {
+      :name => '名取改',
+    },
+    222 => {
+      :name => '川内改',
+    },
+    223 => {
+      :name => '神通改',
+    },
+    224 => {
+      :name => '那珂改',
+    },
+    225 => {
+      :name => '陽炎改',
+    },
+    226 => {
+      :name => '不知火改',
+    },
+    227 => {
+      :name => '黒潮改',
+    },
+    228 => {
+      :name => '雪風改',
+    },
+    229 => {
+      :name => '島風改',
+    },
+    230 => {
+      :name => '朧改',
+    },
+    231 => {
+      :name => '曙改',
+    },
+    232 => {
+      :name => '漣改',
+    },
+    233 => {
+      :name => '潮改',
+    },
+    234 => {
+      :name => '暁改',
+    },
+    235 => {
+      :name => '響改',
+    },
+    236 => {
+      :name => '雷改',
+    },
+    237 => {
+      :name => '電改',
+    },
+    238 => {
+      :name => '初春改',
+    },
+    239 => {
+      :name => '子日改',
+    },
+    240 => {
+      :name => '若葉改',
+    },
+    241 => {
+      :name => '初霜改',
+    },
+    242 => {
+      :name => '白露改',
+    },
+    243 => {
+      :name => '時雨改',
+    },
+    244 => {
+      :name => '村雨改',
+    },
+    245 => {
+      :name => '夕立改',
+    },
+    246 => {
+      :name => '五月雨改',
+    },
+    247 => {
+      :name => '涼風改',
+    },
+    248 => {
+      :name => '朝潮改',
+    },
+    249 => {
+      :name => '大潮改',
+    },
+    250 => {
+      :name => '満潮改',
+    },
+    251 => {
+      :name => '荒潮改',
+    },
+    252 => {
+      :name => '霰改',
+    },
+    253 => {
+      :name => '霞改',
+    },
+    254 => {
+      :name => '睦月改',
+    },
+    255 => {
+      :name => '如月改',
+    },
+    256 => {
+      :name => '皐月改',
+    },
+    257 => {
+      :name => '文月改',
+    },
+    258 => {
+      :name => '長月改',
+    },
+    259 => {
+      :name => '菊月改',
+    },
+    260 => {
+      :name => '三日月改',
+    },
+    261 => {
+      :name => '望月改',
+    },
+    262 => {
+      :name => '古鷹改',
+    },
+    263 => {
+      :name => '加古改',
+    },
+    264 => {
+      :name => '青葉改',
+    },
+    265 => {
+      :name => '妙高改',
+    },
+    266 => {
+      :name => '那智改',
+    },
+    267 => {
+      :name => '足柄改',
+    },
+    268 => {
+      :name => '羽黒改',
+    },
+    269 => {
+      :name => '高雄改',
+    },
+    270 => {
+      :name => '愛宕改',
+    },
+    271 => {
+      :name => '摩耶改',
+    },
+    272 => {
+      :name => '鳥海改',
+    },
+    273 => {
+      :name => '利根改',
+    },
+    274 => {
+      :name => '筑摩改',
+    },
+    275 => {
+      :name => '長門改',
+    },
+    276 => {
+      :name => '陸奥改',
+    },
+    277 => {
+      :name => '赤城改',
+    },
+    278 => {
+      :name => '加賀改',
+    },
+    279 => {
+      :name => '蒼龍改',
+    },
+    280 => {
+      :name => '飛龍改',
+    },
+    281 => {
+      :name => '龍驤改',
+    },
+    282 => {
+      :name => '祥鳳改',
+    },
+    283 => {
+      :name => '飛鷹改',
+    },
+    284 => {
+      :name => '隼鷹改',
+    },
+    285 => {
+      :name => '鳳翔改',
+    },
+    286 => {
+      :name => '扶桑改',
+    },
+    287 => {
+      :name => '山城改',
+    },
+    288 => {
+      :name => '翔鶴改',
+    },
+    289 => {
+      :name => '鬼怒改',
+    },
+    290 => {
+      :name => '阿武隈改',
+    },
+    291 => {
+      :name => '千歳航改',
+    },
+    292 => {
+      :name => '千代田航改',
+    },
+    293 => {
+      :name => '夕張改',
+    },
+    294 => {
+      :name => '舞風改',
+    },
+    295 => {
+      :name => '衣笠改',
+    },
+    296 => {
+      :name => '千歳航改二',
+    },
+    297 => {
+      :name => '千代田航改二',
+    },
+    300 => {
+      :name => '初風改',
+    },
+    301 => {
+      :name => '秋雲改',
+    },
+    302 => {
+      :name => '夕雲改',
+    },
+    303 => {
+      :name => '巻雲改',
+    },
+    304 => {
+      :name => '長波改',
+    },
+    305 => {
+      :name => '阿賀野改',
+    },
+    306 => {
+      :name => '能代改',
+    },
+    307 => {
+      :name => '矢矧改',
+    },
+    308 => {
+      :name => '弥生改',
+    },
+    309 => {
+      :name => '卯月改',
+    },
+    310 => {
+      :name => 'Z1改',
+    },
+    311 => {
+      :name => 'Z3改',
+    },
+    312 => {
+      :name => '浜風改',
+    },
+    313 => {
+      :name => '谷風改',
+    },
+    314 => {
+      :name => '酒匂改',
+    },
+    316 => {
+      :name => '天津風改',
+    },
+    317 => {
+      :name => '浦風改',
+    },
+    318 => {
+      :name => '龍鳳改',
+    },
+    319 => {
+      :name => '妙高改二',
+    },
+    320 => {
+      :name => '磯風改',
+    },
+    321 => {
+      :name => '大淀改',
+    },
+    322 => {
+      :name => '時津風改',
+    },
+    323 => {
+      :name => '春雨改',
+    },
+    324 => {
+      :name => '早霜改',
+    },
+    325 => {
+      :name => '清霜改',
+    },
+    326 => {
+      :name => '初春改二',
+    },
+    327 => {
+      :name => '朝雲改',
+    },
+    328 => {
+      :name => '山雲改',
+    },
+    329 => {
+      :name => '野分改',
+    },
+    330 => {
+      :name => '秋月改',
+    },
+    331 => {
+      :name => '天城',
+      :ship_type => 'cv',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    332 => {
+      :name => '葛城',
+      :ship_type => 'cv',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    334 => {
+      :name => 'U-511改',
+    },
+    343 => {
+      :name => '香取改',
+    },
+    344 => {
+      :name => '朝霜改',
+    },
+    345 => {
+      :name => '高波改',
+    },
+    346 => {
+      :name => '照月改',
+    },
+    347 => {
+      :name => 'Libeccio改',
+    },
+    348 => {
+      :name => '瑞穂改',
+    },
+    349 => {
+      :name => '風雲改',
+    },
+    350 => {
+      :name => '海風改',
+    },
+    351 => {
+      :name => '江風改',
+    },
+    352 => {
+      :name => '速吸改',
+    },
+    398 => {
+      :name => '伊168改',
+    },
+    399 => {
+      :name => '伊58改',
+    },
+    400 => {
+      :name => '伊8改',
+    },
+    401 => {
+      :name => '伊19改',
+    },
+    402 => {
+      :name => 'まるゆ改',
+    },
+    403 => {
+      :name => '伊401改',
+    },
+    404 => {
+      :name => '雲龍',
+      :ship_type => 'cv',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    405 => {
+      :name => '春雨',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    406 => {
+      :name => '雲龍改',
+    },
+    407 => {
+      :name => '潮改二',
+    },
+    408 => {
+      :name => '隼鷹改二',
+    },
+    409 => {
+      :name => '早霜',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    410 => {
+      :name => '清霜',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    411 => {
+      :name => '扶桑改二',
+    },
+    412 => {
+      :name => '山城改二',
+    },
+    413 => {
+      :name => '朝雲',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    414 => {
+      :name => '山雲',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    415 => {
+      :name => '野分',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    416 => {
+      :name => '古鷹改二',
+    },
+    417 => {
+      :name => '加古改二',
+    },
+    419 => {
+      :name => '初霜改二',
+    },
+    420 => {
+      :name => '叢雲改二',
+    },
+    421 => {
+      :name => '秋月',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => false,
+    },
+    422 => {
+      :name => '照月',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => false,
+    },
+    424 => {
+      :name => '高波',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    425 => {
+      :name => '朝霜',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    426 => {
+      :name => '吹雪改二',
+    },
+    427 => {
+      :name => '鳥海改二',
+    },
+    428 => {
+      :name => '摩耶改二',
+    },
+    429 => {
+      :name => '天城改',
+    },
+    430 => {
+      :name => '葛城改',
+    },
+    431 => {
+      :name => 'U-511',
+      :ship_type => 'ss',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    434 => {
+      :name => '睦月改二',
+    },
+    435 => {
+      :name => '如月改二',
+    },
+    436 => {
+      :name => '呂500',
+    },
+    437 => {
+      :name => '暁改二',
+    },
+    441 => {
+      :name => 'Littorio',
+      :ship_type => 'bb',
+      :rare => true,
+      :construction => false,
+      :drop => false,
+    },
+    442 => {
+      :name => 'Roma',
+      :ship_type => 'bb',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    443 => {
+      :name => 'Libeccio',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => false,
+    },
+    445 => {
+      :name => '秋津洲',
+      :ship_type => 'av',
+      :rare => true,
+      :construction => false,
+      :drop => false,
+    },
+    446 => {
+      :name => 'Italia',
+    },
+    447 => {
+      :name => 'Roma改',
+    },
+    450 => {
+      :name => '秋津洲改',
+    },
+    451 => {
+      :name => '瑞穂',
+      :ship_type => 'av',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    453 => {
+      :name => '風雲',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    458 => {
+      :name => '海風',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    459 => {
+      :name => '江風',
+      :ship_type => 'dd',
+      :rare => true,
+      :construction => false,
+      :drop => true,
+    },
+    460 => {
+      :name => '速吸',
+      :ship_type => 'ao',
+      :rare => true,
+      :construction => false,
+      :drop => false,
+    },
+    501 => {
+      :name => '駆逐イ級',
+      :deep_sea => true,
+    },
+    502 => {
+      :name => '駆逐ロ級',
+      :deep_sea => true,
+    },
+    503 => {
+      :name => '駆逐ハ級',
+      :deep_sea => true,
+    },
+    504 => {
+      :name => '駆逐ニ級',
+      :deep_sea => true,
+    },
+    505 => {
+      :name => '軽巡ホ級',
+      :deep_sea => true,
+    },
+    506 => {
+      :name => '軽巡ヘ級',
+      :deep_sea => true,
+    },
+    507 => {
+      :name => '軽巡ト級',
+      :deep_sea => true,
+    },
+    508 => {
+      :name => '雷巡チ級',
+      :deep_sea => true,
+    },
+    509 => {
+      :name => '重巡リ級',
+      :deep_sea => true,
+    },
+    510 => {
+      :name => '軽母ヌ級',
+      :deep_sea => true,
+    },
+    511 => {
+      :name => '戦艦ル級',
+      :deep_sea => true,
+    },
+    512 => {
+      :name => '空母ヲ級',
+      :deep_sea => true,
+    },
+    513 => {
+      :name => '輸送ワ級',
+      :deep_sea => true,
+    },
+    514 => {
+      :name => '駆逐イ級elite',
+      :deep_sea => true,
+    },
+    515 => {
+      :name => '駆逐ロ級elite',
+      :deep_sea => true,
+    },
+    516 => {
+      :name => '駆逐ハ級elite',
+      :deep_sea => true,
+    },
+    517 => {
+      :name => '駆逐ニ級elite',
+      :deep_sea => true,
+    },
+    518 => {
+      :name => '軽巡ホ級elite',
+      :deep_sea => true,
+    },
+    519 => {
+      :name => '軽巡ヘ級elite',
+      :deep_sea => true,
+    },
+    520 => {
+      :name => '軽巡ト級elite',
+      :deep_sea => true,
+    },
+    521 => {
+      :name => '雷巡チ級elite',
+      :deep_sea => true,
+    },
+    522 => {
+      :name => '重巡リ級elite',
+      :deep_sea => true,
+    },
+    523 => {
+      :name => '軽母ヌ級elite',
+      :deep_sea => true,
+    },
+    524 => {
+      :name => '戦艦ル級elite',
+      :deep_sea => true,
+    },
+    525 => {
+      :name => '空母ヲ級elite',
+      :deep_sea => true,
+    },
+    526 => {
+      :name => '輸送ワ級elite',
+      :deep_sea => true,
+    },
+    527 => {
+      :name => '重巡リ級flagship',
+      :deep_sea => true,
+    },
+    528 => {
+      :name => '空母ヲ級flagship',
+      :deep_sea => true,
+    },
+    529 => {
+      :name => '戦艦ル級flagship',
+      :deep_sea => true,
+    },
+    530 => {
+      :name => '潜水カ級',
+      :deep_sea => true,
+    },
+    531 => {
+      :name => '潜水ヨ級',
+      :deep_sea => true,
+    },
+    532 => {
+      :name => '潜水カ級elite',
+      :deep_sea => true,
+    },
+    533 => {
+      :name => '潜水ヨ級elite',
+      :deep_sea => true,
+    },
+    534 => {
+      :name => '潜水カ級flagship',
+      :deep_sea => true,
+    },
+    535 => {
+      :name => '潜水ヨ級flagship',
+      :deep_sea => true,
+    },
+    536 => {
+      :name => '浮遊要塞',
+      :deep_sea => true,
+    },
+    537 => {
+      :name => '浮遊要塞',
+      :deep_sea => true,
+    },
+    538 => {
+      :name => '浮遊要塞',
+      :deep_sea => true,
+    },
+    539 => {
+      :name => '泊地棲鬼',
+      :deep_sea => true,
+    },
+    540 => {
+      :name => '泊地棲姫',
+      :deep_sea => true,
+    },
+    541 => {
+      :name => '戦艦タ級',
+      :deep_sea => true,
+    },
+    542 => {
+      :name => '戦艦タ級elite',
+      :deep_sea => true,
+    },
+    543 => {
+      :name => '戦艦タ級flagship',
+      :deep_sea => true,
+    },
+    544 => {
+      :name => '装甲空母鬼',
+      :deep_sea => true,
+    },
+    545 => {
+      :name => '装甲空母姫',
+      :deep_sea => true,
+    },
+    546 => {
+      :name => '南方棲鬼',
+      :deep_sea => true,
+    },
+    547 => {
+      :name => '南方棲戦鬼',
+      :deep_sea => true,
+    },
+    548 => {
+      :name => '南方棲戦姫',
+      :deep_sea => true,
+    },
+    549 => {
+      :name => '護衛要塞',
+      :deep_sea => true,
+    },
+    550 => {
+      :name => '護衛要塞',
+      :deep_sea => true,
+    },
+    551 => {
+      :name => '護衛要塞',
+      :deep_sea => true,
+    },
+    552 => {
+      :name => '駆逐ロ級flagship',
+      :deep_sea => true,
+    },
+    553 => {
+      :name => '駆逐ハ級flagship',
+      :deep_sea => true,
+    },
+    554 => {
+      :name => '軽巡ホ級flagship',
+      :deep_sea => true,
+    },
+    555 => {
+      :name => '軽巡ヘ級flagship',
+      :deep_sea => true,
+    },
+    556 => {
+      :name => '飛行場姫',
+      :deep_sea => true,
+    },
+    557 => {
+      :name => '戦艦棲姫',
+      :deep_sea => true,
+    },
+    558 => {
+      :name => '輸送ワ級flagship',
+      :deep_sea => true,
+    },
+    559 => {
+      :name => '雷巡チ級flagship',
+      :deep_sea => true,
+    },
+    560 => {
+      :name => '軽母ヌ級flagship',
+      :deep_sea => true,
+    },
+    561 => {
+      :name => '戦艦レ級',
+      :deep_sea => true,
+    },
+    562 => {
+      :name => '戦艦レ級elite',
+      :deep_sea => true,
+    },
+    564 => {
+      :name => '駆逐イ級flagship',
+      :deep_sea => true,
+    },
+    565 => {
+      :name => '空母ヲ級改flagship',
+      :deep_sea => true,
+    },
+    566 => {
+      :name => '重巡リ級改flagship',
+      :deep_sea => true,
+    },
+    567 => {
+      :name => '戦艦ル級改flagship',
+      :deep_sea => true,
+    },
+    570 => {
+      :name => '潜水ソ級',
+      :deep_sea => true,
+    },
+    571 => {
+      :name => '潜水ソ級elite',
+      :deep_sea => true,
+    },
+    572 => {
+      :name => '潜水ソ級flagship',
+      :deep_sea => true,
+    },
+    573 => {
+      :name => '港湾棲姫',
+      :deep_sea => true,
+    },
+    574 => {
+      :name => '離島棲鬼',
+      :deep_sea => true,
+    },
+    575 => {
+      :name => '駆逐イ級後期型',
+      :deep_sea => true,
+    },
+    576 => {
+      :name => '駆逐ロ級後期型',
+      :deep_sea => true,
+    },
+    577 => {
+      :name => '駆逐ハ級後期型',
+      :deep_sea => true,
+    },
+    578 => {
+      :name => '駆逐ニ級後期型',
+      :deep_sea => true,
+    },
+    579 => {
+      :name => '空母ヲ級flagship',
+      :deep_sea => true,
+    },
+    581 => {
+      :name => '北方棲姫',
+      :deep_sea => true,
+    },
+    582 => {
+      :name => '北方棲姫',
+      :deep_sea => true,
+    },
+    583 => {
+      :name => '中間棲姫',
+      :deep_sea => true,
+    },
+    584 => {
+      :name => '中間棲姫',
+      :deep_sea => true,
+    },
+    585 => {
+      :name => '空母棲鬼',
+      :deep_sea => true,
+    },
+    586 => {
+      :name => '空母棲姫',
+      :deep_sea => true,
+    },
+    587 => {
+      :name => '北方棲姫',
+      :deep_sea => true,
+    },
+    588 => {
+      :name => '北方棲姫',
+      :deep_sea => true,
+    },
+    589 => {
+      :name => '北方棲姫',
+      :deep_sea => true,
+    },
+    590 => {
+      :name => '北方棲姫',
+      :deep_sea => true,
+    },
+    591 => {
+      :name => '軽巡ツ級',
+      :deep_sea => true,
+    },
+    592 => {
+      :name => '軽巡ツ級elite',
+      :deep_sea => true,
+    },
+    594 => {
+      :name => '重巡ネ級',
+      :deep_sea => true,
+    },
+    595 => {
+      :name => '重巡ネ級elite',
+      :deep_sea => true,
+    },
+    597 => {
+      :name => '駆逐棲姫',
+      :deep_sea => true,
+    },
+    598 => {
+      :name => '駆逐棲姫',
+      :deep_sea => true,
+    },
+    599 => {
+      :name => '空母水鬼',
+      :deep_sea => true,
+    },
+    600 => {
+      :name => '空母水鬼',
+      :deep_sea => true,
+    },
+    601 => {
+      :name => '軽巡棲鬼',
+      :deep_sea => true,
+    },
+    602 => {
+      :name => '軽巡棲鬼',
+      :deep_sea => true,
+    },
+    603 => {
+      :name => '戦艦水鬼',
+      :deep_sea => true,
+    },
+    604 => {
+      :name => '戦艦水鬼',
+      :deep_sea => true,
+    },
+    605 => {
+      :name => '港湾水鬼',
+      :deep_sea => true,
+    },
+    606 => {
+      :name => '港湾水鬼',
+      :deep_sea => true,
+    },
+    607 => {
+      :name => '港湾水鬼',
+      :deep_sea => true,
+    },
+    608 => {
+      :name => '港湾水鬼',
+      :deep_sea => true,
+    },
+    609 => {
+      :name => '泊地水鬼',
+      :deep_sea => true,
+    },
+    610 => {
+      :name => '泊地水鬼',
+      :deep_sea => true,
+    },
+    611 => {
+      :name => '泊地水鬼',
+      :deep_sea => true,
+    },
+    612 => {
+      :name => '泊地水鬼',
+      :deep_sea => true,
+    },
+    613 => {
+      :name => '港湾棲姫',
+      :deep_sea => true,
+    },
+    614 => {
+      :name => '空母ヲ級flagship',
+      :deep_sea => true,
+    },
+    615 => {
+      :name => '空母ヲ級flagship',
+      :deep_sea => true,
+    },
+    616 => {
+      :name => '空母ヲ級改flagship',
+      :deep_sea => true,
+    },
+    617 => {
+      :name => '空母ヲ級改flagship',
+      :deep_sea => true,
+    },
+    618 => {
+      :name => '空母ヲ級改flagship',
+      :deep_sea => true,
+    },
+    619 => {
+      :name => '空母棲鬼',
+      :deep_sea => true,
+    },
+    620 => {
+      :name => '空母棲姫',
+      :deep_sea => true,
+    },
+    621 => {
+      :name => '駆逐イ級後期型elite',
+      :deep_sea => true,
+    },
+    622 => {
+      :name => '駆逐ロ級後期型elite',
+      :deep_sea => true,
+    },
+    623 => {
+      :name => '駆逐ハ級後期型elite',
+      :deep_sea => true,
+    },
+    624 => {
+      :name => '駆逐ニ級後期型elite',
+      :deep_sea => true,
+    },
+    625 => {
+      :name => '水母棲姫',
+      :deep_sea => true,
+    },
+    626 => {
+      :name => '水母棲姫',
+      :deep_sea => true,
+    },
+    627 => {
+      :name => '水母棲姫',
+      :deep_sea => true,
+    },
+    628 => {
+      :name => '防空棲姫',
+      :deep_sea => true,
+    },
+    629 => {
+      :name => '防空棲姫',
+      :deep_sea => true,
+    },
+    630 => {
+      :name => '防空棲姫',
+      :deep_sea => true,
+    },
+    631 => {
+      :name => '飛行場姫',
+      :deep_sea => true,
+    },
+    632 => {
+      :name => '飛行場姫',
+      :deep_sea => true,
+    },
+    633 => {
+      :name => '飛行場姫',
+      :deep_sea => true,
+    },
+    634 => {
+      :name => '離島棲鬼',
+      :deep_sea => true,
+    },
+    635 => {
+      :name => '離島棲鬼',
+      :deep_sea => true,
+    },
+    636 => {
+      :name => '離島棲鬼',
+      :deep_sea => true,
+    },
+    -1 => {
+      :name => '(无)',
+      :ship_type => '',
+      :rare => false,
+      :construction => false,
+      :drop => true,
     },
   }
 
@@ -1849,6 +4206,14 @@ class KCConstants
 
     def ship_infos
       @@ship_infos
+    end
+
+    def ship_types
+      @@ship_types
+    end
+
+    def ship
+      @@ship
     end
   end
 end

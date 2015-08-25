@@ -1,28 +1,11 @@
 require 'haml'
 require 'json'
 
-get '/construction/index' do
-  ship_list = []
-  CreateShipRecord.distinct(:shipId).each do |id|
-    ship_list.push KCConstants.ships[id]
-  end
-
-  recipe_list = []
-  map = %Q{
-    function() {
-      emit(this.items, this.items.join('/'));
-    }
+get '/construction/?' do
+  haml :'construction/index', :locals => {
+    :location => 'construction',
+    :title_append => " # 建造统计"
   }
-  reduce = %Q{
-    function(key, values) {
-      return key.join('/');
-    }
-  }
-  CreateShipRecord.map_reduce(map, reduce).out(inline: 1).each do |item|
-    recipe_list.push item["value"]
-  end
-
-  haml :'construction/index', :locals => { :ships => ship_list, :recipes => recipe_list }
 end
 
 get '/construction/ship/:name.?:format?' do
