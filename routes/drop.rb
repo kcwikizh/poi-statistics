@@ -149,7 +149,7 @@ get '/drop/map/:name.?:format?' do
     lv_count = [0, 0, 0, 0]
     s_win_count = [0, 0, 0, 0]
     win_count = [0, 0, 0, 0]
-    DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list)
+    DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :enemy: enemy_name)
       .map_reduce(map, reduce).out(inline: 1).each do |q|
         enemies = []
         q['value']['enemy'].each do |k, v|
