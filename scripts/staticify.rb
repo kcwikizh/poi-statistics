@@ -55,4 +55,5 @@ end
   list.push "/wiki/drop/#{i}.html"
 end
 
-puts `staticify --save -d #{path}/public -p "#{list.join(',')}" #{path}`
+File.open("#{path}/tmp/staticify.lst", "w") {|f| f.write(list.join("\n"))}
+puts `cat #{path}/tmp/staticify.lst | staticify --save -d #{path}/public #{path}`
