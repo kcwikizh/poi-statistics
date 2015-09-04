@@ -34,8 +34,8 @@ CreateShipRecord.where(:origin.exists => true).map_reduce(map, reduce).out(inlin
   list.push "/construction/recipe/#{q['_id']}.html"
 end
 KCConstants.ship.select{|k, v| v[:construction] }.each do |k, v|
-  list.push "/construction/ship/#{v[:name]}.json"
-  list.push "/construction/ship/#{v[:name]}.html"
+  list.push "/construction/ship/#{URI.escape(v[:name])}.json"
+  list.push "/construction/ship/#{URI.escape(v[:name])}.html"
 end
 
 list.push '/drop/'
