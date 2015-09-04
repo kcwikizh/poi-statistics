@@ -12,10 +12,15 @@
               - (KCConstants.ship.select {|s_id, s_info| s_info[:construction] && t_ids.include?(s_info[:ship_type])}).each do |id, info|
                 %li
                   %p
-                    %a.btn.btn-default= info[:name]
+                    %a.btn.btn-default{:href => "/construction/ship/#{info[:name]}.html"}= info[:name]
   %div.col-xs-4
     %div.panel-group
       %div.panel.panel-primary
         %div.panel-heading
           %h4.panel-title 公式
-        %div.panel-body Coming soon.
+        %div.panel-body
+          %ul
+            - (cache_get("crl").sort{|a, b| b[:count] <=> a[:count]}).take(50).sort{|a, b| a[:items] <=> b[:items]}.each do |r|
+              %li
+                %p
+                  %a{:href => "/construction/recipe/#{r[:items].join('-')}.html"}= r[:items].join('-')

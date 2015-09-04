@@ -12,6 +12,8 @@
       %a.navbar-brand{:href => "/"} poi-statistics
     %div#navbar-main.navbar-collapse.collapse
       %ul.nav.navbar-nav
+        %li{:class => locals[:location] == "construction" ? "active" : nil}
+          %a{:href => "/construction/"} 建造统计
         %li{:class => locals[:location] == "drop" ? "active" : nil}
           %a{:href => "/drop/"} 掉落统计
         %li{:class => locals[:location] == "event" ? "active" : nil}
