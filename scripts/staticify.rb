@@ -9,8 +9,6 @@ File.delete("#{path}/public/index.html") if File.exist?("#{path}/public/index.ht
 `rm -rf #{path}/public/construction` if Dir.exists?("#{path}/public/construction")
 `rm -rf #{path}/public/drop` if Dir.exists?("#{path}/public/drop")
 `rm -rf #{path}/public/event` if Dir.exists?("#{path}/public/event")
-`rm -rf #{path}/public/enemy` if Dir.exists?("#{path}/public/enemy")
-`rm -rf #{path}/public/enemy2` if Dir.exists?("#{path}/public/enemy2")
 `rm -rf #{path}/public/wiki` if Dir.exists?("#{path}/public/wiki")
 
 Mongoid.load!("#{path}/config/mongoid.yml", :production)
@@ -50,9 +48,7 @@ list.push '/event/'
 end
 
 [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..63).to_a, (311..317).to_a].flatten.each do |i|
-  list.push "/enemy/#{i}.html"
-  list.push "/enemy2/#{i}.html"
-  list.push "/wiki/drop/#{i}.html"
+  list.push "/wiki/enemy/#{i}.json"
 end
 
 File.open("#{path}/tmp/staticify.lst", "w") {|f| f.write(list.join("\n"))}
