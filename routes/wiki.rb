@@ -70,8 +70,10 @@ get '/wiki/enemy/:mid.json' do
 
   enemy_hash = {}
   DropShipRecord.where(mapId: map_id).distinct(:cellId).sort.each do |cell_id|
-    enemy_hash[KCConstants.cells[map_id][cell_id]] ||= []
-    enemy_hash[KCConstants.cells[map_id][cell_id]].push cell_id
+    if KCConstants.cells[map_id].include? cell_id
+      enemy_hash[KCConstants.cells[map_id][cell_id]] ||= []
+      enemy_hash[KCConstants.cells[map_id][cell_id]].push cell_id
+    end
   end
 
   map = %Q{
