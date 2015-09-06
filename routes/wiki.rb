@@ -90,7 +90,7 @@ get '/wiki/enemy/:mid.json' do
 
   enemies = []
   enemy_hash.each do |enemy_name, cell_id_list|
-    enemy_name =~ /([^\(]+).+?-([A-Z])\)/
+    enemy_name =~ /(.+?)\(\d+-\d+-([A-Z])\)/
     name = $1; pos = $2
 
     if map_id > 310
