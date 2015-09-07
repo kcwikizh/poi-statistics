@@ -1,6 +1,5 @@
 require 'haml'
 require 'json'
-require_relative '../helpers/cache_helpers'
 
 get '/construction/?' do
   map = %Q{
