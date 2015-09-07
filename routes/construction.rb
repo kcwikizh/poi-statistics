@@ -22,7 +22,7 @@ get '/construction/?' do
   }
 
   recipe = []
-  CreateShipRecord.where(:origin.exists => true)
+  CreateShipRecord.where(:origin => /Reporter/)
     .map_reduce(map, reduce).out(inline: 1).each do |q|
       recipe.push({
         items: q['_id'].split('-').map(&:to_i),
@@ -108,7 +108,7 @@ get '/construction/ship/:name.?:format?' do
 
   recipes = []
   total_count = 0
-  CreateShipRecord.where(:origin.exists => true).where(shipId: ship_id)
+  CreateShipRecord.where(:origin => /Reporter/).where(shipId: ship_id)
     .map_reduce(map, reduce).out(inline: 1).each do |q|
       secretary = []
       q['value']['secretary'].each do |k, v|
@@ -215,7 +215,7 @@ get '/construction/recipe/:fuel-:ammo-:steel-:bauxite-:devkit.?:format?' do
 
   ships = []
   total_kdock_count = [0, 0, 0, 0]
-  CreateShipRecord.where(:origin.exists => true).where(items: recipe)
+  CreateShipRecord.where(:origin => /Reporter/).where(items: recipe)
     .map_reduce(map, reduce).out(inline: 1).each do |q|
       secretary = []
       q['value']['secretary'].each do |k, v|
