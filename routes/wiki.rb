@@ -97,7 +97,7 @@ get '/wiki/enemy/:mid.json' do
       enemy_lv_fleets = []
       [3, 2, 1].each do |i|
         enemy_fleets = []
-        DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :enemy => name, :mapLv => i)
+        DropShipRecord.where(:mapId => map_id, :quest => KCConstants.maps[map_id], :cellId.in => cell_id_list, :enemy => name, :mapLv => i)
           .map_reduce(map, reduce).out(inline: 1).each do |q|
             data = q['_id'].split('/').map(&:to_i)
             enemy_fleets.push({
@@ -118,7 +118,7 @@ get '/wiki/enemy/:mid.json' do
       })
     else
       enemy_fleets = []
-      DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :enemy => name)
+      DropShipRecord.where(:mapId => map_id, :quest => KCConstants.maps[map_id], :cellId.in => cell_id_list, :enemy => name)
         .map_reduce(map, reduce).out(inline: 1).each do |q|
           data = q['_id'].split('/').map(&:to_i)
           enemy_fleets.push({
@@ -138,4 +138,3 @@ get '/wiki/enemy/:mid.json' do
   json_obj = enemies
   json_obj.to_json
 end
-
