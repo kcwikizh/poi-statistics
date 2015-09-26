@@ -2663,7 +2663,7 @@ class KCConstants
       :name => '秋雲',
       :ship_type => 'dd',
       :rare => true,
-      :construction => false,
+      :construction => true,
       :drop => true,
     },
     133 => {
@@ -2769,7 +2769,7 @@ class KCConstants
       :name => '香取',
       :ship_type => 'clp',
       :rare => true,
-      :construction => false,
+      :construction => true,
       :drop => true,
     },
     155 => {
