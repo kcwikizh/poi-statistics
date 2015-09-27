@@ -78,13 +78,30 @@ get '/wiki/enemy/:mid.json' do
 
   map = %Q{
     function() {
-      emit(this.enemyShips.join('/') + '/' + this.enemyFormation, null);
+      var val = {
+        hqLv: [this.teitokuLv, this.teitokuLv]
+      }
+
+      emit(this.enemyShips.join('/') + '/' + this.enemyFormation, val);
     }
   }
 
   reduce = %Q{
     function(key, values) {
-      return null;
+      var reduced = {
+        hqLv: [151, 0]
+      };
+
+      values.forEach(function(value) {
+        if (value.hqLv[0] < reduced.hqLv[0]) {
+          reduced.hqLv[0] = value.hqLv[0];
+        }
+        if (value.hqLv[1] > reduced.hqLv[1]) {
+          reduced.hqLv[1] = value.hqLv[1];
+        }
+      });
+
+      return reduced;
     }
   }
 
@@ -102,7 +119,8 @@ get '/wiki/enemy/:mid.json' do
             data = q['_id'].split('/').map(&:to_i)
             enemy_fleets.push({
               ships: data.take(6),
-              formation: data[-1]
+              formation: data[-1],
+              hqLvRange: q['value']['hqLv'].map(&:to_i)
             })
           end
         enemy_lv_fleets.push({
@@ -123,7 +141,8 @@ get '/wiki/enemy/:mid.json' do
           data = q['_id'].split('/').map(&:to_i)
           enemy_fleets.push({
             ships: data.take(6),
-            formation: data[-1]
+            formation: data[-1],
+            hqLvRange: q['value']['hqLv'].map(&:to_i)
           })
         end
       enemies.push({
