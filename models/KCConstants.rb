@@ -3637,6 +3637,12 @@ class KCConstants
       :construction => false,
       :drop => false,
     },
+    461 => {
+      :name => '翔鶴改二'
+    },
+    466 => {
+      :name => '翔鶴改二甲'
+    },
     501 => {
       :name => '駆逐イ級',
       :deep_sea => true,
