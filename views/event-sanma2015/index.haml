@@ -1,0 +1,27 @@
+%div.container
+  %div.page-header
+    %h1 2015年秋刀鱼祭典
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 矶风掉落统计
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域
+            %td 战斗点
+            %td 掉落次数
+            %td 战斗胜利次数
+            %td 掉落率
+        %tbody
+          - data.sort{|a, b| b[:rate] <=> a[:rate]}.each do |d|
+            %tr
+              %td
+                %a{:href => "/drop/map/#{d[:mapName].gsub(/ \(\d+-\d+\)/, '')}.html"}= d[:mapName]
+              %td= d[:cellName]
+              %td= d[:count]
+              %td= d[:total]
+              %td= "#{d[:rate]}%"
+=haml :duoshuo, :locals => { :key => "event-sanma2015/index",
+                             :title => "活动统计-2015秋刀鱼祭典",
+                             :url => "http://db.kcwiki.moe/event-sanma2015/index.html" }
