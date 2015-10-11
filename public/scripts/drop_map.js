@@ -1037,36 +1037,31 @@ function requestData(map_name) {
 
             items = [];
             $.each(val.ships, function(key, ship) {
-                var sCount = ship.s[0] + ship.s[1] + ship.s[2] + ship.s[3];
-                var aCount = ship.a[0] + ship.a[1] + ship.a[2] + ship.a[3];
-                var bCount = ship.b[0] + ship.b[1] + ship.b[2] + ship.b[3];
+                var sTotalCount = ship.s[0] + ship.s[1] + ship.s[2] + ship.s[3];
+                var aTotalCount = ship.a[0] + ship.a[1] + ship.a[2] + ship.a[3];
+                var bTotalCount = ship.b[0] + ship.b[1] + ship.b[2] + ship.b[3];
 
                 items.push({
                     name: ship.name,
                     type: constants[ship.name].shipType,
                     totalCount: ship.count,
-                    sCount: sCount,
-                    aCount: aCount,
-                    bCount: bCount,
-                    cCount: ship.c[0] + ship.c[1] + ship.c[2] + ship.c[3],
-                    dCount: ship.d[0] + ship.d[1] + ship.d[2] + ship.d[3],
-                    eCount: ship.e[0] + ship.e[1] + ship.e[2] + ship.e[3],
+                    sTotalCount: sTotalCount,
+                    aTotalCount: aTotalCount,
+                    bTotalCount: bTotalCount,
                     hqLvRange: ship.detail.hqLvRange.join(' ~ '),
-                    dropRate: ((sCount + aCount + bCount) * 100 / (val.winCount[0] + val.winCount[1] + val.winCount[2] + val.winCount[3])).toFixed(3),
+                    dropRate: ((sTotalCount + aTotalCount + bTotalCount) * 100 / val.count).toFixed(3),
                     mapLvCount: ship.detail.mapLvSet,
                     enemyCount: ship.detail.enemySet,
-                    winDropRate0: (ship.detail.mapLvSet[0] * 100 / val.winCount[0]).toFixed(3),
-                    winDropRate1: (ship.detail.mapLvSet[1] * 100 / val.winCount[1]).toFixed(3),
-                    winDropRate2: (ship.detail.mapLvSet[2] * 100 / val.winCount[2]).toFixed(3),
-                    winDropRate3: (ship.detail.mapLvSet[3] * 100 / val.winCount[3]).toFixed(3),
+                    lvDropRate0: (ship.detail.mapLvSet[0] * 100 / val.lvCount[0]).toFixed(3),
+                    lvDropRate1: (ship.detail.mapLvSet[1] * 100 / val.lvCount[1]).toFixed(3),
+                    lvDropRate2: (ship.detail.mapLvSet[2] * 100 / val.lvCount[2]).toFixed(3),
+                    lvDropRate3: (ship.detail.mapLvSet[3] * 100 / val.lvCount[3]).toFixed(3),
                     sDropRate0: (ship.s[0] * 100 / val.sCount[0]).toFixed(3),
                     sDropRate1: (ship.s[1] * 100 / val.sCount[1]).toFixed(3),
                     sDropRate2: (ship.s[2] * 100 / val.sCount[2]).toFixed(3),
                     sDropRate3: (ship.s[3] * 100 / val.sCount[3]).toFixed(3),
-                    s: [ship.s[0], ship.s[1], ship.s[2], ship.s[3]]
+                    sCount: ship.s
                 });
-
-                qCount += ship.count;
             });
 
             items.sort(function(a, b) {
@@ -1075,6 +1070,8 @@ function requestData(map_name) {
                 return a.totalCount - b.totalCount;
             });
             table.bootstrapTable('append', items);
+
+            qCount += val.count;
         });
 
         $('.toolbar-content').append("<span> / 查询结果总数: " + qCount + "</span>");
@@ -1103,10 +1100,10 @@ function detailFormatter(index, row) {
     if (row.mapLvCount[1] + row.mapLvCount[2] + row.mapLvCount[3] > 0) {
         html.push("<div><strong>难度统计：</strong></div>");
         html.push("<div class='table-like'><div><span>甲难度</span><span>" +
-            row.mapLvCount[3] + " (" + row.winDropRate3 +
+            row.mapLvCount[3] + " (" + row.lvDropRate3 +
             "%)</span></div><div><span>乙难度</span><span>" + row.mapLvCount[2] +
-            " (" + row.winDropRate2 + "%)</span></div><div><span>丙难度</span><span>" +
-            row.mapLvCount[1] + " (" + row.winDropRate1 + "%)</span></div>" +
+            " (" + row.lvDropRate2 + "%)</span></div><div><span>丙难度</span><span>" +
+            row.mapLvCount[1] + " (" + row.lvDropRate1 + "%)</span></div>" +
             (row.mapLvCount[0] > 0 ? "<div><span>未知</span><span>" +
             row.mapLvCount[0] + "</span></div></div>" : "</div>"));
     }
@@ -1114,16 +1111,16 @@ function detailFormatter(index, row) {
     if (row.mapLvCount[1] + row.mapLvCount[2] + row.mapLvCount[3] > 0) {
         html.push("<div><strong>S胜统计：</strong></div>");
         html.push("<div class='table-like'><div><span>甲难度</span><span>" +
-            row.s[3] + " (" + row.sDropRate3 +
-            "%)</span></div><div><span>乙难度</span><span>" + row.s[2] +
+            row.sCount[3] + " (" + row.sDropRate3 +
+            "%)</span></div><div><span>乙难度</span><span>" + row.sCount[2] +
             " (" + row.sDropRate2 + "%)</span></div><div><span>丙难度</span><span>" +
-            row.s[1] + " (" + row.sDropRate1 + "%)</span></div>" +
-            (row.s[0] > 0 ? "<div><span>未知</span><span>" +
-            row.s[0] + "</span></div></div>" : "</div>"));
+            row.sCount[1] + " (" + row.sDropRate1 + "%)</span></div>" +
+            (row.sCount[0] > 0 ? "<div><span>未知</span><span>" +
+            row.sCount[0] + "</span></div></div>" : "</div>"));
     }
     else {
       html.push("<div><strong>S胜统计：</strong></div>");
-      html.push("<div>" + row.s[0] + " (" + row.sDropRate0 + "%)</div>");
+      html.push("<div>" + row.sCount[0] + " (" + row.sDropRate0 + "%)</div>");
     }
 
     html.push("<div><strong>敌舰队统计：</strong></div>");
