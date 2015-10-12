@@ -9,9 +9,6 @@ get '/event-sanma2015/?' do
       if (this.shipId == 167) {
         val.count = 1;
       }
-      if (this.rank > 'B' && this.rank < 'F') {
-        val.total = 0;
-      }
 
       if (kcsconst[this.mapId] != undefined && kcsconst[this.mapId][this.cellId] != undefined)
         emit(kcsconst[this.mapId][this.cellId], val);
@@ -37,7 +34,8 @@ get '/event-sanma2015/?' do
   data = []
   DropShipRecord.where(
     :id.gte => BSON::ObjectId.from_time(Time.new(2015, 10, 9, 3, 0, 0)),
-    :id.lte => BSON::ObjectId.from_time(Time.now)
+    :id.lte => BSON::ObjectId.from_time(Time.now),
+    :rank => 'S'
   ).map_reduce(map, reduce).scope(kcsconst: KCConstants.cells)
     .out(inline: 1).each do |q|
       if q["value"]["count"].to_i == 0
