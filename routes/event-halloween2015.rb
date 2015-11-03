@@ -54,7 +54,7 @@ get '/event-halloween2015/?' do
       data.push item
   end
 
-  haml :'event-sanma2015/index', :locals => {
+  haml :'event-halloween2015/index', :locals => {
     :location => 'event',
     :title_append => " # 活动统计 - 2015年万圣节",
     :data => data,
