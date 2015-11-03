@@ -43,7 +43,7 @@ KCConstants.maps.each do |map_id, name|
   list.push "/drop/map/#{URI.escape(name)}.html"
 end
 
-list.push '/event-sanma2015/'
+list.push '/event-halloween2015/'
 
 [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..63).to_a, (311..317).to_a].flatten.each do |i|
   list.push "/wiki/enemy/#{i}.json"
