@@ -3,3 +3,4 @@ config/mongoid.yml
 public/**/*.html
 public/**/*.json
 scripts/*.sh
+Gemfile.lock
