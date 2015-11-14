@@ -1,13 +1,21 @@
 development:
-  sessions:
+  clients:
     default:
       database: poi-production
       hosts:
-        - localhost:27017
+        - localhost: 27017
+    poistat:
+      database: poi-stat
+      hosts:
+        - localhost: 27017
 
 production:
-  sessions:
+  clients:
     default:
       database: poi-production
       hosts:
-        - localhost:27017
+        - localhost: 27017
+    poistat:
+      database: poi-stat
+      hosts:
+        - localhost: 27017
