@@ -32,7 +32,7 @@ class KanColleConstant
     },
   }
 
-  def area
+  def self.area
     @@area
   end
 end

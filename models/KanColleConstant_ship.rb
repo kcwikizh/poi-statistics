@@ -2552,4 +2552,8 @@ class KanColleConstant
       :deep_sea => true,
     },
   }
+
+  def self.ship
+    @@ship
+  end
 end

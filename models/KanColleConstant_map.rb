@@ -5,17 +5,17 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵偵察艦",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵はぐれ艦隊",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "敵主力艦隊",
-          :point => "C",
+          :point => :C,
           :index => [3],
           :boss => true,
         },
@@ -26,18 +26,18 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵前衛艦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵主力艦隊",
-          :point => "B",
+          :point => :B,
           :index => [3],
           :boss => true,
         },
         {
           :name => "敵前衛艦隊",
-          :point => "D",
+          :point => :D,
           :index => [4],
         },
       ],
@@ -47,22 +47,22 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵前衛艦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵前衛艦隊",
-          :point => "E",
+          :point => :E,
           :index => [5],
         },
         {
           :name => "敵支援艦隊",
-          :point => "F",
+          :point => :F,
           :index => [6, 9],
         },
         {
           :name => "敵主力艦隊",
-          :point => "G",
+          :point => :G,
           :index => [7],
           :boss => true,
         },
@@ -73,32 +73,32 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵偵察艦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵偵察艦隊",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "敵前衛艦隊",
-          :point => "E",
+          :point => :E,
           :index => [7],
         },
         {
           :name => "敵前衛艦隊",
-          :point => "I",
+          :point => :I,
           :index => [8],
         },
         {
           :name => "敵支援艦隊",
-          :point => "J",
+          :point => :J,
           :index => [9],
         },
         {
           :name => "敵機動部隊",
-          :point => "F",
+          :point => :F,
           :index => [10, 12, 13],
           :boss => true,
         },
@@ -109,37 +109,37 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵偵察潜水艦",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵潜水艦隊A群",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "敵潜水艦隊B群",
-          :point => "D",
+          :point => :D,
           :index => [3],
         },
         {
           :name => "敵潜水艦隊C群",
-          :point => "C",
+          :point => :C,
           :index => [4],
         },
         {
           :name => "敵侵攻打撃艦隊A群",
-          :point => "F",
+          :point => :F,
           :index => [6],
         },
         {
           :name => "敵侵攻打撃艦隊B群",
-          :point => "G",
+          :point => :G,
           :index => [8],
         },
         {
           :name => "敵通商破壊主力艦隊",
-          :point => "I",
+          :point => :I,
           :index => [9, 10],
           :boss => true,
         },
@@ -150,47 +150,47 @@ class KanColleConstant
       :cells => [
         {
           :name => "通商破壊潜水艦隊 II群",
-          :point => "C",
+          :point => :C,
           :index => [2],
         },
         {
           :name => "通商破壊潜水艦隊 III群",
-          :point => "E",
+          :point => :E,
           :index => [3],
         },
         {
           :name => "任務部隊支援 水上打撃部隊",
-          :point => "K",
+          :point => :K,
           :index => [6, 15],
         },
         {
           :name => "任務部隊A群 機動部隊(第一波)",
-          :point => "L",
+          :point => :L,
           :index => [8],
         },
         {
           :name => "任務部隊A群 機動部隊本隊",
-          :point => "J",
+          :point => :J,
           :index => [9],
         },
         {
           :name => "通商破壊潜水艦隊 I群",
-          :point => "I",
+          :point => :I,
           :index => [10],
         },
         {
           :name => "任務部隊A群 機動部隊(第二波)",
-          :point => "D",
+          :point => :D,
           :index => [11, 16],
         },
         {
           :name => "任務部隊C群 機動部隊",
-          :point => "F",
+          :point => :F,
           :index => [12],
         },
         {
           :name => "任務部隊C群 前衛部隊",
-          :point => "B",
+          :point => :B,
           :index => [13],
         },
       ],
@@ -200,22 +200,22 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵前衛部隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵護衛空母群",
-          :point => "C",
+          :point => :C,
           :index => [4],
         },
         {
           :name => "敵護衛空母群",
-          :point => "F",
+          :point => :F,
           :index => [5],
         },
         {
           :name => "敵主力艦隊",
-          :point => "E",
+          :point => :E,
           :index => [6],
           :boss => true,
         },
@@ -226,22 +226,22 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵水雷戦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵運送船団",
-          :point => "G",
+          :point => :G,
           :index => [4],
         },
         {
           :name => "敵運送船団",
-          :point => "D",
+          :point => :D,
           :index => [6],
         },
         {
           :name => "敵通商破壊艦隊",
-          :point => "F",
+          :point => :F,
           :index => [7],
           :boss => true,
         },
@@ -252,32 +252,32 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵巡洋艦隊",
-          :point => "C",
+          :point => :C,
           :index => [1],
         },
         {
           :name => "敵強襲揚陸艦隊",
-          :point => "H",
+          :point => :H,
           :index => [3],
         },
         {
           :name => "敵巡洋艦隊",
-          :point => "B",
+          :point => :B,
           :index => [5],
         },
         {
           :name => "敵強襲揚陸艦隊",
-          :point => "K",
+          :point => :K,
           :index => [9],
         },
         {
           :name => "敵強襲揚陸艦隊",
-          :point => "F",
+          :point => :F,
           :index => [10],
         },
         {
           :name => "敵主力打撃群",
-          :point => "G",
+          :point => :G,
           :index => [11],
           :boss => true,
         },
@@ -288,63 +288,63 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵巡洋艦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵水上打撃艦隊",
-          :point => "F",
+          :point => :F,
           :index => [3],
         },
         {
           :name => "敵水上打撃艦隊",
-          :point => "C",
+          :point => :C,
           :index => [5],
         },
         {
           :name => "敵空母機動部隊",
-          :point => "D",
+          :point => :D,
           :index => [6],
         },
         {
           :name => "敵水上打撃艦隊",
-          :point => "L",
+          :point => :L,
           :index => [8],
         },
         {
           :name => "敵空母機動部隊",
-          :point => "N",
+          :point => :N,
           :index => [10],
         },
         {
           :name => "敵精鋭水雷戦隊",
-          :point => "I",
+          :point => :I,
           :index => [12],
         },
         {
           :name => "敵空母機動部隊",
-          :point => "H",
+          :point => :H,
           :index => [13],
         },
         {
           :name => "敵精鋭水雷戦隊",
-          :point => "O",
+          :point => :O,
           :index => [14],
         },
         {
           :name => "敵空母機動部隊",
-          :point => "P",
+          :point => :P,
           :index => [15],
         },
         {
           :name => "敵侵攻中核艦隊",
-          :point => "J",
+          :point => :J,
           :index => [16, 17, 18],
           :boss => true,
         },
         {
           :name => "敵空母機動部隊",
-          :point => "G",
+          :point => :G,
           :index => [19],
         },
       ],
@@ -354,37 +354,37 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵水雷戦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵前衛艦隊",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "敵巡洋艦隊",
-          :point => "D",
+          :point => :D,
           :index => [5],
         },
         {
           :name => "敵水上打撃部隊",
-          :point => "E",
+          :point => :E,
           :index => [6],
         },
         {
           :name => "敵機動艦隊",
-          :point => "I",
+          :point => :I,
           :index => [9],
         },
         {
           :name => "敵侵攻部隊",
-          :point => "J",
+          :point => :J,
           :index => [10],
         },
         {
           :name => "敵主力艦隊",
-          :point => "L",
+          :point => :L,
           :index => [12, 15],
           :boss => true,
         },
@@ -395,27 +395,27 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵哨戒艦隊",
-          :point => "D",
+          :point => :D,
           :index => [1],
         },
         {
           :name => "敵哨戒艦隊",
-          :point => "A",
+          :point => :A,
           :index => [2],
         },
         {
           :name => "敵護衛空母群",
-          :point => "F",
+          :point => :F,
           :index => [3],
         },
         {
           :name => "敵護衛空母群",
-          :point => "C",
+          :point => :C,
           :index => [5],
         },
         {
           :name => "敵北方侵攻艦隊",
-          :point => "E",
+          :point => :E,
           :index => [6],
           :boss => true,
         },
@@ -426,27 +426,27 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵水雷戦隊",
-          :point => "E",
+          :point => :E,
           :index => [1],
         },
         {
           :name => "敵水雷戦隊",
-          :point => "A",
+          :point => :A,
           :index => [2],
         },
         {
           :name => "敵水上打撃艦隊",
-          :point => "F",
+          :point => :F,
           :index => [4, 10],
         },
         {
           :name => "敵空母機動部隊",
-          :point => "C",
+          :point => :C,
           :index => [6],
         },
         {
           :name => "敵キス島包囲艦隊",
-          :point => "H",
+          :point => :H,
           :index => [8],
           :boss => true,
         },
@@ -457,32 +457,32 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵前衛艦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵護衛空母群",
-          :point => "E",
+          :point => :E,
           :index => [3],
         },
         {
           :name => "敵護衛空母群",
-          :point => "C",
+          :point => :C,
           :index => [5],
         },
         {
           :name => "敵空母機動部隊",
-          :point => "I",
+          :point => :I,
           :index => [7, 12],
         },
         {
           :name => "敵空母機動部隊",
-          :point => "D",
+          :point => :D,
           :index => [8],
         },
         {
           :name => "深海棲艦泊地艦隊",
-          :point => "G",
+          :point => :G,
           :index => [11, 13],
           :boss => true,
         },
@@ -493,52 +493,52 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵哨戒艦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵哨戒艦隊",
-          :point => "J",
+          :point => :J,
           :index => [2],
         },
         {
           :name => "敵前衛艦隊",
-          :point => "B",
+          :point => :B,
           :index => [4],
         },
         {
           :name => "敵前衛艦隊",
-          :point => "F",
+          :point => :F,
           :index => [5, 16],
         },
         {
           :name => "敵前衛艦隊",
-          :point => "L",
+          :point => :L,
           :index => [6, 17],
         },
         {
           :name => "深海棲艦水上打撃艦隊",
-          :point => "H",
+          :point => :H,
           :index => [10, 18, 19],
         },
         {
           :name => "深海棲艦泊地防衛艦隊",
-          :point => "N",
+          :point => :N,
           :index => [11],
         },
         {
           :name => "深海棲艦泊地防衛艦隊",
-          :point => "D",
+          :point => :D,
           :index => [12],
         },
         {
           :name => "深海棲艦泊地防衛艦隊",
-          :point => "I",
+          :point => :I,
           :index => [13],
         },
         {
           :name => "深海棲艦北方艦隊中枢",
-          :point => "E",
+          :point => :E,
           :index => [15, 20],
           :boss => true,
         },
@@ -549,37 +549,37 @@ class KanColleConstant
       :cells => [
         {
           :name => "北方前衛警戒部隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "北方派遣任務部隊",
-          :point => "C",
+          :point => :C,
           :index => [4],
         },
         {
           :name => "北方遊撃部隊",
-          :point => "E",
+          :point => :E,
           :index => [5, 12],
         },
         {
           :name => "北方増援部隊前衛A",
-          :point => "B",
+          :point => :B,
           :index => [6, 13],
         },
         {
           :name => "北方増援部隊前衛B",
-          :point => "G",
+          :point => :G,
           :index => [7],
         },
         {
           :name => "北方AL泊地",
-          :point => "F",
+          :point => :F,
           :index => [8, 14],
         },
         {
           :name => "北方増援部隊主力",
-          :point => "K",
+          :point => :K,
           :index => [11, 15],
           :boss => true,
         },
@@ -590,42 +590,42 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵水雷戦隊",
-          :point => "E",
+          :point => :E,
           :index => [1],
         },
         {
           :name => "敵哨戒艦隊",
-          :point => "A",
+          :point => :A,
           :index => [2],
         },
         {
           :name => "東方潜水艦隊",
-          :point => "H",
+          :point => :H,
           :index => [3],
         },
         {
           :name => "東方艦隊",
-          :point => "I",
+          :point => :I,
           :index => [5, 10, 11],
         },
         {
           :name => "東方潜水艦隊",
-          :point => "B",
+          :point => :B,
           :index => [6],
         },
         {
           :name => "東方潜水艦隊",
-          :point => "G",
+          :point => :G,
           :index => [7],
         },
         {
           :name => "東方艦隊",
-          :point => "C",
+          :point => :C,
           :index => [8],
         },
         {
           :name => "東方派遣艦隊",
-          :point => "D",
+          :point => :D,
           :index => [9, 12],
           :boss => true,
         },
@@ -636,32 +636,32 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵潜水教導艦隊",
-          :point => "F",
+          :point => :F,
           :index => [1],
         },
         {
           :name => "敵前衛艦隊",
-          :point => "A",
+          :point => :A,
           :index => [2],
         },
         {
           :name => "敵潜水教導艦隊",
-          :point => "C",
+          :point => :C,
           :index => [6],
         },
         {
           :name => "敵空母機動部隊",
-          :point => "H",
+          :point => :H,
           :index => [7, 11, 12],
         },
         {
           :name => "敵補給船団",
-          :point => "I",
+          :point => :I,
           :index => [8],
         },
         {
           :name => "東方主力艦隊",
-          :point => "D",
+          :point => :D,
           :index => [9, 13],
           :boss => true,
         },
@@ -672,47 +672,47 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵前衛艦隊",
-          :point => "J",
+          :point => :J,
           :index => [1],
         },
         {
           :name => "敵前衛艦隊",
-          :point => "A",
+          :point => :A,
           :index => [2],
         },
         {
           :name => "敵潜水艦隊",
-          :point => "F",
+          :point => :F,
           :index => [4, 14, 15],
         },
         {
           :name => "敵潜水艦隊",
-          :point => "K",
+          :point => :K,
           :index => [5, 16],
         },
         {
           :name => "敵潜水艦隊",
-          :point => "D",
+          :point => :D,
           :index => [7, 17, 18],
         },
         {
           :name => "敵空母機動部隊",
-          :point => "G",
+          :point => :G,
           :index => [8, 19, 20],
         },
         {
           :name => "敵支援艦隊",
-          :point => "H",
+          :point => :H,
           :index => [9],
         },
         {
           :name => "敵補給船団",
-          :point => "M",
+          :point => :M,
           :index => [12],
         },
         {
           :name => "東方主力艦隊",
-          :point => "I",
+          :point => :I,
           :index => [13],
           :boss => true,
         },
@@ -723,37 +723,37 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵前衛艦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵潜水艦哨戒線",
-          :point => "I",
+          :point => :I,
           :index => [3],
         },
         {
           :name => "敵潜水艦哨戒線",
-          :point => "F",
+          :point => :F,
           :index => [4],
         },
         {
           :name => "敵東方艦隊残存部隊",
-          :point => "C",
+          :point => :C,
           :index => [5, 11],
         },
         {
           :name => "敵空母機動部隊",
-          :point => "G",
+          :point => :G,
           :index => [7, 12, 13],
         },
         {
           :name => "敵東方艦隊残存部隊",
-          :point => "J",
+          :point => :J,
           :index => [8, 14],
         },
         {
           :name => "敵東方中枢艦隊",
-          :point => "H",
+          :point => :H,
           :index => [10],
           :boss => true,
         },
@@ -764,42 +764,42 @@ class KanColleConstant
       :cells => [
         {
           :name => "東洋方面威力偵察部隊",
-          :point => "D",
+          :point => :D,
           :index => [3],
         },
         {
           :name => "東洋方面反攻先遣隊",
-          :point => "C",
+          :point => :C,
           :index => [4, 14],
         },
         {
           :name => "東洋艦隊新編水上打撃部隊",
-          :point => "E",
+          :point => :E,
           :index => [5],
         },
         {
           :name => "深海東洋方面潜水艦隊",
-          :point => "F",
+          :point => :F,
           :index => [6, 15, 16],
         },
         {
           :name => "深海東洋艦隊機動部隊",
-          :point => "H",
+          :point => :H,
           :index => [8, 17],
         },
         {
           :name => "東洋方面後方兵站部隊",
-          :point => "I",
+          :point => :I,
           :index => [9],
         },
         {
           :name => "深海東洋方面増援艦隊",
-          :point => "J",
+          :point => :J,
           :index => [10, 18],
         },
         {
           :name => "リランカ島港湾守備隊",
-          :point => "M",
+          :point => :M,
           :index => [13, 19],
           :boss => true,
         },
@@ -810,32 +810,32 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵前衛哨戒艦隊",
-          :point => "A",
+          :point => :A,
           :index => [2],
         },
         {
           :name => "敵潜水艦哨戒線",
-          :point => "D",
+          :point => :D,
           :index => [3],
         },
         {
           :name => "敵水上打撃部隊",
-          :point => "F",
+          :point => :F,
           :index => [5, 10],
         },
         {
           :name => "敵空母機動部隊",
-          :point => "E",
+          :point => :E,
           :index => [6, 11],
         },
         {
           :name => "敵護衛空母群",
-          :point => "H",
+          :point => :H,
           :index => [7, 12],
         },
         {
           :name => "敵前線司令艦隊",
-          :point => "I",
+          :point => :I,
           :index => [9],
           :boss => true,
         },
@@ -846,42 +846,42 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵前衛艦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵潜水艦隊",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "敵潜水艦隊",
-          :point => "F",
+          :point => :F,
           :index => [3],
         },
         {
           :name => "敵水上打撃部隊",
-          :point => "G",
+          :point => :G,
           :index => [4, 11],
         },
         {
           :name => "敵任務部隊",
-          :point => "C",
+          :point => :C,
           :index => [6],
         },
         {
           :name => "敵補給部隊",
-          :point => "I",
+          :point => :I,
           :index => [7],
         },
         {
           :name => "敵任務部隊",
-          :point => "J",
+          :point => :J,
           :index => [9, 13],
         },
         {
           :name => "敵機動部隊本隊",
-          :point => "D",
+          :point => :D,
           :index => [10, 14],
           :boss => true,
         },
@@ -892,37 +892,37 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵潜水警戒艦隊",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "敵前衛警戒艦隊",
-          :point => "C",
+          :point => :C,
           :index => [3],
         },
         {
           :name => "敵泊地護衛主力艦隊",
-          :point => "D",
+          :point => :D,
           :index => [4, 12],
         },
         {
           :name => "敵任務部隊",
-          :point => "E",
+          :point => :E,
           :index => [5],
         },
         {
           :name => "敵泊投錨中輸送船団",
-          :point => "F",
+          :point => :F,
           :index => [6],
         },
         {
           :name => "敵支援艦隊",
-          :point => "J",
+          :point => :J,
           :index => [10],
         },
         {
           :name => "敵サーモン方面主力艦隊",
-          :point => "K",
+          :point => :K,
           :index => [11],
           :boss => true,
         },
@@ -933,53 +933,53 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵ピケット艦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵任務部隊",
-          :point => "C",
+          :point => :C,
           :index => [3],
         },
         {
           :name => "敵前衛艦隊",
-          :point => "F",
+          :point => :F,
           :index => [4],
         },
         {
           :name => "敵任務部隊",
-          :point => "G",
+          :point => :G,
           :index => [5],
         },
         {
           :name => "敵潜水艦隊",
-          :point => "I",
+          :point => :I,
           :index => [6],
         },
         {
           :name => "敵水上打撃部隊",
-          :point => "N",
+          :point => :N,
           :index => [10],
         },
         {
           :name => "敵機動部隊主力",
-          :point => "H",
+          :point => :H,
           :index => [12, 17],
         },
         {
           :name => "敵機動部隊支隊",
-          :point => "K",
+          :point => :K,
           :index => [13],
         },
         {
           :name => "敵補給部隊本体",
-          :point => "O",
+          :point => :O,
           :index => [15, 19, 20],
           :boss => true,
         },
         {
           :name => "敵潜水部隊",
-          :point => "I",
+          :point => :I,
           :index => [16],
         },
       ],
@@ -989,57 +989,57 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵前衛警戒部隊",
-          :point => "B",
+          :point => :B,
           :index => [1],
         },
         {
           :name => "敵前衛警戒部隊",
-          :point => "A",
+          :point => :A,
           :index => [2],
         },
         {
           :name => "敵対潜警戒部隊",
-          :point => "F",
+          :point => :F,
           :index => [3],
         },
         {
           :name => "敵潜水艦隊",
-          :point => "C",
+          :point => :C,
           :index => [4],
         },
         {
           :name => "敵任務部隊前衛",
-          :point => "D",
+          :point => :D,
           :index => [5],
         },
         {
           :name => "敵新鋭戦艦部隊",
-          :point => "K",
+          :point => :K,
           :index => [6],
         },
         {
           :name => "敵対潜警戒部隊",
-          :point => "M",
+          :point => :M,
           :index => [7],
         },
         {
           :name => "敵水上打撃部隊",
-          :point => "G",
+          :point => :G,
           :index => [10, 15],
         },
         {
           :name => "敵水上打撃部隊",
-          :point => "H",
+          :point => :H,
           :index => [11, 16],
         },
         {
           :name => "敵水上打撃部隊",
-          :point => "E",
+          :point => :E,
           :index => [12, 17],
         },
         {
           :name => "敵任務部隊本隊",
-          :point => "N",
+          :point => :N,
           :index => [14, 18],
           :boss => true,
         },
@@ -1050,37 +1050,37 @@ class KanColleConstant
       :cells => [
         {
           :name => "中部海域 敵遊撃部隊",
-          :point => "B",
+          :point => :B,
           :index => [3],
         },
         {
           :name => "中部海域哨戒戦 A地点",
-          :point => "C",
+          :point => :C,
           :index => [4],
         },
         {
           :name => "中部海域哨戒戦 B地点",
-          :point => "D",
+          :point => :D,
           :index => [5, 12, 13],
         },
         {
           :name => "敵機動部隊",
-          :point => "H",
+          :point => :H,
           :index => [7],
         },
         {
           :name => "中部海域哨戒戦 D地点",
-          :point => "F",
+          :point => :F,
           :index => [8],
         },
         {
           :name => "中部海域 敵輸送船団",
-          :point => "J",
+          :point => :J,
           :index => [10],
         },
         {
           :name => "敵回航中空母",
-          :point => "K",
+          :point => :K,
           :index => [11],
           :boss => true,
         },
@@ -1091,37 +1091,37 @@ class KanColleConstant
       :cells => [
         {
           :name => "敵攻略支援部隊A群",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "敵攻略支援部隊B群",
-          :point => "B",
+          :point => :B,
           :index => [2, 12],
         },
         {
           :name => "敵空母機動部隊",
-          :point => "E",
+          :point => :E,
           :index => [5, 14],
         },
         {
           :name => "敵高速水上打撃部隊",
-          :point => "G",
+          :point => :G,
           :index => [7],
         },
         {
           :name => "敵任務部隊B群",
-          :point => "H",
+          :point => :H,
           :index => [9, 16],
         },
         {
           :name => "敵任務部隊A群",
-          :point => "I",
+          :point => :I,
           :index => [10],
         },
         {
           :name => "敵攻略部隊本体",
-          :point => "K",
+          :point => :K,
           :index => [11, 17, 18],
           :boss => true,
         },
@@ -1132,32 +1132,32 @@ class KanColleConstant
       :cells => [
         {
           :name => "泊地哨戒線",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "深海潜水艦隊",
-          :point => "C",
+          :point => :C,
           :index => [3],
         },
         {
           :name => "深海ピケット艦隊",
-          :point => "D",
+          :point => :D,
           :index => [4],
         },
         {
           :name => "深海哨戒水雷戦隊",
-          :point => "E",
+          :point => :E,
           :index => [5, 11],
         },
         {
           :name => "深海中部水上打撃群",
-          :point => "F",
+          :point => :F,
           :index => [6],
         },
         {
           :name => "留守泊地旗艦艦隊",
-          :point => "J",
+          :point => :J,
           :index => [10],
           :boss => true,
         },
@@ -1168,32 +1168,32 @@ class KanColleConstant
       :cells => [
         {
           :name => "ピケット艦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "深海打撃任務部隊",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "前衛哨戒潜水艦B群",
-          :point => "C",
+          :point => :C,
           :index => [3],
         },
         {
           :name => "深海巡洋艦戦隊",
-          :point => "E",
+          :point => :E,
           :index => [5],
         },
         {
           :name => "前衛哨戒潜水艦A群",
-          :point => "F",
+          :point => :F,
           :index => [6],
         },
         {
           :name => "警戒艦隊旗艦",
-          :point => "Z",
+          :point => :Z,
           :index => [8, 10],
           :boss => true,
         },
@@ -1204,47 +1204,47 @@ class KanColleConstant
       :cells => [
         {
           :name => "前衛艦隊",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "潜水艦哨戒線",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "水上打撃部隊I群",
-          :point => "D",
+          :point => :D,
           :index => [4],
         },
         {
           :name => "水上打撃部隊II群",
-          :point => "E",
+          :point => :E,
           :index => [5],
         },
         {
           :name => "任務部隊II群",
-          :point => "F",
+          :point => :F,
           :index => [6],
         },
         {
           :name => "ソロモン泊地輸送船団",
-          :point => "G",
+          :point => :G,
           :index => [7, 14],
         },
         {
           :name => "任務部隊I群",
-          :point => "H",
+          :point => :H,
           :index => [8, 15],
         },
         {
           :name => "任務部隊III群",
-          :point => "J",
+          :point => :J,
           :index => [10],
         },
         {
           :name => "ソロモン泊地投錨艦隊旗艦",
-          :point => "Z",
+          :point => :Z,
           :index => [13, 17],
           :boss => true,
         },
@@ -1255,47 +1255,47 @@ class KanColleConstant
       :cells => [
         {
           :name => "深海水雷艦隊",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "任務部隊哨戒艦隊",
-          :point => "C",
+          :point => :C,
           :index => [3],
         },
         {
           :name => "任務部隊III群",
-          :point => "D",
+          :point => :D,
           :index => [4, 13],
         },
         {
           :name => "任務部隊IV群",
-          :point => "E",
+          :point => :E,
           :index => [5, 14],
         },
         {
           :name => "任務支援部隊",
-          :point => "G",
+          :point => :G,
           :index => [7, 15],
         },
         {
           :name => "任務部隊II群",
-          :point => "H",
+          :point => :H,
           :index => [8],
         },
         {
           :name => "任務部隊I群",
-          :point => "I",
+          :point => :I,
           :index => [9],
         },
         {
           :name => "深海飛行場基地",
-          :point => "X",
+          :point => :X,
           :index => [11],
         },
         {
           :name => "深海任務部隊旗艦艦隊",
-          :point => "Z",
+          :point => :Z,
           :index => [12, 16, 17],
           :boss => true,
         },
@@ -1306,47 +1306,47 @@ class KanColleConstant
       :cells => [
         {
           :name => "哨戒潜水艦A群",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "哨戒潜水艦B群",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "任務部隊支隊",
-          :point => "C",
+          :point => :C,
           :index => [3],
         },
         {
           :name => "ソロモン方面守備艦隊前衛",
-          :point => "E",
+          :point => :E,
           :index => [5, 14],
         },
         {
           :name => "任務部隊前衛艦隊",
-          :point => "F",
+          :point => :F,
           :index => [6],
         },
         {
           :name => "ソロモン方面守備艦隊後衛",
-          :point => "G",
+          :point => :G,
           :index => [7],
         },
         {
           :name => "深海任務部隊主隊",
-          :point => "H",
+          :point => :H,
           :index => [8, 15, 16],
         },
         {
           :name => "深海任務部隊支援群",
-          :point => "J",
+          :point => :J,
           :index => [10],
         },
         {
           :name => "深海飛行場基地",
-          :point => "Z",
+          :point => :Z,
           :index => [13, 18],
           :boss => true,
         },
@@ -1357,47 +1357,47 @@ class KanColleConstant
       :cells => [
         {
           :name => "潜水艦哨戒線Aライン",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "深海東洋戦艦部隊",
-          :point => "C",
+          :point => :C,
           :index => [3, 15],
         },
         {
           :name => "深海水雷戦隊",
-          :point => "E",
+          :point => :E,
           :index => [5],
         },
         {
           :name => "東洋方面増援機動部隊B群",
-          :point => "F",
+          :point => :F,
           :index => [6, 16],
         },
         {
           :name => "東洋方面反攻拠点泊地",
-          :point => "G",
+          :point => :G,
           :index => [7],
         },
         {
           :name => "潜水艦哨戒線Bライン",
-          :point => "H",
+          :point => :H,
           :index => [8],
         },
         {
           :name => "東洋方面増援機動部隊A群",
-          :point => "J",
+          :point => :J,
           :index => [10],
         },
         {
           :name => "深海増援輸送船団",
-          :point => "K",
+          :point => :K,
           :index => [11, 17],
         },
         {
           :name => "東洋方面増援艦隊旗艦",
-          :point => "Z",
+          :point => :Z,
           :index => [14],
           :boss => true,
         },
@@ -1408,57 +1408,57 @@ class KanColleConstant
       :cells => [
         {
           :name => "潜水哨戒艦隊II群",
-          :point => "A",
+          :point => :A,
           :index => [1],
         },
         {
           :name => "深海高速水雷戦隊",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "航空集団偵察部隊",
-          :point => "C",
+          :point => :C,
           :index => [3],
         },
         {
           :name => "深海航空集団支援打撃部隊",
-          :point => "D",
+          :point => :D,
           :index => [4],
         },
         {
           :name => "潜水哨戒艦隊I群",
-          :point => "E",
+          :point => :E,
           :index => [5, 18],
         },
         {
           :name => "前衛警戒任務部隊",
-          :point => "F",
+          :point => :F,
           :index => [6, 19, 20],
         },
         {
           :name => "深海航空集団D群",
-          :point => "H",
+          :point => :H,
           :index => [8],
         },
         {
           :name => "深海航空集団B群",
-          :point => "K",
+          :point => :K,
           :index => [11],
         },
         {
           :name => "深海航空集団C群",
-          :point => "L",
+          :point => :L,
           :index => [12, 21],
         },
         {
           :name => "深海航空集団A群",
-          :point => "M",
+          :point => :M,
           :index => [13],
         },
         {
           :name => "深海航空集団旗艦艦隊",
-          :point => "Z",
+          :point => :Z,
           :index => [17, 22, 23],
           :boss => true,
         },
@@ -1469,62 +1469,62 @@ class KanColleConstant
       :cells => [
         {
           :name => "深海潜水艦防衛線Aライン",
-          :point => "B",
+          :point => :B,
           :index => [2],
         },
         {
           :name => "深海FS方面輸送船団",
-          :point => "C",
+          :point => :C,
           :index => [3],
         },
         {
           :name => "FS方面深海再編成部隊",
-          :point => "E",
+          :point => :E,
           :index => [5],
         },
         {
           :name => "深海潜水艦防衛線Bライン",
-          :point => "F",
+          :point => :F,
           :index => [6],
         },
         {
           :name => "深海潜水艦防衛線Cライン",
-          :point => "I",
+          :point => :I,
           :index => [9],
         },
         {
           :name => "FS方面残存航空集団B群",
-          :point => "J",
+          :point => :J,
           :index => [10, 21],
         },
         {
           :name => "FS方面残存航空集団C群",
-          :point => "K",
+          :point => :K,
           :index => [11],
         },
         {
           :name => "FS方面残存水上打撃部隊",
-          :point => "L",
+          :point => :L,
           :index => [12, 22],
         },
         {
           :name => "FS方面残存航空集団A群",
-          :point => "M",
+          :point => :M,
           :index => [13, 23],
         },
         {
           :name => "深海FS方面泊地防衛部隊",
-          :point => "X",
+          :point => :X,
           :index => [17],
         },
         {
           :name => "深海FS諸島防衛施設部隊",
-          :point => "Y",
+          :point => :Y,
           :index => [18, 25],
         },
         {
           :name => "FS方面深海中枢艦隊",
-          :point => "Z",
+          :point => :Z,
           :index => [19, 26],
           :boss => true,
         },
@@ -1532,7 +1532,7 @@ class KanColleConstant
     },
   }
 
-  def map
+  def self.map
     @@map
   end
 end

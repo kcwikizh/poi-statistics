@@ -11,7 +11,7 @@ class KanColleConstant
     14 => '第四警戒航行序列'
   }
 
-  def formation
+  def self.formation
     @@formation
   end
 end
