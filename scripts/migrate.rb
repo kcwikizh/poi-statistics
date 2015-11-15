@@ -22,7 +22,7 @@ first_time = migrate_state.migrate_time
 last_time = DropShipRecord.last.id.generation_time
 migrate_range = {
   from: Time.new(first_time.year, first_time.month, first_time.day, first_time.hour),
-  to: Time.new(last_time.year, last_time.month, last_time.day, last_time.hour - 1)
+  to: Time.new(last_time.year, last_time.month, last_time.day, last_time.hour) - 3600
 }
 
 migrate_time = migrate_range[:from]
