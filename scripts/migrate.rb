@@ -152,6 +152,7 @@ until migrate_time == migrate_range[:to]
             hqLv = query['value']['hqLv'].map(&:to_i)
             drop_stat.min_hq_lv = hqLv[0] if hqLv[0] < drop_stat.min_hq_lv
             drop_stat.max_hq_lv = hqLv[1] if hqLv[1] > drop_stat.max_hq_lv
+            drop_stat.enemy_fleets ||= []
 
             query['value']['enemy'].each do |key, value|
               fleet = key.split('/').map(&:to_i)
