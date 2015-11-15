@@ -29,7 +29,6 @@ migrate_time = migrate_range[:from]
 until migrate_time == migrate_range[:to]
   clock_no = migrate_time.hour
   KanColleConstant.map.each do |map_id, map_obj|
-    next if map_id > 11
     map_obj[:cells].each do |cell_obj|
       map_func = %Q{
         function() {
