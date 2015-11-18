@@ -959,6 +959,18 @@ var constants = {
         shipType: "驱逐舰",
         rare: true
     },
+    "Graf Zeppelin": {
+        chineseName: "Graf Zeppelin",
+        nameForSearch: "齐柏林,qibolin,qi bo lin",
+        shipType: "空母",
+        rare: true
+    },
+    "萩風": {
+        chineseName: "萩风",
+        nameForSearch: "萩风,qiufeng,qiu feng",
+        shipType: "驱逐舰",
+        rare: true
+    }
 }
 
 var searchTag = {
@@ -1016,6 +1028,11 @@ var mapContants = {
     '西方海域戦線 カレー洋': '2015年夏季活动/扩展作战#E-5',
     'ソロモン海東部海域': '2015年夏季活动/扩展作战#E-6',
     'FS方面海域': '2015年夏季活动/扩展作战#E-7',
+    'ショートランド泊地沖': '2015年秋季活动/E-1',
+    'コロネハイカラ島沖': '2015年秋季活动/E-2',
+    'コロネハイカラ島東方沖': '2015年秋季活动/E-3',
+    '西方海域戦線 ステビア海': '2015年秋季活动/E-4',
+    'バニラ湾沖': '2015年秋季活动/E-5',
 }
 
 $(document).ready(function() {
@@ -1072,7 +1089,14 @@ function requestData(map_name) {
             items.sort(function(a, b) {
                 if (a.name == "(无)") return 1;
                 if (b.name == "(无)") return -1;
-                return a.totalCount - b.totalCount;
+                if (a.sCount == 0) {
+                  if (b.sCount == 0) return a.totalCount - b.totalCount;
+                  else return 1;
+                }
+                else {
+                  if (b.sCount == 0) return -1;
+                  else return a.totalCount - b.totalCount;
+                }
             });
             table.bootstrapTable('append', items);
         });
