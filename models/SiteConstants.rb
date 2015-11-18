@@ -36,6 +36,11 @@ class SiteConstants
     315 => 'http://upload.kcwiki.moe/commons/thumb/1/1d/MapE-5Summer2015.png/600px-MapE-5Summer2015.png',
     316 => 'http://upload.kcwiki.moe/commons/thumb/5/5a/MapE-6Summer2015.png/600px-MapE-6Summer2015.png',
     317 => 'http://upload.kcwiki.moe/commons/thumb/0/05/MapE-7Summer2015.png/600px-MapE-7Summer2015.png',
+    321 => 'http://upload.kcwiki.moe/commons/7/7f/MapE-1Autumn2015.png',
+    322 => 'http://upload.kcwiki.moe/commons/0/0d/MapE-2Autumn2015.png',
+    323 => 'http://upload.kcwiki.moe/commons/8/8d/MapE-3Autumn2015.png',
+    324 => 'http://upload.kcwiki.moe/commons/e/e9/MapE-4Autumn2015.png',
+    325 => 'http://upload.kcwiki.moe/commons/2/21/MapE-5Autumn2015.png',
   }
 
   class << self
