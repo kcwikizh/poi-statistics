@@ -107,8 +107,8 @@ get '/wiki/enemy/:mid.json' do
 
   enemies = []
   enemy_hash.each do |enemy_name, cell_id_list|
-    enemy_name =~ /(.+?)\(\d+-\d+-([A-Z])\)/
-    name = $1; pos = $2
+    enemy_name =~ /(?<name>.+?)\(((E\d+)|(\d+-\d+))-(?<pos>[A-Z])\)/
+    name = $~["name"]; pos = $~["pos"]
 
     if map_id > 310
       enemy_lv_fleets = []
