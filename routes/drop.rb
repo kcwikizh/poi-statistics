@@ -151,7 +151,7 @@ get '/drop/map/:name.?:format?' do
     win_count = [0, 0, 0, 0]
     enemy_name =~ /^(.+?)\(/
     e_name = $1
-    DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :enemy => e_name, :quest => KCConstants.maps[map_id])
+    DropShipRecord.where(:mapId => map_id, :cellId.in => cell_id_list, :quest => KCConstants.maps[map_id])
       .map_reduce(map, reduce).out(inline: 1).each do |q|
         enemies = []
         q['value']['enemy'].each do |k, v|
