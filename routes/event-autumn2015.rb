@@ -98,7 +98,7 @@ get '/event-autumn2015/:mid.?:format?' do
   result[:first][:hqLvMax] = PassEventRecord.where(:mapId => map_id, :mapLv => 3).max(:teitokuLv).to_i
   case map_id
   when 321
-    result[:first][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId => 1).count
+    result[:first][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId.in => [3, 5]).count
     result[:first][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId.in => [10, 14], :rank.in =>['S', 'A']).count
   when 322
     result[:first][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 3, :cellId.in => [2, 3, 4]).count
@@ -123,7 +123,7 @@ get '/event-autumn2015/:mid.?:format?' do
   end
   case map_id
   when 321
-    result[:second][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId => 1).count
+    result[:second][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId.in => [3, 5]).count
     result[:second][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId.in => [10, 14], :rank.in =>['S', 'A']).count
   when 322
     result[:second][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId.in => [2, 3, 4]).count
@@ -148,7 +148,7 @@ get '/event-autumn2015/:mid.?:format?' do
   result[:third][:hqLvMax] = PassEventRecord.where(:mapId => map_id, :mapLv => 1).max(:teitokuLv).to_i
   case map_id
   when 321
-    result[:third][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId => 1).count
+    result[:third][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId.in => [3, 5]).count
     result[:third][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId.in => [10, 14], :rank.in =>['S', 'A']).count
   when 322
     result[:third][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 1, :cellId.in => [2, 3, 4]).count
