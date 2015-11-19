@@ -970,6 +970,12 @@ var constants = {
         nameForSearch: "萩风,qiufeng,qiu feng",
         shipType: "驱逐舰",
         rare: true
+    },
+    "嵐": {
+        chineseName: "岚",
+        nameForSearch: "岚,lan",
+        shipType: "驱逐舰",
+        rare: true
     }
 }
 
