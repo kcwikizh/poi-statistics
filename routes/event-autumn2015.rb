@@ -134,7 +134,7 @@ get '/event-autumn2015/:mid.?:format?' do
   when 324
     result[:second][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId.in => [2, 3, 4]).count
     result[:second][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId => 15, :rank.in =>['S', 'A']).count
-  when 315
+  when 325
     result[:second][:battleTotal] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId.in => [2, 6, 7]).count
     result[:second][:battleBoss] = DropShipRecord.where(:mapId => map_id, :mapLv => 2, :cellId => 14, :rank.in =>['S', 'A']).count
   end
