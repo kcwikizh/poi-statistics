@@ -17,6 +17,9 @@
       %p 数据由POI浏览器自动采集，可以保证数据的真实性。
       %p 借助poi浏览器庞大的用户基数和源源不断的数据，保证了数据更加趋近于准确和稳定。我们有能力获得第一手的活动掉落情报。
       %p 网站每天自动更新一次数据，保证了数据的及时。
+      %p 为了维持网站的持续运行，给提督提供更好的浏览体验，舰娘百科正在尝试投放广告。
+      %p 广告的全部收入将用于服务器的支出和维护网站运营，具体的收支明细将会在近期公开。
+      %p 如果广告的投放影响了您的浏览体验，请在下方留言以便我们进行调整。
   %div.row
     %div.col-lg-12
       %h2.page-header Collaborator
@@ -59,11 +62,15 @@
         %li
           %p KanColleViewer
           %p
-            %a{:href => "https://github.com/huoyaoyuan/KCVPlugins/releases", :target => "_blank"}
-              下载插件(for KCV3.8.2)
+            %del
+              %a{:href => "https://github.com/huoyaoyuan/KCVPlugins/releases", :target => "_blank"}
+                下载插件(for KCV3.8.2)
         %li
           %p ElectronicObserver(makai)
           %p 已内置数据发送插件。
+        %li
+          %p KC3改
+          %p 已内置PoiDBSubmission。
 =haml :duoshuo, :locals => { :key => "about",
                              :title => "关于",
                              :url => "http://db.kcwiki.moe/about/" }
