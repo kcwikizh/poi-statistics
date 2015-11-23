@@ -1919,6 +1919,21 @@ class KCConstants
       :ship_type => 'ao',
       :rare => true,
     },
+    "Graf Zeppelin" => {
+        :chinese_name => "Graf Zeppelin",
+        :ship_type => 'cv',
+        :rare => true,
+    },
+    "萩風" => {
+        :chinese_name => "萩风",
+        :ship_type => 'dd',
+        :rare => true,
+    },
+    "嵐" => {
+        :chinese_name => "岚",
+        :ship_type => 'dd',
+        :rare => true,
+    }
   }
 
   @@ship_types = {
@@ -4295,6 +4310,16 @@ class KCConstants
 
     def ship
       @@ship
+    end
+
+    def formation
+      return {
+        1 => '单纵',
+        2 => '复纵',
+        3 => '轮型',
+        4 => '梯形',
+        5 => '单横',
+      }
     end
   end
 end
