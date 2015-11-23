@@ -156,7 +156,7 @@ get '/drop/map/:name.?:format?' do
         enemies = []
         q['value']['enemy'].each do |k, v|
           idx = k.split('/')
-          e = (idx[0..5].map {|i| i == '-1' ? nil : KCConstants.ships[i.to_i]}).compact
+          e = (idx[0..5].map {|i| i == '-1' ? nil : "#{KCConstants.ships[i.to_i]}(#{i.to_i})"}).compact
           enemies.push({
             enemy: "#{e.join('/')}(#{KCConstants.formations[idx[6].to_i]})",
             count: v.to_i
