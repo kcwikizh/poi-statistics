@@ -1,3 +1,5 @@
+require 'date'
+
 class DropShipStatistic
   include Mongoid::Document
   store_in collection: "drop_ship_stats", client: "poistat"
@@ -6,16 +8,11 @@ class DropShipStatistic
   field :map_id,          :type => Integer
   field :point_id,        :type => Symbol
   field :level_no,        :type => Integer
+  field :rank,            :type => Symbol
   field :clock_no,        :type => Integer
+  field :date,            :type => Date
   field :count,           :type => Integer, :default => 0
-  field :s_count,         :type => Integer, :default => 0
-  field :a_count,         :type => Integer, :default => 0
-  field :b_count,         :type => Integer, :default => 0
-  field :c_count,         :type => Integer, :default => 0
-  field :d_count,         :type => Integer, :default => 0
-  field :e_count,         :type => Integer, :default => 0
-  field :min_hq_lv,       :type => Integer, :default => 999
-  field :max_hq_lv,       :type => Integer, :default => 0
+  field :hq_count,        :type => Hash
   field :enemy_fleet,     :type => Array
   field :enemy_formation, :type => Integer
 
