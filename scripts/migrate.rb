@@ -18,7 +18,7 @@ else
   migrate_state.save
 end
 
-first_time = migrate_state.migrate_time + 3700000
+first_time = migrate_state.migrate_time
 last_time = DropShipRecord.last.id.generation_time
 migrate_range = {
   from: Time.new(first_time.year, first_time.month, first_time.day, first_time.hour),
