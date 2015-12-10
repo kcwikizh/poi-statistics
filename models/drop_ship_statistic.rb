@@ -13,6 +13,7 @@ class DropShipStatistic
   field :date,            :type => Date
   field :count,           :type => Integer, :default => 0
   field :hq_count,        :type => Hash
+  field :origin_count,    :type => Hash
   field :enemy_fleet,     :type => Array
   field :enemy_formation, :type => Integer
 

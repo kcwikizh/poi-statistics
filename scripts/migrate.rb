@@ -36,29 +36,40 @@ until migrate_time == migrate_range[:to]
           if (this.enemyShips.length != 6) return;
 
           val = {
-            count: 1,
-            hqCount: {}
+            enemy: {}
           }
 
-          val.hqCount[this.teitokuLv] = 1;
+          var e = {
+            count: 1,
+            hqCount: {},
+            originCount: {}
+          }
+          e.hqCount[this.teitokuLv] = 1;
+          e.originCount[this.origin] = 1;
+          val.enemy[this.enemyShips.join('/') + '/' + this.enemyFormation] = e;
 
-          emit(this.enemyShips.join('/') + '/' + this.enemyFormation, val);
+          emit(this.shipId, val);
         }
       }
 
       reduce_func = %Q{
         function(key, values) {
           var reduced = {
-            count: 0,
-            hqCount: {}
+            enemy: {}
           };
 
           values.forEach(function(value) {
-            reduced.count += value.count;
-
-            for(var lv in value.hqCount) {
-              reduced.hqCount[lv] = reduced.hqCount[lv] || 0;
-              reduced.hqCount[lv] += value.hqCount[lv];
+            for(var e in value.enemy) {
+              reduced.enemy[e] = reduced.enemy[e] || { count: 0, hqCount: {}, originCount: {} };
+              reduced.enemy[e].count += value.enemy[e].count;
+              for(var lv in value.enemy[e].hqCount) {
+                reduced.enemy[e].hqCount[lv] = reduced.enemy[e].hqCount[lv] || 0;
+                reduced.enemy[e].hqCount[lv] += value.enemy[e].hqCount[lv];
+              }
+              for(var ua in value.enemy[e].originCount) {
+                reduced.enemy[e].originCount[ua] = reduced.enemy[e].originCount[ua] || 0;
+                reduced.enemy[e].originCount[ua] += value.enemy[e].originCount[ua];
+              }
             }
           });
 
@@ -71,37 +82,36 @@ until migrate_time == migrate_range[:to]
         next if map_id >= 200 && level_no == 0
 
         ['S', 'A', 'B', 'C', 'D', 'E'].each do |rank|
-          [(1..467).to_a, -1].flatten.each do |ship_id|
-            DropShipRecord.where(
-              :id.gte             => BSON::ObjectId.from_time(migrate_time),
-              :id.lt              => BSON::ObjectId.from_time(migrate_time + 3600),
-              :mapId              => map_id,
-              :quest              => map_obj[:name],
-              :cellId.in          => cell_obj[:index],
-              :enemy              => cell_obj[:name],
-              :mapLv              => level_no,
-              :rank               => rank,
-              :shipId             => ship_id,
-              :origin             => /Reporter/)
-              .map_reduce(map_func, reduce_func)
-              .out(inline: 1).each do |query|
-                fleet = query['_id'].split('/').map(&:to_i)
+          DropShipRecord.where(
+            :id.gte             => BSON::ObjectId.from_time(migrate_time),
+            :id.lt              => BSON::ObjectId.from_time(migrate_time + 3600),
+            :mapId              => map_id,
+            :quest              => map_obj[:name],
+            :cellId.in          => cell_obj[:index],
+            :enemy              => cell_obj[:name],
+            :mapLv              => level_no,
+            :rank               => rank,
+            :origin             => /^(?!KCV)/)
+            .map_reduce(map_func, reduce_func)
+            .out(inline: 1).each do |query|
+              query['value']['enemy'].each do |flt, cnt|
+                fleet = flt.split('/').map(&:to_i)
                 DropShipStatistic.create(
-                  ship_id: ship_id,
+                  ship_id: query['_id'].to_i,
                   map_id: map_id,
                   point_id: cell_obj[:point],
                   level_no: level_no,
                   clock_no: clock_no,
                   rank: rank,
                   date: Date.new(migrate_time.year, migrate_time.month, migrate_time.day),
-                  count: query['value']['count'].to_i,
-                  hq_count: query['value']['hqCount'],
+                  count: cnt['count'].to_i,
+                  hq_count: cnt['hqCount'],
+                  origin_count: cnt['originCount'],
                   enemy_fleet: fleet.take(6),
                   enemy_formation: fleet.last)
+              end
             end
-
-            puts "#{migrate_time}-#{map_id}-#{level_no}-#{rank}-#{ship_id}"
-          end
+            puts "#{migrate_time}-#{map_id}-#{cell_obj[:point]}-#{level_no}-#{rank}"
         end
       end
     end
