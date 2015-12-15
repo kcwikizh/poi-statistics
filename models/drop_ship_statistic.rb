@@ -5,6 +5,7 @@ class DropShipStatistic
   field :name,            :type => String
   field :ship_id,         :type => Integer
   field :map_id,          :type => Integer
+  field :cell_id,         :type => Integer
   field :point_id,        :type => Symbol
   field :level_no,        :type => Integer
   field :rank,            :type => Symbol

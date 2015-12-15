@@ -82,68 +82,16 @@ until migrate_time == migrate_range[:to]
   pool = Sinatra::DropQueryHelper.get_default_pool(migrate_time)
   pool[:map].each do |map_id|
     KanColleConstant.map[map_id][:cells].each do |cell_obj|
-      ['S', 'A', 'B', 'C', 'D', 'E'].each do |rank|
-        DropShipRecord.where(
-          :id.gte     => BSON::ObjectId.from_time(migrate_time),
-          :id.lt      => BSON::ObjectId.from_time(migrate_time + 60),
-          :mapId      => map_id,
-          :quest      => KanColleConstant.map[map_id][:name],
-          :cellId.in  => cell_obj[:index],
-          :enemy      => cell_obj[:name],
-          :mapLv      => 0,
-          :rank       => rank,
-          :origin     => /^(?!KCV)/)
-          .map_reduce(map_func, reduce_func)
-          .out(inline: 1).each do |query|
-            query['value']['enemy'].each do |flt, cnt|
-              fleet = flt.split('/').map(&:to_i)
-              stat = DropShipStatistic.find_or_create_by(
-                name: pool[:name],
-                ship_id: query['_id'].to_i,
-                map_id: map_id,
-                point_id: cell_obj[:point],
-                level_no: 0,
-                hour_no: hour_no,
-                minute_no: minute_no,
-                rank: rank,
-                enemy_fleet: fleet.take(6),
-                enemy_formation: fleet.last)
-              stat.from_time = migrate_time if stat.from_time.nil?
-              stat.to_time = migrate_time
-              stat.count += cnt['count'].to_i
-              cnt['hqCount'].each do |k, v|
-                stat.hq_count[k] ||= 0
-                stat.hq_count[k] += v.to_i
-              end
-              cnt['originCount'].each do |k, v|
-                stat.origin_count[Base64.encode64(k)] ||= 0
-                stat.origin_count[Base64.encode64(k)] += v.to_i
-              end
-              stat.save
-            end
-          end
-      end
-      puts "#{migrate_time}-#{map_id}-#{cell_obj[:point]}"
-    end
-  end
-
-  # event
-  pool = Sinatra::DropQueryHelper.get_event_pool(migrate_time)
-  pool[:map].each do |map_id|
-    KanColleConstant.map[map_id][:cells].each do |cell_obj|
-      ['S', 'A', 'B', 'C', 'D', 'E'].each do |rank|
-        (3..0).to_a.each do |level_no|
-          next if map_id > 200 && level_no == 0
-          next if map_id < 200 && level_no > 0
-
+      cell_obj[:index].each do |cell_id|
+        ['S', 'A', 'B', 'C', 'D', 'E'].each do |rank|
           DropShipRecord.where(
             :id.gte     => BSON::ObjectId.from_time(migrate_time),
             :id.lt      => BSON::ObjectId.from_time(migrate_time + 60),
             :mapId      => map_id,
             :quest      => KanColleConstant.map[map_id][:name],
-            :cellId.in  => cell_obj[:index],
+            :cellId     => cell_id,
             :enemy      => cell_obj[:name],
-            :mapLv      => level_no,
+            :mapLv      => 0,
             :rank       => rank,
             :origin     => /^(?!KCV)/)
             .map_reduce(map_func, reduce_func)
@@ -154,8 +102,9 @@ until migrate_time == migrate_range[:to]
                   name: pool[:name],
                   ship_id: query['_id'].to_i,
                   map_id: map_id,
+                  cell_id: cell_id,
                   point_id: cell_obj[:point],
-                  level_no: level_no,
+                  level_no: 0,
                   hour_no: hour_no,
                   minute_no: minute_no,
                   rank: rank,
@@ -173,6 +122,63 @@ until migrate_time == migrate_range[:to]
                   stat.origin_count[Base64.encode64(k)] += v.to_i
                 end
                 stat.save
+              end
+            end
+        end
+      end
+      puts "#{migrate_time}-#{map_id}-#{cell_obj[:point]}"
+    end
+  end
+
+  # event
+  pool = Sinatra::DropQueryHelper.get_event_pool(migrate_time)
+  pool[:map].each do |map_id|
+    KanColleConstant.map[map_id][:cells].each do |cell_obj|
+      cell_obj[:index].each do |cell_id|
+        ['S', 'A', 'B', 'C', 'D', 'E'].each do |rank|
+          (3..0).to_a.each do |level_no|
+            next if map_id > 200 && level_no == 0
+            next if map_id < 200 && level_no > 0
+
+            DropShipRecord.where(
+              :id.gte     => BSON::ObjectId.from_time(migrate_time),
+              :id.lt      => BSON::ObjectId.from_time(migrate_time + 60),
+              :mapId      => map_id,
+              :quest      => KanColleConstant.map[map_id][:name],
+              :cellId     => cell_id,
+              :enemy      => cell_obj[:name],
+              :mapLv      => level_no,
+              :rank       => rank,
+              :origin     => /^(?!KCV)/)
+              .map_reduce(map_func, reduce_func)
+              .out(inline: 1).each do |query|
+                query['value']['enemy'].each do |flt, cnt|
+                  fleet = flt.split('/').map(&:to_i)
+                  stat = DropShipStatistic.find_or_create_by(
+                    name: pool[:name],
+                    ship_id: query['_id'].to_i,
+                    map_id: map_id,
+                    cell_id: cell_id,
+                    point_id: cell_obj[:point],
+                    level_no: level_no,
+                    hour_no: hour_no,
+                    minute_no: minute_no,
+                    rank: rank,
+                    enemy_fleet: fleet.take(6),
+                    enemy_formation: fleet.last)
+                  stat.from_time = migrate_time if stat.from_time.nil?
+                  stat.to_time = migrate_time
+                  stat.count += cnt['count'].to_i
+                  cnt['hqCount'].each do |k, v|
+                    stat.hq_count[k] ||= 0
+                    stat.hq_count[k] += v.to_i
+                  end
+                  cnt['originCount'].each do |k, v|
+                    stat.origin_count[Base64.encode64(k)] ||= 0
+                    stat.origin_count[Base64.encode64(k)] += v.to_i
+                  end
+                  stat.save
+                end
               end
           end
         end
