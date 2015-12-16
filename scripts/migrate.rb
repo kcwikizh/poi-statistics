@@ -1,6 +1,7 @@
 require 'mongoid'
 require 'pathname'
-require "base64"
+require 'base64'
+require 'parallel'
 
 path = Pathname.new(File.dirname(__FILE__)).realpath.parent
 
@@ -96,8 +97,8 @@ until migrate_time == migrate_range[:to]
             :origin     => /^(?!KCV)/)
             .map_reduce(map_func, reduce_func)
             .out(inline: 1).each do |query|
-              query['value']['enemy'].each do |flt, cnt|
-                fleet = flt.split('/').map(&:to_i)
+              Parallel.each(query['value']['enemy'], :in_threads => 4) do |enemy|
+                fleet = enemy[0].split('/').map(&:to_i)
                 stat = DropShipStatistic.find_or_create_by(
                   name: pool[:name],
                   ship_id: query['_id'].to_i,
@@ -112,12 +113,12 @@ until migrate_time == migrate_range[:to]
                   enemy_formation: fleet.last)
                 stat.from_time = migrate_time if stat.from_time.nil?
                 stat.to_time = migrate_time
-                stat.count += cnt['count'].to_i
-                cnt['hqCount'].each do |k, v|
+                stat.count += enemy[1]['count'].to_i
+                enemy[1]['hqCount'].each do |k, v|
                   stat.hq_count[k] ||= 0
                   stat.hq_count[k] += v.to_i
                 end
-                cnt['originCount'].each do |k, v|
+                enemy[1]['originCount'].each do |k, v|
                   stat.origin_count[Base64.encode64(k)] ||= 0
                   stat.origin_count[Base64.encode64(k)] += v.to_i
                 end
@@ -152,8 +153,8 @@ until migrate_time == migrate_range[:to]
               :origin     => /^(?!KCV)/)
               .map_reduce(map_func, reduce_func)
               .out(inline: 1).each do |query|
-                query['value']['enemy'].each do |flt, cnt|
-                  fleet = flt.split('/').map(&:to_i)
+                Parallel.each(query['value']['enemy'], :in_threads => 4) do |enemy|
+                  fleet = enemy[0].split('/').map(&:to_i)
                   stat = DropShipStatistic.find_or_create_by(
                     name: pool[:name],
                     ship_id: query['_id'].to_i,
@@ -168,12 +169,12 @@ until migrate_time == migrate_range[:to]
                     enemy_formation: fleet.last)
                   stat.from_time = migrate_time if stat.from_time.nil?
                   stat.to_time = migrate_time
-                  stat.count += cnt['count'].to_i
-                  cnt['hqCount'].each do |k, v|
+                  stat.count += enemy[1]['count'].to_i
+                  enemy[1]['hqCount'].each do |k, v|
                     stat.hq_count[k] ||= 0
                     stat.hq_count[k] += v.to_i
                   end
-                  cnt['originCount'].each do |k, v|
+                  enemy[1]['originCount'].each do |k, v|
                     stat.origin_count[Base64.encode64(k)] ||= 0
                     stat.origin_count[Base64.encode64(k)] += v.to_i
                   end
