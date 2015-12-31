@@ -1,6 +1,6 @@
 require 'sinatra/base'
-require '../models/KanColleConstant_area'
-require '../models/KanColleConstant_event'
+require_relative '../models/KanColleConstant_area'
+require_relative '../models/KanColleConstant_event'
 
 module Sinatra
   module DropQueryHelper
