@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'psych'
 gem 'sinatra'
 gem 'puma'
 gem 'haml'
