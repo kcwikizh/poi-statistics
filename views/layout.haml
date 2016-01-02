@@ -5,18 +5,18 @@
     %meta{:"http-equiv" => "X-UA-Compatiable", :content => "IE=edge"}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
     =haml :header, :locals => locals
-    %link{:href => "/stylesheets/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "//cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.css", :rel => "stylesheet"}
     %link{:href => "/stylesheets/offcanvas.css", :rel => "stylesheet"}
-    %link{:href => "/stylesheets/bootstrap-table.min.css", :rel => "stylesheet"}
     %link{:href => "/stylesheets/chartist.min.css", :rel => "stylesheet"}
     %link{:href => "/stylesheets/backTop.css", :rel => "stylesheet"}
     %link{:href => "/stylesheets/custom.css", :rel => "stylesheet"}
-    %script{:src => "/scripts/jquery.min.js"}
+    %script{:src => "//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"}
     %script{:src => "/scripts/chartist.min.js"}
     / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
     /[if lt IE 9]
-      %script{:src => "/scripts/html5shiv.min.js"}
-      %script{:src => "/scripts/respond.min.js"}
+      %script{:src => "//cdn.bootcss.com/html5shiv/r29/html5.min.js"}
+      %script{:src => "//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"}
   %body
     =haml :navbar, :locals => locals
     =haml :ad
@@ -31,21 +31,22 @@
           %span 为本站提供数据支持。如果你在使用的过程中发现什么Bug 抑或是一些好的建议都欢迎在
           %a{:href => "https://github.com/Gizeta/poi-statistics/issues"}Github Issue
           %span 上提交。
-    %script{:src => "/scripts/bootstrap.min.js"}
+    %script{:src => "//cdn.rawgit.com/codesalsa/backTop/master/dist/jquery.backTop.min.js", :async => "async"}
+    %script{:src => "//cdn.rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.min.js"}
+    %script{:src => "//cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"}
+    %script{:src => "//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"}
+    %script{:src => "//cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.js"}
+    %script{:src => "//cdn.bootcss.com/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.min.js"}
     / IE10 viewport hack for Surface/desktop Windows 8 bug
-    %script{:src => "/scripts/ie10-viewport-bug-workaround.js"}
-    %script{:src => "/scripts/offcanvas.js"}
-    %script{:src => "/scripts/bootstrap-table.min.js"}
-    %script{:src => "/scripts/tableExport.min.js"}
-    %script{:src => "/scripts/FileSaver.min.js"}
-    %script{:src => "/scripts/bootstrap-table-export.js"}
-    %script{:src => "/scripts/jquery.backTop.min.js"}
+    %script{:src => "/scripts/ie10-viewport-bug-workaround.js", :async => "async"}
+    %script{:src => "/scripts/offcanvas.js", :async => "async"}
+
     :javascript
       $(document).ready(function() {
         $('#backTop').backTop({
             'position' : 500,
             'speed' : 500,
-            'color' : 'black',
+            'color' : 'black'
         });
       });
     :javascript
