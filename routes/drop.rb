@@ -8,170 +8,71 @@ get '/drop/?' do
   }
 end
 
-get '/drop/map/:name.?:format?' do
-  map_id = nil
-  KCConstants.maps.each do |id, name|
-    map_id = id if name == params[:name]
+get '/drop/map/:map/?' do
+  map_id = params[:map].to_i
+  area_id = map_id / 10
+  cell = KanColleConstant.map[map_id][:cells].find{|c| c[:boss]}
+  point_id = cell.nil? ? KanColleConstant.map[map_id][:cells].last : cell[:point]
+  if KanColleConstant.area[area_id][:event]
+    redirect "/drop/map/#{map_id}/#{point_id}-3-SAB.html"
+  else
+    redirect "/drop/map/#{map_id}/#{point_id}-SAB.html"
   end
+end
 
-  halt 404 if map_id.nil?
+get '/drop/map/:map/:point-:rank.html' do
+  map_id = params[:map].to_i
+  area_id = map_id / 10
+  point_id = params[:point].to_sym
+  rank = params[:rank].split('').map(&:to_sym).uniq
 
-  params[:format] ||= 'html'
-  if params[:format] == 'html'
-    return haml :'drop/map/query', :locals => {
-      :location => 'drop',
-      :query_by => 'map',
-      :title_append => " # 掉落统计 - #{KCConstants.maps[map_id]}",
-      :map_id => map_id,
-    }
-  end
+  halt 404 if KanColleConstant.area[area_id].nil? ||
+    !KanColleConstant.area[area_id][:maps].include?(map_id) ||
+    KanColleConstant.area[area_id][:event] ||
+    KanColleConstant.map[map_id][:cells].index{|c| c[:point] == point_id}.nil? ||
+    rank.any?{|r| ![:S, :A, :B].include?(r)}
 
-  halt 404 unless params[:format] == 'json'
+  cache_name = "drop-map-#{map_id}-#{point_id}-#{rank.join('')}"
+  halt 404 if !StatisticCache.where(name: cache_name).exists?
 
-  enemy_hash = {}
-  DropShipRecord.where(mapId: map_id).distinct(:cellId).sort.each do |cell_id|
-    enemy_hash[KCConstants.cells[map_id][cell_id]] ||= []
-    enemy_hash[KCConstants.cells[map_id][cell_id]].push cell_id
-  end
-
-  map = %Q{
-    function() {
-      var val = {
-        s: [0, 0, 0, 0],
-        a: [0, 0, 0, 0],
-        b: [0, 0, 0, 0],
-        hqLv: [this.teitokuLv, this.teitokuLv],
-        mapLv: [0, 0, 0, 0],
-        enemy: {}
-      }
-
-      switch(this.rank) {
-        case 'S':
-          val.s[this.mapLv] = 1;
-          break;
-        case 'A':
-          val.a[this.mapLv] = 1;
-          break;
-        case 'B':
-          val.b[this.mapLv] = 1;
-          break;
-      }
-
-      val.mapLv[this.mapLv] = 1;
-
-      var enemy = this.enemyShips.join('/') + '/' + this.enemyFormation;
-      val.enemy[enemy] = val.enemy[enemy] || 1;
-
-      emit(this.shipId, val);
-    }
+  haml :'drop/map/query', :locals => {
+    :location => 'drop',
+    :title_append => " # 掉落统计 - #{KanColleConstant.map[map_id][:name]}(#{point_id})",
+    :area_id => area_id,
+    :map_id => map_id,
+    :point_id => point_id,
+    :rank => rank.join(''),
+    :query_data => StatisticCache.where(name: cache_name).first.content
   }
+end
 
-  reduce = %Q{
-    function(key, values) {
-      var reduced = {
-        s: [0, 0, 0, 0],
-        a: [0, 0, 0, 0],
-        b: [0, 0, 0, 0],
-        hqLv: [151, 0],
-        mapLv: [0, 0, 0, 0],
-        enemy: {}
-      };
+get '/drop/map/:map/:point-:level-:rank.html' do
+  map_id = params[:map].to_i
+  area_id = map_id / 10
+  point_id = params[:point].to_sym
+  level_no = params[:level].to_i
+  rank = params[:rank].split('').map(&:to_sym).uniq
 
-      values.forEach(function(value) {
-        reduced.s[0] += value.s[0];
-        reduced.s[1] += value.s[1];
-        reduced.s[2] += value.s[2];
-        reduced.s[3] += value.s[3];
-        reduced.a[0] += value.a[0];
-        reduced.a[1] += value.a[1];
-        reduced.a[2] += value.a[2];
-        reduced.a[3] += value.a[3];
-        reduced.b[0] += value.b[0];
-        reduced.b[1] += value.b[1];
-        reduced.b[2] += value.b[2];
-        reduced.b[3] += value.b[3];
+  halt 404 if KanColleConstant.area[area_id].nil? ||
+    !KanColleConstant.area[area_id][:maps].include?(map_id) ||
+    KanColleConstant.area[area_id][:event] ||
+    KanColleConstant.map[map_id][:cells].index{|c| c[:point] == point_id}.nil? ||
+    level_no < 1 || level_no > 3 ||
+    rank.any?{|r| ![:S, :A, :B].include?(r)}
 
-        reduced.mapLv[0] += value.mapLv[0];
-        reduced.mapLv[1] += value.mapLv[1];
-        reduced.mapLv[2] += value.mapLv[2];
-        reduced.mapLv[3] += value.mapLv[3];
+  cache_name = "drop-map-#{map_id}-#{point_id}-#{level_no}-#{rank.join('')}"
+  halt 404 if !StatisticCache.where(name: cache_name).exists?
 
-        if (value.hqLv[0] < reduced.hqLv[0]) {
-          reduced.hqLv[0] = value.hqLv[0];
-        }
-        if (value.hqLv[1] > reduced.hqLv[1]) {
-          reduced.hqLv[1] = value.hqLv[1];
-        }
-
-        for(var e in value.enemy) {
-          reduced.enemy[e] = reduced.enemy[e] || 0;
-          reduced.enemy[e] += value.enemy[e];
-        }
-      });
-
-      return reduced;
-    }
+  haml :'drop/map/query', :locals => {
+    :location => 'drop',
+    :title_append => " # 掉落统计 - #{KanColleConstant.map[map_id][:name]}(#{point_id})",
+    :area_id => area_id,
+    :map_id => map_id,
+    :point_id => point_id,
+    :level_no => level_no,
+    :rank => rank.join(''),
+    :query_data => StatisticCache.where(name: cache_name).first.content
   }
-
-  # query now
-
-  result = []
-  enemy_hash.each do |enemy_name, cell_id_list|
-    ship_list = []
-    lv_count = [0, 0, 0, 0]
-    s_win_count = [0, 0, 0, 0]
-    enemy_name =~ /(.+?)\(\d+-\d+-([A-Z])\)/
-    DropShipRecord.where(
-      :mapId => map_id,
-      :cellId.in => cell_id_list,
-      :enemy => $1,
-      :quest => KCConstants.maps[map_id],
-      :rank.in => ['S', 'A', 'B']
-    ).map_reduce(map, reduce).out(inline: 1).each do |q|
-        enemies = []
-        q['value']['enemy'].each do |k, v|
-          idx = k.split('/')
-          e = (idx[0..5].map {|i| i == '-1' ? nil : "#{KCConstants.ships[i.to_i]}(#{i.to_i})"}).compact
-          enemies.push({
-            enemy: "#{e.join('/')}(#{KCConstants.formations[idx[6].to_i]})",
-            count: v.to_i
-          })
-        end
-
-        ship_list.push({
-          name: KCConstants.ships[q['_id'].to_i],
-          s: q['value']['s'].map(&:to_i),
-          a: q['value']['a'].map(&:to_i),
-          b: q['value']['b'].map(&:to_i),
-          count: q['value']['mapLv'].map(&:to_i).inject(:+),
-          detail: {
-            hqLvRange: q['value']['hqLv'].map(&:to_i),
-            mapLvSet: q['value']['mapLv'].map(&:to_i),
-            enemySet: enemies
-          }
-        })
-
-        lv_count[0] += q['value']['mapLv'][0].to_i
-        lv_count[1] += q['value']['mapLv'][1].to_i
-        lv_count[2] += q['value']['mapLv'][2].to_i
-        lv_count[3] += q['value']['mapLv'][3].to_i
-        s_win_count[0] += q['value']['s'][0].to_i
-        s_win_count[1] += q['value']['s'][1].to_i
-        s_win_count[2] += q['value']['s'][2].to_i
-        s_win_count[3] += q['value']['s'][3].to_i
-      end
-    result.push({
-      name: enemy_name,
-      ships: ship_list,
-      count: lv_count.inject(:+),
-      lvCount: lv_count,
-      sCount: s_win_count,
-    })
-  end
-
-  content_type :json
-  json_obj = { database: 'drop', query: params[:name], result: result }
-  json_obj.to_json
 end
 
 get '/drop/ship/:name.?:format?' do

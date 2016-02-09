@@ -2,45 +2,11 @@ body {
     font-family: "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, sans-serif;
 }
 
-.glyphicon-spin {
-    -webkit-animation: spin 1000ms infinite linear;
-    animation: spin 1000ms infinite linear;
-}
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg);
-    }
-}
-@keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg);
-    }
-}
-
-.footer {
+footer {
     border-top: 1px solid #e5e5e5;
     color: #777;
     margin-top: 70px;
     padding: 30px 0;
-}
-
-.drop-map {
-    position: absolute;
-    display: none;
-    left: 50%;
-    margin-left: -300px;
-    width: 600px;
-    z-index: 10;
 }
 
 .table-like {
@@ -69,6 +35,15 @@ body {
 .top15 { margin-top:15px; }
 .top17 { margin-top:17px; }
 .top30 { margin-top:30px; }
+
+.col-no-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.block-center {
+  margin: 0 auto;
+}
 
 .ct-label {
     font-size: 15px;

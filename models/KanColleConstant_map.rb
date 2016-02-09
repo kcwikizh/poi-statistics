@@ -20,6 +20,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map1-1.png"
     },
     12 => {
       :name => "南西諸島沖",
@@ -41,6 +42,7 @@ class KanColleConstant
           :index => [4],
         },
       ],
+      :map => "Map1-2.png"
     },
     13 => {
       :name => "製油所地帯沿岸",
@@ -67,6 +69,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map1-3.png"
     },
     14 => {
       :name => "南西諸島防衛線",
@@ -103,6 +106,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map1-4.png"
     },
     15 => {
       :name => "鎮守府近海",
@@ -144,6 +148,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map1-5.png"
     },
     16 => {
       :name => "鎮守府近海航路",
@@ -194,6 +199,7 @@ class KanColleConstant
           :index => [13],
         },
       ],
+      :map => "Map1-6.png"
     },
     21 => {
       :name => "カムラン半島",
@@ -220,6 +226,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map2-1.png"
     },
     22 => {
       :name => "バシー島沖",
@@ -246,6 +253,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map2-2.png"
     },
     23 => {
       :name => "東部オリョール海",
@@ -282,6 +290,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map2-3.png"
     },
     24 => {
       :name => "沖ノ島海域",
@@ -348,6 +357,7 @@ class KanColleConstant
           :index => [19],
         },
       ],
+      :map => "Map2-4.png"
     },
     25 => {
       :name => "沖ノ島沖",
@@ -389,6 +399,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map2-5.png"
     },
     31 => {
       :name => "モーレイ海",
@@ -420,6 +431,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map3-1.png"
     },
     32 => {
       :name => "キス島沖",
@@ -451,6 +463,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map3-2.png"
     },
     33 => {
       :name => "アルフォンシーノ方面",
@@ -487,6 +500,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map3-3.png"
     },
     34 => {
       :name => "北方海域全域",
@@ -543,6 +557,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map3-4.png"
     },
     35 => {
       :name => "北方AL海域",
@@ -584,6 +599,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map3-5.png"
     },
     41 => {
       :name => "ジャム島攻略作戦",
@@ -630,6 +646,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map4-1.png"
     },
     42 => {
       :name => "カレー洋制圧戦",
@@ -666,6 +683,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map4-2.png"
     },
     43 => {
       :name => "リランカ島空襲",
@@ -717,6 +735,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map4-3.png"
     },
     44 => {
       :name => "カスガダマ沖海戦",
@@ -758,6 +777,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map4-4.png"
     },
     45 => {
       :name => "カレー洋リランカ島沖",
@@ -804,6 +824,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map4-5.png"
     },
     51 => {
       :name => "南方海域前面",
@@ -840,6 +861,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map5-1.png"
     },
     52 => {
       :name => "珊瑚諸島沖",
@@ -886,6 +908,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map5-2.png"
     },
     53 => {
       :name => "サブ島沖海域",
@@ -927,6 +950,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map5-3.png"
     },
     54 => {
       :name => "サーモン海域",
@@ -983,6 +1007,7 @@ class KanColleConstant
           :index => [16],
         },
       ],
+      :map => "Map5-4.png"
     },
     55 => {
       :name => "サーモン海域北方",
@@ -1044,6 +1069,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map5-5.png"
     },
     61 => {
       :name => "中部海域哨戒線",
@@ -1085,6 +1111,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map6-1.png"
     },
     62 => {
       :name => "MS諸島沖",
@@ -1126,6 +1153,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map6-2.png"
     },
     63 => {
       :name => "グアノ環礁沖海域",
@@ -1162,6 +1190,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "Map6-3.png"
     },
     311 => {
       :name => "ショートランド沖",
@@ -1198,6 +1227,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "MapE-1Summer2015.png"
     },
     312 => {
       :name => "ソロモン海",
@@ -1249,6 +1279,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "MapE-2Summer2015.png"
     },
     313 => {
       :name => "南太平洋海域",
@@ -1300,6 +1331,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "MapE-3Summer2015.png"
     },
     314 => {
       :name => "アイアンボトムサウンド",
@@ -1351,6 +1383,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "MapE-4Summer2015.png"
     },
     315 => {
       :name => "西方海域戦線 カレー洋",
@@ -1402,6 +1435,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "MapE-5Summer2015.png"
     },
     316 => {
       :name => "ソロモン海東部海域",
@@ -1463,6 +1497,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "MapE-6Summer2015.png"
     },
     317 => {
       :name => "FS方面海域",
@@ -1529,6 +1564,7 @@ class KanColleConstant
           :boss => true,
         },
       ],
+      :map => "MapE-7Summer2015.png"
     },
   }
 

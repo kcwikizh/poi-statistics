@@ -4,7 +4,7 @@
     %meta{:charset => "utf-8"}
     %meta{:"http-equiv" => "X-UA-Compatiable", :content => "IE=edge"}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
-    =haml :header, :locals => locals
+    %title= "poi-statistics @ 舰娘百科 × Poi#{locals[:title_append] || ''}"
     %link{:href => "//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css", :rel => "stylesheet"}
     %link{:href => "//cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.css", :rel => "stylesheet"}
     %link{:href => "/stylesheets/offcanvas.css", :rel => "stylesheet"}
@@ -22,7 +22,7 @@
     =haml :ad
     = yield
     %a#backTop Back To Top
-    %footer.footer
+    %footer
       %div.container
         %div 注：网站仍在开发中，数据每天更新一次。
         %div
