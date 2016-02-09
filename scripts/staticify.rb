@@ -1,3 +1,4 @@
+require 'psych'
 require 'mongoid'
 require 'pathname'
 
