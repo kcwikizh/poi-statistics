@@ -1,5 +1,11 @@
 class KanColleConstant
   @@ship = {
+    -1 => {
+      :name => "(无)",
+    },
+    0 => {
+      :name => "未知",
+    },
     1 => {
       :name => "睦月",
       :type => 2,
@@ -2549,6 +2555,58 @@ class KanColleConstant
     636 => {
       :name => "離島棲鬼",
       :type => 10,
+      :deep_sea => true,
+    },
+    637 => {
+      :name => "PT小鬼群",
+      :deep_sea => true,
+    },
+    638 => {
+      :name => "PT小鬼群",
+      :deep_sea => true,
+    },
+    639 => {
+      :name => "PT小鬼群",
+      :deep_sea => true,
+    },
+    640 => {
+      :name => "PT小鬼群",
+      :deep_sea => true,
+    },
+    641 => {
+      :name => "軽巡棲姫",
+      :deep_sea => true,
+    },
+    642 => {
+      :name => "軽巡棲姫",
+      :deep_sea => true,
+    },
+    643 => {
+      :name => "軽巡棲姫",
+      :deep_sea => true,
+    },
+    644 => {
+      :name => "潜水棲姫",
+      :deep_sea => true,
+    },
+    645 => {
+      :name => "潜水棲姫",
+      :deep_sea => true,
+    },
+    646 => {
+      :name => "潜水棲姫",
+      :deep_sea => true,
+    },
+    647 => {
+      :name => "駆逐水鬼",
+      :deep_sea => true,
+    },
+    648 => {
+      :name => "駆逐水鬼",
+      :deep_sea => true,
+    },
+    649 => {
+      :name => "駆逐水鬼",
       :deep_sea => true,
     },
   }

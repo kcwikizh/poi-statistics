@@ -1,5 +1,6 @@
 class KanColleConstant
   @@formation = {
+    0 => '未知',
     1 => '単縦陣',
     2 => '複縦陣',
     3 => '輪形陣',

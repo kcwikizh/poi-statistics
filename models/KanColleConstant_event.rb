@@ -27,7 +27,7 @@ class KanColleConstant
     {
       name: "Christmas2015",
       from_time: Time.new(2015, 12, 8, 12),
-      to_time: Time.now + 86400,
+      to_time: Time.new(2015, 12, 29, 12),
       map: [15, 16, 25, 35, 45]
     }
   ]
