@@ -74,7 +74,7 @@ function detailFormatter(index, row) {
       }
       var all = window.dropData.enemyData[key];
       var rate = sumCount(value) / Object.keys(all).reduce(function(sum, e){ return sum + sumCount(all[e]); }, 0);
-      html.push("<span>" + (rate * 100).toFixed(3) + "</span></div>");
+      html.push("<span>" + (rate * 100).toFixed(3) + "%</span></div>");
     });
     html.push("</div>")
 
