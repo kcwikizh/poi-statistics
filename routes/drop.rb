@@ -32,8 +32,15 @@ get '/drop/map/:map/:point-:rank.html' do
     KanColleConstant.map[map_id][:cells].index{|c| c[:point] == point_id}.nil? ||
     rank.any?{|r| ![:S, :A, :B].include?(r)}
 
+  query_data = {
+    'totalCount': 0,
+    'cacheTime': Time.now.strftime("%Y-%m-%d %H:%M:%S"),
+    'shipData': {},
+    'enemyData': {}
+  }.to_json
   cache_name = "drop-map-#{map_id}-#{point_id}-#{rank.join('')}"
-  halt 404 if !StatisticCache.where(name: cache_name).exists?
+  cache_data = StatisticCache.where(name: cache_name).first
+  query_data = cache_data.content unless cache_data.nil?
 
   haml :'drop/map/query', :locals => {
     :location => 'drop',
@@ -42,7 +49,7 @@ get '/drop/map/:map/:point-:rank.html' do
     :map_id => map_id,
     :point_id => point_id,
     :rank => rank.join(''),
-    :query_data => StatisticCache.where(name: cache_name).first.content
+    :query_data => query_data
   }
 end
 
@@ -60,8 +67,15 @@ get '/drop/map/:map/:point-:level-:rank.html' do
     level_no < 1 || level_no > 3 ||
     rank.any?{|r| ![:S, :A, :B].include?(r)}
 
+  query_data = {
+    'totalCount': 0,
+    'cacheTime': Time.now.strftime("%Y-%m-%d %H:%M:%S"),
+    'shipData': {},
+    'enemyData': {}
+  }.to_json
   cache_name = "drop-map-#{map_id}-#{point_id}-#{level_no}-#{rank.join('')}"
-  halt 404 if !StatisticCache.where(name: cache_name).exists?
+  cache_data = StatisticCache.where(name: cache_name).first
+  query_data = cache_data.content unless cache_data.nil?
 
   haml :'drop/map/query', :locals => {
     :location => 'drop',
@@ -71,7 +85,7 @@ get '/drop/map/:map/:point-:level-:rank.html' do
     :point_id => point_id,
     :level_no => level_no,
     :rank => rank.join(''),
-    :query_data => StatisticCache.where(name: cache_name).first.content
+    :query_data => query_data
   }
 end
 
