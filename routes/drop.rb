@@ -14,7 +14,7 @@ get '/drop/map/:map/?' do
   cell = KanColleConstant.map[map_id][:cells].find{|c| c[:boss]}
   point_id = cell.nil? ? KanColleConstant.map[map_id][:cells].last : cell[:point]
   if KanColleConstant.area[area_id][:event]
-    redirect "/drop/map/#{map_id}/#{point_id}-3-SAB.html"
+    redirect "/drop/map/#{map_id}/3/#{point_id}-SAB.html"
   else
     redirect "/drop/map/#{map_id}/#{point_id}-SAB.html"
   end
@@ -53,7 +53,7 @@ get '/drop/map/:map/:point-:rank.html' do
   }
 end
 
-get '/drop/map/:map/:point-:level-:rank.html' do
+get '/drop/map/:map/:level/:point-:rank.html' do
   map_id = params[:map].to_i
   area_id = map_id / 10
   point_id = params[:point].to_sym
@@ -62,7 +62,7 @@ get '/drop/map/:map/:point-:level-:rank.html' do
 
   halt 404 if KanColleConstant.area[area_id].nil? ||
     !KanColleConstant.area[area_id][:maps].include?(map_id) ||
-    KanColleConstant.area[area_id][:event] ||
+    !KanColleConstant.area[area_id][:event] ||
     KanColleConstant.map[map_id][:cells].index{|c| c[:point] == point_id}.nil? ||
     level_no < 1 || level_no > 3 ||
     rank.any?{|r| ![:S, :A, :B].include?(r)}

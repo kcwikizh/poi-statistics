@@ -22,20 +22,20 @@
           %ul.nav.nav-pills
             - KanColleConstant.map[map_id][:cells].each do |c|
               %li{:role => "presentation", :class => c[:point] == point_id ? "active" : nil}
-                %a{:href => "/drop/map/#{map_id}/#{c[:point]}#{params[:level_no].nil? ? '' : "-#{level_no}"}-#{rank}.html"}= "#{c[:point]}#{c[:boss] ? " (Boss)" : ""}"
+                %a{:href => "/drop/map/#{map_id}/#{locals[:level_no].nil? ? '' : "#{level_no}/"}#{c[:point]}-#{rank}.html"}= "#{c[:point]}#{c[:boss] ? " (Boss)" : ""}"
           %div
             %b 评价:
           %ul.nav.nav-pills
             - ['SAB', 'SA', 'S', 'A', 'B'].each do |r|
               %li{:role => "presentation", :class => r == rank ? "active" : nil}
-                %a{:href => "/drop/map/#{map_id}/#{point_id}#{params[:level_no].nil? ? '' : "-#{level_no}"}-#{r}.html"}= r
+                %a{:href => "/drop/map/#{map_id}/#{locals[:level_no].nil? ? '' : "#{level_no}/"}#{point_id}-#{r}.html"}= r
           - if KanColleConstant.area[area_id][:event]
             %div
               %b 难度:
             %ul.nav.nav-pills
               - ['甲', '乙', '丙'].each_with_index do |l, idx|
                 %li{:role => "presentation", :class => idx == 3 - level_no ? "active" : nil}
-                  %a{:href => "/drop/map/#{map_id}/#{point_id}-#{3 - idx}-#{rank}.html"}= l
+                  %a{:href => "/drop/map/#{map_id}/#{3 - idx}/#{point_id}-#{rank}.html"}= l
         %div.col-xs-12.col-md-8
           %img.img-responsive{:src => kcwiki_get_thumb(KanColleConstant.map[map_id][:map], size: 600, protocol: "http")}
       %div.row.top10
@@ -97,4 +97,4 @@
 %script{:src => "/scripts/drop/map.js"}
 =haml :duoshuo, :locals => { :key => "drop/map/#{map_id}",
                              :title => "掉落统计##{KanColleConstant.map[map_id][:name]}",
-                             :url => "http://db.kcwiki.moe/drop/map/#{map_id}/#{point_id}#{params[:level_no].nil? ? '' : "-#{level_no}"}-#{rank}.html" }
+                             :url => "http://db.kcwiki.moe/drop/map/#{map_id}/#{locals[:level_no].nil? ? '' : "#{level_no}/"}#{point_id}-#{rank}.html" }
