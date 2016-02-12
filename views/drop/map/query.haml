@@ -91,7 +91,7 @@
       "mapId": #{map_id},
       "pointId": "#{point_id}",
       "rank": "#{rank}",
-      "levelNo": #{params[:level_no] || 0}
+      "levelNo": #{locals[:level_no] || 0}
     };
     window.dropData = #{query_data};
 %script{:src => "/scripts/drop/map.js"}

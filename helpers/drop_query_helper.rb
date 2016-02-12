@@ -25,7 +25,7 @@ module Sinatra
         time ||= Time.now
 
         KanColleConstant.event.each do |evt|
-          if time > evt[:from_time] && time < evt[:from_time]
+          if time > evt[:from_time] && time < evt[:to_time]
             return {
               name: evt[:name],
               map: evt[:map]
