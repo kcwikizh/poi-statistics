@@ -1744,6 +1744,12 @@ class KanColleConstant
       :remodel_id => 334,
       :rare => true,
     },
+    432 => {
+      :name => "Graf Zeppelin",
+      :type => 11,
+      :remodel_id => 334,
+      :rare => true,
+    },
     434 => {
       :name => "睦月改二",
       :type => 2,
@@ -1804,6 +1810,18 @@ class KanColleConstant
     },
     453 => {
       :name => "風雲",
+      :type => 2,
+      :remodel_id => 349,
+      :rare => true,
+    },
+    454 => {
+      :name => "嵐",
+      :type => 2,
+      :remodel_id => 349,
+      :rare => true,
+    },
+    455 => {
+      :name => "萩風",
       :type => 2,
       :remodel_id => 349,
       :rare => true,

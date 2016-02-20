@@ -1566,6 +1566,246 @@ class KanColleConstant
       ],
       :map => "MapE-7Summer2015.png"
     },
+    321 => {
+      :name => "ショートランド泊地沖",
+      :cells => [
+        {
+          :name => "輸送任務部隊",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "前衛哨戒部隊",
+          :point => :C,
+          :index => [3, 11]
+        },
+        {
+          :name => "警戒任務部隊",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "空母機動部隊",
+          :point => :F,
+          :index => [6, 12]
+        },
+        {
+          :name => "水上打撃部隊",
+          :point => :H,
+          :index => [8, 13]
+        },
+        {
+          :name => "前衛展開部隊旗艦",
+          :point => :J,
+          :index => [10, 14],
+          :boss => true
+        },
+      ],
+      :map => "MapE-1Autumn2015.png"
+    },
+    322 => {
+      :name => "コロネハイカラ島沖",
+      :cells => [
+        {
+          :name => "警戒任務群 前衛別働隊",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "警戒任務群 重巡戦隊",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "警戒任務群 前衛部隊",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "潜水艦警戒線",
+          :point => :E,
+          :index => [5, 12]
+        },
+        {
+          :name => "警戒任務群 主力部隊",
+          :point => :F,
+          :index => [6, 13, 14]
+        },
+        {
+          :name => "バニラ湾輸送部隊",
+          :point => :G,
+          :index => [8]
+        },
+        {
+          :name => "警戒任務群 主力部隊増援",
+          :point => :H,
+          :index => [7]
+        },
+        {
+          :name => "警戒任務群 旗艦艦隊",
+          :point => :K,
+          :index => [11, 17],
+          :boss => true
+        },
+      ],
+      :map => "MapE-2Autumn2015.png"
+    },
+    323 => {
+      :name => "コロネハイカラ島東方沖",
+      :cells => [
+        {
+          :name => "深海潜水艦隊",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "前衛警戒部隊",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海巡洋艦戦隊",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "高速魚雷艇部隊",
+          :point => :E,
+          :index => [5, 12]
+        },
+        {
+          :name => "深海輸送船団",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海水上打撃部隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海任務部隊 旗艦艦隊",
+          :point => :K,
+          :index => [11],
+          :boss => true
+        },
+      ],
+      :map => "MapE-3Autumn2015.png"
+    },
+    324 => {
+      :name => "西方海域戦線 ステビア海",
+      :cells => [
+        {
+          :name => "前衛哨戒艦隊",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "潜水艦哨戒線B群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "潜水艦哨戒線A群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "空母機動部隊 II群",
+          :point => :F,
+          :index => [6, 17]
+        },
+        {
+          :name => "空母機動部隊 III群",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海戦艦部隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "空母機動部隊 I群",
+          :point => :I,
+          :index => [9, 18]
+        },
+        {
+          :name => "復旧中港湾施設",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "再建中秘匿泊地",
+          :point => :M,
+          :index => [13]
+        },
+        {
+          :name => "増援東洋艦隊 前衛潜水艦隊",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "東洋艦隊 増援部隊 司令旗艦",
+          :point => :O,
+          :index => [15],
+          :boss => true
+        },
+      ],
+      :map => "MapE-4Autumn2015.png"
+    },
+    325 => {
+      :name => "バニラ湾沖",
+      :cells => [
+        {
+          :name => "潜水艦阻止線 Aライン哨戒前衛",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "潜水艦阻止線 Aライン",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "潜水艦阻止線 Bライン",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "輸送部隊迎撃部隊 前衛哨戒艦隊",
+          :point => :G,
+          :index => [7, 17]
+        },
+        {
+          :name => "高速魚雷艇部隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "伏撃部隊 軽巡戦隊",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "伏撃部隊 精鋭駆逐隊",
+          :point => :J,
+          :index => [10, 18, 19]
+        },
+        {
+          :name => "深海補給船団",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "伏撃部隊集団 旗艦",
+          :point => :N,
+          :index => [14],
+          :boss => true
+        },
+      ],
+      :map => "MapE-5Autumn2015.png"
+    },
   }
 
   def self.map

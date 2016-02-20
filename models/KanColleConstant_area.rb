@@ -30,6 +30,12 @@ class KanColleConstant
       :event => true,
       :available => false,
     },
+    32 => {
+      :name => "突入！海上輸送作戦",
+      :maps => [],#321, 322, 323, 324, 325
+      :event => true,
+      :available => false,
+    },
   }
 
   def self.area
