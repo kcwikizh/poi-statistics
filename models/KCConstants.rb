@@ -1932,7 +1932,22 @@ class KCConstants
         :chinese_name => "岚",
         :ship_type => 'dd',
         :rare => true,
-    }
+    },
+    "初月" => {
+        :chinese_name => "初月",
+        :ship_type => 'dd',
+        :rare => true,
+    },
+    "Zara" => {
+        :chinese_name => "Zara",
+        :ship_type => 'ca',
+        :rare => true,
+    },
+    "沖波" => {
+        :chinese_name => "冲波",
+        :ship_type => 'dd',
+        :rare => true,
+    },
   }
 
   @@ship_types = {

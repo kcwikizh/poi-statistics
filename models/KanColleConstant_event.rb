@@ -29,6 +29,12 @@ class KanColleConstant
       from_time: Time.new(2015, 12, 8, 12),
       to_time: Time.new(2015, 12, 29, 12),
       map: [15, 16, 25, 35, 45]
+    },
+    {
+      name: "Winter2016",
+      from_time: Time.new(2016, 2, 10, 12),
+      to_time: Time.now + 794,
+      map: [331, 332, 333]
     }
   ]
 

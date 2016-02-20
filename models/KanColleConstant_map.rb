@@ -1806,6 +1806,168 @@ class KanColleConstant
       ],
       :map => "MapE-5Autumn2015.png"
     },
+    331 => {
+      :name => "カンパン湾沖",
+      :cells => [
+        {
+          :name => "先遣哨戒潜水艦隊 II群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "先遣哨戒潜水艦隊 I群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "哨戒水雷戦隊 警戒部隊",
+          :point => :D,
+          :index => [4, 11]
+        },
+        {
+          :name => "哨戒水雷戦隊 主力部隊",
+          :point => :F,
+          :index => [6, 12]
+        },
+        {
+          :name => "哨戒任務戦隊 後方部隊",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "先遣哨戒潜水艦隊 旗艦艦隊",
+          :point => :J,
+          :index => [10],
+          :boss => true
+        },
+      ],
+      :map => "MapE-1Winter2016.png"
+    },
+    332 => {
+      :name => "オートロ島マーマレード沖",
+      :cells => [
+        {
+          :name => "潜水艦哨戒線 Aライン",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "潜水艦哨戒線 Bライン",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "潜水艦哨戒線 Cライン",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海迎撃任務部隊",
+          :point => :G,
+          :index => [7, 17]
+        },
+        {
+          :name => "深海船団 間接護衛隊",
+          :point => :J,
+          :index => [10, 18]
+        },
+        {
+          :name => "深海船団 警戒部隊",
+          :point => :L,
+          :index => [12, 19]
+        },
+        {
+          :name => "警戒魚雷艇戦隊 I群",
+          :point => :M,
+          :index => [13, 20]
+        },
+        {
+          :name => "警戒魚雷艇戦隊 II群",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "戦略補給物資集積地",
+          :point => :O,
+          :index => [15, 21],
+          :boss => true
+        },
+      ],
+      :map => "MapE-2Winter2016.png"
+    },
+    333 => {
+      :name => "北海道北東沖",
+      :cells => [
+        {
+          :name => "通商破壊潜水艦隊 A群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "先行侵入 通商破壊部隊",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "通商破壊潜水艦隊 B群",
+          :point => :D,
+          :index => [4, 21]
+        },
+        {
+          :name => "侵攻部隊 火力支援部隊",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "侵攻部隊 潜水艦隊 I群",
+          :point => :F,
+          :index => [6, 25]
+        },
+        {
+          :name => "任務部隊 空母機動部隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "侵攻部隊 支援戦艦部隊",
+          :point => :K,
+          :index => [11]
+        },
+        {
+          :name => "侵攻部隊 攻略部隊",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "侵攻部隊 巡洋艦戦隊",
+          :point => :M,
+          :index => [13]
+        },
+        {
+          :name => "侵攻部隊 主力戦艦部隊",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "侵攻部隊 潜水艦隊 II群",
+          :point => :P,
+          :index => [16]
+        },
+        {
+          :name => "侵攻先遣部隊 本隊",
+          :point => :S,
+          :index => [19],
+          :boss => true
+        },
+        {
+          :name => "侵攻部隊 旗艦艦隊",
+          :point => :T,
+          :index => [20, 23, 24],
+          :boss => true
+        },
+      ],
+      :map => "MapE-3Winter2016.png"
+    }
   }
 
   def self.map

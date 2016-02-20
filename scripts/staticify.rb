@@ -274,12 +274,14 @@ def staticify_wiki_drop(map_id, drop_pool_name)
       end
     end
 
-    response += "{{掉落表<br/> |海域点 =#{cell[:point]}<br/> |掉落 ="
+    flag = false
+    r = "{{掉落表<br/> |海域点 =#{cell[:point]}<br/> |掉落 ="
     ['驱逐舰', '轻巡洋舰', '重巡洋舰', '战列舰', '空母类', '其他'].each do |type|
       next if !drop_list.include?(type)
-      response += "'''#{type}'''："
-      response += (drop_list[type].map do |i|
-        ship = KCConstants.ships[i]
+      flag = true
+      r += "'''#{type}'''："
+      r += (drop_list[type].map do |i|
+        ship = KanColleConstant.ship[i][:name]
         info = KCConstants.ship_infos[ship]
         if info[:rare]
           "{{稀有舰|#{info[:chinese_name]}}}"
@@ -287,9 +289,11 @@ def staticify_wiki_drop(map_id, drop_pool_name)
           "[[#{info[:chinese_name]}]]"
         end
       end).join('、')
-      response += "&lt;br/&gt;"
+      r += "&lt;br/&gt;"
     end
-    response += "<br/>}}<br/>"
+    r += "<br/>}}<br/>"
+
+    response += r if flag
   end
 
   cache = StatisticCache.find_or_create_by(
@@ -324,19 +328,19 @@ def staticify_wiki_enemy(map_id, drop_pool_name)
     levels = [0]
   end
 
-  KanColleConstant.map[map_id][:cells].sort{|x, y| x[:point] <=> y[:point]}.each do |cell|
-    levels.each do |i|
+  levels.each do |i|
+    result += case i
+      when 3
+        "甲：<br/>"
+      when 2
+        "乙：<br/>"
+      when 1
+        "丙：<br/>"
+      when 0
+        ""
+    end
+    KanColleConstant.map[map_id][:cells].sort{|x, y| x[:point] <=> y[:point]}.each do |cell|
       count = 0
-      result += case i
-        when 3
-          "甲：<br/>"
-        when 2
-          "乙：<br/>"
-        when 1
-          "丙：<br/>"
-        when 0
-          ""
-      end
       result += %Q({{敌方配置表<br/>   |海域点       =#{cell[:point]}<br/>   |海域点原名   =#{cell[:name]}<br/>   |海域点译名   =<br/>)
       sum = DropShipStatistic.where(
         :map_id => map_id,

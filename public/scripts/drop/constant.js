@@ -976,6 +976,24 @@ window.shipData = {
         nameForSearch: "岚,lan",
         shipType: "驱逐舰",
         rare: true
+    },
+    "初月": {
+        chineseName: "初月",
+        nameForSearch: "初月,chuyue,chu yue",
+        shipType: "驱逐舰",
+        rare: true
+    },
+    "Zara": {
+        chineseName: "Zara",
+        nameForSearch: "Zara,zara",
+        shipType: "重巡洋舰",
+        rare: true
+    },
+    "沖波": {
+        chineseName: "冲波",
+        nameForSearch: "冲波,chongbo,chong bo",
+        shipType: "驱逐舰",
+        rare: true
     }
 };
 
@@ -1039,4 +1057,7 @@ window.mapWikiData = {
     323: '2015年秋季活动/E-3',
     324: '2015年秋季活动/E-4',
     325: '2015年秋季活动/E-5',
+    331: '2016年冬季活动/E-1',
+    332: '2016年冬季活动/E-2',
+    333: '2016年冬季活动/E-3'
 };

@@ -1592,6 +1592,18 @@ class KanColleConstant
       :name => "速吸改",
       :type => 22,
     },
+    357 => {
+      :name => "初月改",
+      :type => 2,
+    },
+    358 => {
+      :name => "Zara改",
+      :type => 5,
+    },
+    359 => {
+      :name => "沖波改",
+      :type => 2,
+    },
     398 => {
       :name => "伊168改",
       :type => 13,
@@ -1706,6 +1718,12 @@ class KanColleConstant
       :remodel_id => 346,
       :rare => true,
     },
+    423 => {
+      :name => "初月",
+      :type => 2,
+      :remodel_id => 357,
+      :rare => true,
+    },
     424 => {
       :name => "高波",
       :type => 2,
@@ -1798,6 +1816,12 @@ class KanColleConstant
       :name => "Roma改",
       :type => 8,
     },
+    448 => {
+      :name => "Zara",
+      :type => 5,
+      :remodel_id => 358,
+      :rare => true,
+    },
     450 => {
       :name => "秋津洲改",
       :type => 16,
@@ -1806,6 +1830,12 @@ class KanColleConstant
       :name => "瑞穂",
       :type => 16,
       :remodel_id => 348,
+      :rare => true,
+    },
+    452 => {
+      :name => "沖波",
+      :type => 2,
+      :remodel_id => 359,
       :rare => true,
     },
     453 => {
@@ -1854,6 +1884,11 @@ class KanColleConstant
       :type => 11,
       :remodel_id => 467,
     },
+    464 => {
+      :name => "霞改二",
+      :type => 2,
+      :remodel_id => 462,
+    },
     466 => {
       :name => "翔鶴改二甲",
       :type => 18,
@@ -1862,6 +1897,11 @@ class KanColleConstant
     467 => {
       :name => "瑞鶴改二甲",
       :type => 18,
+      :remodel_id => 462,
+    },
+    470 => {
+      :name => "霞改二乙",
+      :type => 2,
       :remodel_id => 462,
     },
     501 => {
@@ -2627,6 +2667,66 @@ class KanColleConstant
       :name => "駆逐水鬼",
       :deep_sea => true,
     },
+    650 => {
+      :name => "飛行場姫",
+      :deep_sea => true,
+    },
+    651 => {
+      :name => "飛行場姫",
+      :deep_sea => true,
+    },
+    652 => {
+      :name => "飛行場姫",
+      :deep_sea => true,
+    },
+    653 => {
+      :name => "集積地棲姫",
+      :deep_sea => true,
+    },
+    654 => {
+      :name => "集積地棲姫",
+      :deep_sea => true,
+    },
+    655 => {
+      :name => "集積地棲姫",
+      :deep_sea => true,
+    },
+    656 => {
+      :name => "集積地棲姫-壊",
+      :deep_sea => true,
+    },
+    657 => {
+      :name => "集積地棲姫-壊",
+      :deep_sea => true,
+    },
+    658 => {
+      :name => "集積地棲姫-壊",
+      :deep_sea => true,
+    },
+    659 => {
+      :name => "重巡棲姫",
+      :deep_sea => true,
+    },
+    660 => {
+      :name => "重巡棲姫",
+      :deep_sea => true,
+    },
+    661 => {
+      :name => "重巡棲姫",
+      :deep_sea => true,
+    },
+    662 => {
+      :name => "重巡棲姫",
+      :deep_sea => true,
+    },
+    663 => {
+      :name => "重巡棲姫",
+      :deep_sea => true,
+    },
+    664 => {
+      :name => "重巡棲姫",
+      :deep_sea => true,
+    }
   }
 
   def self.ship
