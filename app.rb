@@ -1,10 +1,10 @@
 require 'psych'
 require 'sinatra'
+require 'sinatra/activerecord'
 require 'mongoid'
+require './config/environments'
 
 configure do
-  set :server, :puma
-
   Mongoid.load!('./config/mongoid.yml')
 end
 
