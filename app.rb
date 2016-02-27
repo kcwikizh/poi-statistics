@@ -2,7 +2,7 @@ require 'psych'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'mongoid'
-require './config/environments'
+require_relative './config/environments'
 
 configure do
   Mongoid.load!('./config/mongoid.yml')
