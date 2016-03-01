@@ -9,7 +9,13 @@ module Sinatra
     
     def self.set_kv_data(key, value = nil)
       value = block_given? ? yield : value
-      KVData.create(:key => key, :value => value)
+      if KVData.exists?(:key => key)
+        kv = KVData.where(:key => key).take
+        kv.value = value
+        kv.save
+      else
+        KVData.create(:key => key, :value => value)
+      end
       value
     end
   end
