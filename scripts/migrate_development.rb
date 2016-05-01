@@ -75,15 +75,13 @@ CreateItemRecord.distinct(:itemId).to_a.each do |item_id|
     items = query['_id'].split('-').map(&:to_i)
     values = query['value']
     record = DevelopmentRecord.where(
-      "name = :n AND item = :i AND cost = ARRAY[:c] AND time_no = :t",
+      "item = :i AND cost = ARRAY[:c] AND time_no = :t",
       {
-        n: Sinatra::DevelopmentQueryHelper.get_development_pool_name(time_range[:to]),
         i: item_id,
         c: items.take(4),
         t: items.last
       }
     ).first_or_create(
-      name: Sinatra::DevelopmentQueryHelper.get_development_pool_name(time_range[:to]),
       item: item_id,
       cost: items.take(4),
       time_no: items.last,
