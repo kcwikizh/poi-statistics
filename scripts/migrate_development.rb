@@ -1,7 +1,7 @@
 require_relative '../app'
 
 time_range = {
-  from: CreateItemRecord.asc(:id).first.id.generation_time,
+  from: Time.parse(Sinatra::KVDataHelper.get_kv_data("migrate_development")),
   to: CreateItemRecord.desc(:id).first.id.generation_time
 }
 
@@ -94,3 +94,5 @@ CreateItemRecord.distinct(:itemId).to_a.each do |item_id|
     record.save
   end
 end
+
+Sinatra::KVDataHelper.set_kv_data("migrate_development", time_range[:to].to_s)
