@@ -2,8 +2,10 @@ require_relative '../app'
 
 time_range = {
   from: Time.parse(Sinatra::KVDataHelper.get_kv_data("migrate_development")),
-  to: CreateItemRecord.desc(:id).first.id.generation_time
+  to: CreateItemRecord.desc(:id).first.id.generation_time + 1
 }
+
+exit unless time_range[:to] > time_range[:from]
 
 map_func = %Q{
   function() {
