@@ -9,20 +9,17 @@ module Sinatra
       @@store.get(key)
     end
 
-    def cache_set(key, value)
-      @@store.set("#{key}_timestamp", Time.now.to_f)
-      @@store.set(key, value)
-    end
-
-    def cache_get_or_set(key, timestamp, value = nil)
-      return @@store.get(key) if @@store.set?(key) && (@@store.get("#{key}_timestamp") >= timestamp)
-      @@store.set("#{key}_timestamp", Time.now.to_f)
+    def cache_set(key, value = nil)
       @@store.set(key, block_given? ? yield : value)
     end
 
-    def cache_get_or_return(key, timestamp, value = nil)
-      return @@store.get(key) if @@store.set?(key) && (@@store.get("#{key}_timestamp") >= timestamp)
-      block_given? ? yield : value
+    def cache_get_or_set(key, value = nil)
+      return @@store.get(key) if @@store.set?(key)
+      @@store.set(key, block_given? ? yield : value)
+    end
+
+    def cache_clear
+      @@store.reset
     end
   end
 
