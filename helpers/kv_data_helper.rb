@@ -6,7 +6,7 @@ module Sinatra
       return nil unless KVData.exists?(:key => key)
       KVData.where(:key => key).take.value
     end
-    
+
     def self.set_kv_data(key, value = nil)
       value = block_given? ? yield : value
       if KVData.exists?(:key => key)
@@ -17,6 +17,10 @@ module Sinatra
         KVData.create(:key => key, :value => value)
       end
       value
+    end
+
+    def get_kv_data(key)
+      KVDataHelper.get_kv_data(key)
     end
   end
 
