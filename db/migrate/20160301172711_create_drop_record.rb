@@ -5,7 +5,6 @@ class CreateDropRecord < ActiveRecord::Migration
     SQL
 
     create_table :drop_records do |t|
-      t.string  :name,               null: false, default: ''
       t.integer :ship,               null: false, default: 0
       t.integer :map,                null: false, default: 0
       t.integer :cell,               null: false, default: 0
@@ -17,16 +16,15 @@ class CreateDropRecord < ActiveRecord::Migration
       t.json    :hq_lv,              null: false, default: {}
       t.json    :origin,             null: false, default: {}
     end
-    add_index :drop_records, :name
     add_index :drop_records, :ship
     add_index :drop_records, [:map, :cell, :level]
-    add_index :drop_records, :rank    
+    add_index :drop_records, :rank
     add_index :drop_records, :time_no
   end
 
   def down
     drop_table :drop_records
-    
+
     execute <<-SQL
       DROP TYPE battle_rank
     SQL
