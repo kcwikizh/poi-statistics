@@ -1,0 +1,46 @@
+%div.container
+  %div.row
+    %ol.breadcrumb
+      %li 主页
+      %li 开发
+      %li 装备
+      %li= KCSlotItem[item_id][:name]
+    %div
+      %div#toolbar
+      %table.table.table-hover.table-striped{:"data-sort-name" => "count",
+                                             :"data-toolbar" => "#toolbar",
+                                             :"data-search" => "true",
+                                             :"data-show-columns" => "true",
+                                             :"data-show-export" => "true",
+                                             :"data-detail-view" => "true",
+                                             :"data-detail-formatter" => "detailFormatter"}
+        %thead
+          %tr
+            %th{:"data-field" => "fuel",
+                :"data-switchable" => "false"} 油
+            %th{:"data-field" => "ammo",
+                :"data-switchable" => "false"} 弹
+            %th{:"data-field" => "steel",
+                :"data-switchable" => "false"} 钢
+            %th{:"data-field" => "bauxite",
+                :"data-switchable" => "false"} 铝
+            %th{:"data-field" => "count",
+                :"data-sortable" => "true"} 数量
+            %th{:"data-field" => "usedCount",
+                :"data-sortable" => "true"} 公式使用次数
+            %th{:"data-field" => "hqLvRange"} 提督等级
+            %th{:"data-field" => "developmentRate",
+                :"data-formatter" => "developmentRateFormatter",
+                :"data-sortable" => "true"} 开发率
+      %div.busy-indicator
+        %span.glyphicon.glyphicon-refresh.glyphicon-spin
+        %span 少女祈祷中...
+%script{:src => "/scripts/development/item.js"}
+%script
+  :plain
+    $(document).ready(function() {
+      requestData("#{item_id}");
+    });
+=haml :duoshuo, :locals => { :key => "development/item/#{item_id}",
+                             :title => "开发统计##{KCSlotItem[item_id][:name]}",
+                             :url => "http://db.kcwiki.moe/development/item/#{item_id}.html" }
