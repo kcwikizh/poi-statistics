@@ -1103,6 +1103,21 @@ class KCConstants
   }
 
   @@ship_infos = {
+    '鹿島' => {
+      :chinese_name => '鹿岛',
+      :ship_type => 'clp',
+      :rare => true,
+    },
+    '親潮' => {
+      :chinese_name => '亲潮',
+      :ship_type => 'dd',
+      :rare => true,
+    },
+    '春風' => {
+      :chinese_name => '春风',
+      :ship_type => 'dd',
+      :rare => true,
+    },
     '長門' => {
       :chinese_name => '长门',
       :ship_type => 'bb',
@@ -3760,6 +3775,13 @@ class KCConstants
     },
     461 => {
       :name => '翔鶴改二'
+    },
+    465 => {
+      :name => '鹿島',
+      :ship_type => 'clp',
+      :rare => true,
+      :construction => false,
+      :drop => true,
     },
     466 => {
       :name => '翔鶴改二甲'

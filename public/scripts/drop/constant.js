@@ -994,6 +994,24 @@ window.shipData = {
         nameForSearch: "冲波,chongbo,chong bo",
         shipType: "驱逐舰",
         rare: true
+    },
+    "鹿島": {
+      chineseName: "鹿岛",
+      nameForSearch: "鹿岛,ludao,lu dao,kashima",
+      shipType: "练习巡洋舰",
+      rare: true
+    },
+    "親潮": {
+      chineseName: "亲潮",
+      nameForSearch: "亲潮,qinchao,qin chao",
+      shipType: "驱逐舰",
+      rare: true
+    },
+    "春風": {
+      chineseName: "春风",
+      nameForSearch: "春风,chunfeng,chun feng",
+      shipType: "驱逐舰",
+      rare: true
     }
 };
 
@@ -1059,5 +1077,12 @@ window.mapWikiData = {
     325: '2015年秋季活动/E-5',
     331: '2016年冬季活动/E-1',
     332: '2016年冬季活动/E-2',
-    333: '2016年冬季活动/E-3'
+    333: '2016年冬季活动/E-3',
+    341: '2016年春季活动/E-1',
+    342: '2016年春季活动/E-2',
+    343: '2016年春季活动/E-3',
+    344: '2016年春季活动/E-4',
+    345: '2016年春季活动/E-5',
+    346: '2016年春季活动/E-6',
+    347: '2016年春季活动/E-7',
 };

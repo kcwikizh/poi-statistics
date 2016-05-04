@@ -1967,6 +1967,505 @@ class KanColleConstant
         },
       ],
       :map => "MapE-3Winter2016.png"
+    },
+    341 => {
+      :name => "北太平洋前線海域",
+      :cells => [
+        {
+          :name => "前衛水上打撃部隊 I群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "前衛警戒水雷戦隊",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "北太平洋潜水艦隊 II群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "前衛水上打撃部隊 II群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海重雷装戦隊",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "北太平洋潜水艦隊 I群",
+          :point => :G,
+          :index => [7, 13]
+        },
+        {
+          :name => "深海島嶼防衛任務部隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海増援護衛船団",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "島嶼防衛艦隊旗艦",
+          :point => :J,
+          :index => [10],
+          :boss => true
+        },
+        #{
+        #  :name => "",
+        #  :point => :K,
+        #  :index => [11]
+        #},
+      ],
+      :map => "MapE-1Spring2016.png"
+    },
+    342 => {
+      :name => "北太平洋前線海域",
+      :cells => [
+        {
+          :name => "警戒哨戒線",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "前衛空母任務部隊",
+          :point => :B,
+          :index => [2]
+        },
+        #{
+        #  :name => "",
+        #  :point => :D,
+        #  :index => [4]
+        #},
+        {
+          :name => "潜水艦哨戒線",
+          :point => :E,
+          :index => [5, 13]
+        },
+        {
+          :name => "上陸阻止ライン",
+          :point => :F,
+          :index => [6, 14]
+        },
+        {
+          :name => "深海魚雷艇戦隊",
+          :point => :G,
+          :index => [7, 15]
+        },
+        {
+          :name => "救援深海重巡戦隊",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "島嶼防衛要塞",
+          :point => :J,
+          :index => [10],
+          :boss => true
+        },
+        #{
+        #  :name => "",
+        #  :point => :K,
+        #  :index => [11]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :L,
+        #  :index => [12]
+        #}
+      ],
+      :map => "MapE-2Spring2016.png"
+    },
+    343 => {
+      :name => "北太平洋前線海域",
+      :cells => [
+        {
+          :name => "群狼潜水艦隊 C群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海基地航空隊 第2航空隊",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海第二水雷戦隊",
+          :point => :D,
+          :index => [4, 14, 15]
+        },
+        {
+          :name => "群狼潜水艦隊 B群",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "深海第一水雷戦隊",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "群狼潜水艦隊 A群",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海基地航空隊 第1航空隊",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "魚雷艇突撃戦隊",
+          :point => :J,
+          :index => [10, 16, 17]
+        },
+        {
+          :name => "深海駆逐隊旗艦",
+          :point => :K,
+          :index => [11],
+          :boss => true
+        },
+        #{
+        #  :name => "",
+        #  :point => :L,
+        #  :index => [12]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :M,
+        #  :index => [13]
+        #},
+      ],
+      :map => "MapE-3Spring2016.png"
+    },
+    344 => {
+      :name => "北太平洋前線海域",
+      :cells => [
+        {
+          :name => "逆襲任務部隊 III群",
+          :point => :A,
+          :index => [1]
+        },
+        #{
+        #  :name => "",
+        #  :point => :B,
+        #  :index => [2]
+        #},
+        {
+          :name => "逆襲任務部隊 II群",
+          :point => :C,
+          :index => [3, 13]
+        },
+        {
+          :name => "逆襲任務部隊 I群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "逆襲潜水艦隊 B群",
+          :point => :E,
+          :index => [5, 14]
+        },
+        {
+          :name => "逆襲空母主力任務部隊",
+          :point => :F,
+          :index => [6, 15]
+        },
+        {
+          :name => "逆襲前衛水雷戦隊",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "逆襲潜水艦隊 A群",
+          :point => :H,
+          :index => [8, 16]
+        },
+        {
+          :name => "逆襲水上打撃部隊前衛部隊",
+          :point => :I,
+          :index => [9, 17]
+        },
+        {
+          :name => "逆襲水上打撃部隊本隊",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "逆襲部隊旗艦艦隊",
+          :point => :K,
+          :index => [11, 18],
+          :boss => true
+        },
+        #{
+        #  :name => "",
+        #  :point => :L,
+        #  :index => [12, 19]
+        #},
+      ],
+      :map => "MapE-4Spring2016.png"
+    },
+    345 => {
+      :name => "南方ラバウル基地戦域",
+      :cells => [
+        {
+          :name => "南方海域潜水艦哨戒線",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海リコリス航空隊",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "南方海域警戒任務部隊",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "任務部隊 III群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "南方深海任務部隊 II群",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "任務部隊 II群",
+          :point => :F,
+          :index => [6] # G ?
+        },
+        #{
+        #  :name => "",
+        #  :point => :G,
+        #  :index => [7]
+        #},
+        {
+          :name => "深海リコリス航空隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海リコリス航空隊",
+          :point => :I,
+          :index => [9, 16]
+        },
+        {
+          :name => "深海リコリス航空隊",
+          :point => :J,
+          :index => [10, 17]
+        },
+        {
+          :name => "任務部隊 I群",
+          :point => :K,
+          :index => [11]
+        },
+        {
+          :name => "アイアンボトムサウンド警戒隊",
+          :point => :L,
+          :index => [12, 18]
+        },
+        {
+          :name => "深海リコリス航空基地",
+          :point => :M,
+          :index => [13],
+          :boss => true
+        },
+        #{
+        #  :name => "",
+        #  :point => :N,
+        #  :index => [14]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :O,
+        #  :index => [15]
+        #},
+      ],
+      :map => "MapE-5Spring2016.png"
+    },
+    346 => {
+      :name => "北太平洋深海中枢泊地沖",
+      :cells => [
+        {
+          :name => "深海中枢泊地所属潜水艦隊 I群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海中枢泊地航空隊",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "空母任務部隊 A群",
+          :point => :C,
+          :index => [3, 17]
+        },
+        {
+          :name => "空母任務部隊 D群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "空母任務部隊 C群",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "空母任務部隊 B群",
+          :point => :F,
+          :index => [6, 18]
+        },
+        {
+          :name => "北太平洋深海兵站護衛船団",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海中枢泊地航空隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "護衛空母集団",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "深海中枢泊地航空隊",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "深海中枢泊地所属潜水艦隊 II群",
+          :point => :K,
+          :index => [11, 19]
+        },
+        {
+          :name => "深海太平洋艦隊主力任務部隊",
+          :point => :L,
+          :index => [12] # N ?
+        },
+        #{
+        #  :name => "",
+        #  :point => :M,
+        #  :index => [13]
+        #},
+        {
+          :name => "北太平洋深海中枢泊地",
+          :point => :N,
+          :index => [14, 20, 21],
+          :boss => true
+        },
+        #{
+        #  :name => "",
+        #  :point => :O,
+        #  :index => [15, 22]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :P,
+        #  :index => [16]
+        #},
+      ],
+      :map => "MapE-6Spring2016.png"
+    },
+    347 => {
+      :name => "北太平洋戦域",
+      :cells => [
+        {
+          :name => "高速空母任務部隊",
+          :point => :A,
+          :index => [1]
+        },
+        #{
+        #  :name => "",
+        #  :point => :B,
+        #  :index => [2]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :C,
+        #  :index => [3]
+        #},
+        {
+          :name => "深海中枢泊地 特殊任務部隊",
+          :point => :D,
+          :index => [4]
+        },
+        #{
+        #  :name => "",
+        #  :point => :E,
+        #  :index => [5]
+        #},
+        {
+          :name => "護衛空母群 A集団",
+          :point => :F,
+          :index => [6]
+        },
+        #{
+        #  :name => "",
+        #  :point => :G,
+        #  :index => [7]
+        #},
+        {
+          :name => "深海中枢泊地航空隊",
+          :point => :H,
+          :index => [8, 17]
+        },
+        #{
+        #  :name => "",
+        #  :point => :I,
+        #  :index => [9, 18]
+        #},
+        {
+          :name => "深海中枢泊地航空隊",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "深海中枢泊地潜水艦隊旗艦",
+          :point => :K,
+          :index => [11]
+        },
+        {
+          :name => "空母機動部隊 主力艦隊",
+          :point => :L,
+          :index => [12, 19]
+        },
+        {
+          :name => "中枢泊地 再編成巡洋艦戦隊",
+          :point => :M,
+          :index => [13, 20]
+        },
+        {
+          :name => "北太平洋深海中枢泊地",
+          :point => :N,
+          :index => [14, 21],
+          :boss => true
+        },
+        #{
+        #  :name => "",
+        #  :point => :O,
+        #  :index => [15]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :P,
+        #  :index => [16]
+        #},
+      ],
+      :map => "MapE-7Spring2016.png"
     }
   }
 

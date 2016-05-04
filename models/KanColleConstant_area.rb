@@ -32,7 +32,7 @@ class KanColleConstant
     },
     32 => {
       :name => "突入！海上輸送作戦",
-      :maps => [],#321, 322, 323, 324, 325
+      :maps => [321, 322, 323, 324, 325],
       :event => true,
       :available => false,
     },
@@ -41,6 +41,12 @@ class KanColleConstant
       :maps => [331, 332, 333],
       :event => true,
       :available => false,
+    },
+    34 => {
+      :name => "開設！基地航空隊",
+      :maps => [341, 342, 343, 344, 345, 346, 347],
+      :event => true,
+      :available => true,
     },
   }
 
