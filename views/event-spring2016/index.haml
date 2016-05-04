@@ -16,27 +16,27 @@
         %div.row
           %div.col-xs-12.col-sm-3.top30
             %div.well.well-lg
-              %p= "未通关人数： #{data[:e1][:chosen] - data[:e7][:passed]}"
-              %p= "E1： #{data[:e1][:chosen] - data[:e1][:passed]}"
-              %p= "E2： #{data[:e2][:chosen] - data[:e2][:passed]}"
-              %p= "E3： #{data[:e3][:chosen] - data[:e3][:passed]}"
-              %p= "E4： #{data[:e4][:chosen] - data[:e4][:passed]}"
-              %p= "E5： #{data[:e5][:chosen] - data[:e5][:passed]}"
-              %p= "E6： #{data[:e6][:chosen] - data[:e6][:passed]}"
-              %p= "E7： #{data[:e7][:chosen] - data[:e7][:passed]}"
+              %p= "未通关人数： #{data["e1"]["chosen"] - data["e7"]["passed"]}"
+              %p= "E1： #{data["e1"]["chosen"] - data["e1"]["passed"]}"
+              %p= "E2： #{data["e2"]["chosen"] - data["e2"]["passed"]}"
+              %p= "E3： #{data["e3"]["chosen"] - data["e3"]["passed"]}"
+              %p= "E4： #{data["e4"]["chosen"] - data["e4"]["passed"]}"
+              %p= "E5： #{data["e5"]["chosen"] - data["e5"]["passed"]}"
+              %p= "E6： #{data["e6"]["chosen"] - data["e6"]["passed"]}"
+              %p= "E7： #{data["e7"]["chosen"] - data["e7"]["passed"]}"
           %div.col-xs-12.col-sm-9
             %div#chart.col-xs-12.ct-chart
 %script{:defer => "defer"}
   :plain
     var data = {
       labels: ['E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7'],
-      series: [#{data[:e1][:chosen] - data[:e1][:passed]},
-               #{data[:e2][:chosen] - data[:e2][:passed]},
-               #{data[:e3][:chosen] - data[:e3][:passed]},
-               #{data[:e4][:chosen] - data[:e4][:passed]},
-               #{data[:e5][:chosen] - data[:e5][:passed]},
-               #{data[:e6][:chosen] - data[:e6][:passed]},
-               #{data[:e7][:chosen] - data[:e7][:passed]}]
+      series: [#{data["e1"]["chosen"] - data["e1"]["passed"]},
+               #{data["e2"]["chosen"] - data["e2"]["passed"]},
+               #{data["e3"]["chosen"] - data["e3"]["passed"]},
+               #{data["e4"]["chosen"] - data["e4"]["passed"]},
+               #{data["e5"]["chosen"] - data["e5"]["passed"]},
+               #{data["e6"]["chosen"] - data["e6"]["passed"]},
+               #{data["e7"]["chosen"] - data["e7"]["passed"]}]
     };
     var options = {
       height: 300,
