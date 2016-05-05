@@ -2038,11 +2038,6 @@ class KanColleConstant
           :point => :B,
           :index => [2]
         },
-        #{
-        #  :name => "",
-        #  :point => :D,
-        #  :index => [4]
-        #},
         {
           :name => "潜水艦哨戒線",
           :point => :E,
@@ -2069,11 +2064,6 @@ class KanColleConstant
           :index => [10],
           :boss => true
         },
-        #{
-        #  :name => "",
-        #  :point => :K,
-        #  :index => [11]
-        #},
         #{
         #  :name => "",
         #  :point => :L,
@@ -2152,11 +2142,6 @@ class KanColleConstant
           :point => :A,
           :index => [1]
         },
-        #{
-        #  :name => "",
-        #  :point => :B,
-        #  :index => [2]
-        #},
         {
           :name => "逆襲任務部隊 II群",
           :point => :C,
@@ -2242,10 +2227,10 @@ class KanColleConstant
         {
           :name => "任務部隊 II群",
           :point => :F,
-          :index => [6] # G ?
+          :index => [6]
         },
         #{
-        #  :name => "",
+        #  :name => "南方海域潜水艦哨戒線",
         #  :point => :G,
         #  :index => [7]
         #},
@@ -2354,7 +2339,7 @@ class KanColleConstant
         {
           :name => "深海太平洋艦隊主力任務部隊",
           :point => :L,
-          :index => [12] # N ?
+          :index => [12]
         },
         #{
         #  :name => "",
@@ -2388,11 +2373,11 @@ class KanColleConstant
           :point => :A,
           :index => [1]
         },
-        #{
-        #  :name => "",
-        #  :point => :B,
-        #  :index => [2]
-        #},
+        {
+          :name => "深海中枢泊地潜水艦隊 警戒部隊",
+          :point => :B,
+          :index => [2]
+        },
         #{
         #  :name => "",
         #  :point => :C,
@@ -2403,21 +2388,21 @@ class KanColleConstant
           :point => :D,
           :index => [4]
         },
-        #{
-        #  :name => "",
-        #  :point => :E,
-        #  :index => [5]
-        #},
+        {
+          :name => "深海中枢泊地戦艦戦隊",
+          :point => :E,
+          :index => [5]
+        },
         {
           :name => "護衛空母群 A集団",
           :point => :F,
           :index => [6]
         },
-        #{
-        #  :name => "",
-        #  :point => :G,
-        #  :index => [7]
-        #},
+        {
+          :name => "護衛空母群 B集団",
+          :point => :G,
+          :index => [7]
+        },
         {
           :name => "深海中枢泊地航空隊",
           :point => :H,
