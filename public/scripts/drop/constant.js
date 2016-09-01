@@ -1012,6 +1012,30 @@ window.shipData = {
       nameForSearch: "春风,chunfeng,chun feng",
       shipType: "驱逐舰",
       rare: true
+    },
+    "Warspite": {
+      chineseName: "Warspite",
+      nameForSearch: "",
+      shipType: "战舰",
+      rare: true
+    },
+    "Aquila": {
+      chineseName: "Aquila",
+      nameForSearch: "",
+      shipType: "空母",
+      rare: true
+    },
+    "水無月": {
+      chineseName: "水无月",
+      nameForSearch: "",
+      shipType: "驱逐舰",
+      rare: true
+    },
+    "伊26": {
+      chineseName: "伊26",
+      nameForSearch: "",
+      shipType: "潜水舰",
+      rare: true
     }
 };
 
@@ -1085,4 +1109,8 @@ window.mapWikiData = {
     345: '2016年春季活动/E-5',
     346: '2016年春季活动/E-6',
     347: '2016年春季活动/E-7',
+    351: '2016年夏季活动/E-1',
+    352: '2016年夏季活动/E-2',
+    353: '2016年夏季活动/E-3',
+    354: '2016年夏季活动/E-4'
 };

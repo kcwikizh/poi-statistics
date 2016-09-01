@@ -2451,6 +2451,279 @@ class KanColleConstant
         #},
       ],
       :map => "MapE-7Spring2016.png"
+    },
+    351 => {
+      :name => "南西海域 ブンタン沖",
+      :cells => [
+        {
+          :name => "深海東洋艦隊 先遣巡洋艦隊",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海東洋艦隊 偵察潜水艦隊 II群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海東洋艦隊 先遣機動部隊",
+          :point => :C,
+          :index => [3, 10]
+        },
+        #{
+        #  :name => "D",
+        #  :point => :D,
+        #  :index => [4]
+        #},
+        {
+          :name => "深海東洋艦隊 前衛水雷戦隊",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "深海東洋艦隊 偵察潜水艦隊 I群",
+          :point => :F,
+          :index => [6, 11, 12]
+        },
+        {
+          :name => "深海東洋艦隊 侵攻上陸部隊",
+          :point => :G,
+          :index => [7]
+        },
+        #{
+        #  :name => "H",
+        #  :point => :H,
+        #  :index => [8]
+        #},
+        {
+          :name => "深海東洋艦隊 潜水司令母艦",
+          :point => :I,
+          :index => [9],
+          :boss => true
+        },
+      ],
+      :map => "MapE-1Summer2016.png"
+    },
+    352 => {
+      :name => "南西海域 エンドウ沖",
+      :cells => [
+        {
+          :name => "深海東洋艦隊 警戒部隊 IV群",
+          :point => :A,
+          :index => [1]
+        },
+        #{
+        #  :name => "B",
+        #  :point => :B,
+        #  :index => [2]
+        #},
+        #{
+        #  :name => "C",
+        #  :point => :C,
+        #  :index => [3]
+        #},
+        {
+          :name => "深海東洋艦隊 警戒部隊 III群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海東洋艦隊 群狼潜水部隊",
+          :point => :E,
+          :index => [5, 14]
+        },
+        {
+          :name => "深海東洋艦隊 潜水艦哨戒線",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海東洋艦隊 警戒部隊 II群",
+          :point => :G,
+          :index => [7, 15]
+        },
+        {
+          :name => "深海東洋艦隊 艦載機部隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海東洋艦隊 警戒部隊 I群",
+          :point => :I,
+          :index => [9]
+        },
+        #{
+        #  :name => "J",
+        #  :point => :J,
+        #  :index => [10]
+        #},
+        #{
+        #  :name => "K",
+        #  :point => :K,
+        #  :index => [11]
+        #},
+        #{
+        #  :name => "L",
+        #  :point => :L,
+        #  :index => [12]
+        #},
+        {
+          :name => "深海東洋艦隊 Z部隊先遣艦隊",
+          :point => :M,
+          :index => [13],
+          :boss => true
+        },
+      ],
+      :map => "MapE-2Summer2016.png"
+    },
+    353 => {
+      :name => "南西海域 マレー沖",
+      :cells => [
+        {
+          :name => "深海東洋艦隊 艦載機部隊",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海東洋艦隊 前方展開潜水艦隊",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海東洋艦隊 機動部隊 B群",
+          :point => :C,
+          :index => [3, 11]
+        },
+        {
+          :name => "深海東洋艦隊 艦載機部隊",
+          :point => :D,
+          :index => [4]
+        },
+        #{
+        #  :name => "E",
+        #  :point => :E,
+        #  :index => [5]
+        #},
+        #{
+        #  :name => "F",
+        #  :point => :F,
+        #  :index => [6]
+        #},
+        {
+          :name => "深海東洋艦隊 機動部隊 A群",
+          :point => :G,
+          :index => [7, 12, 13, 14]
+        },
+        {
+          :name => "深海東洋艦隊 Z部隊",
+          :point => :H,
+          :index => [8]
+        },
+        #{
+        #  :name => "I",
+        #  :point => :I,
+        #  :index => [9]
+        #},
+        {
+          :name => "深海東洋方面 拠点港湾要塞",
+          :point => :J,
+          :index => [10],
+          :boss => true
+        }
+      ],
+      :map => "MapE-3Summer2016.png"
+    },
+    354 => {
+      :name => "南西海域 マラッカ海峡沖",
+      :cells => [
+        {
+          :name => "東洋方面航空団 先制攻撃",
+          :point => :A,
+          :index => [1]
+        },
+        #{
+        #  :name => "B",
+        #  :point => :B,
+        #  :index => [2]
+        #},
+        {
+          :name => "深海東洋艦隊 戦艦部隊",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海東洋艦隊 G部隊 II群",
+          :point => :D,
+          :index => [4]
+        },
+        #{
+        #  :name => "E",
+        #  :point => :E,
+        #  :index => [5]
+        #},
+        {
+          :name => "深海東洋艦隊 残存潜水艦隊",
+          :point => :F,
+          :index => [6, 18]
+        },
+        {
+          :name => "東洋方面航空団 全力出撃",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海東洋艦隊 G部隊 I群",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "拠点港湾要塞(再建中)",
+          :point => :I,
+          :index => [9, 19, 20]
+        },
+        #{
+        #  :name => "J",
+        #  :point => :J,
+        #  :index => [10]
+        #},
+        {
+          :name => "深海東洋艦隊 Z部隊増派部隊",
+          :point => :K,
+          :index => [11]
+        },
+        {
+          :name => "深海東洋方面 艦載機群第一波",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "深海東洋方面 艦載機群第二波",
+          :point => :M,
+          :index => [13, 21, 22]
+        },
+        {
+          :name => "深海東洋艦隊 潜水艦隊旗艦",
+          :point => :N,
+          :index => [14]
+        },
+        #{
+        #  :name => "O",
+        #  :point => :O,
+        #  :index => [15]
+        #},
+        #{
+        #  :name => "P",
+        #  :point => :P,
+        #  :index => [16]
+        #},
+        {
+          :name => "深海東洋方面 侵攻艦隊旗艦",
+          :point => :Q,
+          :index => [17],
+          :boss => true
+        },
+      ],
+      :map => "MapE-4Summer2016.png"
     }
   }
 

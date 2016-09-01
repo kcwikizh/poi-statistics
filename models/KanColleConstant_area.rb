@@ -46,6 +46,12 @@ class KanColleConstant
       :name => "開設！基地航空隊",
       :maps => [341, 342, 343, 344, 345, 346, 347],
       :event => true,
+      :available => false,
+    },
+    35 => {
+      :name => "迎撃！第二次マレー沖海戦",
+      :maps => [351, 352, 353, 354],
+      :event => true,
       :available => true,
     },
   }
