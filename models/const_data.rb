@@ -3,25 +3,25 @@ require 'json'
 class ConstData
   class ShipData
     def initialize
-      @data = JSON.parse(File.read('../data/ship.json'))
+      @data = JSON.parse(File.read('./data/ship.json'))
     end
 
     def [](index)
-      if index.is_a? Numeric
+      if index == -1
+        return {"name" => "(无)"}
+      elsif index.is_a? Numeric
         return @data.find{|i| i["id"] == index}
       elsif index.is_a? String
         return @data.find{|i| i["name"] == index}
-      elsif index == -1
-        return {:name => "(无)"}
       else
-        return {:name => "未知"}
+        return {"name" => "未知"}
       end
     end
   end
 
   class ShipTypeData
     def initialize
-      @data = JSON.parse(File.read('../data/shiptype.json'))
+      @data = JSON.parse(File.read('./data/shiptype.json'))
     end
 
     def [](index)
