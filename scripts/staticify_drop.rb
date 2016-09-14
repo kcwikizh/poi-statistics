@@ -1,7 +1,9 @@
+require 'json'
+require 'set'
 require_relative '../app'
 
-common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..64).to_a].flatten
-event_maps = [311,312,313,314,315,316,317]
+$common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..64).to_a].flatten
+$event_maps = [311,312,313,314,315,316,317]
 
 def staticify_drop_map(map_id)
   levels = map_id > 100 ? [3, 2, 1] : [0]
@@ -14,7 +16,7 @@ def staticify_drop_map(map_id)
         json_obj = {
           totalCount: 0,
           generateTime: Time.now.strftime("%Y-%m-%d %H:%M:%S"),
-          data: {} 
+          data: {}
         }
         
         enemy_total_count = (table.find_by_sql ["SELECT enemy, SUM(count) AS count FROM #{table_name} WHERE map = ? AND cell = ANY(ARRAY[?]) AND level = ? AND rank = ? GROUP BY enemy", map_id, cell[:index], level_no, rank]).reduce({}) {|h, i| h[i.enemy] = i.count; h}
@@ -225,6 +227,62 @@ def staticify_drop_map(map_id)
   end
 end
 
-[common_maps, event_maps].flatten.each do |map|
+def staticify_drop_ship()
+  table = [DropRecord, DropRecordSummer2015]
+  table_name = ["drop_records", "drop_records_summer2015"]
+
+  ['S', 'A', 'B', 'SA', 'SAB'].each do |rank|
+    drop_map_data = {}
+    [$common_maps, $event_maps].flatten.each do |map|
+      levels = map > 100 ? [3, 2, 1] : [0]
+      levels.each do |level|
+        KanColleConstant.map[map][:cells].each do |cell|
+          drop_map_data["#{map / 10}-#{map % 10}-#{cell[:point]}#{cell[:boss] ? "(Boss)" : ""}#{level == 0 ? "" : (level == 3 ? "-甲" : (level == 2 ? "-乙" : "-丙"))}"] = JSON.parse Sinatra::KVDataHelper.get_kv_data("drop_map_#{map}_#{cell[:point]}#{level > 0 ? "-#{level}" : ""}-#{rank}")
+        end
+      end
+    end
+
+    ship_set = Set.new
+    drop_map_data.each do |_, drop_data|
+      drop_data["data"].each do |key, _|
+        ship_set.add key
+      end
+    end
+    ship_set.delete "(无)"
+
+    ship_set.each do |ship|
+      json_obj = {
+        totalCount: 0,
+        generateTime: Time.now.strftime("%Y-%m-%d %H:%M:%S"),
+        data: {}
+      }
+
+      drop_map_data.each do |map_name, drop_data|
+        next if drop_data["data"][ship].nil?
+
+        if rank.length == 1
+          json_obj[:data][map_name] ||= {
+            hqLv: drop_data["data"][ship]["hqLv"],
+            totalCount: drop_data["data"][ship]["totalCount"],
+            rate: drop_data["data"][ship]["rate"]
+          }
+        else
+          json_obj[:data][map_name] ||= {
+            hqLv: drop_data["data"][ship]["hqLv"],
+            totalCount: drop_data["data"][ship]["totalCount"],
+            rankCount: drop_data["data"][ship]["rankCount"],
+            rate: drop_data["data"][ship]["rate"]
+          }
+        end
+      end
+
+      ship_id = ConstData.ship[ship]["id"]
+      Sinatra::KVDataHelper.set_kv_data("drop_ship_#{ship_id}-#{rank}", json_obj.to_json)
+    end
+  end
+end
+
+[$common_maps, $event_maps].flatten.each do |map|
   staticify_drop_map(map)
 end
+staticify_drop_ship()
