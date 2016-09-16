@@ -35,6 +35,16 @@ class ConstData
     end
   end
 
+  class ShipClassData
+    def initialize
+      @data = JSON.parse(File.read('./data/shipclass.json'))
+    end
+
+    def [](index)
+      return @data.find{|i| i["id"] == index}
+    end
+  end
+
   class << self
     def ship
       @@ship ||= ShipData.new
@@ -42,6 +52,10 @@ class ConstData
 
     def shiptype
       @@shiptype ||= ShipTypeData.new
+    end
+
+    def shipclass
+      @@shipclass ||= ShipClassData.new
     end
   end
 end

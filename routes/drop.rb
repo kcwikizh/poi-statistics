@@ -91,16 +91,29 @@ get '/drop/map/:map/:level/:point-:rank.html' do
   }
 end
 
-get '/drop/ship/:ship_id/:rank.?:format?' do
+get '/drop/ship/:ship_id/?' do
   ship_id = params[:ship_id].to_i
 
-  halt 404 if ConstData.ship[ship_id].nil?
+  redirect "/drop/ship/#{ship_id}/SAB.html"
+end
+
+get '/drop/ship/:ship_id/:rank.?:format?' do
+  ship_id = params[:ship_id].to_i
+  rank = params[:rank].split('').map(&:to_sym).uniq
+
+  halt 404 if ConstData.ship[ship_id].nil? ||
+    rank.any?{|r| ![:S, :A, :B].include?(r)}
 
   params[:format] ||= 'html'
   if params[:format] == 'json'
     content_type :json
-    return get_kv_data("drop_ship_#{ship_id}-#{rank}")
+    return get_kv_data("drop_ship_#{ship_id}-#{rank.join('')}")
   end
 
-  halt 404
+  haml :'drop/ship/query', :locals => {
+    :location => 'drop',
+    :title_append => " # 掉落统计 - #{ConstData.ship[ship_id]["name"]}",
+    :ship_id => ship_id,
+    :rank => rank.join('')
+  }
 end

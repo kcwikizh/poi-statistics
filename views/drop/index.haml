@@ -246,4 +246,79 @@
       %div.panel.panel-primary
         %div.panel-heading
           %h4.panel-title 舰娘
-        %div.panel-body Coming soon.
+        %div.panel-body
+          - ship_list = JSON.parse(Sinatra::KVDataHelper.get_kv_data("drop_shiplist")).map{|s| ConstData.ship[s]}.sort{|a, b| a["wiki_id"] <=> b["wiki_id"]}
+          %ul.nav.nav-pills
+            %li.active
+              %a{:href => "#dd", :"data-toggle" => "tab"} 駆逐
+            %li
+              %a{:href => "#cl", :"data-toggle" => "tab"} 軽巡・練巡
+            %li
+              %a{:href => "#ca", :"data-toggle" => "tab"} 重巡
+            %li
+              %a{:href => "#bb", :"data-toggle" => "tab"} 戦艦
+            %li
+              %a{:href => "#cvl", :"data-toggle" => "tab"} 軽空母
+            %li
+              %a{:href => "#cv", :"data-toggle" => "tab"} 空母
+            %li
+              %a{:href => "#ss", :"data-toggle" => "tab"} 潜水艦・潜水空母
+            %li
+              %a{:href => "#others", :"data-toggle" => "tab"} 水母・揚陸艦・工作艦・潜水母艦・補給艦
+          %div.tab-content.top15
+            %div#dd.tab-pane.active
+              %ul.list-inline
+                - ship_list.select{|s| s["stype"] == 2}.group_by{|s| s["ctype"]}.each do |grp, ships|
+                  - ships.sort{|a, b| a["cnum"] <=> b["cnum"]}.each do |s|
+                    %li
+                      %p
+                        %a.btn.btn-default{:href => "/drop/ship/#{s["id"]}/"}= s["name"]
+            %div#cl.tab-pane
+              %ul.list-inline
+                - ship_list.select{|s| s["stype"] == 3 || s["stype"] == 21}.sort{|a, b| a["cnum"] <=> b["cnum"]}.group_by{|s| s["ctype"]}.each do |grp, ships|
+                  - ships.sort{|a, b| a["cnum"] <=> b["cnum"]}.each do |s|
+                    %li
+                      %p
+                        %a.btn.btn-default{:href => "/drop/ship/#{s["id"]}/"}= s["name"]
+            %div#ca.tab-pane
+              %ul.list-inline
+                - ship_list.select{|s| s["stype"] == 5}.group_by{|s| s["ctype"]}.each do |grp, ships|
+                  - ships.sort{|a, b| a["cnum"] <=> b["cnum"]}.each do |s|
+                    %li
+                      %p
+                        %a.btn.btn-default{:href => "/drop/ship/#{s["id"]}/"}= s["name"]
+            %div#bb.tab-pane
+              %ul.list-inline
+                - ship_list.select{|s| s["stype"] == 8 || s["stype"] == 9}.group_by{|s| s["ctype"]}.each do |grp, ships|
+                  - ships.sort{|a, b| a["cnum"] <=> b["cnum"]}.each do |s|
+                    %li
+                      %p
+                        %a.btn.btn-default{:href => "/drop/ship/#{s["id"]}/"}= s["name"]
+            %div#cvl.tab-pane
+              %ul.list-inline
+                - ship_list.select{|s| s["stype"] == 7}.group_by{|s| s["ctype"]}.each do |grp, ships|
+                  - ships.sort{|a, b| a["cnum"] <=> b["cnum"]}.each do |s|
+                    %li
+                      %p
+                        %a.btn.btn-default{:href => "/drop/ship/#{s["id"]}/"}= s["name"]
+            %div#cv.tab-pane
+              %ul.list-inline
+                - ship_list.select{|s| s["stype"] == 11}.group_by{|s| s["ctype"]}.each do |grp, ships|
+                  - ships.sort{|a, b| a["cnum"] <=> b["cnum"]}.each do |s|
+                    %li
+                      %p
+                        %a.btn.btn-default{:href => "/drop/ship/#{s["id"]}/"}= s["name"]
+            %div#ss.tab-pane
+              %ul.list-inline
+                - ship_list.select{|s| s["stype"] == 13 || s["stype"] == 14}.group_by{|s| s["ctype"]}.each do |grp, ships|
+                  - ships.sort{|a, b| a["cnum"] <=> b["cnum"]}.each do |s|
+                    %li
+                      %p
+                        %a.btn.btn-default{:href => "/drop/ship/#{s["id"]}/"}= s["name"]
+            %div#others.tab-pane
+              %ul.list-inline
+                - ship_list.select{|s| ![(2..14).to_a, 18, 21].flatten.include?(s["stype"])}.group_by{|s| s["ctype"]}.each do |grp, ships|
+                  - ships.sort{|a, b| a["cnum"] <=> b["cnum"]}.each do |s|
+                    %li
+                      %p
+                        %a.btn.btn-default{:href => "/drop/ship/#{s["id"]}/"}= s["name"]
