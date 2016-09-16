@@ -8,7 +8,7 @@ module Sinatra
       options[:protocol] += ':' unless options[:protocol].empty?
 
       hash = Digest::MD5.hexdigest(filename)
-      "#{options[:protocol]}//upload.kcwiki.moe/commons/#{hash[0]}/#{hash[0..1]}/#{filename}"
+      "#{options[:protocol]}//kc.6candy.com/commons/#{hash[0]}/#{hash[0..1]}/#{filename}"
     end
 
     def kcwiki_get_thumb(filename, options = {})
@@ -16,7 +16,7 @@ module Sinatra
       options[:protocol] += ':' unless options[:protocol].empty?
 
       hash = Digest::MD5.hexdigest(filename)
-      "#{options[:protocol]}//upload.kcwiki.moe/commons/thumb/#{hash[0]}/#{hash[0..1]}/#{filename}/#{options[:size]}px-#{filename}"
+      "#{options[:protocol]}//kc.6candy.com/commons/thumb/#{hash[0]}/#{hash[0..1]}/#{filename}/#{options[:size]}px-#{filename}"
     end
   end
 
