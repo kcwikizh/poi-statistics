@@ -2,7 +2,7 @@ require_relative '../app'
 
 time_range = {
   from: Time.parse(Sinatra::KVDataHelper.get_kv_data("migrate_drop")),
-  to: Time.now
+  to: DropShipRecord.desc(:id).first.id.generation_time + 1
 }
 
 common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..64).to_a].flatten
@@ -64,7 +64,7 @@ common_maps.each do |map_id|
   KanColleConstant.map[map_id][:cells].each do |cell_obj|
     DropShipRecord.where(
       :id.gte => BSON::ObjectId.from_time(time_range[:from]),
-      :id.lte  => BSON::ObjectId.from_time(time_range[:to]),
+      :id.lt  => BSON::ObjectId.from_time(time_range[:to]),
       :mapId  => map_id,
       :cellId.in => cell_obj[:index]
     ).distinct(:shipId).to_a.each do |ship_id|
@@ -124,7 +124,7 @@ event_maps.each do |map_id|
   KanColleConstant.map[map_id][:cells].each do |cell_obj|
     DropShipRecord.where(
       :id.gte => BSON::ObjectId.from_time(time_range[:from]),
-      :id.lte  => BSON::ObjectId.from_time(time_range[:to]),
+      :id.lt  => BSON::ObjectId.from_time(time_range[:to]),
       :mapId  => map_id,
       :cellId.in => cell_obj[:index]
     ).distinct(:shipId).to_a.each do |ship_id|
