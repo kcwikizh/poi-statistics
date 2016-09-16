@@ -22,7 +22,7 @@ class KanColleConstant
     },
     6 => {
       :name => "中部海域",
-      :maps => [61, 62, 63],
+      :maps => [61, 62, 63, 64],
     },
     31 => {
       :name => "反撃！第二次SN作戦",
@@ -52,7 +52,7 @@ class KanColleConstant
       :name => "迎撃！第二次マレー沖海戦",
       :maps => [351, 352, 353, 354],
       :event => true,
-      :available => true,
+      :available => false,
     },
   }
 

@@ -1192,6 +1192,83 @@ class KanColleConstant
       ],
       :map => "Map6-3.png"
     },
+    64 => {
+      :name => "中部北海域ピーコック島沖",
+      :cells => [
+        {
+          :name => "中部海域哨戒水雷戦隊 A群",
+          :point => :A,
+          :index => [1],
+        },
+        {
+          :name => "中部海域哨戒水雷戦隊 B群",
+          :point => :B,
+          :index => [2],
+        },
+        {
+          :name => "離島防衛低速戦艦部隊",
+          :point => :C,
+          :index => [3],
+        },
+        {
+          :name => "離島陸上航空隊",
+          :point => :D,
+          :index => [4, 15, 16, 17],
+        },
+        {
+          :name => "中部海域哨戒遊撃部隊",
+          :point => :E,
+          :index => [5],
+        },
+        {
+          :name => "離島陸上航空隊",
+          :point => :F,
+          :index => [6],
+        },
+        {
+          :name => "離島陸上航空隊",
+          :point => :G,
+          :index => [7],
+        },
+        {
+          :name => "離島防衛低速戦艦部隊",
+          :point => :H,
+          :index => [8],
+        },
+        {
+          :name => "離島混成航空隊",
+          :point => :I,
+          :index => [9, 19],
+        },
+        {
+          :name => "任務部隊 I群",
+          :point => :J,
+          :index => [10, 18],
+        },
+        {
+          :name => "任務部隊 II群",
+          :point => :K,
+          :index => [11],
+        },
+        {
+          :name => "増援護衛空母部隊",
+          :point => :L,
+          :index => [12],
+        },
+        {
+          :name => "中部海域潜水哨戒線",
+          :point => :M,
+          :index => [13],
+        },
+        {
+          :name => "離島守備隊",
+          :point => :N,
+          :index => [14, 20, 21],
+          :boss => true,
+        },
+      ],
+      :map => "Map6-4.png"
+    },
     311 => {
       :name => "ショートランド沖",
       :cells => [
