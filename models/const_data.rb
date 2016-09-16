@@ -3,7 +3,7 @@ require 'json'
 class ConstData
   class ShipData
     def initialize
-      @data = JSON.parse(File.read('./data/ship.json'))
+      @data = JSON.parse(File.read("#{File.dirname(__FILE__)}/../data/ship.json"))
     end
 
     def [](index)
@@ -21,7 +21,7 @@ class ConstData
 
   class ShipTypeData
     def initialize
-      @data = JSON.parse(File.read('./data/shiptype.json'))
+      @data = JSON.parse(File.read("#{File.dirname(__FILE__)}/../data/shiptype.json"))
     end
 
     def [](index)
@@ -37,7 +37,7 @@ class ConstData
 
   class ShipClassData
     def initialize
-      @data = JSON.parse(File.read('./data/shipclass.json'))
+      @data = JSON.parse(File.read("#{File.dirname(__FILE__)}/../data/shipclass.json"))
     end
 
     def [](index)

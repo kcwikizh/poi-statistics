@@ -5,14 +5,14 @@ require 'mongoid'
 require_relative './config/environments'
 
 configure do
-  Mongoid.load!('./config/mongoid.yml')
+  Mongoid.load!("#{File.dirname(__FILE__)}/config/mongoid.yml")
 end
 
 error 404 do
   '404 - Not Found'
 end
 
-Dir['./data/*.rb'].each { |file| load file }
-Dir['./models/*.rb'].each { |file| load file }
-Dir['./helpers/*.rb'].each { |file| load file }
-Dir['./routes/*.rb'].each { |file| load file }
+Dir["#{File.dirname(__FILE__)}/data/*.rb"].each { |file| load file }
+Dir["#{File.dirname(__FILE__)}/models/*.rb"].each { |file| load file }
+Dir["#{File.dirname(__FILE__)}/helpers/*.rb"].each { |file| load file }
+Dir["#{File.dirname(__FILE__)}/routes/*.rb"].each { |file| load file }
