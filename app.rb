@@ -6,6 +6,8 @@ require_relative './config/environments'
 
 configure do
   Mongoid.load!("#{File.dirname(__FILE__)}/config/mongoid.yml")
+  
+  ActiveRecord::Base.logger.level = 1
 end
 
 error 404 do
