@@ -1,13 +1,13 @@
 require_relative '../app'
 
 time_range = {
-  from: Time.new(2015, 8, 10, 12),
-  to: Time.new(2015, 9, 7, 12)+1
+  from: Time.parse(Sinatra::KVDataHelper.get_kv_data("migrate_drop")),
+  to: Time.now
 }
 
-common_maps = []#[(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..64).to_a].flatten
+common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..64).to_a].flatten
 common_table = DropRecord
-event_maps = []#[313,314,315,316,317]
+event_maps = []
 event_table = DropRecordSummer2015
 
 map_func = %Q{
@@ -64,7 +64,7 @@ common_maps.each do |map_id|
   KanColleConstant.map[map_id][:cells].each do |cell_obj|
     DropShipRecord.where(
       :id.gte => BSON::ObjectId.from_time(time_range[:from]),
-      :id.lt  => BSON::ObjectId.from_time(time_range[:to]),
+      :id.lte  => BSON::ObjectId.from_time(time_range[:to]),
       :mapId  => map_id,
       :cellId.in => cell_obj[:index]
     ).distinct(:shipId).to_a.each do |ship_id|
@@ -86,10 +86,11 @@ common_maps.each do |map_id|
             reduce_func
           ).scope(uaList: UAWhiteList.filters).out(inline: 1).each do |q|
             qid = q["_id"].split('/')
-            fleet = qid[0].split(',').map(&:to_i)
+            fleet = qid[0]
             time_no = qid[1].to_i
+            values = q["value"]
             record = common_table.where(
-              "ship = :s AND map = :m AND cell = :c AND level = :l AND rank = :r AND enemy = ARRAY[:e] AND time_no = :t",
+              "ship = :s AND map = :m AND cell = :c AND level = :l AND rank = :r AND enemy = :e AND time_no = :t",
               {
                 s: ship_id,
                 m: map_id,
@@ -123,7 +124,7 @@ event_maps.each do |map_id|
   KanColleConstant.map[map_id][:cells].each do |cell_obj|
     DropShipRecord.where(
       :id.gte => BSON::ObjectId.from_time(time_range[:from]),
-      :id.lt  => BSON::ObjectId.from_time(time_range[:to]),
+      :id.lte  => BSON::ObjectId.from_time(time_range[:to]),
       :mapId  => map_id,
       :cellId.in => cell_obj[:index]
     ).distinct(:shipId).to_a.each do |ship_id|
@@ -181,4 +182,4 @@ event_maps.each do |map_id|
   end
 end
 
-Sinatra::KVDataHelper.set_kv_data("drop", time_range[:to].to_s)
+Sinatra::KVDataHelper.set_kv_data("migrate_drop", time_range[:to].to_s)

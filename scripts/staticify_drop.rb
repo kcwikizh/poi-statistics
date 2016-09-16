@@ -3,7 +3,7 @@ require 'set'
 require_relative '../app'
 
 $common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..64).to_a].flatten
-$event_maps = [311,312,313,314,315,316,317]
+$event_maps = []
 
 def staticify_drop_map(map_id)
   levels = map_id > 100 ? [3, 2, 1] : [0]
@@ -249,6 +249,7 @@ def staticify_drop_ship()
       end
     end
     ship_set.delete "(无)"
+    Sinatra::KVDataHelper.set_kv_data("drop_shiplist", ship_set.to_json)
 
     ship_set.each do |ship|
       json_obj = {
@@ -259,6 +260,8 @@ def staticify_drop_ship()
 
       drop_map_data.each do |map_name, drop_data|
         next if drop_data["data"][ship].nil?
+
+        json_obj[:totalCount] += drop_data["data"][ship]["totalCount"]
 
         if rank.length == 1
           json_obj[:data][map_name] ||= {
