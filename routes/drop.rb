@@ -22,7 +22,7 @@ get '/drop/map/:map/?' do
   end
 end
 
-get '/drop/map/:map/:point-:rank.html' do
+get '/drop/map/:map/:point-:rank.?:format?' do
   map_id = params[:map].to_i
   area_id = map_id / 10
   point_id = params[:point].to_sym
@@ -34,15 +34,11 @@ get '/drop/map/:map/:point-:rank.html' do
     KanColleConstant.map[map_id][:cells].index{|c| c[:point] == point_id}.nil? ||
     rank.any?{|r| ![:S, :A, :B].include?(r)}
 
-  query_data = {
-    'totalCount': 0,
-    'cacheTime': Time.now.strftime("%Y-%m-%d %H:%M:%S"),
-    'shipData': {},
-    'enemyData': {}
-  }.to_json
-  cache_name = "drop-map-#{map_id}-#{point_id}-#{rank.join('')}"
-  cache_data = StatisticCache.where(name: cache_name).first
-  query_data = cache_data.content unless cache_data.nil?
+  params[:format] ||= 'html'
+  if params[:format] == 'json'
+    content_type :json
+    return get_kv_data("drop_map_#{map_id}_#{point_id}-#{rank.join('')}")
+  end
 
   haml :'drop/map/query', :locals => {
     :location => 'drop',
@@ -50,12 +46,11 @@ get '/drop/map/:map/:point-:rank.html' do
     :area_id => area_id,
     :map_id => map_id,
     :point_id => point_id,
-    :rank => rank.join(''),
-    :query_data => query_data
+    :rank => rank.join('')
   }
 end
 
-get '/drop/map/:map/:level/:point-:rank.html' do
+get '/drop/map/:map/:level/:point-:rank.?:format?' do
   map_id = params[:map].to_i
   area_id = map_id / 10
   point_id = params[:point].to_sym
@@ -69,15 +64,11 @@ get '/drop/map/:map/:level/:point-:rank.html' do
     level_no < 1 || level_no > 3 ||
     rank.any?{|r| ![:S, :A, :B].include?(r)}
 
-  query_data = {
-    'totalCount': 0,
-    'cacheTime': Time.now.strftime("%Y-%m-%d %H:%M:%S"),
-    'shipData': {},
-    'enemyData': {}
-  }.to_json
-  cache_name = "drop-map-#{map_id}-#{point_id}-#{level_no}-#{rank.join('')}"
-  cache_data = StatisticCache.where(name: cache_name).first
-  query_data = cache_data.content unless cache_data.nil?
+  params[:format] ||= 'html'
+  if params[:format] == 'json'
+    content_type :json
+    return get_kv_data("drop_map_#{map_id}_#{point_id}-#{level_no}-#{rank.join('')}")
+  end
 
   haml :'drop/map/query', :locals => {
     :location => 'drop',
@@ -86,8 +77,7 @@ get '/drop/map/:map/:level/:point-:rank.html' do
     :map_id => map_id,
     :point_id => point_id,
     :level_no => level_no,
-    :rank => rank.join(''),
-    :query_data => query_data
+    :rank => rank.join('')
   }
 end
 

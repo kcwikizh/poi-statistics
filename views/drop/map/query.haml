@@ -38,7 +38,7 @@
                   %a{:href => "/drop/map/#{map_id}/#{3 - idx}/#{point_id}-#{rank}.html"}= l
         %div.col-xs-12.col-md-8
           %img.img-responsive{:src => kcwiki_get_thumb(KanColleConstant.map[map_id][:map], size: 600, protocol: "http")}
-      %div.row.top10
+      %div.row.top10.hidden
         %div#toolbar
         %table.table.table-hover.table-striped{:"data-sort-name" => "dropRate",
                                                :"data-toolbar" => "#toolbar",
@@ -69,6 +69,9 @@
               %th{:"data-field" => "dropRate",
                   :"data-formatter" => "dropRateFormatter",
                   :"data-sortable" => "true"} 掉落率
+      %div.top17.busy-indicator
+        %span.glyphicon.glyphicon-refresh.glyphicon-spin
+        %span 少女祈祷中...
     %div#sidebar.class.col-xs-6.col-sm-3.sidebar-offcanvas
       %div#accordion.panel-group
         - KanColleConstant.area.each do |a_id, a_obj|
@@ -85,16 +88,12 @@
                   %a{:class => "list-group-item#{map_id == m_id ? ' active' : ''}",
                      :href => "/drop/map/#{m_id}/"}= "#{KanColleConstant.map[m_id][:name]} (#{m_id.to_s.insert(-2, '-')})"
 %script{:src => "/scripts/drop/constant.js"}
+%script{:src => "/scripts/drop/map.js"}
 %script
   :plain
-    window.queryData = {
-      "mapId": #{map_id},
-      "pointId": "#{point_id}",
-      "rank": "#{rank}",
-      "levelNo": #{locals[:level_no] || 0}
-    };
-    window.dropData = #{query_data};
-%script{:src => "/scripts/drop/map.js"}
+    $(document).ready(function() {
+      loadData({id: #{map_id}, point: "#{point_id}", rank: "#{rank}", level: #{locals[:level_no] || 0}});
+    });
 =haml :duoshuo, :locals => { :key => "drop/map/#{map_id}",
                              :title => "掉落统计##{KanColleConstant.map[map_id][:name]}",
                              :url => "http://db.kcwiki.moe/drop/map/#{map_id}/#{locals[:level_no].nil? ? '' : "#{level_no}/"}#{point_id}-#{rank}.html" }
