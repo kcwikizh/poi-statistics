@@ -1036,6 +1036,12 @@ window.shipData = {
       nameForSearch: "",
       shipType: "潜水舰",
       rare: true
+    },
+    "浦波": {
+      chineseName: "浦波",
+      nameForSearch: "",
+      shipType: "驱逐舰",
+      rare: true
     }
 };
 
