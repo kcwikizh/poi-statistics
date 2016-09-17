@@ -70,6 +70,8 @@ common_maps.each do |map_id|
       :mapId  => map_id,
       :cellId.in => cell_obj[:index]
     ).distinct(:shipId).to_a.each do |ship_id|
+      next if ConstData.ship[ship_id].nil?
+
       cell_obj[:index].each do |cell_id|
         ['S', 'A', 'B', 'C', 'D', 'E'].each do |rank|
           puts "#{Time.now} #{map_id}:#{ship_id}:#{cell_id}:#{rank}"
@@ -128,6 +130,8 @@ event_maps.each do |map_id|
       :mapId  => map_id,
       :cellId.in => cell_obj[:index]
     ).distinct(:shipId).to_a.each do |ship_id|
+      next if ConstData.ship[ship_id].nil?
+
       cell_obj[:index].each do |cell_id|
         ['S', 'A', 'B', 'C', 'D', 'E'].each do |rank|
           (1..3).to_a.each do |level_no|
