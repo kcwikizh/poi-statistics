@@ -20,6 +20,8 @@ map_func = %Q{
 
     if (this.origin == null) return;
     if (this.teitokuLv == null) return;
+    if (this.quest != quest) return;
+    if (this.enemy != enemy) return;
 
     var origin = this.origin.match(new RegExp(uaList.join('|')));
     if (origin == null) return;
@@ -70,21 +72,19 @@ common_maps.each do |map_id|
     ).distinct(:shipId).to_a.each do |ship_id|
       cell_obj[:index].each do |cell_id|
         ['S', 'A', 'B', 'C', 'D', 'E'].each do |rank|
-          puts "#{map_id}:#{ship_id}:#{cell_id}:#{rank}"
+          puts "#{Time.now} #{map_id}:#{ship_id}:#{cell_id}:#{rank}"
           DropShipRecord.where(
             :id.gte => BSON::ObjectId.from_time(time_range[:from]),
             :id.lt  => BSON::ObjectId.from_time(time_range[:to]),
             :mapId  => map_id,
-            :quest  => KanColleConstant.map[map_id][:name],
             :cellId => cell_id,
-            :enemy  => cell_obj[:name],
             :mapLv  => 0,
-            :shipId => ship_id,
-            :rank   => rank
+            :rank   => rank,
+            :shipId => ship_id
           ).map_reduce(
             map_func,
             reduce_func
-          ).scope(uaList: UAWhiteList.filters).out(inline: 1).each do |q|
+          ).scope(uaList: UAWhiteList.filters, quest: KanColleConstant.map[map_id][:name], enemy: cell_obj[:name]).out(inline: 1).each do |q|
             qid = q["_id"].split('/')
             fleet = qid[0]
             time_no = qid[1].to_i
@@ -136,16 +136,14 @@ event_maps.each do |map_id|
               :id.gte => BSON::ObjectId.from_time(time_range[:from]),
               :id.lt  => BSON::ObjectId.from_time(time_range[:to]),
               :mapId  => map_id,
-              :quest  => KanColleConstant.map[map_id][:name],
               :cellId => cell_id,
-              :enemy  => cell_obj[:name],
               :mapLv  => level_no,
-              :shipId => ship_id,
-              :rank   => rank
+              :rank   => rank,
+              :shipId => ship_id
             ).map_reduce(
               map_func,
               reduce_func
-            ).scope(uaList: UAWhiteList.filters).out(inline: 1).each do |q|
+            ).scope(uaList: UAWhiteList.filters, quest: KanColleConstant.map[map_id][:name], enemy: cell_obj[:name]).out(inline: 1).each do |q|
               qid = q["_id"].split('/')
               fleet = qid[0]
               time_no = qid[1].to_i
