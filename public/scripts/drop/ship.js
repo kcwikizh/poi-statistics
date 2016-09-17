@@ -1,6 +1,9 @@
+var rank = '';
+
 function loadData(query) {
   $.getJSON('/drop/ship/' + query.id + "/" + query.rank + ".json", function(obj) {
     var table = $('table');
+    rank = query.rank;
     
     items = [];
     $.each(obj.data, function(map, val) {
@@ -33,7 +36,8 @@ function loadData(query) {
 }
 
 function questFormatter(value) {
-  return '<a href="#">' + value + '</a>';
+  var val = value.replace('(Boss)', '').replace('甲', 3).replace('乙', 2).replace('丙', 1).split('-');
+  return '<a href="/drop/map/' + val[0] + val[1] + (val[3] ? "/" + val[3] : "") + '/' + val[2] + '-' + rank + '.html">' + value + '</a>';
 }
 
 function dropRateFormatter(value) {
