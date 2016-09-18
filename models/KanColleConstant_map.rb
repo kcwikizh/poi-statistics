@@ -1907,6 +1907,16 @@ class KanColleConstant
           :index => [6, 12]
         },
         {
+          :name => "陸上爆撃機隊 第2飛行中隊",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "陸上爆撃機隊 第1飛行中隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
           :name => "哨戒任務戦隊 後方部隊",
           :point => :I,
           :index => [9]
@@ -1939,14 +1949,39 @@ class KanColleConstant
           :index => [3]
         },
         {
+          :name => "陸上爆撃機隊 第4&第5飛行中隊",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "陸上爆撃機隊 第2飛行中隊",
+          :point => :F,
+          :index => [6, 16]
+        },
+        {
           :name => "深海迎撃任務部隊",
           :point => :G,
           :index => [7, 17]
         },
         {
+          :name => "陸上爆撃機隊 第1飛行中隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "陸上爆撃機隊 第3飛行中隊",
+          :point => :I,
+          :index => [9]
+        },
+        {
           :name => "深海船団 間接護衛隊",
           :point => :J,
           :index => [10, 18]
+        },
+        {
+          :name => "陸上爆撃機隊 戦爆連合",
+          :point => :K,
+          :index => [11]
         },
         {
           :name => "深海船団 警戒部隊",
@@ -1986,6 +2021,11 @@ class KanColleConstant
           :index => [2]
         },
         {
+          :name => "陸上爆撃機隊 渡洋爆撃",
+          :point => :C,
+          :index => [3]
+        },
+        {
           :name => "通商破壊潜水艦隊 B群",
           :point => :D,
           :index => [4, 21]
@@ -2004,6 +2044,11 @@ class KanColleConstant
           :name => "任務部隊 空母機動部隊",
           :point => :H,
           :index => [8]
+        },
+        {
+          :name => "陸上爆撃機隊 戦爆連合",
+          :point => :I,
+          :index => [9, 22]
         },
         {
           :name => "侵攻部隊 支援戦艦部隊",
@@ -2029,6 +2074,11 @@ class KanColleConstant
           :name => "侵攻部隊 潜水艦隊 II群",
           :point => :P,
           :index => [16]
+        },
+        {
+          :name => "陸上爆撃機隊 艦隊攻撃部隊",
+          :point => :Q,
+          :index => [17]
         },
         {
           :name => "侵攻先遣部隊 本隊",
