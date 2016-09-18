@@ -62,12 +62,18 @@ footer {
 .top30 { margin-top:30px; }
 
 .col-no-padding {
-  padding-left: 0px;
-  padding-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .block-center {
-  margin: 0 auto;
+    margin: 0 auto;
+}
+.block-left {
+    margin: 0 auto 0 0;
+}
+.block-right {
+    margin: 0 0 0 auto;
 }
 
 .ct-label {
