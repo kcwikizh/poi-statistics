@@ -17,7 +17,7 @@ map_func = %Q{
 
     if (this.origin == null) return;
     if (this.teitokuLv == null) return;
-    if (this.secretary = null) return;
+    if (this.secretary == null) return;
     if (this.items.length != 4) return;
     if (this.items[0] * this.items[1] * this.items[2] * this.items[3] < 1000) return;
 
