@@ -1,11 +1,11 @@
 function requestData(itemId) {
-  $.getJSON('/development/item/' + itemId + ".json", function(data) {
+  $.getJSON('/development/item/' + itemId + ".json", function(jsonObj) {
     $('.busy-indicator').hide();
 
     var table = $('table');
     table.bootstrapTable();
     items = [];
-    $.each(data.recipes, function(index, item) {
+    $.each(jsonObj.data, function(index, item) {
       hqLv = Object.keys(item.hqLvCount);
       items.push({
         fuel: item.recipe[0],
@@ -14,10 +14,9 @@ function requestData(itemId) {
         bauxite: item.recipe[3],
         count: item.count,
         usedCount: item.usedCount,
-        success: item.success,
         hqLvRange: Math.min.apply(null, hqLv) + '~' + Math.max.apply(null, hqLv),
         secretaryCount: item.secretaryCount,
-        developmentRate: (item.count * 100 / item.usedCount).toFixed(3),
+        developmentRate: item.rate,
       });
     });
     items.sort(function(a, b) {

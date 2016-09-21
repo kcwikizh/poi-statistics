@@ -1,21 +1,14 @@
 %div.container
   %div.page-header
     %h1 开发统计
-  %div.col-xs-8
+  %div.col-xs-12
     %div.panel-group
       %div.panel.panel-primary
         %div.panel-heading
           %h4.panel-title 装备
         %div.panel-body
           %ul.list-inline
-            - JSON.parse(get_kv_data("development_items")).sort.each do |item_id|
+            - JSON.parse(get_kv_data("development_itemlist")).sort.each do |item_id|
               %li
                 %p
-                  %a.btn.btn-default{:href => "/development/item/#{item_id}.html"}= KCSlotItem[item_id][:name]
-  %div.col-xs-4
-    %div.panel-group
-      %div.panel.panel-primary
-        %div.panel-heading
-          %h4.panel-title 公式
-        %div.panel-body
-          Page Not Found
+                  %a.btn.btn-default{:href => "/development/item/#{item_id}.html"}= ConstData.slotitem[item_id]["name"]
