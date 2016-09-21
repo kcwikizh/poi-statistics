@@ -5,8 +5,6 @@ time_range = {
   to: CreateItemRecord.desc(:id).first.id.generation_time + 1
 }
 
-exit unless time_range[:to] > time_range[:from]
-
 map_func = %Q{
   function() {
     val = {
@@ -16,6 +14,12 @@ map_func = %Q{
       succ: this.successful,
       count: NumberInt(1)
     }
+
+    if (this.origin == null) return;
+    if (this.teitokuLv == null) return;
+    if (this.secretary = null) return;
+    if (this.items.length != 4) return;
+    if (this.items[0] * this.items[1] * this.items[2] * this.items[3] < 1000) return;
 
     var origin = this.origin.match(new RegExp(uaList.join('|')));
     if (origin == null) return;
@@ -65,7 +69,7 @@ reduce_func = %Q{
 }
 
 CreateItemRecord.distinct(:itemId).to_a.each do |item_id|
-  puts item_id
+  puts "#{Time.now} #{item_id}"
   CreateItemRecord.where(
     :id.gte => BSON::ObjectId.from_time(time_range[:from]),
     :id.lt  => BSON::ObjectId.from_time(time_range[:to]),
