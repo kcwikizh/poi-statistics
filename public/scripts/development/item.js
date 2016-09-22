@@ -23,6 +23,47 @@ function requestData(itemId) {
       return b.count - a.count;
     });
     table.bootstrapTable('append', items);
+
+    $('#toolbar').bootstrapTableFilter({
+      connectTo: 'table',
+      filters: [
+        {
+          field: 'fuel',
+          label: '油',
+          type: 'range'
+        },
+        {
+          field: 'ammo',
+          label: '弹',
+          type: 'range'
+        },
+        {
+          field: 'steel',
+          label: '钢',
+          type: 'range'
+        },
+        {
+          field: 'bauxite',
+          label: '铝',
+          type: 'range'
+        },
+        {
+          field: 'count',
+          label: '数量',
+          type: 'range'
+        },
+        {
+          field: 'usedCount',
+          label: '公式使用次数',
+          type: 'range'
+        },
+        {
+          field: 'developmentRate',
+          label: '开发率',
+          type: 'range'
+        }
+      ]
+    });
   });
 }
 
