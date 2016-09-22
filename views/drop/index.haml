@@ -250,21 +250,21 @@
           - ship_list = JSON.parse(Sinatra::KVDataHelper.get_kv_data("drop_shiplist")).map{|s| ConstData.ship[s]}
           %ul.nav.nav-pills
             %li.active
-              %a{:href => "#dd", :"data-toggle" => "tab"} 駆逐
+              %a{:href => "#dd", :"data-toggle" => "tab"} 驱逐
             %li
-              %a{:href => "#cl", :"data-toggle" => "tab"} 軽巡・練巡
+              %a{:href => "#cl", :"data-toggle" => "tab"} 轻巡、练巡
             %li
               %a{:href => "#ca", :"data-toggle" => "tab"} 重巡
             %li
-              %a{:href => "#bb", :"data-toggle" => "tab"} 戦艦
+              %a{:href => "#bb", :"data-toggle" => "tab"} 战舰
             %li
-              %a{:href => "#cvl", :"data-toggle" => "tab"} 軽空母
+              %a{:href => "#cvl", :"data-toggle" => "tab"} 轻母
             %li
               %a{:href => "#cv", :"data-toggle" => "tab"} 空母
             %li
-              %a{:href => "#ss", :"data-toggle" => "tab"} 潜水艦・潜水空母
+              %a{:href => "#ss", :"data-toggle" => "tab"} 潜水舰
             %li
-              %a{:href => "#others", :"data-toggle" => "tab"} 水母・揚陸艦・工作艦・潜水母艦・補給艦
+              %a{:href => "#others", :"data-toggle" => "tab"} 其他
           %div.tab-content.top15
             %div#dd.tab-pane.active
               %ul.list-inline

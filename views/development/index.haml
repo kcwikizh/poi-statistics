@@ -7,8 +7,62 @@
         %div.panel-heading
           %h4.panel-title 装备
         %div.panel-body
-          %ul.list-inline
-            - JSON.parse(get_kv_data("development_itemlist")).sort.each do |item_id|
-              %li
-                %p
-                  %a.btn.btn-default{:href => "/development/item/#{item_id}.html"}= ConstData.slotitem[item_id]["name"]
+          - slotitem_list = JSON.parse(get_kv_data("development_itemlist")).map{|s| ConstData.slotitem[s]}
+          %ul.nav.nav-pills
+            %li.active
+              %a{:href => "#t1", :"data-toggle" => "tab"} 主炮、副炮
+            %li
+              %a{:href => "#t2", :"data-toggle" => "tab"} 鱼雷
+            %li
+              %a{:href => "#t3", :"data-toggle" => "tab"} 舰载机
+            %li
+              %a{:href => "#t4", :"data-toggle" => "tab"} 炮弹、对空机铳
+            %li
+              %a{:href => "#t5", :"data-toggle" => "tab"} 侦察机、电探
+            %li
+              %a{:href => "#t6", :"data-toggle" => "tab"} 爆雷、水听
+            %li
+              %a{:href => "#t7", :"data-toggle" => "tab"} 其他
+          %div.tab-content.top15
+            %div#t1.tab-pane.active
+              %ul.list-inline
+                - slotitem_list.select{|s| s["type"][0] == 1}.sort{|a, b| a["id"] <=> b["id"]}.each do |s|
+                  %li
+                    %p
+                      %a.btn.btn-default{:href => "/development/item/#{s["id"]}.html"}= s["name"]
+            %div#t2.tab-pane
+              %ul.list-inline
+                - slotitem_list.select{|s| s["type"][0] == 2}.sort{|a, b| a["id"] <=> b["id"]}.each do |s|
+                  %li
+                    %p
+                      %a.btn.btn-default{:href => "/development/item/#{s["id"]}.html"}= s["name"]
+            %div#t3.tab-pane
+              %ul.list-inline
+                - slotitem_list.select{|s| s["type"][0] == 3}.sort{|a, b| a["id"] <=> b["id"]}.each do |s|
+                  %li
+                    %p
+                      %a.btn.btn-default{:href => "/development/item/#{s["id"]}.html"}= s["name"]
+            %div#t4.tab-pane
+              %ul.list-inline
+                - slotitem_list.select{|s| s["type"][0] == 4}.sort{|a, b| a["id"] <=> b["id"]}.each do |s|
+                  %li
+                    %p
+                      %a.btn.btn-default{:href => "/development/item/#{s["id"]}.html"}= s["name"]
+            %div#t5.tab-pane
+              %ul.list-inline
+                - slotitem_list.select{|s| s["type"][0] == 5}.sort{|a, b| a["id"] <=> b["id"]}.each do |s|
+                  %li
+                    %p
+                      %a.btn.btn-default{:href => "/development/item/#{s["id"]}.html"}= s["name"]
+            %div#t6.tab-pane
+              %ul.list-inline
+                - slotitem_list.select{|s| s["type"][0] == 7}.sort{|a, b| a["id"] <=> b["id"]}.each do |s|
+                  %li
+                    %p
+                      %a.btn.btn-default{:href => "/development/item/#{s["id"]}.html"}= s["name"]
+            %div#t7.tab-pane
+              %ul.list-inline
+                - slotitem_list.select{|s| ![1, 2, 3, 4, 5, 7].include?(s["type"][0])}.sort{|a, b| a["id"] <=> b["id"]}.each do |s|
+                  %li
+                    %p
+                      %a.btn.btn-default{:href => "/development/item/#{s["id"]}.html"}= s["name"]
