@@ -45,7 +45,8 @@ DevelopmentRecord.select(:item).distinct.each do |record|
       WHERE item = #{item_id} AND cost = Array[#{s.cost.join(', ')}]
     }).each do |r|
       data[:hqLvCount].merge!(r.hq_lv) { |k, v1, v2| (v1 + v2) }
-      data[:secretaryCount].merge!(r.secretary) { |k, v1, v2| (v1 + v2) }
+      secretary = Hash[r.secretary.map{|k, v| [ConstData.ship[k.to_i]["name"], v]}]
+      data[:secretaryCount].merge!(secretary) { |k, v1, v2| (v1 + v2) }
     end
 
     result[:data].push(data)

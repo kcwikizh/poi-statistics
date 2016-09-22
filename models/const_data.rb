@@ -7,15 +7,15 @@ class ConstData
     end
 
     def [](index)
+      ret = nil
       if index == -1
-        return {"name" => "(无)"}
+        ret =  {"name" => "(无)"}
       elsif index.is_a? Numeric
-        return @data.find{|i| i["id"] == index}
+        ret = @data.find{|i| i["id"] == index}
       elsif index.is_a? String
-        return @data.find{|i| i["name"] == index}
-      else
-        return {"name" => "未知"}
+        ret = @data.find{|i| i["name"] == index}
       end
+      return ret.nil? ? {"name" => "未知(#{index})"} : ret
     end
   end
 
@@ -25,13 +25,13 @@ class ConstData
     end
 
     def [](index)
+      ret = nil
       if index.is_a? Numeric
-        return @data.find{|i| i["id"] == index}
+        ret = @data.find{|i| i["id"] == index}
       elsif index.is_a? String
-        return @data.find{|i| i["name"] == index}
-      else
-        return nil
+        ret = @data.find{|i| i["name"] == index}
       end
+      return ret.nil? ? {"name" => "未知(#{index})"} : ret
     end
   end
 
@@ -41,7 +41,8 @@ class ConstData
     end
 
     def [](index)
-      return @data.find{|i| i["id"] == index}
+      ret = @data.find{|i| i["id"] == index}
+      return ret.nil? ? {"name" => "未知(#{index})"} : ret
     end
   end
 
@@ -51,13 +52,13 @@ class ConstData
     end
 
     def [](index)
+      ret = nil
       if index.is_a? Numeric
-        return @data.find{|i| i["id"] == index}
+        ret = @data.find{|i| i["id"] == index}
       elsif index.is_a? String
-        return @data.find{|i| i["name"] == index}
-      else
-        return nil
+        ret = @data.find{|i| i["name"] == index}
       end
+      return ret.nil? ? {"name" => "未知(#{index})"} : ret
     end
   end
 
