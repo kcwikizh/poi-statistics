@@ -40,7 +40,7 @@ get '/drop/map/:map/:point-:rank.?:format?' do
     return get_kv_data("drop_map_#{map_id}_#{point_id}-#{rank.join('')}")
   end
 
-  haml :'drop/map/query', :locals => {
+  haml :'drop/map', :locals => {
     :location => 'drop',
     :title_append => " # 掉落统计 - #{KanColleConstant.map[map_id][:name]}(#{point_id})",
     :area_id => area_id,
@@ -70,7 +70,7 @@ get '/drop/map/:map/:level/:point-:rank.?:format?' do
     return get_kv_data("drop_map_#{map_id}_#{point_id}-#{level_no}-#{rank.join('')}")
   end
 
-  haml :'drop/map/query', :locals => {
+  haml :'drop/map', :locals => {
     :location => 'drop',
     :title_append => " # 掉落统计 - #{KanColleConstant.map[map_id][:name]}(#{point_id})",
     :area_id => area_id,
@@ -100,7 +100,7 @@ get '/drop/ship/:ship_id/:rank.?:format?' do
     return get_kv_data("drop_ship_#{ship_id}-#{rank.join('')}")
   end
 
-  haml :'drop/ship/query', :locals => {
+  haml :'drop/ship', :locals => {
     :location => 'drop',
     :title_append => " # 掉落统计 - #{ConstData.ship[ship_id]["name"]}",
     :ship_id => ship_id,
