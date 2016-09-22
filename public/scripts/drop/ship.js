@@ -18,7 +18,7 @@ function loadData(query) {
       });
     });
     items.sort(function(a, b) {
-      return a.rate - b.rate;
+      return b.dropRate - a.dropRate;
     });
 
     table.bootstrapTable().bootstrapTable('append', items);
