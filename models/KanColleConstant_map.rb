@@ -1269,6 +1269,78 @@ class KanColleConstant
       ],
       :map => "Map6-4.png"
     },
+    65 => {
+      :name => "KW環礁沖海域",
+      :cells => [
+        {
+          :name => "先遣任務部隊 前衛艦隊",
+          :point => :A,
+          :index => [1],
+        },
+        {
+          :name => "深海潜水艦隊 前方展開部隊",
+          :point => :B,
+          :index => [2],
+        },
+        {
+          :name => "先遣任務部隊",
+          :point => :C,
+          :index => [3, 14],
+        },
+        {
+          :name => "深海護衛空母部隊 B群",
+          :point => :D,
+          :index => [4],
+        },
+        {
+          :name => "深海潜水艦隊 精鋭群狼部隊",
+          :point => :E,
+          :index => [5],
+        },
+        {
+          :name => "深海巡洋艦戦隊",
+          :point => :F,
+          :index => [6],
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :G,
+          :index => [7, 15],
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :H,
+          :index => [8, 16],
+        },
+        {
+          :name => "深海護衛空母部隊 A群",
+          :point => :I,
+          :index => [9, 17],
+        },
+        {
+          :name => "深海護衛空母部隊 C群",
+          :point => :J,
+          :index => [10],
+        },
+        #{
+        #  :name => "",
+        #  :point => :K,
+        #  :index => [11],
+        #},
+        #{
+        #  :name => "",
+        #  :point => :L,
+        #  :index => [12],
+        #},
+        {
+          :name => "任務部隊 主力群",
+          :point => :M,
+          :index => [13, 18],
+          :boss => true,
+        },
+      ],
+      :map => "Map6-5.png"
+    },
     311 => {
       :name => "ショートランド沖",
       :cells => [

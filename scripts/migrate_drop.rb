@@ -5,7 +5,7 @@ time_range = {
   to: DropShipRecord.desc(:id).first.id.generation_time + 1
 }
 
-common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..64).to_a].flatten
+common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a].flatten
 common_table = DropRecord
 event_maps = []
 event_table = DropRecordSummer2015
@@ -22,6 +22,7 @@ map_func = %Q{
     if (this.teitokuLv == null) return;
     if (this.quest != quest) return;
     if (this.enemy != enemy) return;
+    if (this.enemyShips.length % 6 > 0) return;
 
     var origin = this.origin.match(new RegExp(uaList.join('|')));
     if (origin == null) return;

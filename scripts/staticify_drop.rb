@@ -2,7 +2,7 @@ require 'json'
 require 'set'
 require_relative '../app'
 
-$common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..64).to_a].flatten
+$common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a].flatten
 $event_maps = []
 
 def staticify_drop_map(map_id)
@@ -22,7 +22,7 @@ def staticify_drop_map(map_id)
         enemy_total_count = (table.find_by_sql ["SELECT enemy, SUM(count) AS count FROM #{table_name} WHERE map = ? AND cell = ANY(ARRAY[?]) AND level = ? AND rank = ? GROUP BY enemy", map_id, cell[:index], level_no, rank]).reduce({}) {|h, i| h[i.enemy] = i.count; h}
         json_obj[:totalCount] = enemy_total_count.reduce(0) {|sum, i| sum += i[1]}
         enemy_total_count.each do |k, v|
-          if v.to_f / json_obj[:totalCount] < 0.1
+          if v.to_f / json_obj[:totalCount] < 0.05
             enemy_total_count.delete(k)
             json_obj[:totalCount] -= v
           end
@@ -44,8 +44,8 @@ def staticify_drop_map(map_id)
           enemy_count.each do |q|
             next if enemy_total_count[q.enemy].nil?
             idx = q.enemy.split(',')
-            e = (idx[0..5].map {|i| i == '-1' ? nil : "#{ConstData.ship[i.to_i]["name"]}(#{i})"}).compact
-            e_name = "#{e.join('/')}(#{KanColleConstant.formation[idx[6].to_i]})"
+            e = (idx[0..-2].map {|i| i == '-1' ? nil : "#{ConstData.ship[i.to_i]["name"]}(#{i})"}).compact
+            e_name = "#{e.join('/')}(#{KanColleConstant.formation[idx[-1].to_i]})"
             data_obj[:enemy][e_name] = {
               count: q.count,
               rate: (q.count * 100.0 / enemy_total_count[q.enemy]).round(3)
@@ -76,8 +76,8 @@ def staticify_drop_map(map_id)
       enemy_total_count2 = {}
       enemy_total_count.each do |k, v|
         idx = k.split(',')
-        e = (idx[0..5].map {|i| i == '-1' ? nil : "#{ConstData.ship[i.to_i]["name"]}(#{i})"}).compact
-        e_name = "#{e.join('/')}(#{KanColleConstant.formation[idx[6].to_i]})"
+        e = (idx[0..-2].map {|i| i == '-1' ? nil : "#{ConstData.ship[i.to_i]["name"]}(#{i})"}).compact
+        e_name = "#{e.join('/')}(#{KanColleConstant.formation[idx[-1].to_i]})"
         enemy_total_count2[e_name] = v
       end
 
@@ -141,8 +141,8 @@ def staticify_drop_map(map_id)
       enemy_total_count2 = {}
       enemy_total_count.each do |k, v|
         idx = k.split(',')
-        e = (idx[0..5].map {|i| i == '-1' ? nil : "#{ConstData.ship[i.to_i]["name"]}(#{i})"}).compact
-        e_name = "#{e.join('/')}(#{KanColleConstant.formation[idx[6].to_i]})"
+        e = (idx[0..-2].map {|i| i == '-1' ? nil : "#{ConstData.ship[i.to_i]["name"]}(#{i})"}).compact
+        e_name = "#{e.join('/')}(#{KanColleConstant.formation[idx[-1].to_i]})"
         enemy_total_count2[e_name] = v
       end
 
