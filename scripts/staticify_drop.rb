@@ -56,7 +56,7 @@ def staticify_drop_map(map_id)
           data_obj[:totalCount] = data_obj[:enemy].reduce(0) {|sum, i| sum += i[1][:count]}
           data_obj[:rate] = (data_obj[:totalCount] * 100.0 / json_obj[:totalCount]).round(3)
 
-          json_obj[:data][ConstData.ship[ship_id]["name"]] = data_obj
+          json_obj[:data][ConstData.ship[ship_id]["name"]] = data_obj if data_obj[:totalCount] > 0
         end
 
         Sinatra::KVDataHelper.set_kv_data("drop_map_#{map_id}_#{cell[:point]}#{level_no > 0 ? "-#{level_no}" : ""}-#{rank}", json_obj.to_json)
