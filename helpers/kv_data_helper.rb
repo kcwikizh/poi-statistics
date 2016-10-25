@@ -22,6 +22,10 @@ module Sinatra
     def get_kv_data(key)
       KVDataHelper.get_kv_data(key)
     end
+
+    def set_kv_data(key, value)
+      KVDataHelper.set_kv_data(key, value)
+    end
   end
 
   helpers KVDataHelper
