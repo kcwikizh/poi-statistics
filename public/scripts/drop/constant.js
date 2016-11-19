@@ -1042,7 +1042,37 @@ window.shipData = {
       nameForSearch: "",
       shipType: "驱逐舰",
       rare: true
-    }
+    },
+    "山風": {
+      chineseName: "山风",
+      nameForSearch: "",
+      shipType: "驱逐舰",
+      rare: true
+    },
+    "Commandant Teste": {
+      chineseName: "塔斯特司令官",
+      nameForSearch: "",
+      shipType: "水母",
+      rare: true
+    },
+    "神風": {
+      chineseName: "神风",
+      nameForSearch: "",
+      shipType: "驱逐舰",
+      rare: true
+    },
+    "朝風": {
+      chineseName: "朝风",
+      nameForSearch: "",
+      shipType: "驱逐舰",
+      rare: true
+    },
+    "Pola": {
+        chineseName: "Pola",
+        nameForSearch: "",
+        shipType: "重巡洋舰",
+        rare: true
+    },
 };
 
 window.shipSearchTag = {
@@ -1118,5 +1148,10 @@ window.mapWikiData = {
     351: '2016年夏季活动/E-1',
     352: '2016年夏季活动/E-2',
     353: '2016年夏季活动/E-3',
-    354: '2016年夏季活动/E-4'
+    354: '2016年夏季活动/E-4',
+    361: '2016年秋季活动/E-1',
+    362: '2016年秋季活动/E-2',
+    363: '2016年秋季活动/E-3',
+    364: '2016年秋季活动/E-4',
+    365: '2016年秋季活动/E-5'
 };

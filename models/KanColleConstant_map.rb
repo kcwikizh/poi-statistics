@@ -2923,6 +2923,476 @@ class KanColleConstant
         },
       ],
       :map => "MapE-4Summer2016.png"
+    },
+    361 => {
+      :name => "本土近海諸島補給線",
+      :cells => [
+        #{
+        #  :name => "",
+        #  :point => :A,
+        #  :index => [1]
+        #},
+        {
+          :name => "任務部隊 偵察潜水艦 II群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "通商破壊部隊 軽快水雷戦隊 II群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "通商破壊部隊 軽快水雷戦隊 I群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "16th任務部隊 先遣水上打撃部隊",
+          :point => :E,
+          :index => [5, 13, 14]
+        },
+        {
+          :name => "任務部隊 偵察潜水艦 I群",
+          :point => :F,
+          :index => [6, 15]
+        },
+        #{
+        #  :name => "",
+        #  :point => :G,
+        #  :index => [7]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :H,
+        #  :index => [8, 16, 17]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :I,
+        #  :index => [9]
+        #},
+        {
+          :name => "通商破壊部隊 機動部隊群",
+          :point => :J,
+          :index => [10]
+        },
+        #{
+        #  :name => "",
+        #  :point => :K,
+        #  :index => [11]
+        #},
+        {
+          :name => "任務部隊 先遣潜水艦隊旗艦",
+          :point => :L,
+          :index => [12, 18],
+          :boss => true
+        }
+      ],
+      :map => "MapE-1Autumn2016.png"
+    },
+    362 => {
+      :name => "本土沖",
+      :cells => [
+        {
+          :name => "16th任務部隊 前衛空母群 B群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "16th任務部隊 前衛空母群 B群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "16th任務部隊 護衛水雷戦隊 A群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "16th任務部隊 護衛水雷戦隊 B群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "侵入潜水艦部隊 II群",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "侵入潜水艦部隊 I群",
+          :point => :F,
+          :index => [6, 16, 17]
+        },
+        {
+          :name => "16th任務部隊 前衛空母群 A群",
+          :point => :G,
+          :index => [7, 18]
+        },
+        {
+          :name => "18th任務部隊 先遣巡洋艦部隊",
+          :point => :H,
+          :index => [8, 19]
+        },
+        #{
+        #  :name => "",
+        #  :point => :I,
+        #  :index => [9, 20, 21]
+        #},
+        {
+          :name => "16th任務部隊 前衛空母群 A群",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "16th任務部隊 主力空母群",
+          :point => :K,
+          :index => [11]
+        },
+        {
+          :name => "16th任務部隊 主力空母群",
+          :point => :L,
+          :index => [12]
+        },
+        #{
+        #  :name => "",
+        #  :point => :M,
+        #  :index => [13]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :N,
+        #  :index => [14]
+        #},
+        {
+          :name => "16th任務部隊 主力空母群",
+          :point => :O,
+          :index => [15, 22],
+          :boss => true
+        }
+      ],
+      :map => "MapE-2Autumn2016.png"
+    },
+    363 => {
+      :name => "本土沖太平洋上",
+      :cells => [
+        {
+          :name => "16th任務部隊 C群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "任務部隊 前衛潜水艦隊",
+          :point => :B,
+          :index => [2, 18]
+        },
+        {
+          :name => "16th任務部隊 C群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "任務部隊付属 深海巡洋艦戦隊",
+          :point => :D,
+          :index => [4]
+        },
+        #{
+        #  :name => "",
+        #  :point => :E,
+        #  :index => [5, 19, 20]
+        #},
+        {
+          :name => "16th任務部隊 B群",
+          :point => :F,
+          :index => [6]
+        },
+        #{
+        #  :name => "",
+        #  :point => :G,
+        #  :index => [7]
+        #},
+        {
+          :name => "16th任務部隊 B群",
+          :point => :H,
+          :index => [8, 21]
+        },
+        {
+          :name => "16th任務部隊 B群",
+          :point => :I,
+          :index => [9, 22]
+        },
+        {
+          :name => "16th任務部隊 A群",
+          :point => :J,
+          :index => [10, 23]
+        },
+        {
+          :name => "任務部隊支援 水上打撃部隊",
+          :point => :K,
+          :index => [11, 24]
+        },
+        {
+          :name => "16th任務部隊 主力機動部隊群",
+          :point => :L,
+          :index => [12, 25]
+        },
+        #{
+        #  :name => "",
+        #  :point => :M,
+        #  :index => [13]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :N,
+        #  :index => [14]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :O,
+        #  :index => [15, 26]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :P,
+        #  :index => [16]
+        #},
+        {
+          :name => "16th任務部隊 主力機動部隊群",
+          :point => :Q,
+          :index => [17, 27],
+          :boss => true
+        },
+      ],
+      :map => "MapE-3Autumn2016.png"
+    },
+    364 => {
+      :name => "MS諸島北部",
+      :cells => [
+        {
+          :name => "待ち伏せ深海潜水艦隊 I群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "中部方面 深海機動部隊 B群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海棲艦 中部方面水雷戦隊",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "待ち伏せ深海潜水艦隊 II群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "中部方面 深海機動部隊 A群",
+          :point => :E,
+          :index => [5]
+        },
+        #{
+        #  :name => "",
+        #  :point => :F,
+        #  :index => [6]
+        #},
+        {
+          :name => "中部方面 深海機動部隊 B群",
+          :point => :G,
+          :index => [7, 23]
+        },
+        {
+          :name => "中部方面 深海機動部隊 A群",
+          :point => :H,
+          :index => [8, 24, 25]
+        },
+        #{
+        #  :name => "",
+        #  :point => :I,
+        #  :index => [9]
+        #},
+        {
+          :name => "中部方面 深海機動部隊 A群",
+          :point => :J,
+          :index => [10, 26, 27]
+        },
+        #{
+        #  :name => "",
+        #  :point => :K,
+        #  :index => [11]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :L,
+        #  :index => [12]
+        #},
+        {
+          :name => "拠点強襲任務部隊 巡洋艦戦隊",
+          :point => :M,
+          :index => [13]
+        },
+        {
+          :name => "新生深海機動部隊 先遣隊",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "拠点強襲任務部隊 機動部隊群",
+          :point => :O,
+          :index => [15]
+        },
+        {
+          :name => "深海精鋭潜水艦隊 先遣部隊",
+          :point => :P,
+          :index => [16]
+        },
+        {
+          :name => "拠点強襲任務部隊 機動部隊群",
+          :point => :Q,
+          :index => [17]
+        },
+        {
+          :name => "新生深海機動部隊 先遣隊",
+          :point => :R,
+          :index => [18, 28]
+        },
+        {
+          :name => "任務部隊支援 水上打撃部隊",
+          :point => :S,
+          :index => [19, 29, 30]
+        },
+        #{
+        #  :name => "",
+        #  :point => :T,
+        #  :index => [20]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :U,
+        #  :index => [21]
+        #},
+        {
+          :name => "拠点強襲任務部隊 機動部隊群",
+          :point => :V,
+          :index => [22],
+          :boss => true
+        }
+      ],
+      :map => "MapE-4Autumn2016.png"
+    },
+    365 => {
+      :name => "MS諸島北部 B環礁沖",
+      :cells => [
+        {
+          :name => "深海兵站線 大規模護衛輸送船団",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海精鋭潜水艦隊 警戒隊",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "新生深海機動部隊 II群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海兵站線 大規模護衛輸送船団",
+          :point => :D,
+          :index => [4, 21]
+        },
+        {
+          :name => "新生深海機動部隊 II群",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "深海兵站線 補給艦隊",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "新生深海機動部隊 II群",
+          :point => :G,
+          :index => [7, 22]
+        },
+        {
+          :name => "新生 深海水雷戦隊 II群",
+          :point => :H,
+          :index => [8]
+        },
+        #{
+        #  :name => "",
+        #  :point => :I,
+        #  :index => [9, 27]
+        #},
+        {
+          :name => "深海精鋭潜水艦隊 群狼部隊 II群",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "新生 深海水雷戦隊 I群",
+          :point => :K,
+          :index => [11, 23, 28]
+        },
+        #{
+        #  :name => "",
+        #  :point => :L,
+        #  :index => [12]
+        #},
+        {
+          :name => "深海精鋭潜水艦隊 群狼部隊 I群",
+          :point => :M,
+          :index => [13, 29]
+        },
+        {
+          :name => "新生深海機動部隊 I群",
+          :point => :N,
+          :index => [14, 24]
+        },
+        {
+          :name => "新生深海機動部隊 I群",
+          :point => :O,
+          :index => [15, 25]
+        },
+        {
+          :name => "海月渚泊地 旗艦艦隊",
+          :point => :P,
+          :index => [16]
+        },
+        #{
+        #  :name => "",
+        #  :point => :Q,
+        #  :index => [17]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :R,
+        #  :index => [18]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :S,
+        #  :index => [19]
+        #},
+        {
+          :name => "新生 深海水雷戦隊 III群",
+          :point => :T,
+          :index => [20],
+          :boss => true
+        },
+        {
+          :name => "海月渚泊地 旗艦艦隊",
+          :point => :U,
+          :index => [26]
+        }
+      ],
+      :map => "MapE-5Autumn2016.png"
     }
   }
 

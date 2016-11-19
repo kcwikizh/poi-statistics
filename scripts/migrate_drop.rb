@@ -5,10 +5,10 @@ time_range = {
   to: DropShipRecord.desc(:id).first.id.generation_time + 1
 }
 
-common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a].flatten
+common_maps = []#(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a].flatten
 common_table = DropRecord
-event_maps = []
-event_table = DropRecordSummer2015
+event_maps = [361,362,363,364,365]
+event_table = DropRecordAutumn2016
 
 map_func = %Q{
   function() {
@@ -22,6 +22,7 @@ map_func = %Q{
     if (this.teitokuLv == null) return;
     if (this.quest != quest) return;
     if (this.enemy != enemy) return;
+    if (this.enemyShips == null) return;
     if (this.enemyShips.length % 6 > 0) return;
 
     var origin = this.origin.match(new RegExp(uaList.join('|')));
@@ -81,7 +82,7 @@ common_maps.each do |map_id|
             :id.lt  => BSON::ObjectId.from_time(time_range[:to]),
             :mapId  => map_id,
             :cellId => cell_id,
-            :mapLv  => 0,
+            :mapLv.in => [0, nil],
             :rank   => rank,
             :shipId => ship_id
           ).map_reduce(

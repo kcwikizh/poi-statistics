@@ -54,6 +54,12 @@ class KanColleConstant
       :event => true,
       :available => false,
     },
+    36 => {
+      :name => "発令！「艦隊作戦第三法」",
+      :maps => [361, 362, 363, 364, 365],
+      :event => true,
+      :available => true,
+    },
   }
 
   def self.area
