@@ -5,10 +5,10 @@ time_range = {
   to: DropShipRecord.desc(:id).first.id.generation_time + 1
 }
 
-common_maps = []#(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a].flatten
+common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a].flatten
 common_table = DropRecord
-event_maps = [361,362,363,364,365]
-event_table = DropRecordAutumn2016
+event_maps = [371, 372, 373]
+event_table = DropRecordWinter2017
 
 map_func = %Q{
   function() {
@@ -21,7 +21,6 @@ map_func = %Q{
     if (this.origin == null) return;
     if (this.teitokuLv == null) return;
     if (this.quest != quest) return;
-    if (this.enemy != enemy) return;
     if (this.enemyShips == null) return;
     if (this.enemyShips.length % 6 > 0) return;
 
@@ -88,7 +87,7 @@ common_maps.each do |map_id|
           ).map_reduce(
             map_func,
             reduce_func
-          ).scope(uaList: UAWhiteList.filters, quest: KanColleConstant.map[map_id][:name], enemy: cell_obj[:name]).out(inline: 1).each do |q|
+          ).scope(uaList: UAWhiteList.filters, quest: KanColleConstant.map[map_id][:name]).out(inline: 1).each do |q|
             qid = q["_id"].split('/')
             fleet = qid[0]
             time_no = qid[1].to_i
@@ -149,7 +148,7 @@ event_maps.each do |map_id|
             ).map_reduce(
               map_func,
               reduce_func
-            ).scope(uaList: UAWhiteList.filters, quest: KanColleConstant.map[map_id][:name], enemy: cell_obj[:name]).out(inline: 1).each do |q|
+            ).scope(uaList: UAWhiteList.filters, quest: KanColleConstant.map[map_id][:name]).out(inline: 1).each do |q|
               qid = q["_id"].split('/')
               fleet = qid[0]
               time_no = qid[1].to_i

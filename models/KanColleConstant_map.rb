@@ -3381,18 +3381,293 @@ class KanColleConstant
         #  :index => [19]
         #},
         {
-          :name => "新生 深海水雷戦隊 III群",
+          :name => "海月渚泊地 旗艦艦隊",
           :point => :T,
           :index => [20],
           :boss => true
         },
         {
-          :name => "海月渚泊地 旗艦艦隊",
+          :name => "新生 深海水雷戦隊 III群",
           :point => :U,
           :index => [26]
         }
       ],
       :map => "MapE-5Autumn2016.png"
+    },
+    371 => {
+      :name => "日本近海/七尾北湾/舞鶴湾",
+      :cells => [
+        {
+          :name => "深海侵入潜水艦隊 先遣群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海軽快戦隊 先行侵入群",
+          :point => :B,
+          :index => [2, 12, 13]
+        },
+        #{
+        #  :name => "",
+        #  :point => :C,
+        #  :index => [3]
+        #},
+        {
+          :name => "深海侵入機動部隊 前衛群",
+          :point => :D,
+          :index => [4, 16]
+        },
+        #{
+        #  :name => "",
+        #  :point => :E,
+        #  :index => [5]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :F,
+        #  :index => [6]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :G,
+        #  :index => [7]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :H,
+        #  :index => [8]
+        #},
+        {
+          :name => "先遣侵入潜水艦隊旗艦",
+          :point => :I,
+          :index => [9]
+        },
+        #{
+        #  :name => "",
+        #  :point => :J,
+        #  :index => [10]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :K,
+        #  :index => [11]
+        #},
+        {
+          :name => "深海侵入機動部隊 前衛群",
+          :point => :L,
+          :index => [14]
+        },
+        {
+          :name => "深海侵入機動部隊 前衛群",
+          :point => :M,
+          :index => [15]
+        },
+        #{
+        #  :name => "",
+        #  :point => :N,
+        #  :index => [17]
+        #}
+      ],
+      :map => "MapE-1Winter2017.png"
+    },
+    372 => {
+      :name => "小笠原諸島航路",
+      :cells => [
+        {
+          :name => "深海潜水艦隊 群狼集団",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海通商破壊機動部隊 II群",
+          :point => :B,
+          :index => [2]
+        },
+        #{
+        #  :name => "",
+        #  :point => :C,
+        #  :index => [3]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :D,
+        #  :index => [4]
+        #},
+        {
+          :name => "深海通商破壊機動部隊 II群",
+          :point => :E,
+          :index => [5, 14]
+        },
+        {
+          :name => "深海侵入潜水艦隊 先遣群",
+          :point => :F,
+          :index => [6, 15]
+        },
+        {
+          :name => "深海通商破壊機動部隊 I群",
+          :point => :G,
+          :index => [7, 16]
+        },
+        {
+          :name => "深海通商破壊部隊 支援集団",
+          :point => :H,
+          :index => [8, 17]
+        },
+        {
+          :name => "深海通商破壊機動部隊 III群",
+          :point => :I,
+          :index => [9, 18]
+        },
+        {
+          :name => "深海軽快水雷戦隊",
+          :point => :J,
+          :index => [10, 19, 20]
+        },
+        #{
+        #  :name => "",
+        #  :point => :K,
+        #  :index => [11, 21]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :L,
+        #  :index => [12]
+        #},
+        {
+          :name => "深海通商破壊機動部隊 旗艦集団",
+          :point => :M,
+          :index => [13],
+          :boss => true
+        }
+      ],
+      :map => "MapE-2Winter2017.png"
+    },
+    373 => {
+      :name => "トラック泊地沖",
+      :cells => [
+        {
+          :name => "深海任務部隊 空母III群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海任務部隊 特殊遊撃群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海任務部隊 空母III群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海任務部隊 火力支援群",
+          :point => :D,
+          :index => [4, 20, 21]
+        },
+        #{
+        #  :name => "",
+        #  :point => :E,
+        #  :index => [5]
+        #},
+        {
+          :name => "深海任務部隊 強襲戦隊旗艦",
+          :point => :F,
+          :index => [6]
+        },
+        #{
+        #  :name => "",
+        #  :point => :G,
+        #  :index => [7]
+        #},
+        {
+          :name => "深海離島守備隊 基地航空隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海任務部隊 強襲戦隊旗艦",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "深海離島守備隊",
+          :point => :J,
+          :index => [10, 30]
+        },
+        {
+          :name => "離島基地哨戒 潜水艦隊群",
+          :point => :K,
+          :index => [11]
+        },
+        {
+          :name => "深海泊地 主力空母機動部隊",
+          :point => :L,
+          :index => [12, 31, 32]
+        },
+        {
+          :name => "深海環礁 大規模泊地集結艦隊",
+          :point => :M,
+          :index => [13]
+        },
+        {
+          :name => "深海泊地 水上打撃部隊",
+          :point => :N,
+          :index => [14, 22]
+        },
+        {
+          :name => "深海泊地哨戒 主力潜水艦隊群",
+          :point => :O,
+          :index => [15]
+        },
+        #{
+        #  :name => "",
+        #  :point => :P,
+        #  :index => [16]
+        #},
+        {
+          :name => "深海環礁 大規模泊地集結艦隊",
+          :point => :Q,
+          :index => [17, 23]
+        },
+        #{
+        #  :name => "",
+        #  :point => :R,
+        #  :index => [18]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :S,
+        #  :index => [25]
+        #},
+        {
+          :name => "深海泊地 空母機動部隊 II群",
+          :point => :T,
+          :index => [26]
+        },
+        {
+          :name => "深海離島守備隊 基地航空隊",
+          :point => :V,
+          :index => [27]
+        },
+        {
+          :name => "深海泊地 空母機動部隊 I群",
+          :point => :W,
+          :index => [28]
+        },
+        {
+          :name => "深海泊地 空母機動部隊 II群",
+          :point => :X,
+          :index => [29]
+        },
+        {
+          :name => "深海環礁 大規模泊地集結艦隊",
+          :point => :U,
+          :index => [19, 24],
+          :boss => true
+        }
+      ],
+      :map => "MapE-3Winter2017.png"
     }
   }
 

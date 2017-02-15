@@ -13,10 +13,12 @@ get '/drop/map/:map/?' do
   area_id = map_id / 10
   cell = KanColleConstant.map[map_id][:cells].find{|c| c[:boss]}
   point_id = cell.nil? ? KanColleConstant.map[map_id][:cells].last : cell[:point]
-  if KanColleConstant.area[area_id][:event]
-    redirect "/drop/map/#{map_id}/3/#{point_id}-SAB.html"
-  elsif map_id == 16
+  if map_id == 16
     redirect "/drop/map/16/B-SAB.html"
+  elsif map_id == 371
+    redirect "/drop/map/371/3/I-SAB.html"
+  elsif KanColleConstant.area[area_id][:event]
+    redirect "/drop/map/#{map_id}/3/#{point_id}-SAB.html"
   else
     redirect "/drop/map/#{map_id}/#{point_id}-SAB.html"
   end

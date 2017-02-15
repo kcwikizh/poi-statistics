@@ -1073,6 +1073,24 @@ window.shipData = {
         shipType: "重巡洋舰",
         rare: true
     },
+    "藤波": {
+      chineseName: "藤波",
+      nameForSearch: "",
+      shipType: "驱逐舰",
+      rare: true
+    },
+    "伊13": {
+      chineseName: "伊13",
+      nameForSearch: "",
+      shipType: "潜水舰",
+      rare: true
+    },
+    "伊14": {
+      chineseName: "伊14",
+      nameForSearch: "",
+      shipType: "潜水舰",
+      rare: true
+    }
 };
 
 window.shipSearchTag = {
@@ -1153,5 +1171,8 @@ window.mapWikiData = {
     362: '2016年秋季活动/E-2',
     363: '2016年秋季活动/E-3',
     364: '2016年秋季活动/E-4',
-    365: '2016年秋季活动/E-5'
+    365: '2016年秋季活动/E-5',
+    371: '2017年冬季活动/E-1',
+    372: '2017年冬季活动/E-2',
+    373: '2017年冬季活动/E-3'
 };
