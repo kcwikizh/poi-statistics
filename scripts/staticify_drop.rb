@@ -22,7 +22,7 @@ def staticify_drop_map(map_id)
         enemy_total_count = (table.find_by_sql ["SELECT enemy, SUM(count) AS count FROM #{table_name} WHERE map = ? AND cell = ANY(ARRAY[?]) AND level = ? AND rank = ? GROUP BY enemy", map_id, cell[:index], level_no, rank]).reduce({}) {|h, i| h[i.enemy] = i.count; h}
         json_obj[:totalCount] = enemy_total_count.reduce(0) {|sum, i| sum += i[1]}
         enemy_total_count.each do |k, v|
-          if v.to_f / json_obj[:totalCount] < 0.05
+          if v.to_f / json_obj[:totalCount] < 0.01
             enemy_total_count.delete(k)
             json_obj[:totalCount] -= v
           end
