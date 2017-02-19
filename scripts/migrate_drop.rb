@@ -23,6 +23,8 @@ map_func = %Q{
     if (this.quest != quest) return;
     if (this.enemyShips == null) return;
     if (this.enemyShips.length % 6 > 0) return;
+    if (this.enemyFormation < 1 || this.enemyFormation > 14) return;
+    if (this.enemyFormation > 5 && this.enemyFormation < 11) return;
 
     var origin = this.origin.match(new RegExp(uaList.join('|')));
     if (origin == null) return;
