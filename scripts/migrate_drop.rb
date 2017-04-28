@@ -31,6 +31,11 @@ map_func = %Q{
     origin = origin[0].replace(/[ \.]/g, '_');
     val.origin[origin] = 1;
     val.hqLv[this.teitokuLv] = 1;
+    for (var i = 0; i < this.enemyShips.length; i++) {
+      if (this.enemyShips[i] != -1 && this.enemyShips[i] < 1000) {
+        this.enemyShips[i] += 1000;
+      }
+    }
 
     var date = this._id.getTimestamp();
     var hour = date.getHours() * 10;
