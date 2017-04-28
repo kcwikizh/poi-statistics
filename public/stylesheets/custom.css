@@ -54,12 +54,12 @@ footer {
     border-top-right-radius:0px;
 }
 
-.top5 { margin-top:5px; }
-.top7 { margin-top:7px; }
-.top10 { margin-top:10px; }
-.top15 { margin-top:15px; }
-.top17 { margin-top:17px; }
-.top30 { margin-top:30px; }
+.top5 { margin-top:5px !important; }
+.top7 { margin-top:7px !important; }
+.top10 { margin-top:10px !important; }
+.top15 { margin-top:15px !important; }
+.top17 { margin-top:17px !important; }
+.top30 { margin-top:30px !important; }
 
 .col-no-padding {
     padding-left: 0px;
