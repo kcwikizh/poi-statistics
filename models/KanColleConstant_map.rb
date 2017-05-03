@@ -3668,6 +3668,272 @@ class KanColleConstant
         }
       ],
       :map => "MapE-3Winter2017.png"
+    },
+    381 => {
+      :name => "津軽海峡/北海道沖",
+      :cells => [
+        {
+          :name => "通商破壊部隊 北兎支援部隊 A群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "通商破壊部隊 北兎支援部隊 B群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海北方 奇襲侵攻部隊",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海北兎潜水艦隊 II群",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "通商破壊部隊 偵察水雷戦隊",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "通商破壊部隊 侵入巡洋艦戦隊",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "深海前方展開 巡洋艦戦隊",
+          :point => :K,
+          :index => [11, 15]
+        },
+        {
+          :name => "深海北兎潜水艦隊 I群",
+          :point => :L,
+          :index => [12, 16]
+        },
+        {
+          :name => "深海北兎潜水艦隊 旗艦",
+          :point => :M,
+          :index => [13, 17],
+          :boss => true
+        }
+      ],
+      :map => "MapE-1Spring2017.png"
+    },
+    382 => {
+      :name => "津軽海峡/北海道沖",
+      :cells => [
+        {
+          :name => "深海北兎潜水艦隊 残存部隊",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海北方展開群 上陸部隊前衛",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海北方展開群 上陸支援部隊",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海北方展開群 奇襲上陸部隊",
+          :point => :D,
+          :index => [4, 20]
+        },
+        {
+          :name => "深海北兎潜水艦隊 II群",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海北方展開群 前方警戒部隊",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海北方展開群 前方潜水艦隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海北方展開群 前衛巡洋戦隊",
+          :point => :K,
+          :index => [11, 21]
+        },
+        {
+          :name => "深海北方展開群 攻撃隊",
+          :point => :M,
+          :index => [13]
+        },
+        {
+          :name => "深海北方展開群 襲撃部隊部隊",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "深海北方展開群 攻撃隊",
+          :point => :O,
+          :index => [15, 22]
+        },
+        {
+          :name => "深海北方展開群 護衛空母部隊",
+          :point => :Q,
+          :index => [17, 23]
+        },
+        {
+          :name => "深海北方展開群 泊地襲撃部隊",
+          :point => :R,
+          :index => [18, 24]
+        },
+        {
+          :name => "深海北方展開群 泊地襲撃隊旗艦",
+          :point => :T,
+          :index => [25, 26],
+          :boss => true
+        }
+      ],
+      :map => "MapE-2Spring2017.png"
+    },
+    383 => {
+      :name => "千島列島沖",
+      :cells => [
+        {
+          :name => "深海北方集団 上陸輸送船団A群",
+          :point => :A,
+          :index => [1]
+        },
+        #{
+        #  :name => "",
+        #  :point => :B,
+        #  :index => [2]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :C,
+        #  :index => [3]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :D,
+        #  :index => [4]
+        #},
+        # E
+        {
+          :name => "深海北方集団 上陸輸送船団B群",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海北方集団 上陸支援部隊群",
+          :point => :G,
+          :index => [7]
+        },
+        #{
+        #  :name => "",
+        #  :point => :H,
+        #  :index => [8]
+        #},
+        #{
+        #  :name => "",
+        #  :point => :J,
+        #  :index => [9]
+        #},
+        {
+          :name => "深海北方集団 前方展開警戒群",
+          :point => :K,
+          :index => [10]
+        },
+        #{
+        #  :name => "",
+        #  :point => :N,
+        #  :index => [11]
+        #},
+        {
+          :name => "深海北方集団 前衛軽快巡洋戦隊",
+          :point => :P,
+          :index => [12]
+        },
+        {
+          :name => "深海北方集団 作戦支援群",
+          :point => :R,
+          :index => [13]
+        },
+        {
+          :name => "深海北方集団 水上打撃部隊",
+          :point => :S,
+          :index => [14, 16]
+        },
+        #{
+        #  :name => "",
+        #  :point => :T,
+        #  :index => [15, 28]
+        #},
+        {
+          :name => "深海北方集団 攻撃隊",
+          :point => :I,
+          :index => [17]
+        },
+        {
+          :name => "深海北方集団 潜水哨戒艦隊",
+          :point => :L,
+          :index => [18, 24]
+        },
+        #{
+        #  :name => "",
+        #  :point => :M,
+        #  :index => [19]
+        #},
+        {
+          :name => "深海北方集団 機動部隊B群",
+          :point => :O,
+          :index => [20, 25]
+        },
+        {
+          :name => "深海北方集団 増援阻止哨戒線",
+          :point => :Q,
+          :index => [21, 26, 27]
+        },
+        {
+          :name => "深海北方集団 機動部隊A群",
+          :point => :V,
+          :index => [23]
+        },
+        {
+          :name => "深海北方集団 機動部隊旗艦艦隊",
+          :point => :W,
+          :index => [29],
+          :boss => true
+        }
+      ],
+      :map => "MapE-3Spring2017.png"
+    },
+    384 => {
+      :name => "?",
+      :cells => [
+        {
+          :name => "?",
+          :point => :"?",
+          :index => [1],
+          :boss => true
+        }
+      ],
+      :map => "MapE-4Spring2017.png"
+    },
+    385 => {
+      :name => "?",
+      :cells => [
+        {
+          :name => "?",
+          :point => :"?",
+          :index => [1],
+          :boss => true
+        }
+      ],
+      :map => "MapE-5Spring2017.png"
     }
   }
 

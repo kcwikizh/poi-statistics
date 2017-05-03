@@ -7,8 +7,8 @@ time_range = {
 
 common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a].flatten
 common_table = DropRecord
-event_maps = []
-event_table = DropRecordWinter2017
+event_maps = [381, 382, 383]
+event_table = DropRecordSpring2017
 
 map_func = %Q{
   function() {

@@ -93,6 +93,4 @@
     $(document).ready(function() {
       loadData({id: #{map_id}, point: "#{point_id}", rank: "#{rank}", level: #{locals[:level_no] || 0}});
     });
-=haml :duoshuo, :locals => { :key => "drop/map/#{map_id}",
-                             :title => "掉落统计##{KanColleConstant.map[map_id][:name]}",
-                             :url => "http://db.kcwiki.moe/drop/map/#{map_id}/#{locals[:level_no].nil? ? '' : "#{level_no}/"}#{point_id}-#{rank}.html" }
+=haml :changyan, :locals => { :key => "drop/map/#{map_id}" }

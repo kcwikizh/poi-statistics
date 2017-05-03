@@ -1090,6 +1090,24 @@ window.shipData = {
       nameForSearch: "",
       shipType: "潜水舰",
       rare: true
+    },
+    "国後": {
+      chineseName: "国後",
+      nameForSearch: "",
+      shipType: "海防舰",
+      rare: true
+    },
+    "占守": {
+      chineseName: "占守",
+      nameForSearch: "",
+      shipType: "海防舰",
+      rare: true
+    },
+    "神威": {
+      chineseName: "神威",
+      nameForSearch: "",
+      shipType: "补给舰",
+      rare: true
     }
 };
 
@@ -1108,7 +1126,8 @@ window.shipSearchTag = {
     "潜水母舰": ":as",
     "练习巡洋舰": ":clp",
     "补给舰": ":ao",
-    "稀有": ":稀有,:rare,:sr,:ur"
+    "稀有": ":稀有,:rare,:sr,:ur",
+    "海防舰": ":de"
 };
 
 window.mapWikiData = {
@@ -1174,5 +1193,10 @@ window.mapWikiData = {
     365: '2016年秋季活动/E-5',
     371: '2017年冬季活动/E-1',
     372: '2017年冬季活动/E-2',
-    373: '2017年冬季活动/E-3'
+    373: '2017年冬季活动/E-3',
+    381: '2017年春季活动/E-1',
+    382: '2017年春季活动/E-2',
+    383: '2017年春季活动/E-3',
+    384: '2017年春季活动/E-4',
+    385: '2017年春季活动/E-5'
 };

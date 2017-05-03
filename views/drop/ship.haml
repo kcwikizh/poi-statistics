@@ -55,6 +55,4 @@
     $(document).ready(function() {
       loadData({id: #{ship_id}, rank: "#{rank}", name: "#{ConstData.ship[ship_id]["chinese_name"]}"});
     });
-=haml :duoshuo, :locals => { :key => "drop/ship/#{ship_id}",
-                             :title => "掉落统计##{ConstData.ship[ship_id]["name"]}",
-                             :url => "http://db.kcwiki.moe/drop/ship/#{ship_id}/#{rank}.html" }
+=haml :changyan, :locals => { :key => "drop/ship/#{ship_id}" }

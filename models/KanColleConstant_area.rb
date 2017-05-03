@@ -64,6 +64,12 @@ class KanColleConstant
       :name => "偵察戦力緊急展開！「光」作戦",
       :maps => [371, 372, 373],
       :event => true,
+      :available => false,
+    },
+    38 => {
+      :name => "出撃！北東方面 第五艦隊",
+      :maps => [381, 382, 383, 384, 385],
+      :event => true,
       :available => true,
     },
   }
