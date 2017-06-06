@@ -3806,22 +3806,6 @@ class KanColleConstant
           :point => :A,
           :index => [1]
         },
-        #{
-        #  :name => "",
-        #  :point => :B,
-        #  :index => [2]
-        #},
-        #{
-        #  :name => "",
-        #  :point => :C,
-        #  :index => [3]
-        #},
-        #{
-        #  :name => "",
-        #  :point => :D,
-        #  :index => [4]
-        #},
-        # E
         {
           :name => "深海北方集団 上陸輸送船団B群",
           :point => :F,
@@ -3832,26 +3816,11 @@ class KanColleConstant
           :point => :G,
           :index => [7]
         },
-        #{
-        #  :name => "",
-        #  :point => :H,
-        #  :index => [8]
-        #},
-        #{
-        #  :name => "",
-        #  :point => :J,
-        #  :index => [9]
-        #},
         {
           :name => "深海北方集団 前方展開警戒群",
           :point => :K,
           :index => [10]
         },
-        #{
-        #  :name => "",
-        #  :point => :N,
-        #  :index => [11]
-        #},
         {
           :name => "深海北方集団 前衛軽快巡洋戦隊",
           :point => :P,
@@ -3867,11 +3836,6 @@ class KanColleConstant
           :point => :S,
           :index => [14, 16]
         },
-        #{
-        #  :name => "",
-        #  :point => :T,
-        #  :index => [15, 28]
-        #},
         {
           :name => "深海北方集団 攻撃隊",
           :point => :I,
@@ -3882,11 +3846,6 @@ class KanColleConstant
           :point => :L,
           :index => [18, 24]
         },
-        #{
-        #  :name => "",
-        #  :point => :M,
-        #  :index => [19]
-        #},
         {
           :name => "深海北方集団 機動部隊B群",
           :point => :O,
@@ -3912,24 +3871,154 @@ class KanColleConstant
       :map => "MapE-3Spring2017.png"
     },
     384 => {
-      :name => "?",
+      :name => "占守島沖",
       :cells => [
         {
-          :name => "?",
-          :point => :"?",
-          :index => [1],
+          :name => "深海北方集団 侵攻前衛部隊B群",
+          :point => :A,
+          :index => [1, 18]
+        },
+        {
+          :name => "深海北方集団 航空支援攻撃隊",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海北方集団 侵攻支援空母C群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海北方集団 侵攻前衛部隊A群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海北方航空基地群 爆撃隊",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "深海北方集団 群狼潜水艦隊 II群",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海北方集団 侵攻高速打撃群",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海北方集団 侵攻上陸本隊",
+          :point => :I,
+          :index => [9, 19],
           :boss => true
+        },
+        {
+          :name => "深海北方集団 侵攻支援空母A群",
+          :point => :K,
+          :index => [11, 20]
+        },
+        {
+          :name => "深海北方集団 侵攻火力支援群",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "深海北方集団 航空支援攻撃隊",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "深海北方集団 群狼潜水艦隊 I群",
+          :point => :O,
+          :index => [15, 21]
+        },
+        {
+          :name => "深海北方集団 航空支援攻撃隊",
+          :point => :P,
+          :index => [16, 22]
+        },
+        {
+          :name => "深海北方集団 侵攻支援空母B群",
+          :point => :Q,
+          :index => [17]
         }
       ],
       :map => "MapE-4Spring2017.png"
     },
     385 => {
-      :name => "?",
+      :name => "大ホッケ海北方",
       :cells => [
         {
-          :name => "?",
-          :point => :"?",
-          :index => [1],
+          :name => "深海北方艦隊 潜水部隊 II群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海北方艦隊 攻撃隊",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海北方艦隊 前衛展開部隊 B群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海北方艦隊 前衛展開部隊 A群",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "深海北方艦隊 攻撃機動部隊",
+          :point => :F,
+          :index => [6, 18]
+        },
+        {
+          :name => "深海北方艦隊 支援戦闘集団",
+          :point => :G,
+          :index => [7, 19]
+        },
+        {
+          :name => "深海北方艦隊 潜水部隊 I群",
+          :point => :H,
+          :index => [8, 20]
+        },
+        {
+          :name => "深海北方艦隊 精鋭戦艦集団",
+          :point => :K,
+          :index => [10, 29]
+        },
+        {
+          :name => "深海北方艦隊 攻撃隊",
+          :point => :L,
+          :index => [11]
+        },
+        {
+          :name => "深海北方艦隊 主力空母機動部隊",
+          :point => :M,
+          :index => [12, 21, 22]
+        },
+        {
+          :name => "深海北方艦隊 旗艦艦隊攻撃隊",
+          :point => :O,
+          :index => [13, 30]
+        },
+        {
+          :name => "深海北方艦隊 精鋭戦艦集団",
+          :point => :R,
+          :index => [16, 24]
+        },
+        {
+          :name => "深海北方艦隊 高速打撃予備群",
+          :point => :N,
+          :index => [27]
+        },
+        {
+          :name => "深海北方艦隊 旗艦艦隊",
+          :point => :T,
+          :index => [28],
           :boss => true
         }
       ],

@@ -32,6 +32,8 @@ function loadData(query) {
 
     $('.busy-indicator').hide();
     $('div.row.hidden').removeClass('hidden');
+  }).fail(function() {
+    alert('Failed to get data');
   });
 }
 

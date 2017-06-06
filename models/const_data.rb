@@ -13,7 +13,7 @@ class ConstData
       elsif index.is_a? Numeric
         ret = @data.find{|i| i["id"] == index}
       elsif index.is_a? String
-        ret = @data.find{|i| i["name"] == index}
+        ret = @data.find{|i| i["name"] == index || "#{i["name"]}#{i["yomi"] || ""}" == index}
       end
       return ret.nil? ? {"name" => "未知(#{index})"} : ret
     end
