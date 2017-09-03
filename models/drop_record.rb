@@ -16,3 +16,7 @@ end
 class DropRecordSpring2017 < ActiveRecord::Base
   self.table_name = "drop_records_spring2017"
 end
+
+class DropRecordSummer2017 < ActiveRecord::Base
+  self.table_name = "drop_records_summer2017"
+end

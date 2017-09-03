@@ -72,6 +72,12 @@ class KanColleConstant
       :event => true,
       :available => true,
     },
+    39 => {
+      :name => "西方再打通！欧州救援作戦",
+      :maps => [391, 392, 393, 394, 395, 396, 397],
+      :event => true,
+      :available => true,
+    },
   }
 
   def self.area

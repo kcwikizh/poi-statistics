@@ -29,9 +29,11 @@ function loadData(query) {
 
     $('#cache-time').html(obj.generateTime);
     $('#query-count').html(obj.totalCount);
-    $('.fixed-table-toolbar > div:nth-of-type(2)')
-      .append("<a class='btn btn-default' href='http://zh.kcwiki.moe/wiki/" +
-        window.mapWikiData[query.id] + "' target='_blank'>查看百科</a>");
+    $('.fixed-table-toolbar > div:nth-of-type(1)').addClass('btn-group')
+      .append("<div class='btn-group'><a class='btn btn-default' style='color:#D12222' href='https://zh.kcwiki.org/wiki/" +
+        window.mapWikiData[query.id] + "' target='_blank'><img src='//static.kcwiki.org/enemy.png' style='margin-top:-3px' /> 查看敌舰配置</a></div>")
+      .append("<div class='btn-group'><a class='btn btn-default' style='font-weight:bold' href='https://zh.kcwiki.org/wiki/" +
+        window.mapWikiData[query.id] + "' target='_blank'><img src='//cdn1.iconfinder.com/data/icons/social-media-2057/128/1-11-16.png' style='margin-top:-3px' /> 查看日wiki摘要翻译</a></div>");
     
     $('.busy-indicator').hide();
     $('div.row.hidden').removeClass('hidden');

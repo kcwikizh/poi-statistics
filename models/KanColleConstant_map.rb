@@ -4023,6 +4023,500 @@ class KanColleConstant
         }
       ],
       :map => "MapE-5Spring2017.png"
+    },
+    391 => {
+      :name => "リンガ泊地沖",
+      :cells => [
+        {
+          :name => "深海東方侵入機動部隊",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海東方警戒部隊 B群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海東方侵入潜水艦隊 I群",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "深海東方警戒部隊 A群",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海東方警戒部隊 C群",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海東方通商破壊部隊 B群",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海東方通商破壊部隊 A群",
+          :point => :K,
+          :index => [11]
+        },
+        {
+          :name => "深海東方通商破壊部隊 C群",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "深海東方侵入潜水艦隊 II群",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "深海東方侵入潜水艦隊 旗艦",
+          :point => :P,
+          :index => [16, 17],
+          :boss => true
+        },
+        {
+          :name => "深海南方配備魚雷艇部隊 II群",
+          :point => :R,
+          :index => [19, 21]
+        },
+        {
+          :name => "深海南方配備魚雷艇部隊 I群",
+          :point => :S,
+          :index => [20]
+        }
+      ],
+      :map => "MapE-1Summer2017.png"
+    },
+    392 => {
+      :name => "カレー洋リランカ島沖",
+      :cells => [
+        {
+          :name => "深海東方前方展開潜水艦隊 III群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海東方前方展開潜水艦隊 II群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "海峡前進配備 深海魚雷艇襲撃隊",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "リランカ基地防衛部隊",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "深海東方重巡戦隊",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "リランカ港湾基地",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "リランカ港湾基地",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "深海東方緊急展開 前衛機動部隊",
+          :point => :J,
+          :index => [10, 17]
+        },
+        {
+          :name => "深海東方前方展開潜水艦隊 I群",
+          :point => :K,
+          :index => [11]
+        },
+        {
+          :name => "深海東方緊急展開 前衛機動部隊",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "深海東方緊急展開 主力機動部隊",
+          :point => :O,
+          :index => [15, 20],
+          :boss => true
+        },
+        {
+          :name => "深海東方雷巡戦隊",
+          :point => :P,
+          :index => [18]
+        },
+        {
+          :name => "深海精鋭駆逐隊",
+          :point => :Q,
+          :index => [19]
+        }
+      ],
+      :map => "MapE-2Summer2017.png"
+    },
+    393 => {
+      :name => "ステビア海",
+      :cells => [
+        {
+          :name => "深海東方潜水艦隊 哨戒B群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海ステビア海機動部隊 C群",
+          :point => :C,
+          :index => [3, 13]
+        },
+        {
+          :name => "深海ステビア海機動部隊 C群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海ステビア海機動部隊 B群",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海ステビア海輸送船団",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海ステビア海機動部隊 A群",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海ステビア海機動部隊 B群",
+          :point => :I,
+          :index => [9, 14]
+        },
+        {
+          :name => "深海東方潜水艦隊 哨戒A群",
+          :point => :J,
+          :index => [10, 15]
+        },
+        {
+          :name => "深海紅海展開 火力打撃群",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "深海ステビア海機動部隊 支援群",
+          :point => :M,
+          :index => [17]
+        },
+        {
+          :name => "深海ステビア海機動部隊 A群",
+          :point => :N,
+          :index => [18, 22]
+        },
+        {
+          :name => "深海東方方面艦隊 迎撃集団",
+          :point => :Q,
+          :index => [21, 23],
+          :boss => true
+        }
+      ],
+      :map => "MapE-3Summer2017.png"
+    },
+    394 => {
+      :name => "紅海",
+      :cells => [
+        {
+          :name => "深海東方艦隊 残存巡洋艦戦隊",
+          :point => :A,
+          :index => [1, 10]
+        },
+        {
+          :name => "東方紅海艦隊 ソマリア支隊",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海紅海艦隊 火力打撃群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海東方潜水艦隊 残存部隊",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海紅海艦隊 ソマリア機動部隊群",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "深海紅海配備 魚雷艇襲撃隊",
+          :point => :J,
+          :index => [11]
+        },
+        {
+          :name => "紅海方面 深海物資集積基地",
+          :point => :K,
+          :index => [12]
+        },
+        {
+          :name => "紅海方面 深海物資集積基地",
+          :point => :L,
+          :index => [13]
+        },
+        {
+          :name => "深海スエズ防衛 迎撃ライン",
+          :point => :M,
+          :index => [14, 17]
+        },
+        {
+          :name => "深海スエズ防衛 最終ライン",
+          :point => :N,
+          :index => [15],
+          :boss => true
+        }
+      ],
+      :map => "MapE-4Summer2017.png"
+    },
+    395 => {
+      :name => "地中海キプロス島沖",
+      :cells => [
+        {
+          :name => "深海地中海東部方面 潜水艦隊",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "アフリカ方面 深海野営集積地",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "ギリシャ方面 深海兵站輸送部隊",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海地中海艦隊 警戒重雷装戦隊",
+          :point => :E,
+          :index => [5, 14]
+        },
+        {
+          :name => "マルタ島展開 深海機動部隊",
+          :point => :F,
+          :index => [6, 15]
+        },
+        {
+          :name => "マルタ島展開 深海機動部隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海地中海艦隊 水雷戦隊",
+          :point => :I,
+          :index => [9, 16]
+        },
+        {
+          :name => "マルタ島展開 深海機動部隊",
+          :point => :J,
+          :index => [10, 17]
+        },
+        {
+          :name => "深海地中海東部方面 航空基地",
+          :point => :K,
+          :index => [11, 18]
+        },
+        {
+          :name => "深海地中海艦隊 東部方面旗艦",
+          :point => :M,
+          :index => [13],
+          :boss => true
+        }
+      ],
+      :map => "MapE-5Summer2017.png"
+    },
+    396 => {
+      :name => "地中海マルタ島沖",
+      :cells => [
+        {
+          :name => "地中海配備 深海魚雷艇襲撃群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海地中海艦隊 水雷戦隊",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海地中海艦隊 戦艦戦隊A群",
+          :point => :D,
+          :index => [4, 10]
+        },
+        {
+          :name => "深海地中海艦隊　潜水戦隊III群",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "深海地中海艦隊 戦艦戦隊B群",
+          :point => :G,
+          :index => [7, 12, 13]
+        },
+        {
+          :name => "マルタ島展開 深海戦闘集団",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海地中海艦隊 護衛空母群",
+          :point => :K,
+          :index => [15, 24]
+        },
+        {
+          :name => "深海地中海艦隊 特殊任務群",
+          :point => :L,
+          :index => [16]
+        },
+        {
+          :name => "深海地中海艦隊　潜水戦隊I群",
+          :point => :M,
+          :index => [17]
+        },
+        {
+          :name => "深海地中海艦隊 機動部隊前衛",
+          :point => :N,
+          :index => [18]
+        },
+        {
+          :name => "深海地中海艦隊 特殊任務群",
+          :point => :O,
+          :index => [19, 25]
+        },
+        {
+          :name => "深海地中海艦隊 機動部隊前衛",
+          :point => :P,
+          :index => [20, 26, 27]
+        },
+        {
+          :name => "深海地中海艦隊　潜水戦隊II群",
+          :point => :R,
+          :index => [22]
+        },
+        {
+          :name => "地中海展開 深海機動部隊主力",
+          :point => :S,
+          :index => [23],
+          :boss => true
+        }
+      ],
+      :map => "MapE-6Summer2017.png"
+    },
+    397 => {
+      :name => "北大西洋海域",
+      :cells => [
+        {
+          :name => "深海北部大西洋艦隊 任務群A",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海北部大西洋艦隊 警戒隊II群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海北部大西洋艦隊 任務群A",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海北部大西洋艦隊 任務群A",
+          :point => :E,
+          :index => [5, 23]
+        },
+        {
+          :name => "深海北部大西洋艦隊 任務群B",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海北部大西洋艦隊 警戒隊I群",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海欧州潜水艦隊 群狼II群",
+          :point => :H,
+          :index => [8, 24, 25]
+        },
+        {
+          :name => "深海欧州潜水艦隊 群狼IV群",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "深海欧州潜水艦隊 群狼I群",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "深海欧州潜水艦隊 群狼III群",
+          :point => :K,
+          :index => [11]
+        },
+        {
+          :name => "深海港湾拠点部 攻撃航空基地",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "深海拠点港湾部 防衛部隊",
+          :point => :M,
+          :index => [13]
+        },
+        {
+          :name => "深海欧州主力艦隊 前衛部隊",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "深海潜水艦隊 出撃拠点港湾部",
+          :point => :P,
+          :index => [16, 26]
+        },
+        {
+          :name => "深海欧州主力艦隊 機動部隊",
+          :point => :Q,
+          :index => [17]
+        },
+        {
+          :name => "深海欧州艦隊 兵站補給船団",
+          :point => :R,
+          :index => [18]
+        },
+        {
+          :name => "ドーバー海峡緊急封鎖部隊",
+          :point => :T,
+          :index => [20]
+        },
+        {
+          :name => "深海欧州主力艦隊 旗艦艦隊",
+          :point => :U,
+          :index => [21],
+          :boss => true
+        }
+      ],
+      :map => "MapE-7Summer2017.png"
     }
   }
 

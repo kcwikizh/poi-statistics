@@ -1110,7 +1110,31 @@ window.shipData = {
       rare: true
     },
     "択捉": {
-      chineseName: "択捉",
+      chineseName: "泽捉",
+      nameForSearch: "",
+      shipType: "海防舰",
+      rare: true
+    },
+    "天霧": {
+      chineseName: "天雾",
+      nameForSearch: "",
+      shipType: "驱逐舰",
+      rare: true
+    },
+    "狭霧": {
+      chineseName: "狭雾",
+      nameForSearch: "",
+      shipType: "驱逐舰",
+      rare: true
+    },
+    "Luigi Torelli": {
+      chineseName: "Luigi Torelli",
+      nameForSearch: "",
+      shipType: "潜水舰",
+      rare: true
+    },
+    "松輪": {
+      chineseName: "松轮",
       nameForSearch: "",
       shipType: "海防舰",
       rare: true
@@ -1204,5 +1228,12 @@ window.mapWikiData = {
     382: '2017年春季活动/E-2',
     383: '2017年春季活动/E-3',
     384: '2017年春季活动/E-4',
-    385: '2017年春季活动/E-5'
+    385: '2017年春季活动/E-5',
+    391: '2017年夏季活动/E-1',
+    392: '2017年夏季活动/E-2',
+    393: '2017年夏季活动/E-3',
+    394: '2017年夏季活动/E-4',
+    395: '2017年夏季活动/E-5',
+    396: '2017年夏季活动/E-6',
+    397: '2017年夏季活动/E-7'
 };

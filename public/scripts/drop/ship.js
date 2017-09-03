@@ -26,7 +26,7 @@ function loadData(query) {
     $('#cache-time').html(obj.generateTime);
     $('#query-count').html(obj.totalCount);
     $('.fixed-table-toolbar > div:nth-of-type(2)')
-      .append("<a class='btn btn-default' href='http://zh.kcwiki.moe/wiki/" +
+      .append("<a class='btn btn-default' href='https://zh.kcwiki.org/wiki/" +
         query.name + "' target='_blank'>查看百科</a>");
 
 

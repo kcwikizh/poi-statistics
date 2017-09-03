@@ -69,6 +69,7 @@ reduce_func = %Q{
 }
 
 CreateItemRecord.distinct(:itemId).to_a.each do |item_id|
+  next if item_id.nil?
   puts "#{Time.now} #{item_id}"
   CreateItemRecord.where(
     :id.gte => BSON::ObjectId.from_time(time_range[:from]),
