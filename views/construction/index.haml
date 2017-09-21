@@ -1,26 +1,86 @@
 %div.container
   %div.page-header
     %h1 建造统计
-  %div.col-xs-8
-    - KCConstants.ship_types.each do |t_name, t_ids|
-      %div.panel-group
-        %div.panel.panel-primary
-          %div.panel-heading
-            %h4.panel-title= t_name
-          %div.panel-body
-            %ul.list-inline
-              - (KCConstants.ship.select {|s_id, s_info| s_info[:construction] && t_ids.include?(s_info[:ship_type])}).each do |id, info|
-                %li
-                  %p
-                    %a.btn.btn-default{:href => "/construction/ship/#{info[:name]}.html"}= info[:name]
-  %div.col-xs-4
+  %div.col-xs-12
     %div.panel-group
+      - ship_list = JSON.parse(get_kv_data("construction_shiplist")).map{|s| ConstData.ship[s]}
       %div.panel.panel-primary
         %div.panel-heading
-          %h4.panel-title 公式
+          %h4.panel-title 驱逐
         %div.panel-body
-          %ul
-            - (cache_get("crl").sort{|a, b| b[:count] <=> a[:count]}).take(50).sort{|a, b| a[:items] <=> b[:items]}.each do |r|
-              %li
-                %p
-                  %a{:href => "/construction/recipe/#{r[:items].join('-')}.html"}= r[:items].join('-')
+          %ul.list-inline
+            - ship_list.select{|s| s["stype"] == 2}.group_by{|s| s["ctype"]}.each do |grp, ships|
+              - ships.sort{|a, b| a["wiki_id"] <=> b["wiki_id"]}.each do |s|
+                %li
+                  %p
+                    %a.btn.btn-default{:href => "/construction/ship/#{s["id"]}.html"}= s["name"]
+      %div.panel.panel-primary.top15
+        %div.panel-heading
+          %h4.panel-title 轻巡
+        %div.panel-body
+          %ul.list-inline
+            - ship_list.select{|s| s["stype"] == 3}.group_by{|s| s["ctype"]}.each do |grp, ships|
+              - ships.sort{|a, b| a["wiki_id"] <=> b["wiki_id"]}.each do |s|
+                %li
+                  %p
+                    %a.btn.btn-default{:href => "/construction/ship/#{s["id"]}.html"}= s["name"]
+      %div.panel.panel-primary.top15
+        %div.panel-heading
+          %h4.panel-title 重巡
+        %div.panel-body
+          %ul.list-inline
+            - ship_list.select{|s| s["stype"] == 5}.group_by{|s| s["ctype"]}.each do |grp, ships|
+              - ships.sort{|a, b| a["wiki_id"] <=> b["wiki_id"]}.each do |s|
+                %li
+                  %p
+                    %a.btn.btn-default{:href => "/construction/ship/#{s["id"]}.html"}= s["name"]
+      %div.panel.panel-primary.top15
+        %div.panel-heading
+          %h4.panel-title 战舰
+        %div.panel-body
+          %ul.list-inline
+            - ship_list.select{|s| s["stype"] == 8 || s["stype"] == 9}.group_by{|s| s["ctype"]}.each do |grp, ships|
+              - ships.sort{|a, b| a["wiki_id"] <=> b["wiki_id"]}.each do |s|
+                %li
+                  %p
+                    %a.btn.btn-default{:href => "/construction/ship/#{s["id"]}.html"}= s["name"]
+      %div.panel.panel-primary.top15
+        %div.panel-heading
+          %h4.panel-title 轻母
+        %div.panel-body
+          %ul.list-inline
+            - ship_list.select{|s| s["stype"] == 7}.group_by{|s| s["ctype"]}.each do |grp, ships|
+              - ships.sort{|a, b| a["wiki_id"] <=> b["wiki_id"]}.each do |s|
+                %li
+                  %p
+                    %a.btn.btn-default{:href => "/construction/ship/#{s["id"]}.html"}= s["name"]
+      %div.panel.panel-primary.top15
+        %div.panel-heading
+          %h4.panel-title 空母
+        %div.panel-body
+          %ul.list-inline
+            - ship_list.select{|s| s["stype"] == 11 || s["stype"] == 18}.group_by{|s| s["ctype"]}.each do |grp, ships|
+              - ships.sort{|a, b| a["wiki_id"] <=> b["wiki_id"]}.each do |s|
+                %li
+                  %p
+                    %a.btn.btn-default{:href => "/construction/ship/#{s["id"]}.html"}= s["name"]
+      %div.panel.panel-primary.top15
+        %div.panel-heading
+          %h4.panel-title 潜水舰
+        %div.panel-body
+          %ul.list-inline
+            - ship_list.select{|s| s["stype"] == 13 || s["stype"] == 14}.group_by{|s| s["ctype"]}.each do |grp, ships|
+              - ships.sort{|a, b| a["wiki_id"] <=> b["wiki_id"]}.each do |s|
+                %li
+                  %p
+                    %a.btn.btn-default{:href => "/construction/ship/#{s["id"]}.html"}= s["name"]
+      %div.panel.panel-primary.top15
+        %div.panel-heading
+          %h4.panel-title 其他
+        %div.panel-body
+          %ul.list-inline
+            - ship_list.select{|s| ![(2..14).to_a, 18].flatten.include?(s["stype"])}.group_by{|s| s["ctype"]}.each do |grp, ships|
+              - ships.sort{|a, b| a["wiki_id"] <=> b["wiki_id"]}.each do |s|
+                %li
+                  %p
+                    %a.btn.btn-default{:href => "/construction/ship/#{s["id"]}.html"}= s["name"]

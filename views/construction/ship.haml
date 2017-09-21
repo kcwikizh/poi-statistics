@@ -2,9 +2,9 @@
   %div.row
     %ol.breadcrumb
       %li 主页
-      %li 开发
-      %li 装备
-      %li= ConstData.slotitem[item_id]["name"]
+      %li 建造
+      %li 舰娘
+      %li= ConstData.ship[ship_id]["name"]
     %div
       %div#toolbar
       %table.table.table-hover.table-striped{:"data-toolbar" => "#toolbar",
@@ -26,6 +26,9 @@
             %th{:"data-field" => "bauxite",
                 :"data-switchable" => "false",
                 :"data-filterable" => "true"} 铝
+            %th{:"data-field" => "devkit",
+                :"data-switchable" => "false",
+                :"data-filterable" => "true"} 开发资材
             %th{:"data-field" => "count",
                 :"data-sortable" => "true",
                 :"data-filterable" => "true"} 数量
@@ -33,17 +36,17 @@
                 :"data-sortable" => "true",
                 :"data-filterable" => "true"} 公式使用次数
             %th{:"data-field" => "hqLvRange"} 提督等级
-            %th{:"data-field" => "developmentRate",
-                :"data-formatter" => "developmentRateFormatter",
+            %th{:"data-field" => "constructionRate",
+                :"data-formatter" => "constructionRateFormatter",
                 :"data-sortable" => "true",
-                :"data-filterable" => "true"} 开发率
+                :"data-filterable" => "true"} 建造率
       %div.busy-indicator
         %span.glyphicon.glyphicon-refresh.glyphicon-spin
         %span 少女祈祷中...
-%script{:src => "/scripts/development/item.js"}
+%script{:src => "/scripts/construction/ship.js"}
 %script
   :plain
     $(document).ready(function() {
-      requestData("#{item_id}");
+      requestData("#{ship_id}");
     });
-=haml :changyan, :locals => { :key => "development/item/#{item_id}" }
+=haml :changyan, :locals => { :key => "construction/ship/#{ship_id}" }
