@@ -109,3 +109,8 @@ get '/drop/ship/:ship_id/:rank.?:format?' do
     :rank => rank.join('')
   }
 end
+
+get '/drop/ship_list' do
+  content_type :json
+  return get_kv_data("drop_shiplist")
+end

@@ -25,3 +25,8 @@ get '/construction/ship/:ship.?:format?' do
     :title_append => " # 建造统计 - #{ConstData.ship[ship_id]["name"]}",
   }
 end
+
+get '/construction/ship_list' do
+  content_type :json
+  return get_kv_data("construction_shiplist")
+end
