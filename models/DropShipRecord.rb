@@ -12,6 +12,7 @@ class DropShipRecord
   field :teitokuLv,      type: Integer
   field :mapLv,          type: Integer
   field :enemyFormation, type: Integer
-  field :enemyShips,     type: Array
+  field :enemyShips1,     type: Array
+  field :enemyShips2,     type: Array
   field :origin,         type: String
 end

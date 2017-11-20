@@ -93,4 +93,7 @@
     $(document).ready(function() {
       loadData({id: #{map_id}, point: "#{point_id}", rank: "#{rank}", level: #{locals[:level_no] || 0}});
     });
-=haml :changyan, :locals => { :key => "drop/map/#{map_id}" }
+- if map_id == 404
+  =haml :disqus, :locals => { :key => "drop/map/#{map_id}" }
+- else
+  =haml :changyan, :locals => { :key => "drop/map/#{map_id}" }

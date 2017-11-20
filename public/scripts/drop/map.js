@@ -9,7 +9,7 @@ function loadData(query) {
     $.each(obj.data, function(key, val) {
       items.push({
         name: key,
-        type: window.shipData[key].shipType,
+        type: window.shipData[key] == null ? " " : window.shipData[key].shipType,
         totalCount: val.totalCount,
         sCount: val.rankCount ? val.rankCount[0] : 0,
         aCount: val.rankCount ? val.rankCount[1] : 0,
@@ -43,6 +43,14 @@ function loadData(query) {
 }
 
 function nameFormatter(value) {
+  if (!window.shipData[value]) {
+    window.shipData[value] = {
+      nameForSearch: value,
+      rare: true,
+      shipType: ' '
+    }
+  }
+
   /* why not use searchFormatter */
   var ship = window.shipData[value];
   return (ship.rare ? "<div style='color:red'>" + value + "</div>" : (value == "(无)" ? "(无掉落)" : value))

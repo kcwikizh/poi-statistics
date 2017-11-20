@@ -7,41 +7,33 @@ time_range = {
 
 common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a].flatten
 common_table = DropRecord
-event_maps = [391,392,393,394,395,396,397]
-event_table = DropRecordSummer2017
+event_maps = [401, 402, 403, 404]
+event_table = DropRecordAutumn2017
 
 map_func = %Q{
   function() {
+    if (!this.origin || !this.teitokuLv || !this.enemyFormation || !this.enemyShips1 || !this.enemyShips2) return;
+    if (this.quest != quest) return;
+    var enemyShips = this.enemyShips1.concat(this.enemyShips2);
+    if (!enemyShips.length) return;
+
     val = {
       origin: {},
       hqLv: {},
       count: NumberInt(1)
     };
 
-    if (this.origin == null) return;
-    if (this.teitokuLv == null) return;
-    if (this.quest != quest) return;
-    if (this.enemyShips == null) return;
-    if (this.enemyShips.length % 6 > 0) return;
-    if (this.enemyFormation < 1 || this.enemyFormation > 14) return;
-    if (this.enemyFormation > 5 && this.enemyFormation < 11) return;
-
     var origin = this.origin.match(new RegExp(uaList.join('|')));
     if (origin == null) return;
     origin = origin[0].replace(/[ \.]/g, '_');
     val.origin[origin] = 1;
     val.hqLv[this.teitokuLv] = 1;
-    for (var i = 0; i < this.enemyShips.length; i++) {
-      if (this.enemyShips[i] != -1 && this.enemyShips[i] < 1000) {
-        this.enemyShips[i] += 1000;
-      }
-    }
 
     var date = this._id.getTimestamp();
     var hour = date.getHours() * 10;
     var min = Math.floor(date.getMinutes() / 10);
 
-    emit(this.enemyShips.join(',') + ',' + this.enemyFormation + '/' + (hour + min).toString(), val);
+    emit(enemyShips.join(',') + ',' + this.enemyFormation + '/' + (hour + min).toString(), val);
   }
 }
 

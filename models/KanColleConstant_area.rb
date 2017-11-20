@@ -58,25 +58,26 @@ class KanColleConstant
       :name => "発令！「艦隊作戦第三法」",
       :maps => [361, 362, 363, 364, 365],
       :event => true,
-      :available => false,
     },
     37 => {
       :name => "偵察戦力緊急展開！「光」作戦",
       :maps => [371, 372, 373],
       :event => true,
-      :available => false,
     },
     38 => {
       :name => "出撃！北東方面 第五艦隊",
       :maps => [381, 382, 383, 384, 385],
       :event => true,
-      :available => true,
     },
     39 => {
       :name => "西方再打通！欧州救援作戦",
       :maps => [391, 392, 393, 394, 395, 396, 397],
       :event => true,
-      :available => true,
+    },
+    40 => {
+      :name => "捷号決戦！邀撃、レイテ沖海戦(前篇)",
+      :maps => [401, 402, 403, 404],
+      :event => true,
     },
   }
 
