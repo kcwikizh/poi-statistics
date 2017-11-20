@@ -17,16 +17,13 @@ map_func = %Q{
     var enemyShips = this.enemyShips1.concat(this.enemyShips2);
     if (!enemyShips.length) return;
 
-    val = {
+    var val = {
       origin: {},
       hqLv: {},
       count: NumberInt(1)
     };
 
-    var origin = this.origin.match(new RegExp(uaList.join('|')));
-    if (origin == null) return;
-    origin = origin[0].replace(/[ \.]/g, '_');
-    val.origin[origin] = 1;
+    val.origin[this.origin] = 1;
     val.hqLv[this.teitokuLv] = 1;
 
     var date = this._id.getTimestamp();
@@ -86,7 +83,7 @@ common_maps.each do |map_id|
           ).map_reduce(
             map_func,
             reduce_func
-          ).scope(uaList: UAWhiteList.filters, quest: KanColleConstant.map[map_id][:name]).out(inline: 1).each do |q|
+          ).scope(quest: KanColleConstant.map[map_id][:name]).out(inline: 1).each do |q|
             qid = q["_id"].split('/')
             fleet = qid[0]
             time_no = qid[1].to_i
@@ -147,7 +144,7 @@ event_maps.each do |map_id|
             ).map_reduce(
               map_func,
               reduce_func
-            ).scope(uaList: UAWhiteList.filters, quest: KanColleConstant.map[map_id][:name]).out(inline: 1).each do |q|
+            ).scope(quest: KanColleConstant.map[map_id][:name]).out(inline: 1).each do |q|
               qid = q["_id"].split('/')
               fleet = qid[0]
               time_no = qid[1].to_i

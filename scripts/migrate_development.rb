@@ -7,7 +7,11 @@ time_range = {
 
 map_func = %Q{
   function() {
-    val = {
+    if (!this.origin || !this.teitokuLv || !this.secretary) return;
+    if (this.items.length != 4) return;
+    if (this.items[0] * this.items[1] * this.items[2] * this.items[3] < 1000) return;
+
+    var val = {
       origin: {},
       hqLv: {},
       secretary: {},
@@ -15,16 +19,7 @@ map_func = %Q{
       count: NumberInt(1)
     }
 
-    if (this.origin == null) return;
-    if (this.teitokuLv == null) return;
-    if (this.secretary == null) return;
-    if (this.items.length != 4) return;
-    if (this.items[0] * this.items[1] * this.items[2] * this.items[3] < 1000) return;
-
-    var origin = this.origin.match(new RegExp(uaList.join('|')));
-    if (origin == null) return;
-    origin = origin[0].replace(/[ \.]/g, '_');
-    val.origin[origin] = 1;
+    val.origin[this.origin] = 1;
     val.secretary[this.secretary] = 1;
     val.hqLv[this.teitokuLv] = 1;
 
@@ -78,7 +73,7 @@ CreateItemRecord.distinct(:itemId).to_a.each do |item_id|
   ).map_reduce(
     map_func,
     reduce_func
-  ).scope(uaList: UAWhiteList.filters).out(inline: 1).each do |query|
+  ).out(inline: 1).each do |query|
     items = query['_id'].split('-').map(&:to_i)
     values = query['value']
     record = DevelopmentRecord.where(
