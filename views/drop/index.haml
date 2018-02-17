@@ -28,8 +28,10 @@
               %a{:href => "#area38", :"data-toggle" => "tab"} 出撃！北東方面 第五艦隊
             %li
               %a{:href => "#area39", :"data-toggle" => "tab"} 西方再打通！欧州救援作戦
-            %li.active
+            %li
               %a{:href => "#area40", :"data-toggle" => "tab"} 捷号決戦！邀撃、レイテ沖海戦(前篇)
+            %li.active
+              %a{:href => "#area41", :"data-toggle" => "tab"} 捷号決戦！邀撃、レイテ沖海戦(後篇)
           %div.tab-content.top15
             %div#area1.tab-pane
               %div.col-xs-12
@@ -226,7 +228,7 @@
                 %div.row
                   %a{:href => "/drop/map/397/"}
                     %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-7Summer2017.png"), :alt => "MapBannerE-7Summer2017.png"}
-            %div#area40.tab-pane.active
+            %div#area40.tab-pane
               %div.col-xs-12
                 %div.row
                   %a{:href => "/drop/map/401/"}
@@ -240,6 +242,20 @@
                 %div.row
                   %a{:href => "/drop/map/404/"}
                     %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-4-1Autumn2017.png"), :alt => "MapBannerE-4Autumn2017.png"}
+            %div#area41.tab-pane.active
+              %div.col-xs-12
+                %div.row
+                  %a{:href => "/drop/map/411/"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-1Winter2018.png"), :alt => "MapBannerE-1Winter2018.png"}
+                %div.row
+                  %a{:href => "/drop/map/412/"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-2Winter2018.png"), :alt => "MapBannerE-2Winter2018.png"}
+                %div.row
+                  %a{:href => "/drop/map/413/"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-3Winter2018.png"), :alt => "MapBannerE-3Winter2018.png"}
+                %div.row
+                  %a{:href => "/drop/map/414/"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-4-1Winter2018.png"), :alt => "MapBannerE-4Winter2018.png"}
   %div.col-xs-12.col-md-6
     %div.panel-group
       %div.panel.panel-primary
@@ -248,7 +264,7 @@
         %div.panel-body
           - ship_list = JSON.parse(Sinatra::KVDataHelper.get_kv_data("drop_shiplist")).map{|s| ConstData.ship[s]}
           %ul.nav.nav-pills
-            %li.active
+            %li
               %a{:href => "#dd", :"data-toggle" => "tab"} 驱逐
             %li
               %a{:href => "#cl", :"data-toggle" => "tab"} 轻巡、练巡
@@ -264,8 +280,10 @@
               %a{:href => "#ss", :"data-toggle" => "tab"} 潜水舰
             %li
               %a{:href => "#others", :"data-toggle" => "tab"} 其他
+            %li.active
+              %a{:href => "#new", :"data-toggle" => "tab"} 新实装、活动限定
           %div.tab-content.top15
-            %div#dd.tab-pane.active
+            %div#dd.tab-pane
               %ul.list-inline
                 - ship_list.select{|s| s["stype"] == 2}.group_by{|s| s["ctype"]}.each do |grp, ships|
                   - ships.sort{|a, b| a["wiki_id"] <=> b["wiki_id"]}.each do |s|
@@ -321,3 +339,10 @@
                     %li
                       %p
                         %a.btn.btn-default{:href => "/drop/ship/#{s["id"]}/"}= s["name"]
+            %div#new.tab-pane.active
+              %ul.list-inline
+                - [].each do |s|
+                  - ship = ConstData.ship[s]
+                  %li
+                    %p
+                      %a.btn.btn-default{:href => "/drop/ship/#{ship["id"]}"}= ship["name"]
