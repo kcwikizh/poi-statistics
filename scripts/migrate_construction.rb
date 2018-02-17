@@ -1,10 +1,5 @@
 require_relative '../app'
 
-time_range = {
-  from: Time.parse(Sinatra::KVDataHelper.get_kv_data("migrate_construction")),
-  to: CreateShipRecord.desc(:id).first.id.generation_time + 1
-}
-
 map_func = %Q{
   function() {
     if (!this.origin || !this.teitokuLv || !this.secretary || !this.kdockId) return;
@@ -71,8 +66,6 @@ CreateShipRecord.distinct(:shipId).to_a.each do |ship_id|
   next if ship_id.nil?
   puts "#{Time.now} #{ship_id}"
   CreateShipRecord.where(
-    :id.gte => BSON::ObjectId.from_time(time_range[:from]),
-    :id.lt  => BSON::ObjectId.from_time(time_range[:to]),
     :shipId => ship_id
   ).map_reduce(
     map_func,
@@ -101,4 +94,4 @@ CreateShipRecord.distinct(:shipId).to_a.each do |ship_id|
   end
 end
 
-Sinatra::KVDataHelper.set_kv_data("migrate_construction", time_range[:to].to_s)
+Sinatra::KVDataHelper.set_kv_data("migrate_construction", (CreateShipRecord.desc(:id).first.id.generation_time + 1).to_s)

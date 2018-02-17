@@ -3,7 +3,7 @@ require 'set'
 require_relative '../app'
 
 $common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a].flatten
-$event_maps = [401, 402, 403, 404]
+$event_maps = []
 
 def staticify_drop_map(map_id)
   levels = map_id > 100 ? [3, 2, 1] : [0]

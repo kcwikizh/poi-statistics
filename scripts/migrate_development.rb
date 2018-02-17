@@ -1,10 +1,5 @@
 require_relative '../app'
 
-time_range = {
-  from: Time.parse(Sinatra::KVDataHelper.get_kv_data("migrate_development")),
-  to: CreateItemRecord.desc(:id).first.id.generation_time + 1
-}
-
 map_func = %Q{
   function() {
     if (!this.origin || !this.teitokuLv || !this.secretary) return;
@@ -67,8 +62,6 @@ CreateItemRecord.distinct(:itemId).to_a.each do |item_id|
   next if item_id.nil?
   puts "#{Time.now} #{item_id}"
   CreateItemRecord.where(
-    :id.gte => BSON::ObjectId.from_time(time_range[:from]),
-    :id.lt  => BSON::ObjectId.from_time(time_range[:to]),
     :itemId => item_id
   ).map_reduce(
     map_func,
@@ -97,4 +90,4 @@ CreateItemRecord.distinct(:itemId).to_a.each do |item_id|
   end
 end
 
-Sinatra::KVDataHelper.set_kv_data("migrate_development", time_range[:to].to_s)
+Sinatra::KVDataHelper.set_kv_data("migrate_development", (CreateItemRecord.desc(:id).first.id.generation_time + 1).to_s)
