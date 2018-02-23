@@ -8,7 +8,7 @@ class ConstData
 
     def [](index)
       ret = nil
-      if index == -1
+      if index == -1 || index == 0
         ret =  {"name" => "(无)"}
       elsif index.is_a? Numeric
         ret = @data.find{|i| i["id"] == index}

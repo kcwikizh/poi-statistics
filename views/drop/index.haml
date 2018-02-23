@@ -255,7 +255,16 @@
                     %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-3Winter2018.png"), :alt => "MapBannerE-3Winter2018.png"}
                 %div.row
                   %a{:href => "/drop/map/414/"}
-                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-4-1Winter2018.png"), :alt => "MapBannerE-4Winter2018.png"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-4Winter2018.png"), :alt => "MapBannerE-4Winter2018.png"}
+                %div.row
+                  %a{:href => "/drop/map/415/"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-5Winter2018.png"), :alt => "MapBannerE-5Winter2018.png"}
+                %div.row
+                  %a{:href => "/drop/map/416/"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-6Winter2018.png"), :alt => "MapBannerE-6Winter2018.png"}
+                %div.row
+                  %a{:href => "/drop/map/417/"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-7Winter2018.png"), :alt => "MapBannerE-7Winter2018.png"}
   %div.col-xs-12.col-md-6
     %div.panel-group
       %div.panel.panel-primary
@@ -341,7 +350,7 @@
                         %a.btn.btn-default{:href => "/drop/ship/#{s["id"]}/"}= s["name"]
             %div#new.tab-pane.active
               %ul.list-inline
-                - [].each do |s|
+                - [479, 480, 485, 471, 473, 475, 421, 519, 439, 492, 521, 332, 515, 535, 517, 518, 524, 525, 162, 552, 161].each do |s|
                   - ship = ConstData.ship[s]
                   %li
                     %p

@@ -33,9 +33,14 @@
             %div
               %b 难度:
             %ul.nav.nav-pills
-              - ['甲', '乙', '丙'].each_with_index do |l, idx|
-                %li{:role => "presentation", :class => idx == 3 - level_no ? "active" : nil}
-                  %a{:href => "/drop/map/#{map_id}/#{3 - idx}/#{point_id}-#{rank}.html"}= l
+              - if map_id > 410
+                - ['甲', '乙', '丙', '丁'].each_with_index do |l, idx|
+                  %li{:role => "presentation", :class => idx == 4 - level_no ? "active" : nil}
+                    %a{:href => "/drop/map/#{map_id}/#{4 - idx}/#{point_id}-#{rank}.html"}= l
+              - else
+                - ['甲', '乙', '丙'].each_with_index do |l, idx|
+                  %li{:role => "presentation", :class => idx == 3 - level_no ? "active" : nil}
+                    %a{:href => "/drop/map/#{map_id}/#{3 - idx}/#{point_id}-#{rank}.html"}= l
         %div.col-xs-12.col-md-8
           %img.img-responsive{:src => kcwiki_get_thumb(KanColleConstant.map[map_id][:map], size: 600, protocol: "http")}
       %div.row.top10.hidden

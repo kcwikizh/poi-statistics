@@ -2,8 +2,8 @@ require_relative '../app'
 
 common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a].flatten
 common_table = DropRecord
-event_maps = []
-event_table = DropRecordAutumn2017
+event_maps = [(411..417).to_a].flatten
+event_table = DropRecordWinter2018
 
 map_func = %Q{
   function() {
@@ -25,7 +25,7 @@ map_func = %Q{
     var hour = date.getHours() * 10;
     var min = Math.floor(date.getMinutes() / 10);
 
-    emit(enemyShips.join(',') + ',' + this.enemyFormation + '/' + (hour + min).toString(), val);
+    emit(enemyShips.join(',').replace(/,0/g, ',-1') + ',' + this.enemyFormation + '/' + (hour + min).toString(), val);
   }
 }
 
@@ -61,6 +61,7 @@ common_maps.each do |map_id|
       :cellId.in => cell_obj[:index]
     ).distinct(:shipId).to_a.each do |ship_id|
       next if ConstData.ship[ship_id].nil?
+      ship_id = -1 if ship_id == 0
 
       cell_obj[:index].each do |cell_id|
         ['S', 'A', 'B', 'C', 'D', 'E'].each do |rank|
@@ -117,10 +118,11 @@ event_maps.each do |map_id|
       :cellId.in => cell_obj[:index]
     ).distinct(:shipId).to_a.each do |ship_id|
       next if ConstData.ship[ship_id].nil?
+      ship_id = -1 if ship_id == 0
 
       cell_obj[:index].each do |cell_id|
         ['S', 'A', 'B', 'C', 'D', 'E'].each do |rank|
-          (1..3).to_a.each do |level_no|
+          (1..4).to_a.each do |level_no|
             puts "#{map_id}:#{ship_id}:#{cell_id}:#{rank}:#{level_no}"
             DropShipRecord.where(
               :mapId  => map_id,

@@ -4890,6 +4890,630 @@ class KanColleConstant
         }
       ],
       :map => "MapE-4Autumn2017.png"
+    },
+    411 => {
+      :name => "パラワン水道/作戦海域",
+      :cells => [
+        {
+          :name => "深海潜水艦 待伏部隊D群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海潜水艦 待伏部隊B群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海潜水艦 待伏支援部隊 II群",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海潜水艦 待伏部隊E群",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海潜水艦 待伏部隊A群",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海潜水艦 待伏支援部隊 I群",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "深海潜水艦 待伏部隊C群",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "深海侵攻任務部隊 哨戒艦隊",
+          :point => :K,
+          :index => [11, 16]
+        },
+        {
+          :name => "深海侵攻任務部隊 哨戒艦隊旗艦",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "深海潜水待伏部隊 指揮潜水艦",
+          :point => :O,
+          :index => [18],
+          :boss => true
+        }
+      ],
+      :map => "MapE-1Winter2018.png"
+    },
+    412 => {
+      :name => "シブヤン海",
+      :cells => [
+        {
+          :name => "深海潜水艦 待伏前衛部隊B群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海潜水艦 待伏支援部隊 II群",
+          :point => :C,
+          :index => [3, 28]
+        },
+        {
+          :name => "深海潜水艦 待伏前衛部隊A群",
+          :point => :E,
+          :index => [5, 29]
+        },
+        {
+          :name => "深海潜水艦 待伏部隊本隊",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海潜水艦 待伏前衛部隊C群",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海潜水艦 待伏増派部隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海潜水艦 待伏支援部隊 I群",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :K,
+          :index => [11]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :M,
+          :index => [13]
+        },
+        {
+          :name => "深海潜水艦 第二待伏部隊",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :R,
+          :index => [18]
+        },
+        {
+          :name => "深棲棲艦 島嶼配備PT部隊",
+          :point => :S,
+          :index => [19]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :T,
+          :index => [20, 34]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :U,
+          :index => [21]
+        },
+        {
+          :name => "深海任務部隊 護衛艦艇群",
+          :point => :V,
+          :index => [22]
+        },
+        {
+          :name => "深海任務部隊 護衛空母群",
+          :point => :W,
+          :index => [23]
+        },
+        {
+          :name => "深棲棲艦 海峡配備水雷戦隊",
+          :point => :X,
+          :index => [24]
+        },
+        {
+          :name => "深棲棲艦 海峡旧式戦艦部隊",
+          :point => :Y,
+          :index => [25]
+        },
+        {
+          :name => "深海任務部隊 護衛空母群",
+          :point => :Z,
+          :index => [26],
+          :boss => true
+        }
+      ],
+      :map => "MapE-2Winter2018.png"
+    },
+    413 => {
+      :name => "エンガノ岬沖",
+      :cells => [
+        {
+          :name => "深海潜水艦 通商破壊部隊 III群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海通商破壊部隊 支援戦闘団",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海潜水艦 通商破壊部隊 II群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :D,
+          :index => [4, 22, 23]
+        },
+        {
+          :name => "深海潜水艦 通商破壊部隊 I群",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海任務部隊 護衛空母群",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "深海任務部隊 護衛空母群",
+          :point => :J,
+          :index => [10, 24]
+        },
+        {
+          :name => "深海任務部隊 空母群",
+          :point => :K,
+          :index => [11, 25]
+        },
+        {
+          :name => "深海潜水部隊 任務部隊付属群",
+          :point => :M,
+          :index => [13]
+        },
+        {
+          :name => "深海任務部隊 空母群",
+          :point => :N,
+          :index => [14, 30]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :O,
+          :index => [15, 26]
+        },
+        {
+          :name => "深海任務部隊 空母II群",
+          :point => :P,
+          :index => [16]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :Q,
+          :index => [17]
+        },
+        {
+          :name => "深海任務部隊 空母I群",
+          :point => :S,
+          :index => [19, 27, 28]
+        },
+        {
+          :name => "深海任務部隊 第二戦闘群旗艦",
+          :point => :U,
+          :index => [21],
+          :boss => true
+        }
+      ],
+      :map => "MapE-3Winter2018.png"
+    },
+    414 => {
+      :name => "サマール沖/レイテ湾",
+      :cells => [
+        {
+          :name => "深海潜水艦部隊 阻止線",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海任務部隊 空母群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海任務部隊 空母群",
+          :point => :E,
+          :index => [5, 24]
+        },
+        {
+          :name => "深海任務部隊 哨戒警戒線",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海任務部隊 哨戒警戒線",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :I,
+          :index => [9, 25]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "深海任務部隊 海峡守備PT部隊",
+          :point => :M,
+          :index => [13]
+        },
+        {
+          :name => "深海任務部隊 海峡守備残存部隊",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "深海任務部隊 飴玉護衛空母I群",
+          :point => :O,
+          :index => [15]
+        },
+        {
+          :name => "深海任務部隊 飴玉護衛空母II群",
+          :point => :P,
+          :index => [16, 27]
+        },
+        {
+          :name => "深海任務部隊 飴玉護衛空母III群",
+          :point => :Q,
+          :index => [17]
+        },
+        {
+          :name => "深海任務部隊 上陸支援部隊",
+          :point => :R,
+          :index => [18]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :T,
+          :index => [20]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :V,
+          :index => [22]
+        },
+        {
+          :name => "深海任務部隊 機動部隊群",
+          :point => :W,
+          :index => [23]
+        },
+        {
+          :name => "深海レイテ侵攻 主力輸送船団",
+          :point => :X,
+          :index => [30],
+          :boss => true
+        }
+      ],
+      :map => "MapE-4Winter2018.png"
+    },
+    415 => {
+      :name => "オルモック沖",
+      :cells => [
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海潜水艦部隊 増援阻止線",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :D,
+          :index => [4, 13, 14]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海任務部隊 増援迎撃戦隊B群",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海任務部隊 増援迎撃戦隊A群",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "深海任務部隊 増援迎撃戦隊旗艦",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "深海任務部隊 残存旧式戦艦群",
+          :point => :M,
+          :index => [16]
+        },
+        {
+          :name => "深海任務部隊 飴玉残存空母A群",
+          :point => :N,
+          :index => [17, 24]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :O,
+          :index => [18]
+        },
+        {
+          :name => "深海任務部隊 収容部隊前衛群",
+          :point => :P,
+          :index => [19, 25]
+        },
+        {
+          :name => "深海任務部隊 飴玉残存空母B群",
+          :point => :R,
+          :index => [21]
+        },
+        {
+          :name => "深海任務部隊 増援迎撃戦隊旗艦",
+          :point => :T,
+          :index => [23],
+          :boss => true
+        }
+      ],
+      :map => "MapE-5Winter2018.png"
+    },
+    416 => {
+      :name => "サマール沖東方",
+      :cells => [
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海任務部隊 再編水雷戦隊",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海潜水艦部隊 独立強襲群",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海任務部隊 残存輸送船団",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "深海任務部隊 再編巡洋艦戦隊",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "深海任務部隊 再編空母打撃群",
+          :point => :K,
+          :index => [11]
+        },
+        {
+          :name => "深海任務部隊 残存輸送船団護衛",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "深海任務部隊 再編飴玉空母部隊",
+          :point => :O,
+          :index => [15, 20]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :P,
+          :index => [16]
+        },
+        {
+          :name => "深海任務部隊 増援索敵集団",
+          :point => :U,
+          :index => [18]
+        },
+        {
+          :name => "深海任務部隊 増援支援集団前衛",
+          :point => :Q,
+          :index => [22]
+        },
+        {
+          :name => "深海任務部隊 増援支援集団",
+          :point => :V,
+          :index => [24]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :R,
+          :index => [25]
+        },
+        {
+          :name => "深海任務部隊 増援集団旗艦艦隊",
+          :point => :W,
+          :index => [26],
+          :boss => true
+        }
+      ],
+      :map => "MapE-6Winter2018.png"
+    },
+    417 => {
+      :name => "エンガノ岬沖",
+      :cells => [
+        {
+          :name => "深海潜水艦部隊 岬沖再配備集団",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海任務部隊 岬沖艦隊前衛 I群",
+          :point => :D,
+          :index => [4, 34]
+        },
+        {
+          :name => "",
+          :point => :E,
+          :index => [5, 19]
+        },
+        {
+          :name => "深海岬沖艦隊 哨戒護衛空母群",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海任務部隊 岬沖水雷戦隊",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "",
+          :point => :H,
+          :index => [8, 33, 35]
+        },
+        {
+          :name => "深海任務部隊 艦載機群",
+          :point => :I,
+          :index => [9, 20]
+        },
+        {
+          :name => "",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "",
+          :point => :K,
+          :index => [11, 21]
+        },
+        {
+          :name => "",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "",
+          :point => :M,
+          :index => [13, 22, 23]
+        },
+        {
+          :name => "",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "",
+          :point => :O,
+          :index => [15]
+        },
+        {
+          :name => "",
+          :point => :P,
+          :index => [16]
+        },
+        {
+          :name => "",
+          :point => :Q,
+          :index => [17, 29]
+        },
+        {
+          :name => "",
+          :point => :R,
+          :index => [18]
+        },
+        {
+          :name => "",
+          :point => :S,
+          :index => [25]
+        },
+        {
+          :name => "",
+          :point => :T,
+          :index => [26, 30]
+        },
+        {
+          :name => "",
+          :point => :U,
+          :index => [27]
+        },
+        {
+          :name => "",
+          :point => :V,
+          :index => [28]
+        },
+        {
+          :name => "",
+          :point => :W,
+          :index => [31]
+        },
+        {
+          :name => "",
+          :point => :X,
+          :index => [32],
+          :boss => true
+        }
+      ],
+      :map => "MapE-7Winter2018.png"
     }
   }
 

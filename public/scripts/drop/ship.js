@@ -38,7 +38,12 @@ function loadData(query) {
 }
 
 function questFormatter(value) {
-  var val = value.replace('(Boss)', '').replace('甲', 3).replace('乙', 2).replace('丙', 1).split('-');
+  var val = value.replace('(Boss)', '').split('-');
+  if (val[0] > 40) {
+    val[3] = val[3].replace('甲', 4).replace('乙', 3).replace('丙', 2).replace('丁', 1);
+  } else if (val[3]) {
+    val[3] = val[3].replace('甲', 3).replace('乙', 2).replace('丙', 1);
+  }
   return '<a href="/drop/map/' + val[0] + val[1] + (val[3] ? "/" + val[3] : "") + '/' + val[2] + '-' + rank + '.html">' + value + '</a>';
 }
 

@@ -18,7 +18,11 @@ get '/drop/map/:map/?' do
   elsif map_id == 371
     redirect "/drop/map/371/3/I-SAB.html"
   elsif KanColleConstant.area[area_id][:event]
-    redirect "/drop/map/#{map_id}/3/#{point_id}-SAB.html"
+    if area_id > 40
+      redirect "/drop/map/#{map_id}/4/#{point_id}-SAB.html"
+    else
+      redirect "/drop/map/#{map_id}/3/#{point_id}-SAB.html"
+    end
   else
     redirect "/drop/map/#{map_id}/#{point_id}-SAB.html"
   end
@@ -63,7 +67,8 @@ get '/drop/map/:map/:level/:point-:rank.?:format?' do
     !KanColleConstant.area[area_id][:maps].include?(map_id) ||
     !KanColleConstant.area[area_id][:event] ||
     KanColleConstant.map[map_id][:cells].index{|c| c[:point] == point_id}.nil? ||
-    level_no < 1 || level_no > 3 ||
+    level_no < 1 || map_id < 100 ||
+    (map_id < 410 && level_no > 3) || (map_id > 410 && level_no > 4) ||
     rank.any?{|r| ![:S, :A, :B].include?(r)}
 
   params[:format] ||= 'html'

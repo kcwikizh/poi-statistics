@@ -79,6 +79,11 @@ class KanColleConstant
       :maps => [401, 402, 403, 404],
       :event => true,
     },
+    41 => {
+      :name => "捷号決戦！邀撃、レイテ沖海戦(後篇)",
+      :maps => [411, 412, 413, 414, 415, 416, 417],
+      :event => true,
+    },
   }
 
   def self.area

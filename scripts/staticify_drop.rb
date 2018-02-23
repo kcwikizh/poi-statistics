@@ -3,12 +3,12 @@ require 'set'
 require_relative '../app'
 
 $common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a].flatten
-$event_maps = []
+$event_maps = [(411..417).to_a].flatten
 
 def staticify_drop_map(map_id)
-  levels = map_id > 100 ? [3, 2, 1] : [0]
-  table = map_id > 100 ? DropRecordAutumn2017 : DropRecord
-  table_name = map_id > 100 ? "drop_records_autumn2017" : "drop_records"
+  levels = map_id > 100 ? [4, 3, 2, 1] : [0]
+  table = map_id > 100 ? DropRecordWinter2018 : DropRecord
+  table_name = map_id > 100 ? "drop_records_winter2018" : "drop_records"
   levels.each do |level_no|
     KanColleConstant.map[map_id][:cells].each do |cell|
       query_result = {}
@@ -228,16 +228,16 @@ def staticify_drop_map(map_id)
 end
 
 def staticify_drop_ship()
-  table = [DropRecord, DropRecordAutumn2017]
-  table_name = ["drop_records", "drop_records_autumn2017"]
+  table = [DropRecord, DropRecordWinter2018]
+  table_name = ["drop_records", "drop_records_winter2018"]
 
   ['S', 'A', 'B', 'SA', 'SAB'].each do |rank|
     drop_map_data = {}
     [$common_maps, $event_maps].flatten.each do |map|
-      levels = map > 100 ? [3, 2, 1] : [0]
+      levels = map > 100 ? [4, 3, 2, 1] : [0]
       levels.each do |level|
         KanColleConstant.map[map][:cells].each do |cell|
-          drop_map_data["#{map / 10}-#{map % 10}-#{cell[:point]}#{cell[:boss] ? "(Boss)" : ""}#{level == 0 ? "" : (level == 3 ? "-甲" : (level == 2 ? "-乙" : "-丙"))}"] = JSON.parse Sinatra::KVDataHelper.get_kv_data("drop_map_#{map}_#{cell[:point]}#{level > 0 ? "-#{level}" : ""}-#{rank}")
+          drop_map_data["#{map / 10}-#{map % 10}-#{cell[:point]}#{cell[:boss] ? "(Boss)" : ""}#{level == 0 ? "" : (level == 4 ? "-甲" : (level == 3 ? "-乙" : (level == 2 ? "-丙" : "-丁")))}"] = JSON.parse Sinatra::KVDataHelper.get_kv_data("drop_map_#{map}_#{cell[:point]}#{level > 0 ? "-#{level}" : ""}-#{rank}")
         end
       end
     end
