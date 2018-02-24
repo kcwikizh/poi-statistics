@@ -5397,11 +5397,6 @@ class KanColleConstant
           :index => [1]
         },
         {
-          :name => "",
-          :point => :B,
-          :index => [2]
-        },
-        {
           :name => "深海任務部隊 艦載機群",
           :point => :C,
           :index => [3]
@@ -5410,11 +5405,6 @@ class KanColleConstant
           :name => "深海任務部隊 岬沖艦隊前衛 I群",
           :point => :D,
           :index => [4, 34]
-        },
-        {
-          :name => "",
-          :point => :E,
-          :index => [5, 19]
         },
         {
           :name => "深海岬沖艦隊 哨戒護衛空母群",
@@ -5427,7 +5417,7 @@ class KanColleConstant
           :index => [7]
         },
         {
-          :name => "",
+          :name => "深海潜水艦部隊 親衛艦隊I群",
           :point => :H,
           :index => [8, 33, 35]
         },
@@ -5437,77 +5427,57 @@ class KanColleConstant
           :index => [9, 20]
         },
         {
-          :name => "",
-          :point => :J,
-          :index => [10]
-        },
-        {
-          :name => "",
+          :name => "深海岬沖艦隊 前衛哨戒空母群",
           :point => :K,
           :index => [11, 21]
         },
         {
-          :name => "",
+          :name => "深海任務部隊 岬艦隊空母第IV群",
           :point => :L,
           :index => [12]
         },
         {
-          :name => "",
+          :name => "深海任務部隊 岬艦隊空母第III群",
           :point => :M,
           :index => [13, 22, 23]
         },
         {
-          :name => "",
+          :name => "深海潜水艦部隊 親衛艦隊II群",
           :point => :N,
           :index => [14]
         },
         {
-          :name => "",
-          :point => :O,
-          :index => [15]
-        },
-        {
-          :name => "",
-          :point => :P,
-          :index => [16]
-        },
-        {
-          :name => "",
+          :name => "深海任務部隊 岬艦隊空母第I群",
           :point => :Q,
           :index => [17, 29]
         },
         {
-          :name => "",
-          :point => :R,
-          :index => [18]
-        },
-        {
-          :name => "",
+          :name => "深海任務部隊 艦載機群",
           :point => :S,
           :index => [25]
         },
         {
-          :name => "",
+          :name => "深海任務部隊 岬艦隊空母第II群",
           :point => :T,
           :index => [26, 30]
         },
         {
-          :name => "",
+          :name => "深海岬沖艦隊 支援集団随伴護衛",
           :point => :U,
           :index => [27]
         },
         {
-          :name => "",
+          :name => "深海任務部隊 岬沖艦隊支援集団",
           :point => :V,
           :index => [28]
         },
         {
-          :name => "",
+          :name => "深海岬沖艦隊 総旗艦随伴護衛",
           :point => :W,
           :index => [31]
         },
         {
-          :name => "",
+          :name => "深海任務部隊 岬沖艦隊総旗艦",
           :point => :X,
           :index => [32],
           :boss => true
