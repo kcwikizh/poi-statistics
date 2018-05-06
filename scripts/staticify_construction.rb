@@ -4,10 +4,10 @@ require 'json'
 items = []
 recipeTotalCount = {}
 secretary_rules = [
-  {target: 171, secretary: [174, 175, 179, 180, 310, 311]},
-  {target: 174, secretary: [175, 180, 311]},
-  {target: 175, secretary: [174, 179, 310]},
-  {target: 433, secretary: [162, 360, 440, 499, 500]},
+  {target: 171, secretary: [128, 174, 175, 176, 177, 179, 180, 310, 311, 400]},
+  {target: 174, secretary: [128, 175, 180, 311, 400]},
+  {target: 175, secretary: [128, 174, 179, 310, 400]},
+  {target: 433, secretary: [162, 360, 440, 433, 438, 499, 500, 545, 550]},
   {target: 448, secretary: [347, 361, 443, 449]},
 ]
 filterRecipe = {}
