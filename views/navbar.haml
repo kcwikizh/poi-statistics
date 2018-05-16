@@ -11,17 +11,24 @@
         %span.icon-bar
       %a.navbar-brand{:href => "/"} poi-statistics
     %div#navbar-main.navbar-collapse.collapse
-      %ul.nav.navbar-nav
+      %ul.nav.navbar-nav.hover-trigger
         %li{:class => locals[:location] == "construction" ? "active" : nil}
-          %a{:href => "/construction"} 建造统计
+          %a{:href => "/construction/"} 建造统计
         %li{:class => locals[:location] == "development" ? "active" : nil}
-          %a{:href => "/development"} 开发统计
+          %a{:href => "/development/"} 开发统计
         %li{:class => locals[:location] == "drop" ? "active" : nil}
           %a{:href => "/drop/"} 掉落统计
-        %li{:class => locals[:location] == "event" ? "active" : nil}
-          %a{:href => "/event-sanma2017/"} 秋刀鱼祭典
+        %li{:class => ["dropdown", locals[:location] == "event" ? "active" : nil]}
+          %a{:href => "/event-food2018/"} 活动限定统计(2018年食物迷你活动)
+          %ul.dropdown-menu
+            %li
+              %a{:href => "/event-food2018/"} 2018年食物迷你活动
+            %li
+              %a{:href => "/event-april2018/"} 2018年四月限定
+            %li
+              %a{:href => "/event-sanma2017/"} 2017年秋刀鱼祭典
         %li
-          %a{:href => "http://zh.kcwiki.moe/"} 舰娘百科
+          %a{:href => "https://zh.kcwiki.org/"} 舰娘百科
         %li{:class => locals[:location] == "about" ? "active" : nil}
           %a{:href => "/about/"} 关于
         %li{:class => locals[:location] == "settings" ? "active" : nil}

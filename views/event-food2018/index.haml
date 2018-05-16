@@ -1,0 +1,60 @@
+%div.container
+  %div.page-header
+    %h1 2018年食物迷你活动
+  %div.panel-group
+    %div.panel.panel-primary
+      %div.panel-heading
+        %h4.panel-title 海防舰
+      %div.panel-body
+        %ul.nav.nav-pills
+          - ship_data.each do |i|
+            %li{:class => ship_data.first == i ? "active" : ""}
+              %a{:href => "#ship#{i[:id]}", :"data-toggle" => "tab"}= ConstData.ship[i[:id]]["name"]
+        %div.tab-content.top15
+          - ship_data.each do |i|
+            %div.tab-pane{:id => "ship#{i[:id]}", :class => ship_data.first == i ? "active" : ""}
+              %table.table.table-striped.table-hover{:style => "text-align:center;"}
+                %thead
+                  %tr
+                    %td 海域点
+                    %td S胜掉落次数
+                    %td S胜掉落率
+                    %td A胜掉落次数
+                    %td A胜掉落率
+                %tbody
+                  - i[:data].sort{|a, b| b[1]["s_count"] <=> a[1]["s_count"]}.each do |d|
+                    %tr
+                      %td= d[0]
+                      %td= d[1]["s_count"]
+                      %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+                      %td= d[1]["a_count"]
+                      %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel-group
+    %div.panel.panel-primary
+      %div.panel-heading
+        %h4.panel-title 食物
+      %div.panel-body
+        %ul.nav.nav-pills
+          - item_data.each do |i|
+            %li{:class => item_data.first == i ? "active" : ""}
+              %a{:href => "#item#{i[:id]}", :"data-toggle" => "tab"}= ConstData.useitem[i[:id]]["name"]
+        %div.tab-content.top15
+          - item_data.each do |i|
+            %div.tab-pane{:id => "item#{i[:id]}", :class => item_data.first == i ? "active" : ""}
+              %table.table.table-striped.table-hover{:style => "text-align:center;"}
+                %thead
+                  %tr
+                    %td 海域点
+                    %td S胜掉落次数
+                    %td S胜掉落率
+                    %td A胜掉落次数
+                    %td A胜掉落率
+                %tbody
+                  - i[:data].sort{|a, b| b[1]["s_count"] <=> a[1]["s_count"]}.each do |d|
+                    %tr
+                      %td= d[0]
+                      %td= d[1]["s_count"]
+                      %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+                      %td= d[1]["a_count"]
+                      %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+=haml :disqus, :locals => { :key => "event-food2018/" }

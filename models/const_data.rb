@@ -62,6 +62,22 @@ class ConstData
     end
   end
 
+  class UseItemData
+    def initialize
+      @data = JSON.parse(File.read("#{File.dirname(__FILE__)}/../data/useitem.json"))
+    end
+
+    def [](index)
+      ret = nil
+      if index.is_a? Numeric
+        ret = @data.find{|i| i["id"] == index}
+      elsif index.is_a? String
+        ret = @data.find{|i| i["name"] == index}
+      end
+      return ret.nil? ? {"name" => "未知(#{index})"} : ret
+    end
+  end
+
   class << self
     def ship
       @@ship ||= ShipData.new
@@ -77,6 +93,10 @@ class ConstData
 
     def slotitem
       @@slotitem ||= SlotItemData.new
+    end
+
+    def useitem
+      @@useitem ||= UseItemData.new
     end
   end
 end

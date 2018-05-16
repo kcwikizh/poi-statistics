@@ -2,6 +2,10 @@ body {
     font-family: "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, sans-serif;
 }
 
+ul.nav.hover-trigger li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
+}
+
 .glyphicon-spin {
     -webkit-animation: spin 1000ms infinite linear;
     animation: spin 1000ms infinite linear;
