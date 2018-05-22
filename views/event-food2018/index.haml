@@ -35,26 +35,57 @@
         %h4.panel-title 食物
       %div.panel-body
         %ul.nav.nav-pills
-          - item_data.each do |i|
-            %li{:class => item_data.first == i ? "active" : ""}
-              %a{:href => "#item#{i[:id]}", :"data-toggle" => "tab"}= ConstData.useitem[i[:id]]["name"]
+          %li.active
+            %a{:href => "#180515", :"data-toggle" => "tab"} 18/05/15 
+          %li
+            %a{:href => "#180518", :"data-toggle" => "tab"} 18/05/18 UP
         %div.tab-content.top15
-          - item_data.each do |i|
-            %div.tab-pane{:id => "item#{i[:id]}", :class => item_data.first == i ? "active" : ""}
-              %table.table.table-striped.table-hover{:style => "text-align:center;"}
-                %thead
-                  %tr
-                    %td 海域点
-                    %td S胜掉落次数
-                    %td S胜掉落率
-                    %td A胜掉落次数
-                    %td A胜掉落率
-                %tbody
-                  - i[:data].sort{|a, b| b[1]["s_count"] <=> a[1]["s_count"]}.each do |d|
-                    %tr
-                      %td= d[0]
-                      %td= d[1]["s_count"]
-                      %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
-                      %td= d[1]["a_count"]
-                      %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+          %div#180515.tab-pane.active
+            %ul.nav.nav-pills
+              - item_data_180515.each do |i|
+                %li{:class => item_data_180515.first == i ? "active" : ""}
+                  %a{:href => "#item180515-#{i[:id]}", :"data-toggle" => "tab"}= ConstData.useitem[i[:id]]["name"]
+            %div.tab-content.top15
+              - item_data_180515.each do |i|
+                %div.tab-pane{:id => "item180515-#{i[:id]}", :class => item_data_180515.first == i ? "active" : ""}
+                  %table.table.table-striped.table-hover{:style => "text-align:center;"}
+                    %thead
+                      %tr
+                        %td 海域点
+                        %td S胜掉落次数
+                        %td S胜掉落率
+                        %td A胜掉落次数
+                        %td A胜掉落率
+                    %tbody
+                      - i[:data].sort{|a, b| b[1]["s_count"] <=> a[1]["s_count"]}.each do |d|
+                        %tr
+                          %td= d[0]
+                          %td= d[1]["s_count"]
+                          %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+                          %td= d[1]["a_count"]
+                          %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+          %div#180518.tab-pane
+            %ul.nav.nav-pills
+              - item_data_180518.each do |i|
+                %li{:class => item_data_180518.first == i ? "active" : ""}
+                  %a{:href => "#item180518-#{i[:id]}", :"data-toggle" => "tab"}= ConstData.useitem[i[:id]]["name"]
+            %div.tab-content.top15
+              - item_data_180518.each do |i|
+                %div.tab-pane{:id => "item180518-#{i[:id]}", :class => item_data_180518.first == i ? "active" : ""}
+                  %table.table.table-striped.table-hover{:style => "text-align:center;"}
+                    %thead
+                      %tr
+                        %td 海域点
+                        %td S胜掉落次数
+                        %td S胜掉落率
+                        %td A胜掉落次数
+                        %td A胜掉落率
+                    %tbody
+                      - i[:data].sort{|a, b| b[1]["s_count"] <=> a[1]["s_count"]}.each do |d|
+                        %tr
+                          %td= d[0]
+                          %td= d[1]["s_count"]
+                          %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+                          %td= d[1]["a_count"]
+                          %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
 =haml :disqus, :locals => { :key => "event-food2018/" }

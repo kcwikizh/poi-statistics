@@ -8,9 +8,13 @@ get '/event-food2018/?' do
       :id => i,
       :data => JSON.parse(get_kv_data("event_food2018_drop_ship_#{i}")),
     }},
-    :item_data => [85, 86, 87, 88].map {|i| {
+    :item_data_180515 => [85, 86, 87, 88].map {|i| {
       :id => i,
-      :data => JSON.parse(get_kv_data("event_food2018_drop_item_#{i}")),
+      :data => JSON.parse(get_kv_data("event_food2018_180515_drop_item_#{i}")),
+    }},
+    :item_data_180518 => [85, 86, 87, 88].map {|i| {
+      :id => i,
+      :data => JSON.parse(get_kv_data("event_food2018_180518_drop_item_#{i}")),
     }},
   }
 end
