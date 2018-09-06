@@ -20,9 +20,10 @@
           %div
             %b 战斗点:
           %ul.nav.nav-pills
-            - KanColleConstant.map[map_id][:cells].each do |c|
+            - KanColleConstant.map[map_id][:cells].select{|c| [nil, 7, 10, 402].include?(c[:event])}.each do |c|
               %li{:role => "presentation", :class => c[:point] == point_id ? "active" : nil}
-                %a{:href => "/drop/map/#{map_id}/#{locals[:level_no].nil? ? '' : "#{level_no}/"}#{c[:point]}-#{rank}.html"}= "#{c[:point]}#{c[:boss] ? " (Boss)" : ""}"
+                %a{:href => "/drop/map/#{map_id}/#{locals[:level_no].nil? ? '' : "#{level_no}/"}#{c[:point]}-#{rank}.html",
+                   :title => "#{c[:name]} (#{c[:index].join(',')})"}= "#{c[:point]}#{c[:boss] ? " (Boss)" : ""}"
           %div
             %b 评价:
           %ul.nav.nav-pills
