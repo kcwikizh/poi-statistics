@@ -1,0 +1,84 @@
+%div.container
+  %div.page-header
+    %h1 2018年秋刀鱼祭典
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 秋刀鱼
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - item68_data.sort{|a, b| b[1]["s_count"] <=> a[1]["s_count"]}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 泽捉
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - ship524_data.sort{|a, b| b[1]["s_count"] <=> a[1]["s_count"]}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 松轮
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - ship525_data.sort{|a, b| b[1]["s_count"] <=> a[1]["s_count"]}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 福江
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - ship565_data.sort{|a, b| b[1]["s_count"] <=> a[1]["s_count"]}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+=haml :disqus, :locals => { :key => "event-sanma2018/index" }

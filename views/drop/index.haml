@@ -32,8 +32,10 @@
               %a{:href => "#area39", :"data-toggle" => "tab"} 西方再打通！欧州救援作戦
             %li
               %a{:href => "#area40", :"data-toggle" => "tab"} 捷号決戦！邀撃、レイテ沖海戦(前篇)
-            %li.active
+            %li
               %a{:href => "#area41", :"data-toggle" => "tab"} 捷号決戦！邀撃、レイテ沖海戦(後篇)
+            %li.active
+              %a{:href => "#area42", :"data-toggle" => "tab"} 抜錨！連合艦隊、西へ！
           %div.tab-content.top15
             %div#area1.tab-pane
               %div.col-xs-12
@@ -240,7 +242,7 @@
                 %div.row
                   %a{:href => "/drop/map/404/"}
                     %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-4-1Autumn2017.png"), :alt => "MapBannerE-4Autumn2017.png"}
-            %div#area41.tab-pane.active
+            %div#area41.tab-pane
               %div.col-xs-12
                 %div.row
                   %a{:href => "/drop/map/411/"}
@@ -263,6 +265,23 @@
                 %div.row
                   %a{:href => "/drop/map/417/"}
                     %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerE-7Winter2018.png"), :alt => "MapBannerE-7Winter2018.png"}
+            %div#area42.tab-pane.active
+              %div.col-xs-12
+                %div.row
+                  %a{:href => "/drop/map/421/"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerHDE-1Summer2018.png"), :alt => "MapBannerHDE-1Summer2018.png"}
+                %div.row
+                  %a{:href => "/drop/map/422/"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerHDE-2Summer2018.png"), :alt => "MapBannerHDE-2Summer2018.png"}
+                %div.row
+                  %a{:href => "/drop/map/423/"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerHDE-3Summer2018.png"), :alt => "MapBannerHDE-3Summer2018.png"}
+                %div.row
+                  %a{:href => "/drop/map/424/"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerHDE-4Summer2018.png"), :alt => "MapBannerHDE-4Summer2018.png"}
+                %div.row
+                  %a{:href => "/drop/map/425/"}
+                    %img.img-responsive.block-center{:src => kcwiki_get_file("MapBannerHDE-5Summer2018.png"), :alt => "MapBannerHDE-5Summer2018.png"}
   %div.col-xs-12.col-md-6
     %div.panel-group
       %div.panel.panel-primary
@@ -348,7 +367,7 @@
                         %a.btn.btn-default{:href => "/drop/ship/#{s["id"]}/"}= s["name"]
             %div#new.tab-pane.active
               %ul.list-inline
-                - [457, 479, 480, 167, 456, 409, 410, 484, 485, 175, 471, 472, 473, 474, 475, 421, 519, 516, 439, 492, 511, 440, 171, 521, 332, 515, 432, 433, 535, 517, 518, 524, 525, 531, 540, 162, 552, 161].each do |s|
+                - [].each do |s|
                   - ship = ConstData.ship[s]
                   %li
                     %p

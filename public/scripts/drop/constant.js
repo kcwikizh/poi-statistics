@@ -1138,6 +1138,96 @@ window.shipData = {
       nameForSearch: "",
       shipType: "海防舰",
       rare: true
+    },
+     "Iowa": {
+      chineseName: "Iowa",
+      nameForSearch: "",
+      shipType: "战舰",
+      rare: true
+    },
+     "Saratoga": {
+      chineseName: "Saratoga",
+      nameForSearch: "",
+      shipType: "空母",
+      rare: true
+    },
+     "Bismarck": {
+      chineseName: "Bismarck",
+      nameForSearch: "",
+      shipType: "战舰",
+      rare: true
+    },
+     "Ark Royal": {
+      chineseName: "Ark Royal",
+      nameForSearch: "",
+      shipType: "空母",
+      rare: true
+    },
+     "Richelieu": {
+      chineseName: "Richelieu",
+      nameForSearch: "",
+      shipType: "战舰",
+      rare: true
+    },
+     "Гангут": {
+      chineseName: "Гангут",
+      nameForSearch: "",
+      shipType: "战舰",
+      rare: true
+    },
+     "Ташкент": {
+      chineseName: "Ташкент",
+      nameForSearch: "",
+      shipType: "驱逐舰",
+      rare: true
+    },
+     "Jervis": {
+      chineseName: "Jervis",
+      nameForSearch: "",
+      shipType: "驱逐舰",
+      rare: true
+    },
+     "浜波": {
+      chineseName: "浜波",
+      nameForSearch: "",
+      shipType: "驱逐舰",
+      rare: true
+    },
+     "松風": {
+      chineseName: "松風",
+      nameForSearch: "",
+      shipType: "海防舰",
+      rare: true
+    },
+     "大東": {
+      chineseName: "大東",
+      nameForSearch: "",
+      shipType: "海防舰",
+      rare: true
+    },
+     "春日丸": {
+      chineseName: "春日丸",
+      nameForSearch: "",
+      shipType: "轻空母",
+      rare: true
+    },
+    "岸波": {
+      chineseName: "岸波",
+      nameForSearch: "",
+      shipType: "驱逐舰",
+      rare: true
+    },
+    "伊400": {
+      chineseName: "伊400",
+      nameForSearch: "",
+      shipType: "潜水舰",
+      rare: true
+    },
+    "日振": {
+      chineseName: "日振",
+      nameForSearch: "",
+      shipType: "海防舰",
+      rare: true
     }
 };
 
@@ -1247,5 +1337,10 @@ window.mapWikiData = {
     414: '2018年冬季活动/E-4',
     415: '2018年冬季活动/E-5',
     416: '2018年冬季活动/E-6',
-    417: '2018年冬季活动/E-7'
+    417: '2018年冬季活动/E-7',
+    421: '2018年初秋活动/E-1',
+    422: '2018年初秋活动/E-2',
+    423: '2018年初秋活动/E-3',
+    424: '2018年初秋活动/E-4',
+    425: '2018年初秋活动/E-5'
 };

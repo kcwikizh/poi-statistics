@@ -4,7 +4,7 @@ common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..
 common_maps = common_maps
 common_table = DropRecord
 event_maps = [].flatten
-event_table = DropRecordWinter2018
+event_table = DropRecordAutumn2018
 
 map_func = %Q{
   function() {
@@ -26,7 +26,7 @@ map_func = %Q{
     var hour = date.getHours() * 10;
     var min = Math.floor(date.getMinutes() / 10);
 
-    emit(enemyShips.join(',').replace(/,0/g, ',-1') + ',' + this.enemyFormation + '/' + (hour + min).toString(), val);
+    emit(enemyShips.join(',').replace(/,0/g, '').replace(/,-1/g, '') + ',' + this.enemyFormation + '/' + (hour + min).toString(), val);
   }
 }
 
