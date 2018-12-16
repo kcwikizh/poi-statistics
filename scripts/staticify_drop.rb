@@ -2,7 +2,7 @@ require 'json'
 require 'set'
 require_relative '../app'
 
-$common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a, 71].flatten
+$common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a, (71..72).to_a].flatten
 $event_maps = [].flatten
 
 def staticify_drop_map(map_id)
