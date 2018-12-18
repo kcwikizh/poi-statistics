@@ -2348,13 +2348,90 @@ class KanColleConstant
           :event => 1,
         },
         {
-         :name => "深海潜水艦隊集団 旗艦戦隊",
-         :point => :K,
-         :index => [11],
-         :boss => true,
+          :name => "深海潜水艦隊集団 旗艦戦隊",
+          :point => :K,
+          :index => [11],
+          :boss => true,
         },
       ],
       :map => "MapHD7-1.png"
+    },
+    72 => {
+      :name => "タウイタウイ泊地沖",
+      :cells => [
+        {
+          :name => "",
+          :point => :A,
+          :index => [1],
+          :event => 3,
+        },
+        {
+          :name => "深海任務部隊 前方侵入水雷戦隊",
+          :point => :B,
+          :index => [2, 8],
+        },
+        {
+          :name => "セレベス海方面哨戒潜水艦 I群",
+          :point => :C,
+          :index => [3, 9],
+        },
+        {
+          :name => "",
+          :point => :D,
+          :index => [4],
+          :event => 1,
+        },
+        {
+          :name => "セレベス海方面哨戒潜水艦 II群",
+          :point => :E,
+          :index => [5],
+        },
+        {
+          :name => "",
+          :point => :F,
+          :index => [6],
+          :event => 1,
+        },
+        {
+          :name => "セレベス海方面 旗艦哨戒潜水艦",
+          :point => :G,
+          :index => [7],
+        },
+        {
+          :name => "深海任務部隊 主力機動部隊群",
+          :point => :H,
+          :index => [10],
+        },
+        {
+          :name => "深海任務部隊 前衛哨戒群",
+          :point => :I,
+          :index => [11, 16],
+        },
+        {
+          :name => "深海任務部隊 強襲揚陸部隊群",
+          :point => :J,
+          :index => [12],
+        },
+        {
+          :name => "",
+          :point => :K,
+          :index => [13],
+          :event => 2,
+        },
+        {
+          :name => "",
+          :point => :L,
+          :index => [14],
+          :event => 1,
+        },
+        {
+          :name => "深海任務部隊 主力機動部隊群",
+          :point => :M,
+          :index => [15],
+          :boss => true,
+        },
+      ],
+      :map => "MapHD7-2.png"
     },
     311 => {
       :name => "ショートランド沖",
