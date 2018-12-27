@@ -14,7 +14,7 @@ class KanColleConstant
     },
     7 => {
       :name => "南西海域",
-      :maps => [71],
+      :maps => [71, 72],
     },
     4 => {
       :name => "西方海域",
