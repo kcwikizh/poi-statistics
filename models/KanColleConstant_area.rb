@@ -93,6 +93,11 @@ class KanColleConstant
       :maps => [421, 422, 423, 424, 425],
       :event => true,
     },
+    43 => {
+      :name => "邀撃！ブイン防衛作戦",
+      :maps => [431, 432, 433],
+      :event => true,
+    },
   }
 
   def self.area
