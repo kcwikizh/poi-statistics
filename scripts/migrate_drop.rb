@@ -62,7 +62,6 @@ common_maps.each do |map_id|
       :cellId.in => cell_obj[:index]
     ).distinct(:shipId).to_a.each do |ship_id|
       next if ConstData.ship[ship_id].nil?
-      ship_id = -1 if ship_id == 0
 
       cell_obj[:index].each do |cell_id|
         ['S', 'A', 'B', 'C', 'D', 'E'].each do |rank|
@@ -84,7 +83,7 @@ common_maps.each do |map_id|
             record = common_table.where(
               "ship = :s AND map = :m AND cell = :c AND level = :l AND rank = :r AND enemy = :e AND time_no = :t",
               {
-                s: ship_id,
+                s: ship_id == 0 ? -1 : ship_id,
                 m: map_id,
                 c: cell_id,
                 l: 0,
@@ -93,7 +92,7 @@ common_maps.each do |map_id|
                 t: time_no
               }
             ).first_or_create(
-              ship: ship_id,
+              ship: ship_id == 0 ? -1 : ship_id,
               map: map_id,
               cell: cell_id,
               level: 0,
@@ -119,7 +118,6 @@ event_maps.each do |map_id|
       :cellId.in => cell_obj[:index]
     ).distinct(:shipId).to_a.each do |ship_id|
       next if ConstData.ship[ship_id].nil?
-      ship_id = -1 if ship_id == 0
 
       cell_obj[:index].each do |cell_id|
         ['S', 'A', 'B', 'C', 'D', 'E'].each do |rank|
@@ -142,7 +140,7 @@ event_maps.each do |map_id|
               record = event_table.where(
                 "ship = :s AND map = :m AND cell = :c AND level = :l AND rank = :r AND enemy = :e AND time_no = :t",
                 {
-                  s: ship_id,
+                  s: ship_id == 0 ? -1 : ship_id,
                   m: map_id,
                   c: cell_id,
                   l: level_no,
@@ -151,7 +149,7 @@ event_maps.each do |map_id|
                   t: time_no
                 }
               ).first_or_create(
-                ship: ship_id,
+                ship: ship_id == 0 ? -1 : ship_id,
                 map: map_id,
                 cell: cell_id,
                 level: level_no,
