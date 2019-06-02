@@ -206,9 +206,9 @@ def merge(key, *arr)
   Sinatra::KVDataHelper.set_kv_data(key, data.to_json)
 end
 
-[68].each do |id|
-  item(id, "sanma2018", Time.new(2018, 10, 10, 12, 0, 0), Time.now)
-end
-[524, 525, 565].each do |id|
-  ship(id, "sanma2018", Time.new(2018, 10, 10, 12, 0, 0), Time.now)
+# [68].each do |id|
+#   item(id, "sanma2018", Time.new(2018, 10, 10, 12, 0, 0), Time.now)
+# end
+[445, 574, 491, 451, 162].each do |id|
+  ship(id, "6th-anniv", Time.new(2019, 4, 22, 14, 0, 0), Time.now)
 end

@@ -7408,6 +7408,666 @@ class KanColleConstant
         }
       ],
       :map => "MapHDE-3Winter2019.png"
+    },
+    441 => {
+      :name => "津軽海峡/北海道沖/南千島沖",
+      :cells => [
+        {
+          :name => "浸透深海潜水艦隊 IV群",
+          :point => :A,
+          :index => [1]
+        },
+        # {
+        #   :name => "",
+        #   :point => :B,
+        #   :index => [2]
+        # },
+        {
+          :name => "浸透潜水艦隊 支援群",
+          :point => :C,
+          :index => [3, 22]
+        },
+        # {
+        #   :name => "",
+        #   :point => :D,
+        #   :index => [4]
+        # },
+        {
+          :name => "浸透潜水艦隊 支援群本体",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "浸透深海潜水艦隊 I群",
+          :point => :F,
+          :index => [6, 23]
+        },
+        # {
+        #   :name => "",
+        #   :point => :G,
+        #   :index => [7]
+        # },
+        # {
+        #   :name => "",
+        #   :point => :H,
+        #   :index => [8]
+        # },
+        {
+          :name => "浸透深海潜水艦隊 III群",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "浸透深海潜水艦隊 II群",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "強行偵察水雷戦隊 C群",
+          :point => :K,
+          :index => [11]
+        },
+        # {
+        #   :name => "",
+        #   :point => :L,
+        #   :index => [12, 24, 25]
+        # },
+        {
+          :name => "浸透深海潜水艦隊 II群",
+          :point => :M,
+          :index => [13]
+        },
+        # {
+        #   :name => "",
+        #   :point => :N,
+        #   :index => [14]
+        # },
+        {
+          :name => "深海高速浸透任務部隊 前衛群",
+          :point => :O,
+          :index => [15]
+        },
+        {
+          :name => "浸透深海潜水艦隊 I群",
+          :point => :P,
+          :index => [16]
+        },
+        {
+          :name => "強行偵察水雷戦隊 B群",
+          :point => :Q,
+          :index => [17]
+        },
+        # {
+        #   :name => "",
+        #   :point => :R,
+        #   :index => [18]
+        # },
+        {
+          :name => "強行偵察水雷戦隊 A群",
+          :point => :S,
+          :index => [19]
+        },
+        {
+          :name => "浸透深海潜水艦隊 泊地封鎖部隊",
+          :point => :T,
+          :index => [20]
+        },
+        {
+          :name => "",
+          :point => :U,
+          :index => [21]
+        },
+        {
+          :name => "深海高速浸透任務部隊 支援隊",
+          :point => :V,
+          :index => [26]
+        },
+        {
+          :name => "深海水雷戦隊 前衛警戒隊",
+          :point => :W,
+          :index => [27, 28],
+          :boss => true
+        }
+      ],
+      :map => "MapHDE-1Spring2019.png"
+    },
+    442 => {
+      :name => "九州南部/南西諸島沖",
+      :cells => [
+        # {
+        #   :name => "",
+        #   :point => :A,
+        #   :index => [1]
+        # },
+        {
+          :name => "任務部隊 艦載機群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "任務部隊 艦載機群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "任務部隊 外周ピケット艦隊 A群",
+          :point => :D,
+          :index => [4, 14]
+        },
+        {
+          :name => "任務部隊 艦載機群",
+          :point => :E,
+          :index => [5, 34, 35]
+        },
+        {
+          :name => "任務部隊 外周ピケット艦隊 B群",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海任務部隊 別働群",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海任務部隊 護衛集団II群",
+          :point => :H,
+          :index => [8, 36]
+        },
+        {
+          :name => "深海潜水艦隊 通商破壊集団",
+          :point => :I,
+          :index => [9, 15, 16]
+        },
+        {
+          :name => "攻略部隊 前衛護衛水雷戦隊",
+          :point => :J,
+          :index => [10, 17, 18]
+        },
+        # {
+        #   :name => "",
+        #   :point => :K,
+        #   :index => [11]
+        # },
+        {
+          :name => "深海攻略部隊 主力集団",
+          :point => :L,
+          :index => [12]
+        },
+        # {
+        #   :name => "",
+        #   :point => :M,
+        #   :index => [13]
+        # },
+        {
+          :name => "深海潜水艦隊 前進哨戒線",
+          :point => :N,
+          :index => [19]
+        },
+        # {
+        #   :name => "",
+        #   :point => :O1,
+        #   :index => [20]
+        # },
+        # {
+        #   :name => "",
+        #   :point => :O2,
+        #   :index => [21]
+        # },
+        {
+          :name => "任務部隊 艦載機群",
+          :point => :O3,
+          :index => [22]
+        },
+        {
+          :name => "任務部隊 艦載機群",
+          :point => :P1,
+          :index => [23]
+        },
+        {
+          :name => "任務部隊 艦載機群",
+          :point => :P2,
+          :index => [24]
+        },
+        {
+          :name => "深海潜水艦隊 精鋭部隊",
+          :point => :P3,
+          :index => [25]
+        },
+        {
+          :name => "任務部隊 艦載機群",
+          :point => :Q1,
+          :index => [26]
+        },
+        {
+          :name => "任務部隊 艦載機群",
+          :point => :Q2,
+          :index => [27, 37]
+        },
+        {
+          :name => "任務部隊 艦載機群",
+          :point => :Q3,
+          :index => [28, 38]
+        },
+        {
+          :name => "任務部隊 艦載機群",
+          :point => :R,
+          :index => [29, 39]
+        },
+        {
+          :name => "深海任務部隊 護衛集団II群",
+          :point => :S,
+          :index => [30, 40]
+        },
+        {
+          :name => "深海任務部隊 戦艦戦隊",
+          :point => :T,
+          :index => [31, 41]
+        },
+        {
+          :name => "深海任務部隊 侵攻旗艦艦隊",
+          :point => :U,
+          :index => [32],
+          :boss => true
+        },
+        # {
+        #   :name => "",
+        #   :point => :V,
+        #   :index => [33]
+        # }
+      ],
+      :map => "MapHDE-2Spring2019.png"
+    },
+    443 => {
+      :name => "アリューシャン列島沖",
+      :cells => [
+        {
+          :name => "深海北方潜水艦隊 前方展開A群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海北方艦隊 警戒部隊I群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海北方潜水艦隊 前方展開B群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海北方艦隊 警戒部隊II群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海北方基地 航空隊",
+          :point => :E,
+          :index => [5]
+        },
+        # {
+        #   :name => "",
+        #   :point => :F,
+        #   :index => [6, 15]
+        # },
+        {
+          :name => "深海北方基地 航空隊",
+          :point => :G,
+          :index => [7]
+        },
+        # {
+        #   :name => "",
+        #   :point => :H,
+        #   :index => [8, 16, 29]
+        # },
+        {
+          :name => "深海北方基地 航空隊",
+          :point => :I,
+          :index => [9, 17]
+        },
+        {
+          :name => "深海北方艦隊 機動部隊",
+          :point => :J,
+          :index => [10, 18]
+        },
+        {
+          :name => "深海北方艦隊 巡洋艦戦隊",
+          :point => :K,
+          :index => [11, 19]
+        },
+        {
+          :name => "深海北方艦隊 高速戦艦戦隊",
+          :point => :L,
+          :index => [12, 20, 21]
+        },
+        # {
+        #   :name => "",
+        #   :point => :M,
+        #   :index => [13]
+        # },
+        {
+          :name => "深海北方艦隊 遊撃部隊主力",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "深海北方艦隊 拠点防衛部隊",
+          :point => :O,
+          :index => [22, 26]
+        },
+        {
+          :name => "深海北方基地 航空隊",
+          :point => :P,
+          :index => [23, 27]
+        },
+        # {
+        #   :name => "",
+        #   :point => :Q,
+        #   :index => [24]
+        # },
+        {
+          :name => "深海北方艦隊 拠点基地",
+          :point => :R,
+          :index => [25, 30],
+          :boss => true
+        },
+        {
+          :name => "深海北方潜水艦隊 緊急展開部隊",
+          :point => :S,
+          :index => [28]
+        }
+      ],
+      :map => "MapHDE-3Spring2019.png"
+    },
+    444 => {
+      :name => "北太平洋ハワイ諸島戦域",
+      :cells => [
+        # {
+        #   :name => "",
+        #   :point => :A,
+        #   :index => [1]
+        # },
+        {
+          :name => "深海太平洋潜水艦隊 B群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海太平洋潜水艦隊 C群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海機動部隊A群 艦載機群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海太平洋潜水艦隊 D群",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "深海太平洋中枢泊地 航空隊",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海機動部隊A群 随伴護衛部隊",
+          :point => :G,
+          :index => [7, 23]
+        },
+        {
+          :name => "深海太平洋中枢艦隊 前衛展開群",
+          :point => :H,
+          :index => [8, 24]
+        },
+        {
+          :name => "深海太平洋潜水艦隊 A群",
+          :point => :I,
+          :index => [9, 25]
+        },
+        {
+          :name => "深海機動部隊A群 主隊",
+          :point => :J,
+          :index => [10, 26]
+        },
+        {
+          :name => "深海機動部隊B群 艦載機群",
+          :point => :K,
+          :index => [11, 43, 44]
+        },
+        {
+          :name => "深海太平洋中枢泊地 航空隊",
+          :point => :L,
+          :index => [12, 27]
+        },
+        {
+          :name => "深海機動部隊B群 艦載機群",
+          :point => :M,
+          :index => [13]
+        },
+        {
+          :name => "深海太平洋中枢艦隊 遊撃部隊",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "深海太平洋中枢泊地 駐留艦隊",
+          :point => :O,
+          :index => [15, 28, 29, 30, 31, 45]
+        },
+        {
+          :name => "深海機動部隊B群 随伴護衛部隊",
+          :point => :P,
+          :index => [16, 32]
+        },
+        {
+          :name => "深海太平洋兵站輸送部隊 護衛群",
+          :point => :Q,
+          :index => [17]
+        },
+        {
+          :name => "深海太平洋中枢泊地 航空隊",
+          :point => :R,
+          :index => [18, 33]
+        },
+        {
+          :name => "深海機動部隊B群 主隊",
+          :point => :S,
+          :index => [19, 34, 35, 46]
+        },
+        {
+          :name => "深海太平洋兵站輸送部隊",
+          :point => :T,
+          :index => [20]
+        },
+        # {
+        #   :name => "",
+        #   :point => :U,
+        #   :index => [21, 36]
+        # },
+        {
+          :name => "深海太平洋中枢泊地 占領司令部",
+          :point => :V,
+          :index => [22, 37],
+          :boss => true
+        },
+        {
+          :name => "深海太平洋潜水艦隊 緊急展開群",
+          :point => :W,
+          :index => [39]
+        },
+        {
+          :name => "深海太平洋中枢泊地 任務部隊群",
+          :point => :X,
+          :index => [40, 42]
+        },
+        {
+          :name => "深海太平洋中枢泊地 航空隊",
+          :point => :Y,
+          :index => [41]
+        }
+      ],
+      :map => "MapHDE-4Spring2019.png"
+    },
+    445 => {
+      :name => "北太平洋ハワイ諸島南東沖",
+      :cells => [
+        {
+          :name => "深海任務部隊 強行偵察艦隊",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海太平洋潜水艦隊 再編成B群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海太平洋潜水艦隊 再編成A群",
+          :point => :C,
+          :index => [3, 18]
+        },
+        # {
+        #   :name => "",
+        #   :point => :D,
+        #   :index => [4, 43]
+        # },
+        {
+          :name => "深海太平洋深淵任務群 航空隊",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "深海任務部隊　艦載機群",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海任務部隊　艦載機群",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海任務部隊　増派護衛空母B群",
+          :point => :H,
+          :index => [8, 19, 20]
+        },
+        {
+          :name => "深海任務部隊 前衛警戒部隊",
+          :point => :I,
+          :index => [9, 21]
+        },
+        # {
+        #   :name => "",
+        #   :point => :J,
+        #   :index => [10, 22, 44]
+        # },
+        {
+          :name => "深海任務部隊　増派護衛空母A群",
+          :point => :K,
+          :index => [11, 23, 45]
+        },
+        {
+          :name => "深海任務部隊　増派水上打撃部隊",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "深海任務部隊 逆上陸部隊 I群",
+          :point => :M,
+          :index => [13, 46]
+        },
+        {
+          :name => "深海任務部隊 逆上陸部隊 II群",
+          :point => :N,
+          :index => [14, 47]
+        },
+        # {
+        #   :name => "",
+        #   :point => :O,
+        #   :index => [15]
+        # },
+        # {
+        #   :name => "",
+        #   :point => :P,
+        #   :index => [16]
+        # },
+        {
+          :name => "深海太平洋深淵任務群 出撃艦隊",
+          :point => :Q,
+          :index => [17, 24]
+        },
+        {
+          :name => "深海太平洋深淵潜水艦隊",
+          :point => :R,
+          :index => [25]
+        },
+        {
+          :name => "深海太平洋深淵任務群 航空隊",
+          :point => :S,
+          :index => [26]
+        },
+        # {
+        #   :name => "",
+        #   :point => :T,
+        #   :index => [27]
+        # },
+        {
+          :name => "深海太平洋深淵任務群 戦艦戦隊",
+          :point => :U,
+          :index => [28]
+        },
+        {
+          :name => "深海太平洋深淵任務群 強襲部隊",
+          :point => :V,
+          :index => [29]
+        },
+        {
+          :name => "深海太平洋深淵任務群 航空隊",
+          :point => :W,
+          :index => [30, 36]
+        },
+        {
+          :name => "深海太平洋深淵任務群 強襲部隊",
+          :point => :X,
+          :index => [31, 37, 38, 39]
+        },
+        {
+          :name => "深海太平洋深淵任務群 戦艦戦隊",
+          :point => :Y,
+          :index => [32]
+        },
+        {
+          :name => "深海太平洋深淵任務群 旗艦艦隊",
+          :point => :Z,
+          :index => [33, 40],
+          :boss => true
+        },
+        # {
+        #   :name => "",
+        #   :point => :Z1,
+        #   :index => [34]
+        # },
+        # {
+        #   :name => "",
+        #   :point => :Z2,
+        #   :index => [35]
+        # },
+        # {
+        #   :name => "",
+        #   :point => :J2,
+        #   :index => [41]
+        # },
+        # {
+        #   :name => "",
+        #   :point => :AD,
+        #   :index => [42]
+        # }
+      ],
+      :map => "MapHDE-5Spring2019.png"
     }
   }
 
