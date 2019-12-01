@@ -1,10 +1,10 @@
 require_relative '../app'
 
-common_maps = [(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a, (71..72).to_a].flatten
+common_maps = []#(11..16).to_a, (21..25).to_a, (31..35).to_a, (41..45).to_a, (51..55).to_a, (61..65).to_a, (71..72).to_a].flatten
 common_maps = common_maps
 common_table = DropRecord
-event_maps = [(441..445).to_a].flatten
-event_table = DropRecordSpring2019
+event_maps = [(461..464).to_a].flatten
+event_table = DropRecordAutumn2019
 
 map_func = %Q{
   function() {

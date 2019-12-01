@@ -1,0 +1,224 @@
+%div.container
+  %div.page-header
+    %h1 2019年秋刀鱼祭典
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 秋刀鱼
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - item68_data.sort{|a, b| b[1]["s_count"] * 100000 / (b[1]["s_total"]+0.00001) <=> a[1]["s_count"] * 100000 / (a[1]["s_total"]+0.00001)}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 沙丁鱼
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - item93_data.sort{|a, b| b[1]["s_count"] * 100000 / (b[1]["s_total"]+0.00001) <=> a[1]["s_count"] * 100000 / (a[1]["s_total"]+0.00001)}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 占守
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - ship517_data.sort{|a, b| b[1]["s_count"] * 100000 / (b[1]["s_total"]+0.00001) <=> a[1]["s_count"] * 100000 / (a[1]["s_total"]+0.00001)}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 国後
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - ship518_data.sort{|a, b| b[1]["s_count"] * 100000 / (b[1]["s_total"]+0.00001) <=> a[1]["s_count"] * 100000 / (a[1]["s_total"]+0.00001)}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 択捉
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - ship524_data.sort{|a, b| b[1]["s_count"] * 100000 / (b[1]["s_total"]+0.00001) <=> a[1]["s_count"] * 100000 / (a[1]["s_total"]+0.00001)}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 松輪
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - ship525_data.sort{|a, b| b[1]["s_count"] * 100000 / (b[1]["s_total"]+0.00001) <=> a[1]["s_count"] * 100000 / (a[1]["s_total"]+0.00001)}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 佐渡
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - ship531_data.sort{|a, b| b[1]["s_count"] * 100000 / (b[1]["s_total"]+0.00001) <=> a[1]["s_count"] * 100000 / (a[1]["s_total"]+0.00001)}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 大東
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - ship552_data.sort{|a, b| b[1]["s_count"] * 100000 / (b[1]["s_total"]+0.00001) <=> a[1]["s_count"] * 100000 / (a[1]["s_total"]+0.00001)}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 福江
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - ship565_data.sort{|a, b| b[1]["s_count"] * 100000 / (b[1]["s_total"]+0.00001) <=> a[1]["s_count"] * 100000 / (a[1]["s_total"]+0.00001)}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 八丈
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - ship584_data.sort{|a, b| b[1]["s_count"] * 100000 / (b[1]["s_total"]+0.00001) <=> a[1]["s_count"] * 100000 / (a[1]["s_total"]+0.00001)}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+  %div.panel.panel-primary
+    %div.panel-heading
+      %h4.panel-title 石垣
+    %div.panel-body
+      %table.table.table-striped.table-hover{:style => "text-align:center;"}
+        %thead
+          %tr
+            %td 海域点
+            %td S胜掉落次数
+            %td S胜掉落率
+            %td A胜掉落次数
+            %td A胜掉落率
+        %tbody
+          - ship585_data.sort{|a, b| b[1]["s_count"] * 100000 / (b[1]["s_total"]+0.00001) <=> a[1]["s_count"] * 100000 / (a[1]["s_total"]+0.00001)}.each do |d|
+            %tr
+              %td= d[0]
+              %td= d[1]["s_count"]
+              %td= "#{(d[1]["s_count"] * 100.0 / d[1]["s_total"]).round(3)}%"
+              %td= d[1]["a_count"]
+              %td= "#{d[1]["a_total"] > 0 ? (d[1]["a_count"] * 100.0 / d[1]["a_total"]).round(3) : 0}%"
+=haml :disqus, :locals => { :key => "event-sanma2019/index" }

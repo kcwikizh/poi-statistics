@@ -40,3 +40,11 @@ end
 class DropRecordSpring2019 < ActiveRecord::Base
   self.table_name = "drop_records_spring2019"
 end
+
+class DropRecordSummer2019 < ActiveRecord::Base
+  self.table_name = "drop_records_summer2019"
+end
+
+class DropRecordAutumn2019 < ActiveRecord::Base
+  self.table_name = "drop_records_autumn2019"
+end

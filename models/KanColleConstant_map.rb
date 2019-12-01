@@ -1,4 +1,8 @@
+require 'json'
+
 class KanColleConstant
+  @data = JSON.parse(File.read("#{File.dirname(__FILE__)}/../data/map.json"))
+
   @@map = {
     11 => {
       :name => "鎮守府正面海域",
@@ -8068,6 +8072,360 @@ class KanColleConstant
         # }
       ],
       :map => "MapHDE-5Spring2019.png"
+    },
+    451 => {
+      :name => "北大西洋ブレスト沖",
+      :cells => [
+        {
+          :name => "深海北大西洋潜水艦部隊 II群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "深海北大 西洋艦隊 水雷戦隊B群",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海北大西洋艦隊 前衛水雷戦隊",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海北大西洋潜水艦部隊 I群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "",
+          :point => :F,
+          :index => [6, 13]
+        },
+        {
+          :name => "深海北大西洋 攻略部隊随伴護衛",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海北大西洋艦隊 水雷戦隊A群",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "",
+          :point => :I,
+          :index => [9]
+        },
+        {
+          :name => "",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "深海北大西洋 攻略揚陸部隊",
+          :point => :K,
+          :index => [11]
+        },
+        {
+          :name => "深海北大西洋巡洋艦戦隊",
+          :point => :L,
+          :index => [12, 16]
+        },
+        {
+          :name => "深海ブレスト侵攻 前衛潜水艦隊",
+          :point => :M,
+          :index => [14,17]
+        },
+        {
+          :name => "深海ブレスト侵攻艦隊 旗艦",
+          :point => :N,
+          :boss => true,
+          :index => [15,18]
+        }
+      ],
+      :map => "MapHDE-1Summer2019.png"
+    },
+    452 => {
+      :name => "ジブラルタル海峡沖/地中海",
+      :cells => [
+        {
+          :name => "深海北大西洋 警戒部隊 B群",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海北大西洋群狼部隊 II群",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海北大西洋群狼部隊 II群",
+          :point => :D,
+          :index => [4]
+        },
+        {
+          :name => "深海北大西洋 警戒巡洋艦戦隊",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "深海北大西洋 警戒部隊 A群",
+          :point => :F,
+          :index => [6]
+        },
+        {
+          :name => "深海ジブラルタル港湾 駐屯艦隊",
+          :point => :G,
+          :index => [7, 15,16]
+        },
+        {
+          :name => "",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海ジブラルタル潜水艦隊",
+          :point => :I,
+          :index => [9,17]
+        },
+        {
+          :name => "深海ジブラルタル港湾 駐屯艦隊",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "深海ジブラルタル港湾 駐屯艦隊",
+          :point => :K,
+          :index => [11,18,19]
+        },
+        {
+          :name => "",
+          :point => :L,
+          :index => [12]
+        },
+        {
+          :name => "",
+          :point => :M,
+          :index => [13,20]
+        },
+        {
+          :name => "深海ジブラルタル港湾要塞",
+          :point => :N,
+          :index => [14]
+        },
+        {
+          :name => "海地中海艦隊 前衛巡洋戦隊",
+          :point => :O,
+          :index => [21]
+        },
+        {
+          :name => "深海地中海潜水艦隊 前衛部隊",
+          :point => :P,
+          :index => [22]
+        },
+        {
+          :name => "深海北方基地 航空隊",
+          :point => :Q,
+          :index => [23]
+        },
+        {
+          :name => "深海地中海艦隊 沿岸警備隊群",
+          :point => :R,
+          :index => [24]
+        },
+        {
+          :name => "",
+          :point => :S,
+          :index => [25]
+        },
+        {
+          :name => "深海地中海艦隊 水上打撃部隊",
+          :point => :T,
+          :index => [26,29]
+        },
+        {
+          :name => "",
+          :point => :U,
+          :index => [27]
+        },
+        {
+          :name => "深海地中海艦隊 旗艦艦隊",
+          :point => :V,
+          :boss => true,
+          :index => [28,30,31]
+        }
+      ],
+      :map => "MapHDE-2Summer2019.png"
+    },
+    453 => {
+      :name => "地中海/マルタ島沖/アンツィオ沖",
+      :cells => [
+        {
+          :name => "深海地中海艦隊 先遣巡洋戦隊",
+          :point => :A,
+          :index => [1]
+        },
+        {
+          :name => "",
+          :point => :B,
+          :index => [2]
+        },
+        {
+          :name => "深海地中海方面 基地航空隊",
+          :point => :C,
+          :index => [3]
+        },
+        {
+          :name => "深海地中海方面 基地航空隊",
+          :point => :D,
+          :index => [4,29]
+        },
+        {
+          :name => "深海地中海艦隊 兵站補給基地",
+          :point => :E,
+          :index => [5]
+        },
+        {
+          :name => "深海地中海潜水艦戦隊",
+          :point => :F,
+          :index => [6,11,12,30]
+        },
+        {
+          :name => "深海地中海機動部隊 前衛群",
+          :point => :G,
+          :index => [7]
+        },
+        {
+          :name => "深海地中海方面 基地航空隊",
+          :point => :H,
+          :index => [8]
+        },
+        {
+          :name => "深海ジブラルタル港湾 駐屯艦隊",
+          :point => :I,
+          :index => [9,13,14]
+        },
+        {
+          :name => "深海地中海艦隊 マルタ島守備隊",
+          :point => :J,
+          :index => [10]
+        },
+        {
+          :name => "深海地中海艦隊 戦艦戦隊",
+          :point => :K,
+          :index => [15,27]
+        },
+        {
+          :name => "",
+          :point => :L,
+          :index => [16]
+        },
+        {
+          :name => "",
+          :point => :M,
+          :index => [17,20]
+        },
+        {
+          :name => "深海地中海方面 基地航空隊",
+          :point => :N,
+          :index => [18]
+        },
+        {
+          :name => "深海地中海艦隊 上陸占領部隊",
+          :point => :O,
+          :index => [19]
+        },
+        {
+          :name => "深海地中海潜水艦隊 最終防衛線",
+          :point => :P,
+          :index => [21,31]
+        },
+        {
+          :name => "",
+          :point => :Q,
+          :index => [22]
+        },
+        {
+          :name => "深海地中海方面 基地航空隊",
+          :point => :R,
+          :index => [23,28]
+        },
+        {
+          :name => "",
+          :point => :S,
+          :index => [24]
+        },
+        {
+          :name => "",
+          :point => :T,
+          :index => [25]
+        },
+        {
+          :name => "深海アンツィオ侵攻部隊 旗艦艦隊",
+          :point => :U,
+          :index => [26],
+          :boss => true
+        }
+      ],
+      :map => "MapHDE-3Summer2019.png"
+    },
+    461 => {
+      :name => @data.find{|x| x["id"] == 461}["name"],
+      :map => @data.find{|x| x["id"] == 461}["image"],
+      :cells => @data.find{|x| x["id"] == 461}["cells"].filter{|x, y| y["name"] != nil}.map do |x, y|
+        {
+          :name => y["name"],
+          :point => x.to_sym,
+          :boss => y["boss"],
+          :index => y["routes"]
+        }
+      end
+    },
+    462 => {
+      :name => @data.find{|x| x["id"] == 462}["name"],
+      :map => @data.find{|x| x["id"] == 462}["image"],
+      :cells => @data.find{|x| x["id"] == 462}["cells"].filter{|x, y| y["name"] != nil}.map do |x, y|
+        {
+          :name => y["name"],
+          :point => x.to_sym,
+          :boss => y["boss"],
+          :index => y["routes"]
+        }
+      end
+    },
+    463 => {
+      :name => @data.find{|x| x["id"] == 463}["name"],
+      :map => @data.find{|x| x["id"] == 463}["image"],
+      :cells => @data.find{|x| x["id"] == 463}["cells"].filter{|x, y| y["name"] != nil}.map do |x, y|
+        {
+          :name => y["name"],
+          :point => x.to_sym,
+          :boss => y["boss"],
+          :index => y["routes"]
+        }
+      end
+    },
+    464 => {
+      :name => @data.find{|x| x["id"] == 464}["name"],
+      :map => @data.find{|x| x["id"] == 464}["image"],
+      :cells => @data.find{|x| x["id"] == 464}["cells"].filter{|x, y| y["name"] != nil}.map do |x, y|
+        {
+          :name => y["name"],
+          :point => x.to_sym,
+          :boss => y["boss"],
+          :index => y["routes"]
+        }
+      end
     }
   }
 
