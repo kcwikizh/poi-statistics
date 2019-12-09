@@ -8426,6 +8426,30 @@ class KanColleConstant
           :index => y["routes"]
         }
       end
+    },
+    465 => {
+      :name => @data.find{|x| x["id"] == 465}["name"],
+      :map => @data.find{|x| x["id"] == 465}["image"],
+      :cells => @data.find{|x| x["id"] == 465}["cells"].filter{|x, y| y["name"] != nil}.map do |x, y|
+        {
+          :name => y["name"],
+          :point => x.to_sym,
+          :boss => y["boss"],
+          :index => y["routes"]
+        }
+      end
+    },
+    466 => {
+      :name => @data.find{|x| x["id"] == 466}["name"],
+      :map => @data.find{|x| x["id"] == 466}["image"],
+      :cells => @data.find{|x| x["id"] == 466}["cells"].filter{|x, y| y["name"] != nil}.map do |x, y|
+        {
+          :name => y["name"],
+          :point => x.to_sym,
+          :boss => y["boss"],
+          :index => y["routes"]
+        }
+      end
     }
   }
 

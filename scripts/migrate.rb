@@ -126,7 +126,7 @@ migrate_range = {
   end
 
   # event
-  pool = {map: [461,462,463,464], name: 't'}
+  pool = {map: [465,466], name: 't'}
   pool[:map].each do |map_id|
     KanColleConstant.map[map_id][:cells].each do |cell_obj|
       cell_obj[:index].each do |cell_id|
