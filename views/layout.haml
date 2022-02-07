@@ -5,22 +5,22 @@
     %meta{:"http-equiv" => "X-UA-Compatiable", :content => "IE=edge"}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
     %title= "poi-statistics @ 舰娘百科 × poi#{locals[:title_append] || ''}"
-    %link{:href => "//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css", :rel => "stylesheet"}
-    %link{:href => "//cdn.bootcss.com/bootstrap-table/1.11.0/bootstrap-table.min.css", :rel => "stylesheet"}
-    %link{:href => "//static.kcwiki.org/db/stylesheets/offcanvas.css", :rel => "stylesheet"}
-    %link{:href => "//static.kcwiki.org/db/stylesheets/chartist.min.css", :rel => "stylesheet"}
-    %link{:href => "//static.kcwiki.org/db/stylesheets/backTop.css", :rel => "stylesheet"}
-    %link{:href => "//static.kcwiki.org/db/stylesheets/custom.css", :rel => "stylesheet"}
-    %script{:src => "//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"}
-    %script{:src => "//static.kcwiki.org/db/scripts/chartist.min.js"}
+    %link{:href => "//static.kcwiki.cn/bootstrap/3.3.7/css/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "//static.kcwiki.cn/bootstrap-table/1.11.0/bootstrap-table.min.css", :rel => "stylesheet"}
+    %link{:href => "//static.kcwiki.cn/db/stylesheets/offcanvas.css", :rel => "stylesheet"}
+    %link{:href => "//static.kcwiki.cn/db/stylesheets/chartist.min.css", :rel => "stylesheet"}
+    %link{:href => "//static.kcwiki.cn/db/stylesheets/backTop.css", :rel => "stylesheet"}
+    %link{:href => "//static.kcwiki.cn/db/stylesheets/custom.css", :rel => "stylesheet"}
+    %script{:src => "//static.kcwiki.cn/jquery/2.2.4/jquery.min.js"}
+    %script{:src => "//static.kcwiki.cn/db/scripts/chartist.min.js"}
     / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
     /[if lt IE 9]
-      %script{:src => "//cdn.bootcss.com/html5shiv/r29/html5.min.js"}
-      %script{:src => "//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"}
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"}
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"}
     / WEB PUSH
     %link{:rel => "manifest", :href => "/manifest.json"}
-    %link{:href => "//static.kcwiki.org/iDisqus/2019/iDisqus.min.css", :rel => "stylesheet"}
-    %script{:src => "//static.kcwiki.org/iDisqus/2019/iDisqus.min.js"}
+    %link{:href => "//static.kcwiki.cn/iDisqus/2019/iDisqus.min.css", :rel => "stylesheet"}
+    %script{:src => "//static.kcwiki.cn/iDisqus/2019/iDisqus.min.js"}
   %body
     =haml :navbar, :locals => locals
     =haml :ad
@@ -35,18 +35,18 @@
           %span 为本站提供数据支持。如果你在使用的过程中发现什么Bug 抑或是一些好的建议都欢迎在
           %a{:href => "https://github.com/kcwikizh/poi-statistics/issues"}Github Issue
           %span 上提交。
-    %script{:src => "//static.kcwiki.org/poi-static/jquery.backTop.min.js"}
-    %script{:src => "//static.kcwiki.org/poi-static/tableExport.min.js"}
-    %script{:src => "//cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.min.js"}
-    %script{:src => "//static.kcwiki.org/poi-static/bootstrap-table-filter.min.js"}
-    %script{:src => "//static.kcwiki.org/poi-static/bs-table.js"}
-    %script{:src => "//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"}
-    %script{:src => "//cdn.bootcss.com/bootstrap-table/1.11.0/bootstrap-table.min.js"}
-    %script{:src => "//cdn.bootcss.com/bootstrap-table/1.11.0/extensions/export/bootstrap-table-export.min.js"}
-    %script{:src => "//cdn.bootcss.com/bootstrap-table/1.11.0/extensions/filter/bootstrap-table-filter.min.js"}
+    %script{:src => "//static.kcwiki.cn/poi-static/jquery.backTop.min.js"}
+    %script{:src => "//static.kcwiki.cn/poi-static/tableExport.min.js"}
+    %script{:src => "//static.kcwiki.cn/FileSaver.js/2014-11-29/FileSaver.min.js"}
+    %script{:src => "//static.kcwiki.cn/poi-static/bootstrap-table-filter.min.js"}
+    %script{:src => "//static.kcwiki.cn/poi-static/bs-table.js"}
+    %script{:src => "//static.kcwiki.cn/bootstrap/3.3.7/js/bootstrap.min.js"}
+    %script{:src => "//static.kcwiki.cn/bootstrap-table/1.11.0/bootstrap-table.min.js"}
+    %script{:src => "//static.kcwiki.cn/bootstrap-table/1.11.0/extensions/export/bootstrap-table-export.min.js"}
+    %script{:src => "//static.kcwiki.cn/bootstrap-table/1.11.0/extensions/filter/bootstrap-table-filter.min.js"}
     / IE10 viewport hack for Surface/desktop Windows 8 bug
-    %script{:src => "//static.kcwiki.org/db/scripts/ie10-viewport-bug-workaround.js"}
-    %script{:src => "//static.kcwiki.org/db/scripts/offcanvas.js"}
+    %script{:src => "//static.kcwiki.cn/db/scripts/ie10-viewport-bug-workaround.js"}
+    %script{:src => "//static.kcwiki.cn/db/scripts/offcanvas.js"}
 
     :javascript
       $(document).ready(function() {
